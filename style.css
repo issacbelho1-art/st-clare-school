@@ -18,6 +18,7 @@ nav a {
   color: white;
   margin-left: 20px;
   text-decoration: none;
+  margin: 0 10px;
   font-weight: bold;
 }
 
@@ -40,12 +41,14 @@ nav a:hover {
   font-size: 42px;
   margin-bottom: 10px;
   font-weight: bold;
+  color: white;
   text-shadow: 2px 2px 8px
   rgba(0,0,0,0.9);
 }
 
 .hero p {
   font-size: 20px;
+  color: white;
   text-shadow: 2px 2px 8px
   rgba(0,0,0,0
   9);
@@ -122,4 +125,37 @@ html {
   height: 50px;
   object-fit: contain;
   margin-right: 10px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr; /* stack cards */
+  }
+
+  .about-img {
+    width: 100%;
+  }
 }
