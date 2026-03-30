@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Academic - St Clare Higher Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="header-content">
+    <img src="images/logo.jpg" alt="School Logo">
+    <h1>St Clare Higher Secondary School</h1>
+    <p class="motto">To serve in love</p>
+  </div>
+
+  <!--  NAVIGATION -->
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="academic.html">Academic</a>
+    <a href="boarding.html">Boarding</a>
+    <a href="cocurricular.html">Co-Curricular</a>
+    <a href="admissions.html">Admissions</a>
+    <a href="about.html">About Us</a>
+    <a href="news.html">News & Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section>
+  <h2>Contact Us</h2>
+  <p><strong>Address:</strong> St clare Higher Secondary School, kacharigaon(Phevima) Village, Dimapur, Nagaland-797112</p>
+  <p><strong>Phone:</strong>+91 8413079844</p>
+  <p><strong>Email:</strong>stclaresh@gmail.com</p>
+  <h3>Send us a message</h3>
+  <form>
+    <input type="text" placeholder="YOur Name" required><br><br>
+    <input type="email" required><br><br>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+</body>
+</html>

@@ -10,32 +10,42 @@
     <body>
 
         <!--   NAVBAR  -->
-          <header>
-  <div class="logo">
+          <header class="header">
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="header-content">
     <img src="images/logo.jpg" alt="School Logo">
     <h1>St Clare Higher Secondary School</h1>
+    <p class="motto">To serve in love</p>
   </div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#about">About</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+  <!--  NAVIGATION -->
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="academic.html">Academic</a>
+    <a href="boarding.html">Boarding</a>
+    <a href="cocurricular.html">Co-Curricular</a>
+    <a href="admissions.html">Admissions</a>
+    <a href="about.html">About Us</a>
+    <a href="news.html">News & Events</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
            <!--     HERO SECTION  -->
-                <section class="hero">
-                    <h2>St Clare Higher Secondary School</h2>
-                    <p>To serve in love</p>
-                </section>
+                <section class="hero"></section>
+<section class="home-description">
+  <h2>Welcome to St Clare Higher Secondary School</h2>
 
-                <!--  ABOUT -->
-                  <section id="about">
-                    <h2>Our School</h2>
-                    <p>St Clare Higher Secondary School is commited to providing quality education, nurturing values, and shaping students for a bright future.</p>
-                  </section>
+  <p>
+    St Clare Higher Secondary School is dedicated to providing quality education
+    that nurtures academic excellence, discipline, and moral values. Our institution
+    focuses on the holistic development of students through a balanced approach to
+    academics, co-curricular activities, and character building. We strive to create
+    a supportive and inspiring environment where every student can grow into a
+    responsible and successful individual.
+  </p>
+</section>
+
                   <section id="gallery">
                     <h2>Gallery</h2>
 
@@ -69,21 +79,21 @@
 
 </div>
                      </section>
+                     <section>
+  <h2>Contact Us</h2>
+  <p>For admissions and inquiries, please get in touch with us.</p>
+  <a href="contact.html">Contact Page</a>
+</section>
 
-                     <!--   CONTACT  -->
-                        <section id="contact">
-                            <h2>Contact Us</h2>
-
-                            <div class="contact-box">
-                            <p><strong>Email:</strong> stclaresh@gmail.com</p>
-                            <p><strong>Phone:</strong> 8413079844</p>
-                            <p><strong>Address:</strong> St Clare Higher Secondary School, Kacharigaon(Phevima) village, Dimapur, Nagaland</p>
-                            </div>
-                        </section>
 
                         <!--  FOOTER  -->
                           <footer>
                           <p> © 2026 St Clare Higher Secondary School  | Designed by Issac</p>
                           </footer>
+                          <script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
     </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Academic - St Clare Higher Secondary School</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="header">
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="header-content">
+    <img src="images/logo.jpg" alt="School Logo">
+    <h1>St Clare Higher Secondary School</h1>
+    <p class="motto">To serve in love</p>
+  </div>
+
+  <!--  NAVIGATION -->
+  <nav id="menu">
+    <a href="index.html">Home</a>
+    <a href="academic.html">Academic</a>
+    <a href="boarding.html">Boarding</a>
+    <a href="cocurricular.html">Co-Curricular</a>
+    <a href="admissions.html">Admissions</a>
+    <a href="about.html">About Us</a>
+    <a href="news.html">News & Events</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+<section>
+  <section>
+  <h2>Academic Programs</h2>
+
+  <div class="cards">
+    
+    <div class="card">
+      <img src="images/classroom.jpg" alt="Classroom">
+      <h3>Classroom Learning</h3>
+      <p>We provide structured and interactive classroom learning for all students.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/lab.jpg" alt="Laboratory">
+      <h3>Laboratories</h3>
+      <p>Well-equipped science labs for practical knowledge and experiments.</p>
+    </div>
+
+    <div class="card">
+      <img src="images/library.jpg" alt="Library">
+      <h3>Library</h3>
+      <p>A rich collection of books to support learning and research.</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+</body>
+</html>
