@@ -4874,4 +4874,41 @@ img {
     height: 320px;
   }
 }
+/* ================= MOBILE HEADER FIX ================= */
+@media (max-width: 700px) {
+  .main-header {
+    padding: 10px 14px;
+  }
 
+  .logo h3,
+  .school-name {
+    font-size: 12px;
+    max-width: 145px;
+    line-height: 1.2;
+  }
+
+  .logo img {
+    height: 34px;
+  }
+
+  .header-right {
+    gap: 8px;
+  }
+
+  .enquire-btn {
+    display: inline-block;
+    padding: 7px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .home-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    width: 24px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+}
