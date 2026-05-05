@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admissions - St Clare School</title>
+<title>Admissions Team - St Clare School</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="admission-team.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="inner-page">
 
 <!-- ================= HEADER ================= -->
 <header class="main-header">
@@ -20,6 +21,7 @@
 
   <div class="header-right">
     <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
     <button class="menu-toggle" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -77,42 +79,56 @@
 <!-- ================= HERO ================= -->
 <section class="page-hero" style="background-image: url('images/school.jpeg');">
   <div class="hero-overlay">
-    <h1>Admissions</h1>
+    <h1>Admisson Team</h1>
   </div>
 </section>
+<!-- ================= MAIN ================= -->
+<section class="admissions-page">
 
-<!-- ================= JOIN OUR FAMILY ================= -->
-<section class="admissions-intro">
+  <div class="page-layout">
 
-  <div class="intro-grid">
+    <!-- LEFT CONTENT -->
+    <div class="page-content">
 
-    <!-- LEFT TEXT -->
-    <div class="intro-left">
-      <p>
-        Located in a nurturing environment, our school is a safe, inspiring,
-        and exciting place for students to learn and grow.
-      </p>
+      <!-- INTRO -->
+      <section class="inner-page">
+        <p>
+          Our Admissions Team is here to guide you through every step of the process.
+          We are committed to helping families feel welcomed, informed, and confident.
+        </p>
+      </section>
+
+      <!-- TEAM -->
+      <section class="team-section">
+
+        <div class="team-card">
+          <img src="images/staff1.jpeg" alt="">
+          <h3>Sr. Mary Joseph</h3>
+          <p>Admissions Head</p>
+          <p>Email: stclareshs@gmail.com</p>
+        </div>
+
+        <div class="team-card">
+          <img src="images/staff2.jpeg" alt="">
+          <h3>Mr. John Peter</h3>
+          <p>Admissions Officer</p>
+          <p>Phone: +91 8413079844</p>
+        </div>
+
+        <div class="team-card">
+          <img src="images/staff3.jpeg" alt="">
+          <h3>Ms. Anita Das</h3>
+          <p>Student Coordinator</p>
+          <p>Email: stclareshs@gmail.com</p>
+        </div>
+
+      </section>
+
     </div>
 
-    <!-- CENTER CONTENT -->
-    <div class="intro-center">
-      <h2>Join Our Family</h2>
-
-      <div class="intro-text">
-        <p>
-          We are delighted that you are interested in joining St Clare Higher Secondary School.
-        </p>
-
-        <p>
-          Our students grow academically, socially, and personally in a supportive environment.
-        </p>
-      </div>
-
-      <img src="images/portrait.jpeg" alt="Students">
-    </div>
-
-    <!-- RIGHT SIDEBAR (FIXED: no extra wrapper) -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="enquire-sidebar">
+
       <div class="sidebar-logo">
         <img src="images/logo.jpg" alt="School Logo">
       </div>
@@ -120,88 +136,24 @@
       <h3>In this section</h3>
 
       <ul>
-        <li><a href="admissions.html" class="active">Admissions</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
         <li><a href="application-process.html">Application Process</a></li>
         <li><a href="enquire.html">Admissions Enquiry</a></li>
-        <li><a href="admission-team.html">Meet Our Team</a></li>
+        <li><a href="admission-team.html" class="active">Meet Our Team</a></li>
         <li><a href="fees.html">Tuition & Fees</a></li>
       </ul>
+
     </aside>
 
   </div>
 
 </section>
 
-<!-- ================= PROCESS CONTENT ================= -->
-<section class="process-section">
-
-  <div class="process-container">
-
-    <!-- LEFT EMPTY -->
-    <div></div>
-
-    <!-- CENTER -->
-    <div class="process-text">
-
-      <h2>The Admissions Process</h2>
-
-      <p class="intro">
-        The admissions process is the beginning of a strong relationship between your family and our school.
-      </p>
-
-      <p>
-        Our team will guide you step by step — from enquiry to enrolment — ensuring everything is simple and clear.
-      </p>
-
-      <p>
-        Visiting the campus gives the best experience of our environment. You can explore facilities and meet our staff.
-      </p>
-
-      <p>
-        We are here to support you throughout the journey.
-      </p>
-
-      <div class="process-buttons">
-        <a href="application-process.html" class="btn-primary">Application Process</a>
-        <a href="enquire.html" class="btn-secondary">Book a Visit</a>
-      </div>
-
-    </div>
-
-    <!-- RIGHT (WHY CHOOSE US ONLY HERE) -->
-    <div class="right-column">
-
-      <div class="process-card">
-
-        <img src="images/school-small.jpeg" alt="School">
-
-        <h3>Why Choose Us</h3>
-
-        <p>
-          A place where students grow with confidence, discipline, and excellence.
-        </p>
-
-        <ul>
-          <li>✔ Experienced teachers</li>
-          <li>✔ Strong academics</li>
-          <li>✔ Safe campus</li>
-          <li>✔ Holistic growth</li>
-        </ul>
-
-        <a href="about.html" class="card-btn">Learn More</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= NEXT SECTION ================= -->
-<section class="content-section">
-  <h2>Admissions</h2>
-  <p>More details about admission will go here...</p>
+<!-- ================= CTA ================= -->
+<section class="activity-cta">
+  <h2>Get in Touch With Us</h2>
+  <p>We are here to help you with your admission journey.</p>
+  <a href="enquire.html">Contact Admissions</a>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -274,10 +226,8 @@
 
 </footer>
 
-<!-- ================= TRANSITION ================= -->
 <div class="page-transition"></div>
 
-<!-- ================= JS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
 

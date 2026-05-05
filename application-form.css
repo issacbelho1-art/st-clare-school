@@ -1,0 +1,191 @@
+/* ================= APPLICATION FORM HERO ================= */
+.page-hero {
+  min-height: 80vh;
+  background: url("images/school.jpeg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 70px;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+}
+
+.page-hero h1 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 52px;
+  font-weight: 400;
+}
+
+/* ================= FORM PAGE ================= */
+.form-page {
+  background: #f4f4f4;
+  padding: 110px 20px;
+}
+
+.multi-step-form {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 60px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+}
+
+/* ================= STEP INDICATOR ================= */
+.form-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 45px;
+}
+
+.step {
+  padding: 18px;
+  background: #f2f2f2;
+  color: #0d2d5c;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+}
+
+.step.active {
+  background: #eaf0f8;
+  border-left-color: #0d2d5c;
+}
+
+/* ================= FORM STEPS ================= */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-step h2 {
+  grid-column: span 2;
+  font-size: 34px;
+  color: #0d2d5c;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.form-step p {
+  grid-column: span 2;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ================= INPUTS ================= */
+.multi-step-form input,
+.multi-step-form select,
+.multi-step-form textarea {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid #d6d6d6;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fafafa;
+  transition: 0.3s;
+}
+
+.multi-step-form input:focus,
+.multi-step-form select:focus,
+.multi-step-form textarea:focus {
+  outline: none;
+  border-color: #0d2d5c;
+  background: white;
+}
+
+/* ================= BUTTONS ================= */
+.multi-step-form button {
+  background: #0d2d5c;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.multi-step-form button:hover {
+  background: #071d3d;
+}
+
+.form-step > button {
+  grid-column: span 2;
+  justify-self: start;
+}
+
+.form-nav {
+  grid-column: span 2;
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* ================= CTA ================= */
+.activity-cta {
+  background: #0d2d5c;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.activity-cta h2 {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.activity-cta p {
+  margin-bottom: 25px;
+}
+
+.activity-cta a {
+  display: inline-block;
+  background: white;
+  color: #0d2d5c;
+  padding: 13px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 800px) {
+  .page-hero {
+    min-height: 60vh;
+    padding: 35px;
+  }
+
+  .page-hero h1 {
+    font-size: 38px;
+  }
+
+  .multi-step-form {
+    padding: 35px 25px;
+  }
+
+  .form-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .form-step.active {
+    grid-template-columns: 1fr;
+  }
+
+  .form-step h2,
+  .form-step p,
+  .form-step > button,
+  .form-nav {
+    grid-column: span 1;
+  }
+}

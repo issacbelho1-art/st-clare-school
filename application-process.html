@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admissions - St Clare School</title>
+<title>Application Process - St Clare School</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="application.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="inner-page">
 
 <!-- ================= HEADER ================= -->
 <header class="main-header">
@@ -20,6 +21,7 @@
 
   <div class="header-right">
     <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
     <button class="menu-toggle" onclick="toggleMenu()">
       <span></span><span></span><span></span>
     </button>
@@ -77,42 +79,91 @@
 <!-- ================= HERO ================= -->
 <section class="page-hero" style="background-image: url('images/school.jpeg');">
   <div class="hero-overlay">
-    <h1>Admissions</h1>
+    <h1>Application Process</h1>
   </div>
 </section>
+<!-- ================= MAIN ================= -->
+<section class="admissions-page">
 
-<!-- ================= JOIN OUR FAMILY ================= -->
-<section class="admissions-intro">
+  <div class="page-layout">
 
-  <div class="intro-grid">
+    <!-- LEFT CONTENT -->
+    <div class="page-content">
 
-    <!-- LEFT TEXT -->
-    <div class="intro-left">
-      <p>
-        Located in a nurturing environment, our school is a safe, inspiring,
-        and exciting place for students to learn and grow.
+      <p class="process-intro">
+        Joining St Clare Higher Secondary School is a simple and structured process.
       </p>
-    </div>
 
-    <!-- CENTER CONTENT -->
-    <div class="intro-center">
-      <h2>Join Our Family</h2>
+      <!-- STEPS -->
+      <div class="process-steps">
 
-      <div class="intro-text">
-        <p>
-          We are delighted that you are interested in joining St Clare Higher Secondary School.
-        </p>
+        <div class="step-box active" onclick="showStep(1)">
+          <h3>Step 1</h3>
+          <p>Complete Application Form</p>
+        </div>
 
-        <p>
-          Our students grow academically, socially, and personally in a supportive environment.
-        </p>
+        <div class="step-box" onclick="showStep(2)">
+          <h3>Step 2</h3>
+          <p>References</p>
+        </div>
+
+        <div class="step-box" onclick="showStep(3)">
+          <h3>Step 3</h3>
+          <p>Pay Application Fee</p>
+        </div>
+
+        <div class="step-box" onclick="showStep(4)">
+          <h3>Step 4</h3>
+          <p>Getting to Know You</p>
+        </div>
+
+        <div class="step-box" onclick="showStep(5)">
+          <h3>Step 5</h3>
+          <p>Review Your Application</p>
+        </div>
+
       </div>
 
-      <img src="images/portrait.jpeg" alt="Students">
+      <!-- STEP CONTENT -->
+      <div class="step-content-wrapper">
+
+        <div id="step-content-1" class="step-content active">
+          <h2>Step 1: Complete the Application Form</h2>
+          <p>Download and fill out our official application form.</p>
+
+          <div class="process-buttons">
+            <a href="pdf/application-form.pdf" download class="btn-primary">Download Form</a>
+            <a href="application-form.html" class="btn-secondary">Apply Online</a>
+          </div>
+        </div>
+
+        <div id="step-content-2" class="step-content">
+          <h2>Step 2: References</h2>
+          <p>Provide academic references from your previous school.</p>
+        </div>
+
+        <div id="step-content-3" class="step-content">
+          <h2>Step 3: Pay Application Fee</h2>
+          <p>Submit the required application fee to proceed.</p>
+        </div>
+
+        <div id="step-content-4" class="step-content">
+          <h2>Step 4: Getting to Know You</h2>
+          <p>Attend an interaction session with our admissions team.</p>
+        </div>
+
+        <div id="step-content-5" class="step-content">
+          <h2>Step 5: Review Your Application</h2>
+          <p>We review your application and confirm admission.</p>
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- RIGHT SIDEBAR (FIXED: no extra wrapper) -->
+    <!-- RIGHT SIDEBAR -->
     <aside class="enquire-sidebar">
+
       <div class="sidebar-logo">
         <img src="images/logo.jpg" alt="School Logo">
       </div>
@@ -120,88 +171,24 @@
       <h3>In this section</h3>
 
       <ul>
-        <li><a href="admissions.html" class="active">Admissions</a></li>
-        <li><a href="application-process.html">Application Process</a></li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="application-process.html" class="active">Application Process</a></li>
         <li><a href="enquire.html">Admissions Enquiry</a></li>
         <li><a href="admission-team.html">Meet Our Team</a></li>
         <li><a href="fees.html">Tuition & Fees</a></li>
       </ul>
+
     </aside>
 
   </div>
 
 </section>
 
-<!-- ================= PROCESS CONTENT ================= -->
-<section class="process-section">
-
-  <div class="process-container">
-
-    <!-- LEFT EMPTY -->
-    <div></div>
-
-    <!-- CENTER -->
-    <div class="process-text">
-
-      <h2>The Admissions Process</h2>
-
-      <p class="intro">
-        The admissions process is the beginning of a strong relationship between your family and our school.
-      </p>
-
-      <p>
-        Our team will guide you step by step — from enquiry to enrolment — ensuring everything is simple and clear.
-      </p>
-
-      <p>
-        Visiting the campus gives the best experience of our environment. You can explore facilities and meet our staff.
-      </p>
-
-      <p>
-        We are here to support you throughout the journey.
-      </p>
-
-      <div class="process-buttons">
-        <a href="application-process.html" class="btn-primary">Application Process</a>
-        <a href="enquire.html" class="btn-secondary">Book a Visit</a>
-      </div>
-
-    </div>
-
-    <!-- RIGHT (WHY CHOOSE US ONLY HERE) -->
-    <div class="right-column">
-
-      <div class="process-card">
-
-        <img src="images/school-small.jpeg" alt="School">
-
-        <h3>Why Choose Us</h3>
-
-        <p>
-          A place where students grow with confidence, discipline, and excellence.
-        </p>
-
-        <ul>
-          <li>✔ Experienced teachers</li>
-          <li>✔ Strong academics</li>
-          <li>✔ Safe campus</li>
-          <li>✔ Holistic growth</li>
-        </ul>
-
-        <a href="about.html" class="card-btn">Learn More</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= NEXT SECTION ================= -->
-<section class="content-section">
-  <h2>Admissions</h2>
-  <p>More details about admission will go here...</p>
+<!-- ================= CTA ================= -->
+<section class="activity-cta">
+  <h2>Start Your Journey With Us</h2>
+  <p>Take the first step towards quality education.</p>
+  <a href="enquire.html">Submit Enquiry</a>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -274,10 +261,8 @@
 
 </footer>
 
-<!-- ================= TRANSITION ================= -->
 <div class="page-transition"></div>
 
-<!-- ================= JS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
 

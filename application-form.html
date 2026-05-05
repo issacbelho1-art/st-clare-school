@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Application Form - St Clare School</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="application-form.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* FORM PAGE */
+.form-page {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.admission-form h2 {
+  margin: 30px 0 15px;
+  color: #6a1b4d;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* INPUTS */
+.admission-form input,
+.admission-form select,
+.admission-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.admission-form input:focus,
+.admission-form select:focus,
+.admission-form textarea:focus {
+  border-color: #6a1b4d;
+  outline: none;
+}
+
+/* FULL WIDTH */
+.full-width {
+  grid-column: span 2;
+}
+
+/* TEXTAREA */
+textarea {
+  min-height: 100px;
+}
+
+/* BUTTON */
+.admission-form button {
+  margin-top: 25px;
+  padding: 14px;
+  width: 100%;
+  background: #6a1b4d;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admission-form button:hover {
+  background: #4e1238;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+}
+
+</style>
+
+</head>
+
+<body class="inner-page">
+
+<!-- HEADER -->
+<header class="main-header">
+  <div class="logo">
+    <img src="images/logo.jpg">
+    <h3>St Clare Higher Secondary School</h3>
+  </div>
+
+  <div class="header-right">
+    <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MENU -->
+<nav id="menu">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+  <div class="mega-menu">
+    <!-- SAME MENU -->
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <h1>Application Form</h1>
+</section>
+
+<!-- FORM -->
+<section class="form-page">
+
+<form id="admissionForm" class="multi-step-form">
+
+  <!-- STEP INDICATOR -->
+  <div class="form-steps">
+    <div class="step active">1. Student</div>
+    <div class="step">2. Parent</div>
+    <div class="step">3. Review</div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="form-step active">
+    <h2>Student Information</h2>
+
+    <input type="text" placeholder="First Name" id="firstName" required>
+    <input type="text" placeholder="Last Name" id="lastName" required>
+
+    <input type="date" id="dob" required>
+
+    <select id="grade" required>
+      <option value="">Select Grade</option>
+      <option>Grade 1</option>
+      <option>Grade 2</option>
+      <option>Grade 3</option>
+      <option>Grade 4</option>
+    </select>
+
+    <button type="button" onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="form-step">
+    <h2>Parent Information</h2>
+
+    <input type="text" placeholder="Parent Name" id="parentName" required>
+    <input type="email" placeholder="Email" id="email" required>
+    <input type="text" placeholder="Phone" id="phone" required>
+
+    <div class="form-nav">
+      <button type="button" onclick="prevStep()">Back</button>
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="form-step">
+    <h2>Review & Submit</h2>
+
+    <p>Please review your details and submit.</p>
+
+    <div class="form-nav">
+      <button type="button" onclick="prevStep()">Back</button>
+      <button type="submit">Submit Application</button>
+    </div>
+  </div>
+
+</form>
+
+</section>
+
+<!-- CTA -->
+<section class="activity-cta">
+  <h2>Need Help?</h2>
+  <p>Contact our admissions team for assistance.</p>
+  <a href="enquire.html">Enquire Now</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="premium-footer">
+
+  <div class="footer-logo">
+    <img src="images/logo.jpg">
+    <h2>St Clare Higher Secondary School</h2>
+  </div>
+
+  <div class="footer-container">
+
+    <div class="footer-column">
+      <h3>Contact us</h3>
+      <p>Kacharigaon (Phevima) village</p>
+      <p>Dimapur, Nagaland - 797112</p>
+      <p>India</p>
+
+      <p>stclareshs@gmail.com</p>
+      <p>+91 8413079844</p>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/St. Clare hr. Sec school" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.instagram.com/st.clareschool777" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/St clare School" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Information</h3>
+      <a href="news.html">News & Events</a>
+      <a href="activities.html">School Activities</a>
+      <a href="careers.html">Careers</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Access</h3>
+      <a href="payments.html">Online Payments</a>
+      <a href="term-dates.html">Term Dates</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Admissions</h3>
+      <a href="application-process.html">Application Process</a>
+      <a href="application-form.html">Application Form</a>
+      <a href="admission-team.html">Admission Team</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Policies</h3>
+      <a href="legal.html">Legal Notice</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    Design by Issac Belho
+  </div>
+
+</footer>
+<div class="page-transition"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script type="module" src="js/form.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
