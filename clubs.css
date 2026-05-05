@@ -1,0 +1,182 @@
+/* ================= CLUBS PAGE ================= */
+
+/* HERO */
+.clubs-hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.clubs-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 50px;
+  left: 60px;
+  color: white;
+}
+
+.hero-overlay h1 {
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ================= INTRO ================= */
+.clubs-intro {
+  background: #f4f4f4;
+  padding: 110px 60px;
+}
+
+.clubs-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1fr;
+  gap: 70px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+/* LEFT */
+.clubs-left h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  color: #0d2d5c;
+}
+
+/* CENTER */
+.clubs-center {
+  font-family: 'Poppins', sans-serif;
+}
+
+.clubs-center .lead {
+  font-size: 19px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.clubs-center p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ================= RIGHT PANEL ================= */
+.section-box {
+  background: #0d2d5c;
+  color: white;
+  padding: 35px 30px;
+  position: sticky;
+  top: 120px;
+}
+
+/* LOGO */
+.section-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-logo img {
+  width: 50px;
+}
+
+/* TITLE */
+.section-box h3 {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* LIST */
+.section-box ul {
+  list-style: none;
+}
+
+.section-box li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* LINKS */
+.section-box li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.section-box li a:hover {
+  color: #ffd700;
+  padding-left: 5px;
+}
+
+/* ACTIVE */
+.section-box li.active {
+  color: #ffd700;
+  font-weight: 500;
+}
+
+/* ================= IMAGE ================= */
+.clubs-image img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+}
+
+/* ================= CONTENT ================= */
+.clubs-content {
+  padding: 110px 20px;
+  background: #fff;
+}
+
+.content-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.clubs-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #0d2d5c;
+}
+
+.clubs-content p {
+  margin-bottom: 30px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* BLOCKS */
+.content-block {
+  margin-bottom: 45px;
+}
+
+.content-block h3 {
+  font-size: 26px;
+  color: #0d2d5c;
+  margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1000px) {
+  .clubs-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .clubs-left h2 {
+    font-size: 26px;
+  }
+
+  .clubs-right {
+    order: 3;
+  }
+
+  .section-box {
+    position: relative;
+    top: 0;
+  }
+}
