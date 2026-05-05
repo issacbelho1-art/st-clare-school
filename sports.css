@@ -1,0 +1,130 @@
+/* ================= SPORTS HERO SLIDER FINAL ================= */
+
+.sports-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.sports-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+.sports-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.sports-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.28);
+  z-index: 1;
+}
+
+.sports-overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  z-index: 3;
+  text-align: center;
+  color: white;
+}
+
+.sports-overlay h1 {
+  font-size: 48px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.sports-controls {
+  position: absolute;
+  right: 60px;
+  bottom: 45px;
+  z-index: 5;
+  display: flex;
+  gap: 10px;
+}
+
+.sports-controls button {
+  width: 52px;
+  height: 52px;
+  border: none;
+  background: #008ed6;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sports-controls button:hover {
+  background: #002f63;
+}
+
+/* ================= SPORTS CONTENT BUTTONS ================= */
+
+.sports-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 32px 0 55px;
+}
+
+.sports-buttons a {
+  display: inline-block;
+  background: #002f63;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+
+.sports-buttons a:hover {
+  background: #7b1e2b;
+  transform: translateY(-2px);
+}
+
+.houses-main img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  margin: 55px 0 70px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sports-overlay h1 {
+    font-size: 36px;
+  }
+
+  .sports-controls {
+    right: 25px;
+    bottom: 30px;
+  }
+
+  .sports-controls button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .houses-main img {
+    height: 320px;
+  }
+}
