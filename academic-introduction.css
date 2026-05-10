@@ -1,0 +1,1064 @@
+/* ================= ACADEMIC INTRO HERO ================= */
+
+.academic-intro {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #213f7a;
+}
+
+/* BACKGROUND IMAGE */
+.academic-intro-image {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.academic-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY */
+.intro-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  transition: opacity 1s ease;
+}
+
+/* BLUE SHAPE */
+.blue-shape {
+  position: absolute;
+  inset: 0;
+  background: #058ac0;
+  z-index: 1;
+
+  clip-path: polygon(
+    32% 0,
+    100% 0,
+    100% 100%,
+    32% 100%,
+    29% 88%,
+    54% 78%,
+    30% 66%,
+    55% 52%,
+    31% 41%,
+    56% 25%,
+    32% 12%
+  );
+}
+
+/* TEXT CONTENT */
+.intro-text-content {
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 560px;
+  z-index: 5;
+  text-align: center;
+  color: white;
+}
+
+.intro-text-content .tag {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+.intro-text-content h1 {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.intro-text-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 28px;
+}
+
+/* PREMIUM BUTTON */
+.discover-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 190px;
+  height: 48px;
+
+  background: #123c73;
+  color: white;
+
+  border: 2px solid white;
+  border-radius: 50px;
+
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 12px 30px rgba(18, 60, 115, 0.25);
+}
+
+.discover-btn:hover {
+  background: white;
+  color: #123c73;
+  border: 2px solid #123c73;
+  transform: translateY(-3px);
+}
+
+/* REMOVE OLD GHOST EFFECT */
+.discover-btn::before,
+.discover-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* REVEAL */
+.intro-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ================= DETAIL SECTION ================= */
+
+.academic-detail {
+  position: relative;
+  background: #fff;
+  padding: 120px 60px;
+}
+
+.detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.detail-text {
+  width: 58%;
+}
+
+.detail-text h2 {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.detail-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.detail-image {
+  width: 38%;
+}
+
+.detail-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= FULLSCREEN SLIDER ================= */
+
+.fullscreen-slider {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* CONTENT BOX */
+.content-box {
+  position: absolute;
+  bottom: 80px;
+  left: 8%;
+
+  display: flex;
+  width: 600px;
+  height: 230px;
+
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* LEFT BLUE */
+.blue-side {
+  width: 40%;
+  background: #2f4f7f;
+  color: white;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blue-side h4 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.blue-side h2 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.blue-side button {
+  padding: 8px 14px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blue-side button:hover {
+  background: white;
+  color: #2f4f7f;
+}
+
+/* RIGHT WHITE */
+.white-side {
+  width: 60%;
+  background: white;
+  padding: 25px 30px;
+
+  display: flex;
+  align-items: center;
+}
+
+.white-side p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  background: rgba(255,255,255,0.9);
+
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.arrow.left {
+  margin-left: -35px;
+}
+
+.arrow.right {
+  margin-left: 35px;
+}
+
+.arrow:hover {
+  background: white;
+}
+
+/* ================= COLLAGE INTRO ================= */
+
+.collage-intro {
+  background: #f4f4f4;
+  text-align: center;
+  padding: 90px 20px 120px;
+}
+
+.collage-intro img {
+  width: 58px;
+  display: block;
+  margin: 0 auto 22px;
+}
+
+.collage-intro p {
+  max-width: 950px;
+  margin: auto;
+  font-size: 28px;
+  line-height: 1.35;
+  color: #222;
+  font-weight: 400;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .blue-shape {
+    clip-path: none;
+  }
+
+  .intro-text-content {
+    left: 50%;
+    right: auto;
+    width: 85%;
+    transform: translate(-50%, -50%);
+  }
+
+  .intro-text-content h1 {
+    font-size: 30px;
+  }
+
+  .detail-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .detail-text,
+  .detail-image {
+    width: 100%;
+  }
+
+  .academic-detail {
+    padding: 80px 25px;
+  }
+
+  .content-box {
+    width: 90%;
+    left: 5%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .blue-side,
+  .white-side {
+    width: 100%;
+  }
+
+  .blue-side h2 {
+    font-size: 22px;
+  }
+
+  .white-side p {
+    font-size: 13px;
+  }
+
+  .collage-intro p {
+    font-size: 22px;
+  }
+}
+
+/* ================= PIXEL-STYLE BEAUSOLEIL COLLAGE FINAL ================= */
+
+.beau-collage {
+  position: relative;
+  background: #f4f4f4;
+  padding: 0 0 140px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+
+.beau-collage:active {
+  cursor: grabbing;
+}
+
+.beau-collage::-webkit-scrollbar {
+  height: 8px;
+}
+
+.beau-collage::-webkit-scrollbar-track {
+  background: #e5e5e5;
+}
+
+.beau-collage::-webkit-scrollbar-thumb {
+  background: #1f3f7a;
+  border-radius: 20px;
+}
+
+/* GRID AREA */
+.beau-grid {
+  position: relative;
+  width: 2050px;
+  height: 1450px;
+  margin: 0 auto;
+}
+
+/* DRAG MESSAGE */
+.drag-indicator {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(70, 70, 70, 0.88);
+  color: white;
+  padding: 14px 28px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* SHOW ONLY ON HOVER */
+.beau-collage:hover .drag-indicator {
+  opacity: 1;
+}
+.beau-collage.dragging {
+  cursor: grabbing;
+}
+
+/* ALL TILES */
+.tile,
+.collage-message {
+  position: absolute;
+  border: 8px solid #fff;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.tile {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.tile:hover {
+  transform: scale(1.025);
+  z-index: 5;
+}
+
+/* LEFT SIDE */
+.t1 {
+  width: 280px;
+  height: 300px;
+  left: -10px;
+  top: 150px;
+}
+
+.t7 {
+  width: 280px;
+  height: 320px;
+  left: -10px;
+  top: 475px;
+}
+
+/* LEFT-MIDDLE COLUMN */
+.t2 {
+  width: 460px;
+  height: 280px;
+  left: 300px;
+  top: 0;
+}
+
+.t3 {
+  width: 460px;
+  height: 310px;
+  left: 300px;
+  top: 305px;
+}
+
+.t8 {
+  width: 460px;
+  height: 300px;
+  left: 300px;
+  top: 640px;
+}
+
+.t12 {
+  width: 460px;
+  height: 300px;
+  left: 300px;
+  top: 965px;
+}
+
+/* CENTER COLUMN */
+.t4 {
+  width: 460px;
+  height: 300px;
+  left: 790px;
+  top: 145px;
+}
+
+.t9 {
+  width: 460px;
+  height: 310px;
+  left: 790px;
+  top: 470px;
+}
+
+.collage-message {
+  width: 460px;
+  height: 300px;
+  left: 790px;
+  top: 805px;
+
+  background: #1f3f7a;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 38px;
+}
+
+.collage-message img {
+  width: 58px;
+  margin-bottom: 22px;
+}
+
+.collage-message h2 {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.t13 {
+  width: 460px;
+  height: 280px;
+  left: 790px;
+  top: 1130px;
+}
+
+/* RIGHT-MIDDLE COLUMN */
+.t5 {
+  width: 460px;
+  height: 300px;
+  left: 1280px;
+  top: 0;
+}
+
+.t10 {
+  width: 460px;
+  height: 310px;
+  left: 1280px;
+  top: 325px;
+}
+
+.t14 {
+  width: 460px;
+  height: 300px;
+  left: 1280px;
+  top: 660px;
+}
+
+.t15 {
+  width: 460px;
+  height: 300px;
+  left: 1280px;
+  top: 985px;
+}
+
+/* FAR RIGHT SMALL COLUMN */
+.t6 {
+  width: 270px;
+  height: 300px;
+  left: 1770px;
+  top: 165px;
+}
+
+.t11 {
+  width: 270px;
+  height: 320px;
+  left: 1770px;
+  top: 490px;
+}
+
+.t16 {
+  width: 270px;
+  height: 300px;
+  left: 1770px;
+  top: 835px;
+}
+
+/* If you have t17, t18, t19 in HTML, use them like this */
+.t17 {
+  width: 270px;
+  height: 280px;
+  left: -10px;
+  top: 820px;
+}
+
+.t18 {
+  width: 270px;
+  height: 280px;
+  left: -10px;
+  top: 1125px;
+}
+
+.t19 {
+  width: 270px;
+  height: 260px;
+  left: 1770px;
+  top: 1160px;
+}
+
+/* SCALE FOR LAPTOP */
+@media (max-width: 1700px) {
+  .beau-grid {
+    transform: scale(0.82);
+    transform-origin: top center;
+    margin-bottom: -220px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .beau-grid {
+    transform: scale(0.72);
+    margin-bottom: -360px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .beau-collage {
+    padding: 30px 15px 70px;
+  }
+
+  .beau-grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    position: static;
+    transform: none;
+    margin-bottom: 0;
+  }
+
+  .tile,
+  .collage-message {
+    position: static;
+    width: 100%;
+    height: 220px;
+  }
+
+  .collage-message {
+    grid-column: span 2;
+  }
+
+  .collage-message h2 {
+    font-size: 22px;
+  }
+}
+/* ================= TOUR SECTION ================= */
+
+.tour-section {
+  background: #f4f4f4;
+  padding: 90px 0 110px;
+}
+
+/* TOP INTRO */
+.tour-intro {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
+}
+
+.tour-intro img {
+  width: 60px;
+  margin-bottom: 25px;
+}
+
+.tour-intro p {
+  font-size: 24px;
+  line-height: 1.5;
+  color: #444;
+  font-weight: 400;
+}
+
+/* TOUR WRAPPER */
+.tour-wrapper {
+  display: flex;
+  align-items: stretch;
+  max-width: 1500px;
+  margin: auto;
+}
+
+/* LEFT VERTICAL TEXT */
+.tour-title {
+  width: 140px;
+  background: #f4f4f4;
+  color: #0a7cff;
+  font-size: 46px;
+  font-weight: 300;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE AREA */
+.tour-image {
+  position: relative;
+  flex: 1;
+  height: 520px;
+  overflow: hidden;
+}
+
+.tour-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* DARK OVERLAY */
+.tour-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ================= PLAY BUTTON ================= */
+
+.tour-play {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+
+  background: #f26522;
+  color: white;
+  border: 3px solid white;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.tour-play:hover {
+  background: #ff6f2a;
+  transform: scale(1.1);
+}
+
+/* ================= PLAY BUTTON POSITIONS ================= */
+
+.play-1 {
+  top: 34%;
+  left: 17%;
+}
+
+.play-2 {
+  top: 50%;
+  left: 50%;
+  animation: pulse 2s infinite;
+}
+
+.play-3 {
+  top: 38%;
+  right: 18%;
+}
+
+.play-4 {
+  top: 24%;
+  left: 56%;
+}
+
+/* pulse handles play-2 transform */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ================= LABEL BOXES ================= */
+
+.tour-label {
+  position: absolute;
+  background: #1f3f7a;
+  color: white;
+
+  padding: 7px 18px;
+  font-size: 13px;
+  font-style: italic;
+  border-radius: 2px;
+  white-space: nowrap;
+
+  z-index: 6;
+}
+
+/* ================= CONNECTOR LINES ================= */
+
+.tour-line {
+  position: absolute;
+  height: 2px;
+  background: #1f3f7a;
+  transform-origin: left center;
+  z-index: 4;
+}
+
+/* ================= LINE + LABEL POSITIONS ================= */
+
+/* Library */
+.line-1 {
+  width: 120px;
+  top: 38%;
+  left: 21%;
+  transform: rotate(-35deg);
+}
+
+.label-1 {
+  top: 30%;
+  left: 27%;
+}
+
+/* Computer Lab */
+.line-2 {
+  width: 130px;
+  top: 50%;
+  left: 52%;
+  transform: rotate(0deg);
+}
+
+.label-2 {
+  top: 47%;
+  left: 61%;
+}
+
+/* Smart Class */
+.line-3 {
+  width: 120px;
+  top: 41%;
+  right: 21%;
+  transform: rotate(-35deg);
+}
+
+.label-3 {
+  top: 32%;
+  right: 25%;
+}
+
+/* Campus */
+.line-4 {
+  width: 130px;
+  top: 28%;
+  left: 58%;
+  transform: rotate(35deg);
+}
+
+.label-4 {
+  top: 22%;
+  left: 65%;
+}
+
+/* ================= VIDEO POPUP ================= */
+
+.video-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 99999;
+}
+
+.video-popup.active {
+  display: flex;
+}
+
+.video-box {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+}
+
+.video-box video {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.close-video {
+  position: absolute;
+  top: -45px;
+  right: 0;
+
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .tour-section {
+    padding: 70px 0;
+  }
+
+  .tour-wrapper {
+    flex-direction: column;
+  }
+
+  .tour-title {
+    width: 100%;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 32px;
+    padding: 25px 0;
+  }
+
+  .tour-image {
+    height: 380px;
+  }
+
+  .tour-intro {
+    margin-bottom: 50px;
+  }
+
+  .tour-intro p {
+    font-size: 20px;
+  }
+
+  .tour-play {
+    width: 48px;
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .tour-label,
+  .tour-line {
+    display: none;
+  }
+}
+.tour-intro {
+  text-align: center;
+}
+
+.tour-intro img {
+  display: block;
+  margin: 0 auto 25px;
+}
+
+/* ================= PREMIUM BACK BUTTON ================= */
+
+.back-academic-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 120px 0 70px;
+}
+
+.premium-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  text-decoration: none;
+
+  background: white;
+  color: #002b5c;
+
+  padding: 18px 34px;
+
+  border-radius: 70px;
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
+  transition: all 0.4s ease;
+}
+
+.arrow-circle {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #7a1c2e, #9e2a3f);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 16px;
+
+  transition: 0.4s ease;
+}
+
+.back-text {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* HOVER */
+.premium-back-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.14);
+}
+
+.premium-back-btn:hover .arrow-circle {
+  transform: translateX(-4px);
+}
