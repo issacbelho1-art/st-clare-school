@@ -368,28 +368,109 @@ function changeSportSlide(direction) {
 
 window.changeSportSlide = changeSportSlide;
 
-function openOutdoorSlide(imageSrc, title, desc) {
-  const panel = document.getElementById("outdoorSlidePanel");
-  const image = document.getElementById("outdoorSlideImage");
-  const slideTitle = document.getElementById("outdoorSlideTitle");
-  const slideDesc = document.getElementById("outdoorSlideDesc");
+let outdoorSlides = [
+  {
+    image: "images/outdoor-main.jpeg",
+    title: "Term 1 - Outdoor Activities",
+    desc1: "In Term 1, students take part in outdoor activities and practical learning experiences in and around Dimapur.",
+    desc2: "These activities help build confidence, teamwork, and leadership while encouraging students to learn beyond the classroom."
+  },
+  {
+    image: "images/outdoor4.jpeg",
+    title: "River Adventure",
+    desc1: "Students experience the joy of outdoor learning through river-side activities around Dimapur.",
+    desc2: "These moments help them build courage, teamwork and confidence while learning to respect nature."
+  },
+  {
+    image: "images/outdoor3.jpeg",
+    title: "Nature Walks",
+    desc1: "Through guided walks and outdoor exploration, students observe the natural beauty around Nagaland.",
+    desc2: "These experiences encourage curiosity, discipline and appreciation for the environment."
+  }
+];
 
-  image.src = imageSrc;
-  slideTitle.textContent = title;
-  slideDesc.textContent = desc;
+let currentOutdoorIndex = 0;
 
-  panel.classList.add("active");
+function renderOutdoorSlider() {
+  const mainImage = document.getElementById("outdoorMainImage");
+  const titleBox = document.getElementById("outdoorTitle");
+  const descBox1 = document.getElementById("outdoorDesc1");
+  const descBox2 = document.getElementById("outdoorDesc2");
+  const rightBox = document.getElementById("outdoorRight");
+
+  const current = outdoorSlides[currentOutdoorIndex];
+
+  mainImage.style.opacity = "0";
+  titleBox.style.opacity = "0";
+  descBox1.style.opacity = "0";
+  descBox2.style.opacity = "0";
+
+  setTimeout(() => {
+    mainImage.src = current.image;
+    titleBox.textContent = current.title;
+    descBox1.textContent = current.desc1;
+    descBox2.textContent = current.desc2;
+
+    rightBox.innerHTML = "";
+
+    outdoorSlides.forEach((slide, index) => {
+      if (index !== currentOutdoorIndex) {
+        rightBox.innerHTML += `
+          <div class="small-img" onclick="currentOutdoorIndex=${index}; renderOutdoorSlider();">
+            <img src="${slide.image}" alt="">
+            <div class="plus">+</div>
+          </div>
+        `;
+      }
+    });
+
+    mainImage.style.opacity = "1";
+    titleBox.style.opacity = "1";
+    descBox1.style.opacity = "1";
+    descBox2.style.opacity = "1";
+  }, 250);
 }
 
-function closeOutdoorSlide() {
-  const panel = document.getElementById("outdoorSlidePanel");
-  panel.classList.remove("active");
-}
-
+document.addEventListener("DOMContentLoaded", renderOutdoorSlider);
 function showStep(step) {
   document.querySelectorAll(".step-content").forEach(el => el.classList.remove("active"));
   document.querySelectorAll(".step-box").forEach(el => el.classList.remove("active"));
 
   document.getElementById("step-content-" + step).classList.add("active");
   document.querySelectorAll(".step-box")[step - 1].classList.add("active");
+}
+
+const beauCollage = document.querySelector(".beau-collage");
+
+if (beauCollage) {
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  beauCollage.addEventListener("mousedown", (e) => {
+    isDown = true;
+    beauCollage.classList.add("dragging");
+    startX = e.pageX - beauCollage.offsetLeft;
+    scrollLeft = beauCollage.scrollLeft;
+  });
+
+  beauCollage.addEventListener("mouseleave", () => {
+    isDown = false;
+    beauCollage.classList.remove("dragging");
+  });
+
+  beauCollage.addEventListener("mouseup", () => {
+    isDown = false;
+    beauCollage.classList.remove("dragging");
+  });
+
+  beauCollage.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+
+    const x = e.pageX - beauCollage.offsetLeft;
+    const walk = (x - startX) * 1.4;
+
+    beauCollage.scrollLeft = scrollLeft - walk;
+  });
 }
