@@ -12,7 +12,6 @@
 
 <body class="inner-page">
 
-<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="logo">
     <img src="images/logo.jpg" alt="School Logo">
@@ -28,12 +27,10 @@
   </div>
 </header>
 
-<!-- ================= MENU ================= -->
 <nav id="menu">
   <div class="close-btn" onclick="toggleMenu()">✕</div>
 
   <div class="mega-menu">
-
     <div class="menu-column">
       <h3 class="menu-title">Academic</h3>
       <div class="menu-links">
@@ -72,31 +69,24 @@
         <a href="careers.html">Careers</a>
       </div>
     </div>
-
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
 <section class="page-hero" style="background-image: url('images/school.jpeg');">
   <div class="hero-overlay">
     <h1>Application Process</h1>
   </div>
 </section>
-<!-- ================= MAIN ================= -->
-<section class="admissions-page">
 
+<section class="admissions-page">
   <div class="page-layout">
 
-    <!-- LEFT CONTENT -->
     <div class="page-content">
-
       <p class="process-intro">
         Joining St Clare Higher Secondary School is a simple and structured process.
       </p>
 
-      <!-- STEPS -->
       <div class="process-steps">
-
         <div class="step-box active" onclick="showStep(1)">
           <h3>Step 1</h3>
           <p>Complete Application Form</p>
@@ -121,18 +111,18 @@
           <h3>Step 5</h3>
           <p>Review Your Application</p>
         </div>
-
       </div>
 
-      <!-- STEP CONTENT -->
       <div class="step-content-wrapper">
 
         <div id="step-content-1" class="step-content active">
           <h2>Step 1: Complete the Application Form</h2>
-          <p>Download and fill out our official application form.</p>
+          <p>Download and fill out our official application form, or apply online.</p>
 
           <div class="process-buttons">
-            <a href="pdf/application-form.pdf" download class="btn-primary">Download Form</a>
+            <button onclick="downloadAdmissionPDF()" class="btn-primary" style="border:none; cursor:pointer;">
+              Download Form
+            </button>
             <a href="application-form.html" class="btn-secondary">Apply Online</a>
           </div>
         </div>
@@ -158,12 +148,9 @@
         </div>
 
       </div>
-
     </div>
 
-    <!-- RIGHT SIDEBAR -->
     <aside class="enquire-sidebar">
-
       <div class="sidebar-logo">
         <img src="images/logo.jpg" alt="School Logo">
       </div>
@@ -177,36 +164,29 @@
         <li><a href="admission-team.html">Meet Our Team</a></li>
         <li><a href="fees.html">Tuition & Fees</a></li>
       </ul>
-
     </aside>
 
   </div>
-
 </section>
 
-<!-- ================= CTA ================= -->
 <section class="activity-cta">
   <h2>Start Your Journey With Us</h2>
   <p>Take the first step towards quality education.</p>
   <a href="enquire.html">Submit Enquiry</a>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer class="premium-footer">
-
   <div class="footer-logo">
     <img src="images/logo.jpg">
     <h2>St Clare Higher Secondary School</h2>
   </div>
 
   <div class="footer-container">
-
     <div class="footer-column">
       <h3>Contact us</h3>
       <p>Kacharigaon (Phevima) village</p>
       <p>Dimapur, Nagaland - 797112</p>
       <p>India</p>
-
       <p>stclareshs@gmail.com</p>
       <p>+91 8413079844</p>
 
@@ -214,11 +194,9 @@
         <a href="https://www.facebook.com/St. Clare hr. Sec school" target="_blank">
           <i class="fab fa-facebook-f"></i>
         </a>
-
         <a href="https://www.instagram.com/st.clareschool777" target="_blank">
           <i class="fab fa-instagram"></i>
         </a>
-
         <a href="https://www.youtube.com/St clare School" target="_blank">
           <i class="fab fa-youtube"></i>
         </a>
@@ -252,19 +230,173 @@
       <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a>
     </div>
-
   </div>
 
   <div class="footer-bottom">
     Design by Issac Belho
   </div>
-
 </footer>
 
 <div class="page-transition"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+function showStep(stepNumber) {
+  document.querySelectorAll(".step-box").forEach(box => {
+    box.classList.remove("active");
+  });
+
+  document.querySelectorAll(".step-content").forEach(content => {
+    content.classList.remove("active");
+  });
+
+  document.querySelectorAll(".step-box")[stepNumber - 1].classList.add("active");
+  document.getElementById("step-content-" + stepNumber).classList.add("active");
+}
+
+function downloadAdmissionPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF("p", "mm", "a4");
+
+  const logo = new Image();
+  logo.src = "images/logo.jpg";
+
+  logo.onload = function () {
+    createPDF(doc, logo);
+  };
+
+  logo.onerror = function () {
+    createPDF(doc, null);
+  };
+}
+
+function createPDF(doc, logo) {
+  doc.setDrawColor(122, 28, 46);
+  doc.setLineWidth(1);
+  doc.rect(10, 10, 190, 277);
+
+  if (logo) {
+    doc.addImage(logo, "JPEG", 18, 15, 25, 25);
+  }
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(17);
+  doc.text("ST CLARE HIGHER SECONDARY SCHOOL", 105, 22, { align: "center" });
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Kacharigaon (Phevima), Dimapur, Nagaland - 797112", 105, 29, { align: "center" });
+  doc.text("Email: stclareshs@gmail.com | Phone: +91 8413079844", 105, 35, { align: "center" });
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text("ADMISSION APPLICATION FORM", 105, 45, { align: "center" });
+
+  doc.line(20, 50, 190, 50);
+
+  let y = 60;
+
+  function sectionTitle(title) {
+    doc.setFillColor(122, 28, 46);
+    doc.setTextColor(255, 255, 255);
+    doc.rect(20, y - 6, 170, 8, "F");
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text(title, 22, y);
+    doc.setTextColor(0, 0, 0);
+    y += 10;
+  }
+
+  function field(label, x, width) {
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    doc.text(label, x, y);
+    doc.line(x, y + 6, x + width, y + 6);
+  }
+
+  sectionTitle("1. STUDENT INFORMATION");
+
+  field("Full Name:", 20, 80);
+  field("Class Applying For:", 110, 80);
+  y += 14;
+
+  field("Date of Birth:", 20, 50);
+  field("Gender:", 80, 45);
+  field("Religion:", 135, 55);
+  y += 14;
+
+  field("Nationality:", 20, 50);
+  field("Blood Group:", 80, 45);
+  field("Previous School:", 135, 55);
+  y += 18;
+
+  sectionTitle("2. PARENT / GUARDIAN INFORMATION");
+
+  field("Father's Name:", 20, 80);
+  field("Occupation:", 110, 80);
+  y += 14;
+
+  field("Mother's Name:", 20, 80);
+  field("Occupation:", 110, 80);
+  y += 14;
+
+  field("Phone Number:", 20, 80);
+  field("Email:", 110, 80);
+  y += 18;
+
+  sectionTitle("3. ADDRESS DETAILS");
+
+  field("Permanent Address:", 20, 170);
+  y += 14;
+  doc.line(20, y + 6, 190, y + 6);
+  y += 14;
+
+  field("Village / Town:", 20, 55);
+  field("District:", 85, 45);
+  field("State:", 140, 50);
+  y += 18;
+
+  sectionTitle("4. MEDICAL INFORMATION");
+
+  field("Medical Condition / Allergy:", 20, 170);
+  y += 14;
+  field("Emergency Contact Name:", 20, 80);
+  field("Emergency Contact Number:", 110, 80);
+  y += 18;
+
+  sectionTitle("5. DECLARATION");
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const declaration =
+    "I hereby declare that the information given above is true and correct to the best of my knowledge. I agree to follow the rules and regulations of St Clare Higher Secondary School.";
+  const lines = doc.splitTextToSize(declaration, 165);
+  doc.text(lines, 22, y);
+  y += 25;
+
+  doc.line(20, y, 80, y);
+  doc.line(130, y, 190, y);
+
+  y += 6;
+  doc.text("Parent / Guardian Signature", 20, y);
+  doc.text("Office Signature", 130, y);
+
+  y += 18;
+  doc.setFont("helvetica", "bold");
+  doc.text("For Office Use Only", 20, y);
+  y += 10;
+
+  doc.setFont("helvetica", "normal");
+  field("Admission No:", 20, 50);
+  field("Date:", 80, 40);
+  field("Remarks:", 130, 60);
+
+  doc.save("St_Clare_Admission_Application_Form.pdf");
+}
+</script>
 
 </body>
 </html>

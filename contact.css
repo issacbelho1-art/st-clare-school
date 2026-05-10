@@ -273,3 +273,14 @@
   background: #ffd700;
   color: #0d2d5c;
 }
+.admissions-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admissions-logo img {
+  width: 85px;
+  display: block;
+}

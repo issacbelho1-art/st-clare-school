@@ -1,0 +1,50 @@
+/* ================= ARTS HERO IMAGE ================= */
+
+.arts {
+  background: url("images/arts.jpeg") center/cover no-repeat;
+}
+
+/* ================= ARTS PAGE IMAGE FIX ================= */
+
+.houses-main img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  margin: 55px 0 70px;
+}
+
+/* First large image */
+.houses-main img:first-of-type {
+  height: 560px;
+  object-position: center 35%;
+}
+
+/* Other arts images */
+.houses-main img:not(:first-of-type) {
+  height: 460px;
+}
+
+/* Better spacing around subheadings */
+.houses-main h2 {
+  margin-top: 70px;
+  margin-bottom: 22px;
+  font-size: 34px;
+  font-weight: 400;
+  color: #002f63;
+}
+
+.houses-main hr {
+  margin: 70px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .houses-main img,
+  .houses-main img:first-of-type,
+  .houses-main img:not(:first-of-type) {
+    height: 320px;
+  }
+}

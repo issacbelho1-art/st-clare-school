@@ -1,191 +1,231 @@
-/* ================= APPLICATION FORM HERO ================= */
+/* HERO */
 .page-hero {
   min-height: 80vh;
   background: url("images/school.jpeg") center/cover no-repeat;
-  position: relative;
   display: flex;
   align-items: flex-end;
   padding: 70px;
+  position: relative;
 }
 
 .page-hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.32);
+  background: rgba(0,0,0,0.35);
 }
 
 .page-hero h1 {
-  position: relative;
-  z-index: 2;
   color: white;
-  font-size: 52px;
-  font-weight: 400;
+  font-size: 50px;
+  z-index: 2;
 }
 
-/* ================= FORM PAGE ================= */
-.form-page {
+/* OPTIONS */
+.application-options {
+  padding: 100px 20px;
+  text-align: center;
   background: #f4f4f4;
-  padding: 110px 20px;
 }
 
-.multi-step-form {
+.application-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   max-width: 900px;
   margin: auto;
+}
+
+.app-card {
   background: white;
-  padding: 60px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  padding: 40px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
-/* ================= STEP INDICATOR ================= */
-.form-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  margin-bottom: 45px;
+.app-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 2px solid #7a1c2e;
+  color: #7a1c2e;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.step {
-  padding: 18px;
-  background: #f2f2f2;
-  color: #0d2d5c;
-  font-weight: 500;
-  border-left: 4px solid transparent;
+.app-btn:hover {
+  background: #7a1c2e;
+  color: white;
 }
 
-.step.active {
-  background: #eaf0f8;
-  border-left-color: #0d2d5c;
+/* FORM */
+.form-page {
+  padding: 120px 20px;
+  background: #f6f3ef;
 }
 
-/* ================= FORM STEPS ================= */
-.form-step {
-  display: none;
+.school-application-form {
+  max-width: 1100px;
+  margin: auto;
+  background: white;
+  padding: 70px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  border-top: 6px solid #7a1c2e;
 }
 
-.form-step.active {
+.school-application-form h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #7a1c2e;
+}
+
+.form-note {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-section {
+  margin-bottom: 50px;
+}
+
+.form-section h3 {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-.form-step h2 {
-  grid-column: span 2;
-  font-size: 34px;
-  color: #0d2d5c;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.form-step p {
-  grid-column: span 2;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* ================= INPUTS ================= */
-.multi-step-form input,
-.multi-step-form select,
-.multi-step-form textarea {
+/* FIXED INPUT TARGETING */
+.school-application-form input,
+.school-application-form select,
+.school-application-form textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
   width: 100%;
-  padding: 15px 16px;
-  border: 1px solid #d6d6d6;
-  font-size: 15px;
-  font-family: inherit;
   background: #fafafa;
-  transition: 0.3s;
 }
 
-.multi-step-form input:focus,
-.multi-step-form select:focus,
-.multi-step-form textarea:focus {
+.school-application-form input:focus,
+.school-application-form select:focus,
+.school-application-form textarea:focus {
   outline: none;
-  border-color: #0d2d5c;
+  border-color: #7a1c2e;
   background: white;
 }
 
-/* ================= BUTTONS ================= */
-.multi-step-form button {
-  background: #0d2d5c;
+textarea {
+  min-height: 100px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+/* UPLOAD */
+.upload-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.upload-box {
+  background: #faf7f5;
+  border: 1px dashed #7a1c2e;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: 0.3s;
+}
+
+.upload-box:hover {
+  background: #fff5f6;
+}
+
+.upload-box span {
+  color: #1f2f46;
+  font-weight: 500;
+}
+
+.upload-box input {
+  background: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* DECLARATION */
+.declaration {
+  display: block;
+  padding: 20px;
+  background: #f4f4f4;
+}
+
+/* BUTTON */
+.submit-application {
+  margin-top: 40px;
+  padding: 15px 40px;
+  background: #7a1c2e;
   color: white;
   border: none;
-  padding: 14px 30px;
-  font-size: 14px;
-  cursor: pointer;
   border-radius: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   transition: 0.3s;
 }
 
-.multi-step-form button:hover {
-  background: #071d3d;
+.submit-application:hover {
+  background: #4f101d;
+  transform: translateY(-2px);
 }
 
-.form-step > button {
-  grid-column: span 2;
-  justify-self: start;
-}
-
-.form-nav {
-  grid-column: span 2;
-  display: flex;
-  gap: 15px;
-  margin-top: 15px;
-}
-
-/* ================= CTA ================= */
-.activity-cta {
-  background: #0d2d5c;
-  color: white;
+/* FOOTER LOGO */
+.footer-logo {
   text-align: center;
-  padding: 80px 20px;
+  margin-bottom: 50px;
 }
 
-.activity-cta h2 {
-  font-size: 34px;
+.footer-logo img {
+  width: 80px;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+.footer-logo h2 {
+  color: white;
   font-weight: 400;
-  margin-bottom: 12px;
+  font-size: 22px;
 }
 
-.activity-cta p {
-  margin-bottom: 25px;
-}
-
-.activity-cta a {
-  display: inline-block;
-  background: white;
-  color: #0d2d5c;
-  padding: 13px 30px;
-  border-radius: 30px;
-  text-decoration: none;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width: 800px) {
-  .page-hero {
-    min-height: 60vh;
-    padding: 35px;
+
+  .application-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+
+  .school-application-form {
+    padding: 35px 25px;
   }
 
   .page-hero h1 {
     font-size: 38px;
   }
 
-  .multi-step-form {
-    padding: 35px 25px;
-  }
-
-  .form-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .form-step.active {
-    grid-template-columns: 1fr;
-  }
-
-  .form-step h2,
-  .form-step p,
-  .form-step > button,
-  .form-nav {
-    grid-column: span 1;
-  }
 }
