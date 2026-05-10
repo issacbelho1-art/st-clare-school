@@ -10,6 +10,8 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="boarding.css">
+  <link rel="stylesheet" href="admissions.css">
   <link rel="stylesheet" href="outdoor.css">
 </head>
 
@@ -185,66 +187,26 @@
 <section class="outdoor-feature">
 
   <div class="outdoor-left">
-    <img src="images/outdoor-main.jpeg" alt="Outdoor">
+    <img id="outdoorMainImage" src="images/outdoor-main.jpeg" alt="Outdoor">
   </div>
 
   <div class="outdoor-center">
-    <h2>Term 1 - Outdoor Activities</h2>
+    <h2 id="outdoorTitle">Term 1 - Outdoor Activities</h2>
 
-    <p>
+    <p id="outdoorDesc1">
       In Term 1, students take part in outdoor activities and practical learning
       experiences in and around Dimapur.
     </p>
 
-    <p>
+    <p id="outdoorDesc2">
       These activities help build confidence, teamwork, and leadership while
       encouraging students to learn beyond the classroom.
     </p>
   </div>
 
-  <div class="outdoor-right">
-
-    <div class="small-img"
-     onclick="openOutdoorSlide(
-       'images/outdoor4.jpeg',
-       'River Adventure',
-       'Students experience the joy of outdoor learning through river-side activities around Dimapur. These moments help them build courage, teamwork and confidence while learning to respect nature.'
-     )">
-  <img src="images/outdoor4.jpeg" alt="">
-  <div class="plus">+</div>
-</div>
-
-<div class="small-img"
-     onclick="openOutdoorSlide(
-       'images/outdoor3.jpeg',
-       'Nature Walks',
-       'Through guided walks and outdoor exploration, students observe the natural beauty around Nagaland. These experiences encourage curiosity, discipline and appreciation for the environment.'
-     )">
-  <img src="images/outdoor3.jpeg" alt="">
-  <div class="plus">+</div>
-</div>
+  <div class="outdoor-right" id="outdoorRight"></div>
 
 </section>
-
-<!-- FULL IMAGE SLIDE PANEL -->
-<div class="outdoor-slide-panel" id="outdoorSlidePanel">
-
-  <button class="outdoor-close" onclick="closeOutdoorSlide()">×</button>
-
-  <div class="outdoor-slide-inner">
-
-    <div class="outdoor-slide-image">
-      <img id="outdoorSlideImage" src="" alt="">
-    </div>
-
-    <div class="outdoor-slide-text">
-      <h2 id="outdoorSlideTitle"></h2>
-      <p id="outdoorSlideDesc"></p>
-    </div>
-
-  </div>
-
-</div>
 <!-- ADMISSIONS -->
 <section class="admissions-section">
 
@@ -280,18 +242,34 @@
 
 </section>
 
-<!-- ================= BACK ================= -->
+<!-- ================= PREMIUM BACK BUTTONS ================= -->
 
-<div class="back-wrapper">
-  <a href="cocurricular.html" class="back-modern">
-    <span>←</span>
-    <span>Back to Co-Curricular</span>
+<div class="premium-back-wrapper">
+
+  <a href="cocurricular.html" class="premium-nav-btn">
+
+    <span class="premium-icon">
+      <i class="fas fa-arrow-left"></i>
+    </span>
+
+    <span class="premium-label">
+      Back to Co-Curricular
+    </span>
+
   </a>
 
-  <a href="index.html" class="back-modern secondary">
-    <span>⌂</span>
-    <span>Home</span>
+  <a href="index.html" class="premium-nav-btn home-btn">
+
+    <span class="premium-icon">
+      <i class="fas fa-house"></i>
+    </span>
+
+    <span class="premium-label">
+      Home
+    </span>
+
   </a>
+
 </div>
 <!-- ================= TRANSITION ================= -->
 

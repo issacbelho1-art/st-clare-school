@@ -1,9 +1,9 @@
-/* ================= OUTDOOR PAGE IMAGE FIX ================= */
+/* ================= OUTDOOR HERO ================= */
 
-/* Hero image */
 .houses-hero {
   position: relative;
-  height: 90vh;
+  width: 100%;
+  height: 78vh;
   overflow: hidden;
 }
 
@@ -11,18 +11,33 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.houses-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
 }
 
 .houses-hero h1 {
   position: absolute;
-  left: 60px;
-  bottom: 50px;
-  color: #fff;
-  font-size: 48px;
-  font-weight: 500;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: white;
+  text-align: center;
+  z-index: 5;
 }
 
-/* Main page spacing */
+/* ================= OUTDOOR PAGE CONTENT ================= */
+
 .houses-page {
   background: #f4f4f4;
   padding: 100px 60px;
@@ -44,16 +59,14 @@
   align-items: start;
 }
 
-/* Left text */
 .houses-left h3 {
   font-size: 28px;
   line-height: 1.5;
   color: #0d2d5c;
 }
 
-/* Main content */
 .houses-main {
-  background: #fff;
+  background: white;
   padding: 45px;
 }
 
@@ -70,7 +83,6 @@
   font-weight: 500;
 }
 
-/* Main image fix */
 .houses-main > img {
   width: 100%;
   height: 420px;
@@ -78,7 +90,6 @@
   margin: 35px 0;
 }
 
-/* Quote */
 .outdoor-quote {
   font-size: 24px;
   line-height: 1.5;
@@ -88,7 +99,6 @@
   padding-left: 25px;
 }
 
-/* Outdoor card */
 .outdoor-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -109,10 +119,11 @@
   margin-bottom: 15px;
 }
 
-/* Right menu */
+/* ================= RIGHT MENU ================= */
+
 .houses-menu {
   background: #0d2d5c;
-  color: #fff;
+  color: white;
   padding: 35px 30px;
   position: sticky;
   top: 120px;
@@ -132,6 +143,8 @@
 
 .houses-menu ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .houses-menu li {
@@ -140,7 +153,7 @@
 
 .houses-menu a {
   display: block;
-  color: #fff;
+  color: white;
   text-decoration: none;
   padding: 13px 0;
   transition: 0.3s;
@@ -152,72 +165,96 @@
   padding-left: 6px;
 }
 
-/* Feature section */
+/* ================= OUTDOOR BEAUSOLEIL FEATURE ================= */
+
 .outdoor-feature {
-  max-width: 1400px;
-  margin: 100px auto 0;
+  background: #f4f4f4;
+  padding: 90px 7%;
   display: grid;
-  grid-template-columns: 1.4fr 1fr 0.8fr;
-  gap: 35px;
+  grid-template-columns: 430px 1fr 300px;
+  gap: 28px;
   align-items: stretch;
+}
+
+.outdoor-left {
+  border-left: 8px solid #008ed6;
 }
 
 .outdoor-left img {
   width: 100%;
-  height: 560px;
+  height: 520px;
   object-fit: cover;
+  display: block;
 }
 
 .outdoor-center {
-  background: #fff;
-  padding: 50px;
+  background: white;
+  min-height: 520px;
+  padding: 90px 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .outdoor-center h2 {
-  color: #0d2d5c;
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 38px;
+  font-weight: 400;
+  color: #002f63;
+  margin-bottom: 35px;
 }
 
 .outdoor-center p {
-  color: #444;
+  font-size: 17px;
   line-height: 1.8;
-  margin-bottom: 18px;
+  color: #333;
+  margin-bottom: 22px;
 }
 
 .outdoor-right {
   display: grid;
-  gap: 25px;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
 }
 
 .small-img {
   position: relative;
+  height: 520px;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .small-img img {
   width: 100%;
-  height: 267px;
+  height: 100%;
   object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.small-img:hover img {
+  transform: scale(1.06);
 }
 
 .plus {
   position: absolute;
-  right: 18px;
-  bottom: 18px;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 42px;
   height: 42px;
-  background: #0d2d5c;
-  color: #fff;
+  border-radius: 50%;
+  background: #f26522;
+  color: white;
+  border: 3px solid white;
   display: grid;
   place-items: center;
-  font-size: 26px;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  z-index: 4;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 1000px) {
   .houses-page {
     padding: 70px 25px;
@@ -239,182 +276,280 @@
   }
 
   .houses-main > img,
-  .outdoor-card img,
-  .outdoor-left img,
-  .small-img img {
+  .outdoor-card img {
     height: 300px;
   }
 
   .houses-hero h1 {
-    left: 25px;
-    font-size: 36px;
+    font-size: 38px;
+    bottom: 45px;
+    width: 90%;
+  }
+
+  .outdoor-feature {
+    padding: 70px 25px;
+  }
+
+  .outdoor-left img,
+  .small-img {
+    height: 360px;
+  }
+
+  .outdoor-center {
+    min-height: auto;
+    padding: 45px 30px;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .outdoor-slide-inner {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .outdoor-slide-image img {
+    height: 320px;
+  }
+
+  .outdoor-slide-text {
+    padding: 40px 30px;
   }
 }
 
-/* ================= OUTDOOR SLIDE FEATURE ================= */
+/* ================= OUTDOOR BEAUSOLEIL FEATURE ================= */
 
 .outdoor-feature {
-  max-width: 1500px;
-  margin: 100px auto;
+  background: #f4f4f4;
+  padding: 90px 7%;
   display: grid;
-  grid-template-columns: 1.1fr 1.8fr 0.75fr;
-  gap: 30px;
+  grid-template-columns: 430px 1fr 300px;
+  gap: 28px;
   align-items: stretch;
-  min-height: 520px;
 }
 
 .outdoor-left {
   border-left: 8px solid #008ed6;
+  overflow: hidden;
+  background: #ddd;
 }
 
 .outdoor-left img {
   width: 100%;
-  height: 100%;
+  height: 520px;
   object-fit: cover;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.6s ease;
 }
 
 .outdoor-center {
   background: #fff;
-  padding: 60px 55px;
+  min-height: 520px;
+  padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .outdoor-center h2 {
-  font-size: 34px;
+  font-size: 38px;
   font-weight: 400;
   color: #002f63;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
+  transition: opacity 0.35s ease;
 }
 
 .outdoor-center p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.8;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  transition: opacity 0.35s ease;
 }
 
 .outdoor-right {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 22px;
 }
 
 .small-img {
   position: relative;
+  height: 520px;
   overflow: hidden;
   cursor: pointer;
+  background: #ddd;
 }
 
 .small-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.small-img:hover img {
+  transform: scale(1.06);
 }
 
 .plus {
   position: absolute;
-  bottom: 45px;
+  bottom: 38px;
   left: 50%;
   transform: translateX(-50%);
   width: 42px;
   height: 42px;
-  border: 3px solid white;
   border-radius: 50%;
-  background: #f05a00;
+  background: #f26522;
   color: white;
-  font-size: 34px;
-  line-height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* SLIDE PANEL - SAME SIZE FEEL AS LEFT IMAGE */
-.outdoor-slide-panel {
-  position: fixed;
-  top: 50%;
-  right: -100%;
-  transform: translateY(-50%);
-  width: 72%;
-  max-width: 1100px;
-  height: 560px;
-  background: white;
-  z-index: 9999;
-  transition: right 0.75s ease;
-  box-shadow: -20px 20px 60px rgba(0,0,0,0.25);
-}
-
-.outdoor-slide-panel.active {
-  right: 60px;
-}
-
-.outdoor-slide-inner {
+  border: 3px solid white;
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  height: 100%;
-}
-
-.outdoor-slide-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.outdoor-slide-text {
-  padding: 60px 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.outdoor-slide-text h2 {
-  font-size: 34px;
-  font-weight: 400;
-  color: #002f63;
-  margin-bottom: 22px;
-}
-
-.outdoor-slide-text p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #333;
-}
-
-.outdoor-close {
-  position: absolute;
-  top: -22px;
-  right: -22px;
-  z-index: 5;
-  background: #f05a00;
-  color: white;
-  border: 3px solid white;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
+  place-items: center;
   font-size: 30px;
-  cursor: pointer;
+  font-weight: 300;
+  line-height: 1;
+  z-index: 4;
+  transition: 0.3s ease;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .outdoor-slide-panel {
-    width: 92%;
-    height: auto;
-    max-height: 90vh;
-  }
+.small-img:hover .plus {
+  transform: translateX(-50%) scale(1.08);
+  background: #d94e12;
+}
 
-  .outdoor-slide-panel.active {
-    right: 4%;
-  }
+/* ================= RESPONSIVE ================= */
 
-  .outdoor-slide-inner {
+@media (max-width: 1000px) {
+  .outdoor-feature {
+    padding: 70px 25px;
     grid-template-columns: 1fr;
   }
 
-  .outdoor-slide-image img {
+  .outdoor-left img,
+  .small-img {
+    height: 360px;
+  }
+
+  .outdoor-center {
+    min-height: auto;
+    padding: 45px 30px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 30px;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .outdoor-feature {
+    padding: 50px 18px;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr;
+  }
+
+  .small-img {
     height: 300px;
   }
 
-  .outdoor-slide-text {
-    padding: 35px 25px;
+  .outdoor-center {
+    padding: 35px 24px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 26px;
+  }
+
+  .outdoor-center p {
+    font-size: 15px;
+  }
+}
+
+/* ================= PREMIUM NAV BUTTONS ================= */
+
+.premium-back-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 110px 0 70px;
+  flex-wrap: wrap;
+}
+
+.premium-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 34px;
+
+  background: white;
+  color: #002b5c;
+
+  text-decoration: none;
+
+  border-radius: 70px;
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
+  transition: all 0.4s ease;
+}
+
+.premium-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #7a1c2e, #9e2a3f);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 15px;
+
+  transition: 0.4s ease;
+}
+
+.premium-label {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* HOVER */
+.premium-nav-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.14);
+}
+
+.premium-nav-btn:hover .premium-icon {
+  transform: scale(1.08);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .premium-back-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .premium-nav-btn {
+    width: 90%;
+    justify-content: center;
   }
 }
