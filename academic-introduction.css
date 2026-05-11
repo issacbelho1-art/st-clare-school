@@ -1128,49 +1128,96 @@
 }
 
 /* =====================================================
-   MOBILE BEAUSOLEIL STYLE SLIDER FIX
+   MOBILE BEAUSOLEIL STYLE SLIDER
+   For .fullscreen-slider HTML
 ===================================================== */
 
 @media (max-width: 768px) {
 
   .fullscreen-slider {
+    width: 100%;
     height: auto !important;
     min-height: auto !important;
-    background: #fff !important;
-    padding: 0 !important;
-    position: relative !important;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
   }
 
   .slides {
+    width: 100%;
     height: auto !important;
+    position: relative;
   }
 
   .slide {
-    display: none !important;
+    display: none;
+    width: 100%;
     height: auto !important;
     min-height: auto !important;
-    background: none !important;
+    background-image: none !important;
+    background-color: #fff;
   }
 
   .slide.active {
-    display: block !important;
+    display: block;
   }
 
-  /* IMAGE ON TOP */
+  /* TOP IMAGE AREA */
   .slide::before {
     content: "";
     display: block;
     width: 100%;
-    height: 370px;
-    background-image: inherit;
+    height: 360px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
 
-  /* TEXT AREA BELOW IMAGE */
-  .slide-content {
+  .slide:nth-child(1)::before {
+    background-image: url("images/pre-primary.jpeg");
+  }
+
+  .slide:nth-child(2)::before {
+    background-image: url("images/primary.png");
+  }
+
+  .slide:nth-child(3)::before {
+    background-image: url("images/middle.jpeg");
+  }
+
+  .slide:nth-child(4)::before {
+    background-image: url("images/senior.jpeg");
+  }
+
+  .slide:nth-child(5)::before {
+    background-image: url("images/science.png");
+  }
+
+  .slide:nth-child(6)::before {
+    background-image: url("images/maths.png");
+  }
+
+  .slide:nth-child(7)::before {
+    background-image: url("images/humanities.png");
+  }
+
+  .slide:nth-child(8)::before {
+    background-image: url("images/english.png");
+  }
+
+  .slide:nth-child(9)::before {
+    background-image: url("images/sports.jpg");
+  }
+
+  .slide:nth-child(10)::before {
+    background-image: url("images/arts.jpeg");
+  }
+
+  /* TEXT BOX BELOW IMAGE */
+  .content-box {
     position: relative !important;
-    inset: auto !important;
+    left: auto !important;
+    bottom: auto !important;
     transform: none !important;
 
     width: 100% !important;
@@ -1179,96 +1226,88 @@
     display: grid !important;
     grid-template-columns: 150px 1fr !important;
 
-    background: #fff !important;
-    color: #333 !important;
-
-    padding: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
+
+    background: #fff;
   }
 
   /* BLUE LEFT BOX */
-  .slide-content h2 {
+  .blue-side {
     background: #008fc7 !important;
     color: #fff !important;
 
-    font-size: 30px !important;
-    line-height: 1.15 !important;
+    min-height: 170px;
+    padding: 20px 14px 70px !important;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .blue-side h4 {
+    font-size: 17px !important;
+    letter-spacing: 1px !important;
+    margin: 0 0 12px !important;
     font-weight: 400 !important;
-
-    padding: 22px 15px 85px !important;
-    margin: 0 !important;
-
-    display: flex !important;
-    align-items: flex-start !important;
+    color: #fff !important;
   }
 
-  .slide-content h2::before {
-    content: "DISCOVER";
-    display: block;
+  .blue-side h2 {
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+    color: #fff !important;
+  }
+
+  .blue-side .discover-btn,
+  .blue-side button {
     position: absolute;
-    top: 16px;
-    left: 15px;
-
-    font-size: 18px;
-    letter-spacing: 1px;
-    color: #fff;
-  }
-
-  .slide-content h2 {
-    padding-top: 55px !important;
-  }
-
-  /* WHITE DESCRIPTION BOX */
-  .slide-content p {
-    background: #fff !important;
-    color: #333 !important;
-
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-
-    padding: 22px 18px 70px !important;
-    margin: 0 !important;
-  }
-
-  /* FIND OUT MORE BUTTON INSIDE BLUE BOX */
-  .slide-content .discover-btn,
-  .slide-content a {
-    position: absolute !important;
-    left: 15px !important;
-    bottom: 24px !important;
+    left: 14px;
+    bottom: 22px;
 
     background: #fff !important;
     color: #008fc7 !important;
 
-    padding: 12px 18px !important;
+    border: none !important;
     border-radius: 30px !important;
 
-    font-size: 11px !important;
+    padding: 11px 16px !important;
+
+    font-size: 10px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
-
+    text-transform: uppercase !important;
     text-decoration: none !important;
-    border: none !important;
+    white-space: nowrap;
   }
 
-  /* ARROWS LIKE BEAUSOLEIL */
-  .slider-buttons,
-  .slide-arrows,
-  .slider-controls {
-    position: absolute !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: auto !important;
-    transform: none !important;
+  /* WHITE RIGHT BOX */
+  .white-side {
+    background: #fff !important;
+    min-height: 170px;
+    padding: 20px 18px 70px !important;
 
-    display: flex !important;
-    z-index: 20 !important;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .white-side p {
     margin: 0 !important;
+    padding: 0 !important;
+
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: #333 !important;
   }
 
-  .slider-buttons button,
-  .slide-arrows button,
-  .slider-controls button {
+  /* ARROWS BOTTOM RIGHT */
+  .fullscreen-slider .arrow {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+
     width: 48px !important;
     height: 48px !important;
 
@@ -1276,21 +1315,23 @@
     border-radius: 0 !important;
 
     font-size: 24px !important;
-    background: #008fc7 !important;
-    color: #fff !important;
+    z-index: 50 !important;
   }
 
-  .slider-buttons button:first-child,
-  .slide-arrows button:first-child,
-  .slider-controls button:first-child {
+  .fullscreen-slider .arrow.left {
+    right: 48px !important;
+    left: auto !important;
+
     background: #f1f1f1 !important;
     color: #003b6f !important;
   }
 
-  /* HIDE YOUR RED IN THIS SECTION TAB ON MOBILE */
-  .section-tab,
-  .in-this-section,
-  .side-section-btn {
-    display: none !important;
+  .fullscreen-slider .arrow.right {
+    right: 0 !important;
+    left: auto !important;
+
+    background: #008fc7 !important;
+    color: #fff !important;
   }
+
 }
