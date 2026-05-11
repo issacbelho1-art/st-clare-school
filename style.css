@@ -419,7 +419,11 @@ html {
   background: url("images/faculty.jpg") center/cover no-repeat;
 }
 .news { background: url("images/news.jpeg") center/cover no-repeat; }
-.careers { background: url("images/career.jpeg") center/cover no-repeat; }
+.careers-hero {
+  background: url("images/career.jpeg") center/cover no-repeat;
+  min-height: 100vh;
+  position: relative;
+}
 .contact { background: url("images/contact.jpeg") center/cover no-repeat; }
 
 /* ================= TOGGLE ================= */
@@ -1196,10 +1200,6 @@ html {
   color: #002b5c;
 }
 /* ================= CAREERS PAGE ================= */
-
-.careers-hero {
-  background-image: url("images/careers-hero.jpg");
-}
 
 .careers-page {
   background: #f7f7f7;
