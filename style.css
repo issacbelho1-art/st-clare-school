@@ -2060,10 +2060,18 @@ img {
     line-height: 1.15;
   }
 
-  .home-btn,
-  .enquire-btn {
-    display: none;
-  }
+  .home-btn {
+  display: none !important;
+}
+
+.enquire-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px !important;
+  font-size: 11px !important;
+  white-space: nowrap;
+}
 
   .menu-toggle {
     width: 28px;
