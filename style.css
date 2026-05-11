@@ -2017,83 +2017,43 @@ img {
    All responsive rules are kept here at the bottom.
    ===================================================== */
 
-/* ---------- TABLET ---------- */
-@media (max-width: 1100px) {
-  .footer-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
-  }
+/* ================= BEAUSOLEIL-LIKE MOBILE FINAL ================= */
 
-  .career-features {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  .about-content-wrapper,
-  .about-intro,
-  .principal-inner,
-  .vision-mission-row,
-  .academic-page,
-  .contact-intro {
-    grid-template-columns: 1fr;
-    flex-direction: column;
-  }
-}
-
-/* ---------- MOBILE MAIN ---------- */
 @media (max-width: 768px) {
-  html,
-  body {
+
+  html, body {
     width: 100%;
-    max-width: 100%;
     overflow-x: hidden;
+    background: #f5f5f5;
   }
 
-  body.home {
-    padding-top: 64px;
-  }
-
-  .inner-page {
-    padding-top: 78px;
-  }
-
-  section {
-    overflow-x: hidden;
-  }
-
-  img,
-  video {
-    max-width: 100%;
-    height: auto;
+  body {
+    font-size: 14px;
   }
 
   /* HEADER */
   .main-header {
-    min-height: 64px;
-    padding: 9px 14px;
-    background: rgba(0, 0, 0, 0.72);
+    height: 84px;
+    padding: 10px 22px;
+    background: #062b55;
   }
 
   .logo {
-    gap: 7px;
-    min-width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
   }
 
   .logo img {
-    height: 34px;
-    width: auto;
+    height: 42px;
+    margin: 0 auto;
   }
 
   .logo h3,
   .school-name {
-    font-size: 12px;
-    line-height: 1.15;
-    max-width: 145px;
-  }
-
-  .header-right {
-    gap: 8px;
-    flex-shrink: 0;
+    font-size: 11px;
+    line-height: 1.1;
   }
 
   .home-btn {
@@ -2101,540 +2061,297 @@ img {
   }
 
   .enquire-btn {
-    padding: 7px 11px;
     font-size: 11px;
-    white-space: nowrap;
+    padding: 8px 14px;
   }
 
-  .menu-toggle {
-    width: 24px;
-    height: 18px;
-    flex-shrink: 0;
-  }
-
-  /* FULLSCREEN MAIN MENU - 4 COLUMNS VISIBLE */
-  #menu {
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 80px 14px 35px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-
-  .close-btn {
-    top: 22px;
-    right: 22px;
-    font-size: 32px;
-    z-index: 100000;
-  }
-
-  .mega-menu {
-    width: 100%;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
-    align-items: start;
-  }
-
-  .menu-column {
-    gap: 6px;
-    min-width: 0;
-    align-items: flex-start;
-  }
-
-  .menu-title {
-    width: 18px;
-    font-size: 12px;
-    letter-spacing: 1.3px;
-    color: #c6ff00;
-    flex-shrink: 0;
-  }
-
-  .menu-links {
-    gap: 8px;
-    min-width: 0;
-  }
-
-  .menu-links a {
-    font-size: 10.5px;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-  }
-
-  /* HERO / PANELS */
+  /* HERO */
   .hero,
   .panel,
-  .panel.hero,
   .page-hero,
-  .about-hero,
-  .sub-hero {
-    min-height: 72vh;
-    height: 72vh;
-    background-size: cover;
-    background-position: center;
+  .intro-hero {
+    min-height: 560px;
+    background-size: cover !important;
+    background-position: center !important;
   }
 
-  .panel .content {
-    max-width: 90%;
-    padding: 18px;
+  .panel .content,
+  .hero-overlay,
+  .slide-content {
+    width: 82%;
+    max-width: 420px;
+    margin: auto;
+    padding: 26px 22px;
+    text-align: center;
   }
 
   .panel h1,
   .hero-overlay h1,
-  .about-hero h1,
-  .sub-hero {
-    font-size: 34px;
-    line-height: 1.1;
+  .slide-content h2 {
+    font-size: 32px;
+    line-height: 1.15;
   }
 
-  .panel p {
+  .panel p,
+  .hero-overlay p,
+  .slide-content p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  /* CENTER TEXT LIKE BEAUSOLEIL */
+  .intro-text,
+  .section-intro,
+  .content-section,
+  .about-text {
+    max-width: 420px;
+    margin: auto;
+    padding: 70px 22px;
+    text-align: center;
+  }
+
+  .intro-text p,
+  .section-intro p,
+  .content-section p,
+  .about-text p {
     font-size: 15px;
     line-height: 1.55;
   }
 
-  .hero-overlay {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 10px;
+  /* THREE CARD ROW - KEEP 3 COLUMNS */
+  .card-container,
+  .feature-grid,
+  .cards-grid,
+  .academic-grid,
+  .boarding-grid,
+  .cocurricular-grid,
+  .activities-grid,
+  .career-features {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    padding: 25px 8px !important;
   }
 
-  /* INTRO UNCOVER */
-  .panel.intro,
-  .intro-photo {
-    min-height: 82vh;
-    height: 82vh;
-  }
-
-  .blue-shape {
-    clip-path: none;
-  }
-
-  .blue-shape::before,
-  .blue-shape::after {
-    display: none;
-  }
-
-  .intro-text {
-    left: 50%;
-    right: auto;
-    top: 50%;
-    width: 86%;
-    max-width: 420px;
-    transform: translate(-50%, -50%);
-    padding: 0;
-  }
-
-  .intro-text h1 {
-    font-size: 28px;
-    line-height: 1.2;
-  }
-
-  .intro-text p {
-    font-size: 14px;
-  }
-
-  /* TEXT CONTENT */
-  .sub-content,
-  .about-content-section,
-  .leadership-section,
-  .careers-page,
-  .contact-main,
-  .admission-section,
-  .activity-cta {
-    padding: 55px 20px;
-  }
-
-  .about-intro,
-  .about-content-wrapper,
-  .vision-mission-row,
-  .principal-inner,
-  .contact-intro,
-  .voice-box,
-  .team-slide {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .about-intro h2,
-  .about-heritage h2,
-  .principal-message h2,
-  .leadership-intro h2,
-  .careers-intro h2,
-  .career-community h2,
-  .opportunities-section h2,
-  .team-slider-section h2,
-  .contact-intro h2,
-  .admission-section h2 {
-    font-size: 30px;
-    line-height: 1.2;
-  }
-
-  .about-intro p,
-  .about-heritage p,
-  .principal-inner p,
-  .leadership-intro p,
-  .careers-intro p,
-  .career-community p,
-  .contact-block p,
-  .contact-block li,
-  .admission-section p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .about-heritage,
-  .vision-mission-row > div,
-  .opportunity-card {
-    padding: 30px 22px;
-  }
-
-  .principal-inner img {
-    height: auto;
-    max-height: 420px;
-  }
-
-  /* KEEP BEAUSOLEIL-STYLE MULTI COLUMN SECTIONS */
-  .career-features,
-  .activity-section,
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    padding: 34px 8px;
-  }
-
+  .card,
   .feature,
-  .activity-card,
-  .card {
-    width: 100%;
-    min-width: 0;
+  .activity-card {
+    width: 100% !important;
+    height: auto !important;
     border-radius: 0;
   }
 
-  .feature,
-  .activity-card {
-    padding: 16px 10px;
+  .card img,
+  .feature img,
+  .activity-card img {
+    height: 125px !important;
+    object-fit: cover !important;
   }
 
+  .card-text,
   .feature h3,
-  .activity-card h3,
-  .card-text {
-    font-size: 13px;
+  .activity-card h3 {
+    font-size: 14px !important;
     line-height: 1.2;
   }
 
   .feature p,
   .activity-card p {
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 11px !important;
+    line-height: 1.4;
   }
 
-  .card {
-    height: 180px;
-  }
-
-  /* GALLERIES / COLLAGES */
-  .activity-gallery {
-    padding: 20px 8px;
-    gap: 8px;
-  }
-
-  .activity-gallery img {
-    width: 33.333%;
-    height: 135px;
-  }
-
-  .careers-collage {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 210px;
-    gap: 10px;
-    margin: 50px auto 70px;
-  }
-
-  .career-img.big {
-    grid-row: span 2;
-  }
-
-  .career-message {
-    padding: 22px 14px;
-  }
-
-  .career-message p {
-    font-size: 13px;
-  }
-
-  /* SLIDERS */
-  .leader-track {
-    gap: 14px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    scroll-snap-type: x mandatory;
-    padding: 0 8px 12px;
-  }
-
-  .leader-card {
-    min-width: 78%;
-    height: 430px;
-    scroll-snap-align: center;
-  }
-
-  .leader-message h2,
-  .leader-message blockquote {
-    font-size: 28px;
-  }
-
-  .team-slide img,
-  .voice-box img {
-    height: 340px;
-  }
-
-  .team-text,
-  .voice-box div {
-    padding: 35px 24px;
-  }
-
-  /* CONTACT ADMISSIONS BEAUSOLEIL LOOK */
+  /* ADMISSIONS / TWO IMAGE SECTION */
+  .admissions-section,
   .contact-admissions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    min-height: 650px;
-    padding: 0 8px 70px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+    padding: 0 8px 80px !important;
+    min-height: auto !important;
   }
 
+  .admissions-image,
   .contact-admissions-img {
-    height: 620px;
+    width: 100% !important;
+    height: 560px !important;
   }
 
+  .admissions-box,
   .contact-admissions-box {
-    position: absolute;
-    left: 50%;
-    top: 47%;
-    transform: translate(-50%, -50%);
-    width: 82%;
-    padding: 34px 22px;
+    position: absolute !important;
+    top: 38% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 78% !important;
+    padding: 32px 22px !important;
+    z-index: 5;
   }
 
+  .admissions-box h2,
   .contact-admissions-box h2 {
-    font-size: 28px;
+    font-size: 26px !important;
   }
 
+  .admissions-box p,
   .contact-admissions-box p {
-    font-size: 13px;
+    font-size: 13px !important;
+    line-height: 1.55;
   }
 
-  .contact-admissions-buttons {
-    flex-direction: row;
-    gap: 10px;
-    flex-wrap: wrap;
+  .admissions-buttons {
+    flex-direction: row !important;
+    gap: 12px !important;
   }
 
-  .contact-admissions-buttons a {
-    padding: 11px 18px;
-    font-size: 11px;
+  .admissions-buttons a {
+    font-size: 11px !important;
+    padding: 10px 16px !important;
   }
 
-  /* IN THIS SECTION PANEL */
-  .section-tab {
-    width: 40px;
-    height: 165px;
-    top: 50%;
-    z-index: 99997;
-  }
-
-  .section-tab span {
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-
-  .section-panel-slide {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 55px 24px 35px;
-    z-index: 99998;
-  }
-
-  .section-panel-slide.open {
-    transform: translateX(0);
-  }
-
-  .section-tab.active {
-    right: 0;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .section-panel-slide .panel-title {
-    font-size: 26px;
-  }
-
-  .section-panel-slide .panel-links a {
-    font-size: 16px;
-    padding: 14px 0;
-  }
-
-  /* FOOTER - NOT ONE LONG COLUMN */
+  /* FOOTER - 4 COLUMNS LIKE BEAUSOLEIL */
   .premium-footer {
-    padding: 50px 22px 28px;
-    text-align: left;
+    padding: 48px 22px 32px !important;
+    text-align: left !important;
   }
 
   .footer-logo {
-    margin-bottom: 34px;
-  }
-
-  .footer-logo img {
-    width: 74px;
-  }
-
-  .footer-logo h2 {
-    font-size: 24px;
+    text-align: center !important;
+    align-items: center !important;
   }
 
   .footer-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 26px 18px;
-    max-width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 28px !important;
   }
 
   .footer-column h3 {
-    font-size: 15px;
-    margin-bottom: 10px;
+    font-size: 17px !important;
+    margin-bottom: 12px;
   }
 
   .footer-column p,
   .footer-column a {
-    font-size: 12px;
-    line-height: 1.5;
-    margin-bottom: 6px;
-  }
-
-  .social-icons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .social-icons a {
-    margin-right: 0;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
   }
 
   .footer-bottom {
-    text-align: center;
-    font-size: 12px;
+    font-size: 11px !important;
   }
 
-  /* BUTTONS */
-  .discover-btn,
-  .premium-nav-btn,
-  button {
-    max-width: 100%;
+  .social-icons {
+    display: flex !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
   }
 
-  .premium-back-wrapper {
-    margin: 70px 0 45px;
+  .social-icons a {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 13px !important;
   }
-}
 
-/* ---------- SMALL PHONES ---------- */
-@media (max-width: 430px) {
-  .enquire-btn {
-    display: none;
+  /* MENU FULL CLEAN */
+  #menu {
+    align-items: flex-start !important;
+    overflow-y: auto !important;
+    padding-top: 80px !important;
   }
 
   .mega-menu {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 5px;
+    width: 100% !important;
+    max-width: 100% !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 18px !important;
+    padding: 0 18px 60px !important;
   }
 
   .menu-column {
-    gap: 4px;
+    gap: 8px !important;
   }
 
   .menu-title {
-    width: 15px;
-    font-size: 10px;
-    letter-spacing: 1px;
+    font-size: 15px !important;
+    width: 24px !important;
+    letter-spacing: 2px;
+  }
+
+  .menu-links {
+    gap: 10px !important;
   }
 
   .menu-links a {
-    font-size: 9.5px;
-    line-height: 1.1;
+    font-size: 12px !important;
+    line-height: 1.25;
   }
 
-  .panel h1,
-  .hero-overlay h1,
-  .about-hero h1,
-  .sub-hero {
-    font-size: 29px;
+  .close-btn {
+    top: 24px !important;
+    right: 28px !important;
+  }
+}
+
+/* Very small phone safety */
+@media (max-width: 430px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
-  .career-features,
-  .activity-section,
-  .card-container {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 7px;
-    padding-left: 6px;
-    padding-right: 6px;
+  .mega-menu {
+    grid-template-columns: repeat(2, 1fr) !important;
+    row-gap: 40px !important;
   }
+}
 
-  .feature,
-  .activity-card {
-    padding: 13px 7px;
-  }
+/* FORCE FOOTER 4 COLUMNS ON MOBILE */
+@media (max-width: 768px) {
 
-  .feature h3,
-  .activity-card h3,
-  .card-text {
-    font-size: 12px;
-  }
-
-  .feature p,
-  .activity-card p {
-    font-size: 10px;
-  }
-
-  .card {
-    height: 155px;
-  }
-
-  .activity-gallery img {
-    height: 115px;
-  }
-
-  .careers-collage {
-    grid-auto-rows: 180px;
-  }
-
-  .contact-admissions {
-    min-height: 610px;
-  }
-
-  .contact-admissions-img {
-    height: 560px;
-  }
-
-  .contact-admissions-box {
-    width: 86%;
-    padding: 28px 18px;
+  .premium-footer {
+    padding: 45px 18px 30px !important;
   }
 
   .footer-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px 16px;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 14px !important;
+    align-items: start !important;
   }
 
   .footer-column h3 {
-    font-size: 14px;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 10px !important;
   }
 
   .footer-column p,
   .footer-column a {
-    font-size: 11px;
+    font-size: 10px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 5px !important;
+    word-break: normal !important;
+  }
+
+  .footer-logo img {
+    width: 58px !important;
+  }
+
+  .footer-logo h2 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  .social-icons {
+    display: flex !important;
+    gap: 5px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .social-icons a {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 11px !important;
+    margin: 0 !important;
   }
 }
-
