@@ -339,3 +339,39 @@ body.inner-page {
   margin-bottom: 55px;
   letter-spacing: 0.2px;
 }
+
+/* ================= FOOTER SOCIAL ICON FIX ================= */
+
+.footer-social,
+.social-icons {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.footer-social a,
+.social-icons a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: white;
+  color: #0d2d5c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover,
+.social-icons a:hover {
+  background: #ffd700;
+  color: #0d2d5c;
+}
+
+.footer-social i,
+.social-icons i {
+  display: inline-block !important;
+  color: inherit !important;
+}
