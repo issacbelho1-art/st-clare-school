@@ -240,86 +240,169 @@
 }
 
 /* =====================================================
-   MOBILE FIX FOR DISCOVER / SLIDER SECTION
-   Academic Introduction + Co-curricular
+   MOBILE BEAUSOLEIL STYLE SLIDER FIX
 ===================================================== */
 
 @media (max-width: 768px) {
 
-  .discover-section,
-  .fullscreen-slider,
-  .slider-section {
+  .fullscreen-slider {
+    height: auto !important;
     min-height: auto !important;
+    background: #fff !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+
+  .slides {
     height: auto !important;
   }
 
-  .discover-content,
-  .slide-content {
-    padding: 55px 28px 45px !important;
-    text-align: left !important;
+  .slide {
+    display: none !important;
+    height: auto !important;
+    min-height: auto !important;
+    background: none !important;
   }
 
-  .discover-content span,
-  .slide-content span {
-    font-size: 16px !important;
-    letter-spacing: 3px !important;
-  }
-
-  .discover-content h1,
-  .slide-content h1,
-  .slide-content h2 {
-    font-size: 44px !important;
-    line-height: 1.15 !important;
-    margin-top: 20px !important;
-  }
-
-  .discover-content p,
-  .slide-content p {
-    font-size: 22px !important;
-    line-height: 1.55 !important;
-    margin-top: 25px !important;
-  }
-
-  .slide,
-  .slider-image,
-  .discover-image {
-    height: 420px !important;
-    min-height: 420px !important;
-    background-position: center top !important;
-  }
-
-  .slide img,
-  .slider-image img,
-  .discover-image img {
-    width: 100% !important;
-    height: 420px !important;
-    object-fit: cover !important;
-    object-position: center top !important;
+  .slide.active {
     display: block !important;
   }
 
+  /* IMAGE ON TOP */
+  .slide::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 370px;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* TEXT AREA BELOW IMAGE */
+  .slide-content {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    display: grid !important;
+    grid-template-columns: 150px 1fr !important;
+
+    background: #fff !important;
+    color: #333 !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* BLUE LEFT BOX */
+  .slide-content h2 {
+    background: #008fc7 !important;
+    color: #fff !important;
+
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+    font-weight: 400 !important;
+
+    padding: 22px 15px 85px !important;
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+  }
+
+  .slide-content h2::before {
+    content: "DISCOVER";
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 15px;
+
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .slide-content h2 {
+    padding-top: 55px !important;
+  }
+
+  /* WHITE DESCRIPTION BOX */
+  .slide-content p {
+    background: #fff !important;
+    color: #333 !important;
+
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+
+    padding: 22px 18px 70px !important;
+    margin: 0 !important;
+  }
+
+  /* FIND OUT MORE BUTTON INSIDE BLUE BOX */
+  .slide-content .discover-btn,
+  .slide-content a {
+    position: absolute !important;
+    left: 15px !important;
+    bottom: 24px !important;
+
+    background: #fff !important;
+    color: #008fc7 !important;
+
+    padding: 12px 18px !important;
+    border-radius: 30px !important;
+
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+
+    text-decoration: none !important;
+    border: none !important;
+  }
+
+  /* ARROWS LIKE BEAUSOLEIL */
   .slider-buttons,
   .slide-arrows,
   .slider-controls {
-    position: relative !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
     left: auto !important;
-    bottom: auto !important;
     transform: none !important;
 
     display: flex !important;
-    justify-content: center !important;
-    gap: 0 !important;
-
-    margin: -70px auto 40px !important;
     z-index: 20 !important;
+    margin: 0 !important;
   }
 
   .slider-buttons button,
   .slide-arrows button,
   .slider-controls button {
-    width: 72px !important;
-    height: 72px !important;
-    font-size: 34px !important;
+    width: 48px !important;
+    height: 48px !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    font-size: 24px !important;
+    background: #008fc7 !important;
+    color: #fff !important;
   }
 
+  .slider-buttons button:first-child,
+  .slide-arrows button:first-child,
+  .slider-controls button:first-child {
+    background: #f1f1f1 !important;
+    color: #003b6f !important;
+  }
+
+  /* HIDE YOUR RED IN THIS SECTION TAB ON MOBILE */
+  .section-tab,
+  .in-this-section,
+  .side-section-btn {
+    display: none !important;
+  }
 }
