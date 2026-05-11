@@ -100,29 +100,6 @@
   pointer-events: none;
 }
 
-@media (max-width: 900px) {
-  .boarding-overlay {
-    clip-path: none;
-    background: rgba(33, 63, 122, 0.9);
-  }
-
-  .boarding-overlay::before,
-  .boarding-overlay::after {
-    display: none;
-  }
-
-  .boarding-text {
-    right: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 85%;
-  }
-
-  .boarding-text h1 {
-    font-size: 34px;
-  }
-}
 /* ================= BOARDING LIFE CONTENT ================= */
 
 .boarding-life-page {
@@ -261,24 +238,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-@media (max-width: 1000px) {
-  .boarding-life-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .boarding-life-menu {
-    position: static;
-  }
-
-  .boarding-life-title {
-    font-size: 36px;
-  }
-
-  .boarding-life-left h3 {
-    font-size: 28px;
-  }
 }
 
 /* ================= BOARDING HOUSES PAGE ================= */
@@ -508,34 +467,6 @@
   line-height: 1;
 }
 
-/* MOBILE */
-
-@media (max-width: 1000px) {
-  .houses-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .houses-menu {
-    position: static;
-  }
-
-  .house-cards {
-    grid-template-columns: 1fr;
-    padding: 30px 7% 80px;
-  }
-
-  .house-card {
-    grid-template-columns: 1fr;
-  }
-
-  .houses-title {
-    font-size: 36px;
-  }
-
-  .houses-left h3 {
-    font-size: 28px;
-  }
-}
 .house-small {
   position: relative;
   height: 360px;
@@ -703,22 +634,86 @@
   color: #ffd400;
 }
 
-/* ================= MOBILE ================= */
-
+/* ================= BOARDING MOBILE ================= */
 @media (max-width: 1000px) {
+
+  /* BOARDING LIFE */
+  .boarding-life-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .boarding-life-menu {
+    position: static;
+    width: 100%;
+  }
+
+  .boarding-life-title {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .boarding-life-left h3 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  /* HOUSES */
+  .houses-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .houses-menu {
+    position: static;
+    width: 100%;
+  }
+
+  .house-cards {
+    grid-template-columns: 1fr;
+    padding: 30px 7% 80px;
+    gap: 30px;
+  }
+
+  .house-card {
+    grid-template-columns: 1fr;
+  }
+
+  .house-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .houses-title {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .houses-left h3 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  /* WELLBEING */
   .wellbeing-layout {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .wellbeing-menu {
     position: static;
+    width: 100%;
   }
 
   .wellbeing-title {
     font-size: 36px;
+    line-height: 1.15;
   }
 
   .wellbeing-left h3 {
     font-size: 28px;
+    line-height: 1.2;
   }
 }

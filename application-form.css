@@ -201,31 +201,36 @@ textarea {
   font-size: 22px;
 }
 
-/* MOBILE */
+/* ================= APPLICATION FORM MOBILE ================= */
 @media (max-width: 800px) {
 
-  .application-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .application-grid,
+  .form-grid,
   .upload-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .full-width {
-    grid-column: span 1;
+    grid-column: 1 / -1;
   }
 
   .school-application-form {
-    padding: 35px 25px;
+    padding: 35px 22px;
+  }
+
+  .page-hero {
+    padding: 90px 20px;
   }
 
   .page-hero h1 {
     font-size: 38px;
+    line-height: 1.15;
   }
 
+  input,
+  select,
+  textarea {
+    width: 100%;
+  }
 }

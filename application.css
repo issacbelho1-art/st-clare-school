@@ -181,24 +181,46 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1000px) {
+
   .page-layout {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .enquire-sidebar {
     position: relative;
     top: 0;
+    width: 100%;
   }
 
   .page-content {
-    padding: 40px 25px;
+    padding: 40px 22px;
   }
 
   .hero-overlay {
-    left: 30px;
+    left: 25px;
+    right: 25px;
+    max-width: 100%;
   }
 
   .hero-overlay h1 {
     font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-buttons a,
+  .hero-buttons button {
+    width: 100%;
+    text-align: center;
   }
 }

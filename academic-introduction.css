@@ -328,64 +328,6 @@
   font-weight: 400;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-  .blue-shape {
-    clip-path: none;
-  }
-
-  .intro-text-content {
-    left: 50%;
-    right: auto;
-    width: 85%;
-    transform: translate(-50%, -50%);
-  }
-
-  .intro-text-content h1 {
-    font-size: 30px;
-  }
-
-  .detail-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .detail-text,
-  .detail-image {
-    width: 100%;
-  }
-
-  .academic-detail {
-    padding: 80px 25px;
-  }
-
-  .content-box {
-    width: 90%;
-    left: 5%;
-    height: auto;
-    flex-direction: column;
-  }
-
-  .blue-side,
-  .white-side {
-    width: 100%;
-  }
-
-  .blue-side h2 {
-    font-size: 22px;
-  }
-
-  .white-side p {
-    font-size: 13px;
-  }
-
-  .collage-intro p {
-    font-size: 22px;
-  }
-}
-
 /* ================= PIXEL-STYLE BEAUSOLEIL COLLAGE FINAL ================= */
 
 .beau-collage {
@@ -635,54 +577,6 @@
   top: 1160px;
 }
 
-/* SCALE FOR LAPTOP */
-@media (max-width: 1700px) {
-  .beau-grid {
-    transform: scale(0.82);
-    transform-origin: top center;
-    margin-bottom: -220px;
-  }
-}
-
-@media (max-width: 1400px) {
-  .beau-grid {
-    transform: scale(0.72);
-    margin-bottom: -360px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .beau-collage {
-    padding: 30px 15px 70px;
-  }
-
-  .beau-grid {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    position: static;
-    transform: none;
-    margin-bottom: 0;
-  }
-
-  .tile,
-  .collage-message {
-    position: static;
-    width: 100%;
-    height: 220px;
-  }
-
-  .collage-message {
-    grid-column: span 2;
-  }
-
-  .collage-message h2 {
-    font-size: 22px;
-  }
-}
 /* ================= TOUR SECTION ================= */
 
 .tour-section {
@@ -945,57 +839,6 @@
   cursor: pointer;
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-  .tour-section {
-    padding: 70px 0;
-  }
-
-  .tour-wrapper {
-    flex-direction: column;
-  }
-
-  .tour-title {
-    width: 100%;
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 32px;
-    padding: 25px 0;
-  }
-
-  .tour-image {
-    height: 380px;
-  }
-
-  .tour-intro {
-    margin-bottom: 50px;
-  }
-
-  .tour-intro p {
-    font-size: 20px;
-  }
-
-  .tour-play {
-    width: 48px;
-    height: 48px;
-    font-size: 17px;
-  }
-
-  .tour-label,
-  .tour-line {
-    display: none;
-  }
-}
-.tour-intro {
-  text-align: center;
-}
-
-.tour-intro img {
-  display: block;
-  margin: 0 auto 25px;
-}
-
 /* ================= PREMIUM BACK BUTTON ================= */
 
 .back-academic-wrapper {
@@ -1061,4 +904,225 @@
 
 .premium-back-btn:hover .arrow-circle {
   transform: translateX(-4px);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media (max-width: 900px) {
+
+  .blue-shape {
+    clip-path: none;
+  }
+
+  .intro-text-content {
+    left: 50%;
+    right: auto;
+    width: 86%;
+    max-width: 520px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .intro-text-content h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .intro-text-content p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .detail-container {
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .detail-text,
+  .detail-image {
+    width: 100%;
+  }
+
+  .academic-detail {
+    padding: 80px 28px;
+  }
+
+  .content-box {
+    width: 90%;
+    left: 5%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .blue-side,
+  .white-side {
+    width: 100%;
+  }
+
+  .blue-side {
+    padding: 35px 25px;
+  }
+
+  .white-side {
+    padding: 35px 25px;
+  }
+
+  .blue-side h2 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+
+  .white-side p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .collage-intro {
+    padding: 60px 24px;
+  }
+
+  .collage-intro p {
+    font-size: 24px;
+    line-height: 1.45;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .tour-section {
+    padding: 70px 0;
+  }
+
+  .tour-wrapper {
+    flex-direction: column;
+  }
+
+  .tour-title {
+    width: 100%;
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 32px;
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .tour-image {
+    height: 380px;
+  }
+
+  .tour-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tour-intro {
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 0 22px;
+  }
+
+  .tour-intro img {
+    display: block;
+    margin: 0 auto 25px;
+  }
+
+  .tour-intro p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .tour-play {
+    width: 48px;
+    height: 48px;
+    font-size: 17px;
+  }
+
+  .tour-label,
+  .tour-line {
+    display: none;
+  }
+
+  .academic-detail {
+    padding: 65px 22px;
+  }
+
+  .detail-text h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .detail-text p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .detail-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .content-box {
+    position: relative;
+    width: 100%;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 40px auto;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 600px) {
+
+  .intro-text-content {
+    width: 88%;
+  }
+
+  .intro-text-content h1 {
+    font-size: 28px;
+  }
+
+  .intro-text-content p {
+    font-size: 14px;
+  }
+
+  .academic-detail {
+    padding: 55px 18px;
+  }
+
+  .detail-text h2 {
+    font-size: 26px;
+  }
+
+  .detail-text p {
+    font-size: 14px;
+  }
+
+  .tour-title {
+    font-size: 28px;
+  }
+
+  .tour-image {
+    height: 310px;
+  }
+
+  .tour-intro p {
+    font-size: 18px;
+  }
+
+  .blue-side h2 {
+    font-size: 22px;
+  }
+
+  .white-side p {
+    font-size: 13px;
+  }
+
+  .collage-intro p {
+    font-size: 20px;
+  }
 }

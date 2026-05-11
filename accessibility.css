@@ -55,23 +55,55 @@ body.inner-page {
   max-width: 850px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 800px) {
+
   .page-hero {
     min-height: 60vh;
-    padding: 35px;
+    padding: 35px 22px;
+    text-align: center;
   }
 
   .page-hero h1 {
     font-size: 38px;
+    line-height: 1.15;
   }
 
   .terms-section {
-    margin: 70px 25px;
-    padding: 40px 25px;
+    margin: 70px 22px;
+    padding: 40px 24px;
   }
 
   .terms-section h2 {
     font-size: 25px;
+    line-height: 1.25;
+  }
+
+  .terms-section p,
+  .terms-section li {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .page-hero {
+    min-height: 50vh;
+    padding: 28px 18px;
+  }
+
+  .page-hero h1 {
+    font-size: 30px;
+  }
+
+  .terms-section {
+    margin: 55px 16px;
+    padding: 32px 18px;
+  }
+
+  .terms-section h2 {
+    font-size: 22px;
   }
 }

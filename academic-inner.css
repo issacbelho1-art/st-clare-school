@@ -257,50 +257,124 @@ body.inner-page {
   display: block;
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
 @media (max-width: 1100px) {
+
   .academic-page {
     grid-template-columns: 1fr;
-    padding: 60px 25px;
+    padding: 70px 35px;
+    gap: 50px;
+  }
+
+  .academic-left h2 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .academic-content p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .academic-menu {
+    padding: 45px 30px;
+  }
+
+  .academic-menu h3 {
+    font-size: 30px;
+  }
+
+  .academic-hero {
+    height: 420px;
+  }
+
+  .academic-hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+  }
+
+  .academic-quote {
+    padding: 70px 30px;
+  }
+
+  .academic-quote p {
+    font-size: 30px;
+    line-height: 1.5;
+  }
+}
+
+/* EXTRA GRID */
+@media (max-width: 900px) {
+
+  .extra-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .academic-page {
+    padding: 55px 22px;
     gap: 40px;
   }
 
   .academic-left h2 {
     font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .academic-content p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
   .academic-menu {
-    padding: 40px 25px;
+    padding: 35px 22px;
+  }
+
+  .academic-menu h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .academic-menu a {
+    font-size: 14px;
   }
 
   .academic-hero {
-    height: 330px;
+    height: 320px;
   }
 
   .academic-hero h1 {
-    font-size: 38px;
+    font-size: 40px;
+    line-height: 1.1;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .academic-quote {
+    padding: 60px 20px;
   }
 
   .academic-quote p {
-    font-size: 26px;
+    font-size: 24px;
+    line-height: 1.5;
   }
-}
 
-@media (max-width: 900px) {
-  .extra-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
   .video-container iframe {
     height: 260px;
   }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 600px) {
+
   .academic-page {
-    padding: 45px 20px;
+    padding: 45px 18px;
   }
 
   .academic-left h2 {
@@ -308,11 +382,36 @@ body.inner-page {
   }
 
   .academic-content p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .academic-menu {
+    padding: 28px 18px;
   }
 
   .academic-menu h3 {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .academic-menu a {
+    font-size: 13px;
+  }
+
+  .academic-hero {
+    height: 270px;
+  }
+
+  .academic-hero h1 {
+    font-size: 32px;
+  }
+
+  .academic-quote p {
+    font-size: 20px;
+  }
+
+  .video-container iframe {
+    height: 220px;
   }
 }
 
