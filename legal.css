@@ -55,23 +55,37 @@ body.inner-page {
   max-width: 850px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= LEGAL MOBILE ================= */
 @media (max-width: 800px) {
+
   .page-hero {
     min-height: 60vh;
-    padding: 35px;
+    padding: 35px 22px;
   }
 
   .page-hero h1 {
     font-size: 38px;
+    line-height: 1.1;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .terms-section {
-    margin: 70px 25px;
-    padding: 40px 25px;
+    margin: 70px 20px;
+    padding: 40px 22px;
   }
 
   .terms-section h2 {
     font-size: 25px;
+    line-height: 1.2;
+  }
+
+  .terms-section p,
+  .terms-section li {
+    font-size: 15px;
+    line-height: 1.8;
   }
 }

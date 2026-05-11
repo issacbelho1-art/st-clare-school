@@ -302,8 +302,9 @@
 
 /* ================= MOBILE RESPONSIVE - ENQUIRE PAGE FINAL ================= */
 @media (max-width: 1000px) {
+
   .enquire-main {
-    padding: 80px 25px;
+    padding: 80px 22px;
   }
 
   .enquire-container {
@@ -329,19 +330,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     width: 100%;
   }
 
   .sidebar-logo img {
     display: block;
     margin: 0 auto;
+    max-width: 70px;
   }
 
-  .section-menu h3 {
-    text-align: center;
-  }
-
+  .section-menu h3,
   .section-menu a {
     text-align: center;
   }
@@ -360,16 +358,24 @@
 
   .form-scroll textarea,
   .form-scroll button {
-    grid-column: span 1;
+    grid-column: 1 / -1;
+  }
+
+  .form-scroll input,
+  .form-scroll select,
+  .form-scroll textarea {
+    width: 100%;
   }
 
   .main-title {
     font-size: 32px;
+    line-height: 1.25;
     margin-bottom: 50px;
   }
 
   .enquire-left h2 {
     font-size: 26px;
+    line-height: 1.35;
     text-align: center;
   }
 
@@ -384,24 +390,33 @@
     height: 360px;
   }
 
+  .admissions-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .admissions-box {
     position: relative;
-    transform: none;
     top: auto;
     left: auto;
+    transform: none;
     width: 88%;
     max-width: 560px;
     margin: -90px auto 0;
     padding: 42px 32px;
+    text-align: center;
   }
 
   .admissions-box img {
     display: block;
     margin: 0 auto 20px;
+    max-width: 80px;
   }
 }
 
 @media (max-width: 600px) {
+
   .enquire-hero {
     height: 62vh;
     background-position: center;
@@ -412,6 +427,7 @@
     right: 0;
     bottom: 42px;
     width: 100%;
+    max-width: 100%;
     text-align: center;
     padding: 0 22px;
   }
@@ -481,10 +497,12 @@
 
   .admissions-box h2 {
     font-size: 29px;
+    line-height: 1.2;
   }
 
   .admissions-box p {
     font-size: 14px;
+    line-height: 1.7;
   }
 
   .admissions-buttons {
@@ -492,7 +510,8 @@
     gap: 12px;
   }
 
-  .admissions-buttons a {
+  .admissions-buttons a,
+  .admissions-buttons button {
     display: block;
     width: 100%;
     text-align: center;

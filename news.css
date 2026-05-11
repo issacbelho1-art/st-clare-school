@@ -292,34 +292,6 @@
 }
 
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1000px) {
-  .about-content-section {
-    padding: 70px 25px;
-  }
-
-  .about-content-wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  .about-main {
-    padding: 35px 25px;
-  }
-
-  .section-panel {
-    position: relative;
-    top: 0;
-  }
-
-  .news-showcase-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .news-card img {
-    height: 240px;
-  }
-}
-
  /* ================= EXACT BEAUSOLEIL SOCIAL GALLERY ================= */
 
 .beau-social-section {
@@ -394,27 +366,6 @@
   grid-column: 3 / 4;
 }
 
-/* MOBILE */
-@media (max-width: 768px) {
-  .beau-social-top h2 {
-    font-size: 30px;
-  }
-
-  .beau-social-strip {
-    display: flex;
-    overflow-x: auto;
-  }
-
-  .beau-social-strip img {
-    min-width: 82%;
-    height: 330px;
-  }
-
-  .last-strip img {
-    grid-column: auto;
-  }
-}
-
 /* CENTER IN THIS SECTION LOGO */
 
 .panel-header {
@@ -434,4 +385,76 @@
 .panel-logo img {
   display: block;
   margin: 0 auto;
+}
+
+/* ================= NEWS RESPONSIVE ================= */
+@media (max-width: 1000px) {
+
+  .about-content-section {
+    padding: 70px 22px;
+  }
+
+  .about-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-main {
+    padding: 35px 22px;
+  }
+
+  .section-panel {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .news-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .news-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .beau-social-top h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .beau-social-strip {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .beau-social-strip img {
+    min-width: 82%;
+    height: 330px;
+    object-fit: cover;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+  }
+
+  .last-strip img {
+    grid-column: auto;
+  }
+
+  .news-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card img {
+    height: 300px;
+  }
 }

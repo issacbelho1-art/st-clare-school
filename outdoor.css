@@ -253,71 +253,6 @@
   z-index: 4;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1000px) {
-  .houses-page {
-    padding: 70px 25px;
-  }
-
-  .houses-layout,
-  .outdoor-feature,
-  .outdoor-card {
-    grid-template-columns: 1fr;
-  }
-
-  .houses-menu {
-    position: relative;
-    top: 0;
-  }
-
-  .houses-main {
-    padding: 30px;
-  }
-
-  .houses-main > img,
-  .outdoor-card img {
-    height: 300px;
-  }
-
-  .houses-hero h1 {
-    font-size: 38px;
-    bottom: 45px;
-    width: 90%;
-  }
-
-  .outdoor-feature {
-    padding: 70px 25px;
-  }
-
-  .outdoor-left img,
-  .small-img {
-    height: 360px;
-  }
-
-  .outdoor-center {
-    min-height: auto;
-    padding: 45px 30px;
-  }
-
-  .outdoor-right {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .outdoor-slide-inner {
-    width: 95%;
-    grid-template-columns: 1fr;
-  }
-
-  .outdoor-slide-image img {
-    height: 320px;
-  }
-
-  .outdoor-slide-text {
-    padding: 40px 30px;
-  }
-}
-
 /* ================= OUTDOOR BEAUSOLEIL FEATURE ================= */
 
 .outdoor-feature {
@@ -418,59 +353,6 @@
   background: #d94e12;
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1000px) {
-  .outdoor-feature {
-    padding: 70px 25px;
-    grid-template-columns: 1fr;
-  }
-
-  .outdoor-left img,
-  .small-img {
-    height: 360px;
-  }
-
-  .outdoor-center {
-    min-height: auto;
-    padding: 45px 30px;
-  }
-
-  .outdoor-center h2 {
-    font-size: 30px;
-  }
-
-  .outdoor-right {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .outdoor-feature {
-    padding: 50px 18px;
-  }
-
-  .outdoor-right {
-    grid-template-columns: 1fr;
-  }
-
-  .small-img {
-    height: 300px;
-  }
-
-  .outdoor-center {
-    padding: 35px 24px;
-  }
-
-  .outdoor-center h2 {
-    font-size: 26px;
-  }
-
-  .outdoor-center p {
-    font-size: 15px;
-  }
-}
-
 /* ================= PREMIUM NAV BUTTONS ================= */
 
 .premium-back-wrapper {
@@ -540,16 +422,139 @@
   transform: scale(1.08);
 }
 
-/* MOBILE */
+/* ================= OUTDOOR RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .houses-page {
+    padding: 70px 22px;
+  }
+
+  .houses-layout,
+  .outdoor-feature,
+  .outdoor-card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .houses-menu {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .houses-main {
+    padding: 30px 22px;
+  }
+
+  .houses-main > img,
+  .outdoor-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .houses-hero h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    bottom: 45px;
+    width: 90%;
+  }
+
+  .outdoor-feature {
+    padding: 70px 22px;
+  }
+
+  .outdoor-left img,
+  .small-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .outdoor-center {
+    min-height: auto;
+    padding: 45px 28px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .outdoor-center p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .outdoor-slide-inner {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .outdoor-slide-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .outdoor-slide-text {
+    padding: 40px 28px;
+  }
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
+
+  .outdoor-feature {
+    padding: 50px 18px;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr;
+  }
+
+  .small-img {
+    height: 300px;
+  }
+
+  .outdoor-center {
+    padding: 35px 24px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .outdoor-center p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
 
   .premium-back-wrapper {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
   }
 
   .premium-nav-btn {
     width: 90%;
     justify-content: center;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .premium-nav-btn span,
+  .premium-nav-btn i {
+    display: flex;
+    align-items: center;
   }
 }

@@ -160,15 +160,27 @@
   margin-bottom: 10px;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= CLUBS MOBILE ================= */
 @media (max-width: 1000px) {
+
   .clubs-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
+  .clubs-left,
+  .clubs-right {
+    width: 100%;
+  }
+
   .clubs-left h2 {
-    font-size: 26px;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .clubs-left p {
+    font-size: 16px;
+    line-height: 1.7;
   }
 
   .clubs-right {
@@ -178,5 +190,10 @@
   .section-box {
     position: relative;
     top: 0;
+    width: 100%;
+  }
+
+  .section-box ul {
+    padding-left: 18px;
   }
 }

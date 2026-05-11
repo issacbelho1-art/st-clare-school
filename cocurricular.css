@@ -167,28 +167,53 @@
   color: white;
 }
 
+/* ================= CO-CURRICULAR MOBILE ================= */
 @media (max-width: 900px) {
+
   .coco-three-section {
     grid-template-columns: 1fr;
-    padding: 80px 25px;
+    padding: 80px 22px;
+    gap: 40px;
+  }
+
+  .coco-photo {
+    width: 100%;
   }
 
   .coco-photo img {
+    width: 100%;
     height: 360px;
+    object-fit: cover;
+    display: block;
   }
 
   .coco-slide-box {
-    width: 90%;
-    left: 5%;
+    position: relative;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin-top: -40px;
     flex-direction: column;
   }
 
   .coco-blue,
   .coco-white {
     width: 100%;
+    padding: 35px 25px;
+  }
+
+  .coco-blue h2,
+  .coco-white h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .coco-blue p,
+  .coco-white p {
+    font-size: 16px;
+    line-height: 1.7;
   }
 }
-
 
 /* ================= ACADEMIC INNER CONTENT ================= */
 

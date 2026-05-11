@@ -2392,3 +2392,32 @@ img {
     font-size: 10px !important;
   }
 }
+
+@media (max-width: 768px) {
+
+  .mega-menu {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .menu-links a {
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .footer-column h3 {
+    font-size: 12px !important;
+  }
+
+  .footer-column p,
+  .footer-column a {
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+  }
+}

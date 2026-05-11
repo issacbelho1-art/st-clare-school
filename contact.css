@@ -200,8 +200,9 @@
   color: #0d2d5c;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= CONTACT MOBILE ================= */
 @media (max-width: 1000px) {
+
   .about-content-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -210,34 +211,50 @@
   .section-panel {
     position: relative;
     top: 0;
+    width: 100%;
   }
 
   .contact-main {
-    padding: 40px 25px;
+    padding: 40px 22px;
   }
 
   .contact-admissions {
     height: auto;
+    display: flex;
+    flex-direction: column;
   }
 
   .contact-admissions-img {
     position: relative;
     width: 100%;
-    height: 250px;
+    height: 260px;
+  }
+
+  .contact-admissions-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .contact-admissions-box {
     position: relative;
+    top: auto;
+    left: auto;
     transform: none;
-    margin: 20px auto;
+    width: 90%;
+    margin: -60px auto 45px;
+    padding: 35px 25px;
+  }
+
+  .contact-hero .hero-overlay {
+    left: 25px;
+    right: 25px;
+    max-width: 100%;
   }
 
   .contact-hero h1 {
     font-size: 36px;
-  }
-
-  .contact-hero .hero-overlay {
-    left: 30px;
+    line-height: 1.15;
   }
 }
 

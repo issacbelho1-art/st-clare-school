@@ -121,25 +121,6 @@
   color: #ffd700;
 }
 
-/* MOBILE */
-@media (max-width: 900px) {
-  .payments-container {
-    grid-template-columns: 1fr;
-  }
-
-  .payment-methods {
-    grid-template-columns: 1fr;
-  }
-
-  .page-hero {
-    padding: 30px;
-  }
-
-  .page-hero h1 {
-    font-size: 36px;
-  }
-}
-
 /* ================= UPI SECTION ================= */
 .upi-section {
   margin-top: 60px;
@@ -186,10 +167,42 @@
   background: #071d3d;
 }
 
-/* MOBILE */
+/* ================= PAYMENT MOBILE ================= */
 @media (max-width: 900px) {
+
+  .payments-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page-hero {
+    padding: 30px 22px;
+  }
+
+  .page-hero h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
   .upi-box {
     flex-direction: column;
+    align-items: center;
     text-align: center;
+    gap: 20px;
+  }
+
+  .upi-box img {
+    max-width: 180px;
+    width: 100%;
   }
 }

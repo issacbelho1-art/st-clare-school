@@ -115,8 +115,9 @@
   font-weight: 500;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= HERITAGE MOBILE ================= */
 @media (max-width: 1000px) {
+
   .heritage-content-wrapper {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -125,18 +126,27 @@
   .section-panel {
     position: relative;
     top: 0;
+    width: 100%;
   }
 
   .heritage-main {
-    padding: 40px 30px;
+    padding: 40px 22px;
   }
 
   .hero-overlay {
-    left: 30px;
+    left: 25px;
+    right: 25px;
     bottom: 40px;
+    max-width: 100%;
   }
 
   .hero-overlay h1 {
     font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+    line-height: 1.7;
   }
 }
