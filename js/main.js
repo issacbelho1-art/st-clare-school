@@ -475,7 +475,37 @@ if (beauCollage) {
   });
 }
 
+/* ================= MAIN MOBILE MENU ================= */
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+
+  if (!menu) return;
+
+  menu.classList.toggle("active");
+
+  if (menu.classList.contains("active")) {
+    document.body.classList.add("menu-open");
+  } else {
+    document.body.classList.remove("menu-open");
+  }
+}
+
+
+/* ================= CLOSE MENU ================= */
+
+function closeMenu() {
+  const menu = document.getElementById("menu");
+
+  if (!menu) return;
+
+  menu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+
 /* ================= MOBILE MENU ACCORDION ================= */
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuTitles = document.querySelectorAll(".menu-title");
 
@@ -491,45 +521,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
       column.classList.toggle("active");
     });
-  });
-});
-
-/* HIDE IN THIS SECTION WHEN MAIN MENU OPENS */
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.querySelector(".menu-toggle");
-  const closeBtn = document.querySelector(".close-btn");
-  const menu = document.getElementById("menu");
-
-  if (menuBtn && menu) {
-    menuBtn.addEventListener("click", function () {
-      setTimeout(function () {
-        document.body.classList.toggle("menu-open", menu.classList.contains("active"));
-      }, 50);
-    });
-  }
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function () {
-      document.body.classList.remove("menu-open");
-    });
-  }
-});
-
-/* FORCE HIDE SECTION TAB WHEN MENU OPENS */
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.getElementById("menu");
-
-  function checkMenuState() {
-    if (!menu) return;
-
-    if (menu.classList.contains("active")) {
-      document.body.classList.add("menu-open");
-    } else {
-      document.body.classList.remove("menu-open");
-    }
-  }
-
-  document.addEventListener("click", function () {
-    setTimeout(checkMenuState, 80);
   });
 });
