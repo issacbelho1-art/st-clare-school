@@ -523,3 +523,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+/* ================= MOBILE MENU ACCORDION ================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuTitles = document.querySelectorAll(".menu-title");
+
+  menuTitles.forEach(function (title) {
+    title.addEventListener("click", function () {
+      const column = title.closest(".menu-column");
+
+      document.querySelectorAll(".menu-column").forEach(function (item) {
+        if (item !== column) {
+          item.classList.remove("active");
+        }
+      });
+
+      column.classList.toggle("active");
+    });
+  });
+});
