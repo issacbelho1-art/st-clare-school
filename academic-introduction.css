@@ -1053,37 +1053,41 @@
     object-fit: cover;
   }
 
-  /* BEAUSOLEIL STYLE SLIDER */
+  /* ================= MOBILE SLIDER FIX ================= */
+
+@media (max-width: 768px) {
+
   .fullscreen-slider {
     width: 100%;
     height: auto !important;
     min-height: auto !important;
     background: #fff !important;
-    position: relative !important;
     overflow: hidden !important;
-    padding: 0 !important;
+    position: relative !important;
   }
 
   .slides {
-    width: 100%;
+    display: flex !important;
+    width: 100% !important;
     height: auto !important;
-    position: relative !important;
+    transition: transform 0.8s ease-in-out;
   }
 
   .slide {
-    display: none;
-    width: 100%;
+    display: block !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 100% !important;
+
     height: auto !important;
     min-height: auto !important;
+
     background-size: cover !important;
     background-position: center top !important;
     background-repeat: no-repeat !important;
-    padding-top: 340px !important;
-    position: relative !important;
-  }
 
-  .slide.active {
-    display: block;
+    padding-top: 310px !important;
+    position: relative !important;
   }
 
   .content-box {
@@ -1098,7 +1102,7 @@
     max-width: 100% !important;
 
     display: grid !important;
-    grid-template-columns: 145px 1fr !important;
+    grid-template-columns: 135px 1fr !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -1109,29 +1113,27 @@
     background: #008fc7 !important;
     color: #fff !important;
     min-height: 175px !important;
-    padding: 20px 13px 68px !important;
+    padding: 20px 12px 68px !important;
     position: relative !important;
   }
 
   .blue-side h4 {
-    font-size: 15px !important;
-    letter-spacing: 1px !important;
+    font-size: 14px !important;
     margin: 0 0 12px !important;
     color: #fff !important;
   }
 
   .blue-side h2 {
-    font-size: 25px !important;
+    font-size: 22px !important;
     line-height: 1.12 !important;
     margin: 0 !important;
     color: #fff !important;
-    font-weight: 400 !important;
   }
 
   .blue-side .discover-btn,
   .blue-side button {
     position: absolute !important;
-    left: 13px !important;
+    left: 12px !important;
     bottom: 22px !important;
 
     background: #fff !important;
@@ -1154,7 +1156,7 @@
   }
 
   .white-side p {
-    font-size: 14px !important;
+    font-size: 13px !important;
     line-height: 1.55 !important;
     color: #333 !important;
     margin: 0 !important;
@@ -1176,17 +1178,26 @@
   }
 
   .fullscreen-slider .arrow.left {
-    left: auto !important;
     right: 48px !important;
+    left: auto !important;
     background: #f1f1f1 !important;
     color: #003b6f !important;
   }
 
   .fullscreen-slider .arrow.right {
-    left: auto !important;
     right: 0 !important;
+    left: auto !important;
     background: #008fc7 !important;
     color: #fff !important;
+  }
+
+  .section-tab,
+  .in-this-section,
+  .side-section-btn,
+  .section-toggle,
+  .section-sidebar,
+  .section-nav {
+    display: none !important;
   }
 }
 
