@@ -558,3 +558,563 @@
     align-items: center;
   }
 }
+/* ================= OUTDOOR HERO ================= */
+
+.houses-hero {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  overflow: hidden;
+}
+
+.houses-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.houses-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+}
+
+.houses-hero h1 {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: white;
+  text-align: center;
+  z-index: 5;
+}
+
+/* ================= OUTDOOR PAGE CONTENT ================= */
+
+.houses-page {
+  background: #f4f4f4;
+  padding: 100px 60px;
+}
+
+.houses-title {
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  font-size: 38px;
+  color: #0d2d5c;
+}
+
+.houses-layout {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.houses-left h3 {
+  font-size: 28px;
+  line-height: 1.5;
+  color: #0d2d5c;
+}
+
+.houses-main {
+  background: white;
+  padding: 45px;
+}
+
+.houses-main p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 22px;
+}
+
+.houses-main .strong {
+  font-size: 20px;
+  color: #0d2d5c;
+  font-weight: 500;
+}
+
+.houses-main > img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  margin: 35px 0;
+}
+
+.outdoor-quote {
+  font-size: 24px;
+  line-height: 1.5;
+  color: #0d2d5c;
+  margin: 40px 0;
+  border-left: 4px solid #0d2d5c;
+  padding-left: 25px;
+}
+
+.outdoor-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 35px;
+  align-items: center;
+}
+
+.outdoor-card img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.outdoor-card-text h3 {
+  color: #0d2d5c;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* ================= RIGHT MENU ================= */
+
+.houses-menu {
+  background: #0d2d5c;
+  color: white;
+  padding: 35px 30px;
+  position: sticky;
+  top: 120px;
+}
+
+.houses-menu img {
+  width: 55px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.houses-menu h3 {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.houses-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.houses-menu li {
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.houses-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 13px 0;
+  transition: 0.3s;
+}
+
+.houses-menu a:hover,
+.houses-menu a.active {
+  color: #ffd700;
+  padding-left: 6px;
+}
+
+/* ================= OUTDOOR BEAUSOLEIL FEATURE ================= */
+
+.outdoor-feature {
+  background: #f4f4f4;
+  padding: 90px 7%;
+  display: grid;
+  grid-template-columns: 430px 1fr 300px;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.outdoor-left {
+  border-left: 8px solid #008ed6;
+}
+
+.outdoor-left img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.outdoor-center {
+  background: white;
+  min-height: 520px;
+  padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.outdoor-center h2 {
+  font-size: 38px;
+  font-weight: 400;
+  color: #002f63;
+  margin-bottom: 35px;
+}
+
+.outdoor-center p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 22px;
+}
+
+.outdoor-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.small-img {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.small-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.small-img:hover img {
+  transform: scale(1.06);
+}
+
+.plus {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f26522;
+  color: white;
+  border: 3px solid white;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  z-index: 4;
+}
+
+/* ================= OUTDOOR BEAUSOLEIL FEATURE ================= */
+
+.outdoor-feature {
+  background: #f4f4f4;
+  padding: 90px 7%;
+  display: grid;
+  grid-template-columns: 430px 1fr 300px;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.outdoor-left {
+  border-left: 8px solid #008ed6;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.outdoor-left img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.35s ease, transform 0.6s ease;
+}
+
+.outdoor-center {
+  background: #fff;
+  min-height: 520px;
+  padding: 90px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.outdoor-center h2 {
+  font-size: 38px;
+  font-weight: 400;
+  color: #002f63;
+  margin-bottom: 35px;
+  transition: opacity 0.35s ease;
+}
+
+.outdoor-center p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 22px;
+  transition: opacity 0.35s ease;
+}
+
+.outdoor-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.small-img {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #ddd;
+}
+
+.small-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.small-img:hover img {
+  transform: scale(1.06);
+}
+
+.plus {
+  position: absolute;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f26522;
+  color: white;
+  border: 3px solid white;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 1;
+  z-index: 4;
+  transition: 0.3s ease;
+}
+
+.small-img:hover .plus {
+  transform: translateX(-50%) scale(1.08);
+  background: #d94e12;
+}
+
+/* ================= PREMIUM NAV BUTTONS ================= */
+
+.premium-back-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 110px 0 70px;
+  flex-wrap: wrap;
+}
+
+.premium-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px 34px;
+
+  background: white;
+  color: #002b5c;
+
+  text-decoration: none;
+
+  border-radius: 70px;
+
+  border: 1px solid rgba(0,0,0,0.08);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
+  transition: all 0.4s ease;
+}
+
+.premium-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #7a1c2e, #9e2a3f);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  font-size: 15px;
+
+  transition: 0.4s ease;
+}
+
+.premium-label {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* HOVER */
+.premium-nav-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.14);
+}
+
+.premium-nav-btn:hover .premium-icon {
+  transform: scale(1.08);
+}
+
+/* ================= OUTDOOR RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .houses-page {
+    padding: 70px 22px;
+  }
+
+  .houses-layout,
+  .outdoor-feature,
+  .outdoor-card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .houses-menu {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .houses-main {
+    padding: 30px 22px;
+  }
+
+  .houses-main > img,
+  .outdoor-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .houses-hero h1 {
+    font-size: 38px;
+    line-height: 1.1;
+    bottom: 45px;
+    width: 90%;
+  }
+
+  .outdoor-feature {
+    padding: 70px 22px;
+  }
+
+  .outdoor-left img,
+  .small-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .outdoor-center {
+    min-height: auto;
+    padding: 45px 28px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .outdoor-center p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .outdoor-slide-inner {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+
+  .outdoor-slide-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+  }
+
+  .outdoor-slide-text {
+    padding: 40px 28px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+
+  .outdoor-feature {
+    padding: 50px 18px;
+  }
+
+  .outdoor-right {
+    grid-template-columns: 1fr;
+  }
+
+  .small-img {
+    height: 300px;
+  }
+
+  .outdoor-center {
+    padding: 35px 24px;
+  }
+
+  .outdoor-center h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .outdoor-center p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .premium-back-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .premium-nav-btn {
+    width: 90%;
+    justify-content: center;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .premium-nav-btn span,
+  .premium-nav-btn i {
+    display: flex;
+    align-items: center;
+  }
+}

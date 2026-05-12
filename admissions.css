@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ================= ADMISSIONS HERO CLASSES ================= */
 .admissions { background: url("images/admission.jpeg") center/cover no-repeat; }
 .fees { background: url("images/fees.jpeg") center/cover no-repeat; }
@@ -153,4 +154,161 @@
     font-size: 11px;
     padding: 10px 16px;
   }
+=======
+/* ================= ADMISSIONS HERO CLASSES ================= */
+.admissions { background: url("images/admission.jpeg") center/cover no-repeat; }
+.fees { background: url("images/fees.jpeg") center/cover no-repeat; }
+
+/* ================= ADMISSIONS SECTION ORIGINAL ================= */
+
+.admissions-section {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  background: #f4f4f4;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.admissions-image {
+  width: 50%;
+  height: 650px;
+}
+
+.admissions-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admissions-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 560px;
+  transform: translate(-50%, -50%);
+  background: #008fc7;
+  color: white;
+  text-align: center;
+  padding: 45px 55px;
+  z-index: 10;
+}
+
+.admissions-box img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+.admissions-box h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.admissions-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: white;
+}
+
+.admissions-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.admissions-buttons a {
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 30px;
+  padding: 13px 28px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ================= RESPONSIVE ================= */
+
+.admissions-box img {
+  display: block;
+  margin: 0 auto 25px;
+}
+
+@media (max-width: 900px) {
+
+  .admissions-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    min-height: 620px;
+    padding: 0 10px 70px;
+    position: relative;
+  }
+
+  .admissions-image {
+    width: 100%;
+    height: 600px;
+  }
+
+  .admissions-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .admissions-box {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 82%;
+    margin: 0;
+    padding: 38px 24px;
+  }
+
+  .admissions-box h2 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .admissions-box p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .admissions-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .admissions-section {
+    min-height: 580px;
+  }
+
+  .admissions-image {
+    height: 560px;
+  }
+
+  .admissions-box {
+    width: 86%;
+    padding: 32px 20px;
+  }
+
+  .admissions-buttons a {
+    font-size: 11px;
+    padding: 10px 16px;
+  }
+>>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 }

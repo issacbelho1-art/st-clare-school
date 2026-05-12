@@ -125,3 +125,130 @@
     width: 100%;
   }
 }
+/* ================= HERO ================= */
+.page-hero {
+  min-height: 80vh;
+  background: url("images/school.jpeg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 70px;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+}
+
+.page-hero h1 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: 52px;
+}
+
+/* ================= MAIN ================= */
+.term-section {
+  background: #f4f4f4;
+  padding: 110px 60px;
+}
+
+.term-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 70px;
+}
+
+/* LEFT */
+.term-main {
+  background: white;
+  padding: 60px;
+}
+
+.term-main h2 {
+  font-size: 36px;
+  color: #0d2d5c;
+  margin-bottom: 20px;
+}
+
+.lead {
+  font-size: 20px;
+  color: #0d2d5c;
+  margin-bottom: 30px;
+}
+
+/* TERM BOX */
+.term-box {
+  background: #f7f7f7;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-left: 5px solid #0d2d5c;
+}
+
+.term-box h3 {
+  color: #0d2d5c;
+  margin-bottom: 10px;
+}
+
+/* SIDEBAR */
+.term-sidebar {
+  background: #0d2d5c;
+  color: white;
+  padding: 40px;
+  position: sticky;
+  top: 120px;
+}
+
+.term-sidebar h3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.term-sidebar ul {
+  list-style: none;
+}
+
+.term-sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.term-sidebar a:hover,
+.term-sidebar a.active {
+  color: #ffd700;
+}
+
+/* ================= TERM DATES MOBILE ================= */
+@media (max-width: 900px) {
+
+  .term-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .page-hero {
+    padding: 30px 22px;
+  }
+
+  .page-hero h1 {
+    font-size: 36px;
+    line-height: 1.1;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .term-card,
+  .term-box {
+    width: 100%;
+  }
+}

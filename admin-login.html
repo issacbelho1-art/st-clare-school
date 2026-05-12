@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -112,4 +113,120 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
 </script>
 
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login - St Clare School</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f1ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 45px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.12);
+  border-top: 6px solid #7a1c2e;
+}
+
+.login-box h1 {
+  color: #7a1c2e;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.login-box p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 15px;
+  background: #7a1c2e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #4f101d;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+  <h1>Admin Login</h1>
+  <p>St Clare Higher Secondary School</p>
+
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Admin Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
+  authDomain: "st-clare-school.firebaseapp.com",
+  projectId: "st-clare-school",
+  storageBucket: "st-clare-school.firebasestorage.app",
+  messagingSenderId: "980272641859",
+  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
+  measurementId: "G-4B7S4KEJFZ"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("loginForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const button = document.querySelector("button");
+
+  button.textContent = "Logging in...";
+  button.disabled = true;
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    window.location.href = "admin.html";
+  } catch (error) {
+    console.error(error);
+    alert("Invalid email or password.");
+    button.textContent = "Login";
+    button.disabled = false;
+  }
+});
+</script>
+
+</body>
+>>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 </html>

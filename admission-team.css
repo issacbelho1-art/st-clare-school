@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ================= HERO ================= */
 .page-hero {
   min-height: 90vh;
@@ -264,4 +265,272 @@
   .team-card img {
     height: 320px;
   }
+=======
+/* ================= HERO ================= */
+.page-hero {
+  min-height: 90vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 70px;
+  z-index: 2;
+  color: white;
+}
+
+.hero-overlay h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+/* ================= MAIN ================= */
+.admissions-page {
+  background: #f4f4f4;
+  padding: 110px 60px;
+}
+
+.page-layout {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 70px;
+  align-items: start;
+}
+
+.page-content {
+  background: white;
+  padding: 60px;
+}
+
+.page-content > .inner-page {
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.page-content > .inner-page p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #0d2d5c;
+}
+
+/* ================= TEAM ================= */
+.team-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.team-card {
+  background: #f7f7f7;
+  overflow: hidden;
+  transition: 0.35s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
+
+.team-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  font-size: 22px;
+  color: #0d2d5c;
+  margin: 24px 24px 8px;
+}
+
+.team-card p {
+  color: #444;
+  line-height: 1.6;
+  margin: 0 24px 12px;
+}
+
+.team-card p:last-child {
+  margin-bottom: 26px;
+}
+
+/* ================= SIDEBAR ================= */
+.enquire-sidebar {
+  background: #0d2d5c;
+  color: white;
+  padding: 40px 35px;
+  position: sticky;
+  top: 120px;
+  min-width: 320px;
+}
+
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.enquire-sidebar h3 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 28px;
+}
+
+.enquire-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.enquire-sidebar li {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+.enquire-sidebar li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 15px 0;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: 0.3s;
+}
+
+.enquire-sidebar li a:hover,
+.enquire-sidebar li a.active {
+  color: #ffd700;
+  padding-left: 6px;
+}
+
+/* ================= CTA ================= */
+.activity-cta {
+  background: #0d2d5c;
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
+
+.activity-cta h2 {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.activity-cta p {
+  margin-bottom: 25px;
+}
+
+.activity-cta a {
+  display: inline-block;
+  background: white;
+  color: #0d2d5c;
+  padding: 13px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .admissions-page {
+    padding: 75px 28px;
+  }
+
+  .page-layout,
+  .team-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .page-content {
+    padding: 45px 28px;
+  }
+
+  .page-content h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .page-content p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .enquire-sidebar {
+    position: relative;
+    top: 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hero-overlay {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    text-align: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .hero-overlay p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .team-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .admissions-page {
+    padding: 55px 18px;
+  }
+
+  .page-content {
+    padding: 35px 20px;
+  }
+
+  .page-content h2 {
+    font-size: 28px;
+  }
+
+  .page-content p {
+    font-size: 14px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 34px;
+  }
+
+  .team-card img {
+    height: 320px;
+  }
+>>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 }
