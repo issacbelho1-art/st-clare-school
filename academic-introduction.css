@@ -948,36 +948,6 @@
     padding: 80px 28px;
   }
 
-  .content-box {
-    width: 90%;
-    left: 5%;
-    height: auto;
-    flex-direction: column;
-  }
-
-  .blue-side,
-  .white-side {
-    width: 100%;
-  }
-
-  .blue-side {
-    padding: 35px 25px;
-  }
-
-  .white-side {
-    padding: 35px 25px;
-  }
-
-  .blue-side h2 {
-    font-size: 26px;
-    line-height: 1.25;
-  }
-
-  .white-side p {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
   .collage-intro {
     padding: 60px 24px;
   }
@@ -988,9 +958,21 @@
   }
 }
 
+
 /* MOBILE */
 @media (max-width: 768px) {
 
+  /* HIDE IN THIS SECTION */
+  .section-tab,
+  .in-this-section,
+  .side-section-btn,
+  .section-toggle,
+  .section-sidebar,
+  .section-nav {
+    display: none !important;
+  }
+
+  /* TOUR SECTION */
   .tour-section {
     padding: 70px 0;
   }
@@ -1009,7 +991,7 @@
   }
 
   .tour-image {
-    height: 380px;
+    height: 340px;
   }
 
   .tour-image img {
@@ -1045,6 +1027,7 @@
     display: none;
   }
 
+  /* DETAIL SECTION */
   .academic-detail {
     padding: 65px 22px;
   }
@@ -1065,74 +1048,7 @@
     object-fit: cover;
   }
 
-  .content-box {
-    position: relative;
-    width: 100%;
-    left: auto;
-    top: auto;
-    transform: none;
-    margin: 40px auto;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 600px) {
-
-  .intro-text-content {
-    width: 88%;
-  }
-
-  .intro-text-content h1 {
-    font-size: 28px;
-  }
-
-  .intro-text-content p {
-    font-size: 14px;
-  }
-
-  .academic-detail {
-    padding: 55px 18px;
-  }
-
-  .detail-text h2 {
-    font-size: 26px;
-  }
-
-  .detail-text p {
-    font-size: 14px;
-  }
-
-  .tour-title {
-    font-size: 28px;
-  }
-
-  .tour-image {
-    height: 310px;
-  }
-
-  .tour-intro p {
-    font-size: 18px;
-  }
-
-  .blue-side h2 {
-    font-size: 22px;
-  }
-
-  .white-side p {
-    font-size: 13px;
-  }
-
-  .collage-intro p {
-    font-size: 20px;
-  }
-}
-
-/* =====================================================
-   FINAL MOBILE FIX - ACADEMIC INTRODUCTION SLIDER
-===================================================== */
-
-@media (max-width: 768px) {
-
+  /* BEAUSOLEIL STYLE SLIDER */
   .fullscreen-slider {
     width: 100%;
     height: auto !important;
@@ -1148,7 +1064,7 @@
   }
 
   .slide {
-    display: none !important;
+    display: none;
     height: auto !important;
     min-height: auto !important;
     background-size: cover !important;
@@ -1159,7 +1075,7 @@
   }
 
   .slide.active {
-    display: block !important;
+    display: block;
   }
 
   .content-box {
@@ -1264,10 +1180,57 @@
     background: #008fc7 !important;
     color: #fff !important;
   }
+}
 
-  .section-tab,
-  .in-this-section,
-  .side-section-btn {
-    display: none !important;
+
+/* SMALL MOBILE */
+@media (max-width: 600px) {
+
+  .intro-text-content {
+    width: 88%;
+  }
+
+  .intro-text-content h1 {
+    font-size: 28px;
+  }
+
+  .intro-text-content p {
+    font-size: 14px;
+  }
+
+  .academic-detail {
+    padding: 55px 18px;
+  }
+
+  .detail-text h2 {
+    font-size: 26px;
+  }
+
+  .detail-text p {
+    font-size: 14px;
+  }
+
+  .tour-title {
+    font-size: 28px;
+  }
+
+  .tour-image {
+    height: 310px;
+  }
+
+  .tour-intro p {
+    font-size: 18px;
+  }
+
+  .blue-side h2 {
+    font-size: 23px !important;
+  }
+
+  .white-side p {
+    font-size: 14px !important;
+  }
+
+  .collage-intro p {
+    font-size: 20px;
   }
 }
