@@ -1,0 +1,541 @@
+/* ================= ENQUIRE HERO ================= */
+.enquire-hero {
+  height: 90vh;
+  background: url("images/school.jpeg") center/cover no-repeat;
+  position: relative;
+}
+
+.enquire-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.enquire-hero .hero-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 80px;
+  color: white;
+  z-index: 2;
+}
+
+.enquire-hero h1 {
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ================= MAIN ================= */
+.enquire-main {
+  background: #f4f4f4;
+  padding: 110px 60px;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 400;
+  color: #0d2d5c;
+  margin-bottom: 90px;
+}
+
+.enquire-container {
+  max-width: 1500px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 360px;
+  gap: 65px;
+  align-items: start;
+}
+
+/* LEFT */
+.enquire-left h2 {
+  font-size: 31px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #0d2d5c;
+  margin: 0;
+}
+
+/* FORM */
+.enquire-form-box {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+.enquire-form-box p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.form-intro {
+  color: #222;
+}
+
+.enquire-form-box h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 80px 0 25px;
+}
+
+.form-scroll {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-height: 520px;
+  overflow-y: auto;
+  padding-right: 25px;
+}
+
+.form-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-scroll::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px;
+}
+
+.form-scroll input,
+.form-scroll select,
+.form-scroll textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #555;
+  background: white;
+  font-size: 15px;
+}
+
+.form-scroll textarea {
+  grid-column: span 2;
+  height: 120px;
+  resize: vertical;
+}
+
+.form-scroll button {
+  grid-column: span 2;
+  justify-self: start;
+  background: #0d2d5c;
+  color: white;
+  border: none;
+  padding: 15px 34px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-scroll button:hover {
+  background: #071d3d;
+}
+
+/* ================= SIDEBAR ================= */
+.enquire-sidebar {
+  background: transparent;
+  position: sticky;
+  top: 120px;
+}
+
+.section-menu {
+  background: #0d2d5c;
+  padding: 45px 35px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.sidebar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.sidebar-logo img {
+  display: block;
+  width: 58px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.section-menu h3 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.section-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-menu li {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.section-menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 14px 0;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.section-menu a.active,
+.section-menu a:hover {
+  color: #ffd700;
+  padding-left: 6px;
+}
+
+/* WHY BOX */
+.why-box {
+  background: #0d2d5c;
+  color: white;
+}
+
+.why-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.why-box h3 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 25px 0 20px;
+}
+
+.why-box ul {
+  list-style: none;
+  padding: 0 35px 35px;
+  margin: 0;
+}
+
+.why-box li {
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+/* ================= ADMISSIONS CTA ================= */
+.admissions-section {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+
+.admissions-image {
+  width: 50%;
+  height: 650px;
+}
+
+.admissions-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.admissions-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 560px;
+  transform: translate(-50%, -50%);
+  background: #0d2d5c;
+  color: white;
+  text-align: center;
+  padding: 50px 55px;
+  z-index: 5;
+}
+
+.admissions-box img {
+  display: block;
+  width: 65px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+.admissions-box h2 {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 18px;
+}
+
+.admissions-box p {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.admissions-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.admissions-buttons a {
+  color: white;
+  text-decoration: none;
+  border: 1.5px solid white;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.admissions-buttons a:hover {
+  background: white;
+  color: #0d2d5c;
+}
+
+/* ================= MOBILE RESPONSIVE - ENQUIRE PAGE FINAL ================= */
+@media (max-width: 1000px) {
+
+  .enquire-main {
+    padding: 80px 22px;
+  }
+
+  .enquire-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .enquire-sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .section-menu {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto 30px;
+    padding: 42px 30px;
+    text-align: center;
+  }
+
+  .sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sidebar-logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 70px;
+  }
+
+  .section-menu h3,
+  .section-menu a {
+    text-align: center;
+  }
+
+  .why-box {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .form-scroll {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .form-scroll textarea,
+  .form-scroll button {
+    grid-column: 1 / -1;
+  }
+
+  .form-scroll input,
+  .form-scroll select,
+  .form-scroll textarea {
+    width: 100%;
+  }
+
+  .main-title {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 50px;
+  }
+
+  .enquire-left h2 {
+    font-size: 26px;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .admissions-section {
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 60px;
+  }
+
+  .admissions-image {
+    width: 100%;
+    height: 360px;
+  }
+
+  .admissions-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .admissions-box {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 88%;
+    max-width: 560px;
+    margin: -90px auto 0;
+    padding: 42px 32px;
+    text-align: center;
+  }
+
+  .admissions-box img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .enquire-hero {
+    height: 62vh;
+    background-position: center;
+  }
+
+  .enquire-hero .hero-overlay {
+    left: 0;
+    right: 0;
+    bottom: 42px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 22px;
+  }
+
+  .enquire-hero h1 {
+    font-size: 38px;
+    line-height: 1.1;
+  }
+
+  .enquire-main {
+    padding: 65px 20px;
+  }
+
+  .main-title {
+    font-size: 29px;
+    line-height: 1.25;
+    margin-bottom: 45px;
+  }
+
+  .enquire-left h2 {
+    font-size: 23px;
+    line-height: 1.35;
+  }
+
+  .enquire-form-box p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .form-scroll input,
+  .form-scroll select,
+  .form-scroll textarea {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .section-menu {
+    padding: 38px 24px;
+  }
+
+  .sidebar-logo img {
+    width: 60px;
+  }
+
+  .section-menu h3 {
+    font-size: 28px;
+  }
+
+  .section-menu a {
+    font-size: 15px;
+    padding: 13px 0;
+  }
+
+  .why-box h3 {
+    font-size: 26px;
+  }
+
+  .admissions-image {
+    height: 300px;
+  }
+
+  .admissions-box {
+    width: 90%;
+    margin-top: -80px;
+    padding: 38px 24px;
+  }
+
+  .admissions-box h2 {
+    font-size: 29px;
+    line-height: 1.2;
+  }
+
+  .admissions-box p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .admissions-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .admissions-buttons a,
+  .admissions-buttons button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================= FOOTER LOGO CENTER FIX ================= */
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  display: block;
+  width: 90px;
+  height: auto;
+  margin: 0 auto 15px;
+}
+
+.footer-logo h2 {
+  width: 100%;
+  text-align: center;
+}

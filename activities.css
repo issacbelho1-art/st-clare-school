@@ -1,0 +1,196 @@
+/* ================= HERO ================= */
+.sub-hero {
+  height: 85vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+  color: white;
+}
+
+.sub-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.sub-hero h1 {
+  position: relative;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+/* ================= INTRO ================= */
+.sub-content {
+  max-width: 900px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.sub-content h2 {
+  font-size: 38px;
+  color: #0d2d5c;
+  margin-bottom: 20px;
+}
+
+.sub-content p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ================= ACTIVITY CARDS ================= */
+.activity-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.activity-card {
+  background: white;
+  padding: 50px 30px;
+  text-align: center;
+  border-top: 4px solid #0d2d5c;
+  transition: 0.4s;
+}
+
+.activity-card i {
+  font-size: 40px;
+  color: #0d2d5c;
+  margin-bottom: 20px;
+}
+
+.activity-card h3 {
+  margin-bottom: 15px;
+  color: #0d2d5c;
+}
+
+.activity-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.activity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* ================= GALLERY ================= */
+.activity-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 100px auto;
+  max-width: 1200px;
+}
+
+.activity-gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.activity-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= CTA ================= */
+.activity-cta {
+  background: #0d2d5c;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.activity-cta h2 {
+  font-size: 34px;
+  margin-bottom: 15px;
+}
+
+.activity-cta p {
+  margin-bottom: 25px;
+}
+
+.activity-cta a {
+  background: white;
+  color: #0d2d5c;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .activity-section {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .activity-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .activity-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .sub-hero {
+    height: 60vh;
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .sub-hero h1 {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+
+  .activity-content h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .activity-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  .activity-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-gallery img {
+    height: 260px;
+  }
+
+  .sub-hero {
+    height: 50vh;
+    padding: 25px 18px;
+  }
+
+  .sub-hero h1 {
+    font-size: 32px;
+  }
+
+  .activity-content h2 {
+    font-size: 26px;
+  }
+
+  .activity-content p {
+    font-size: 14px;
+  }
+}

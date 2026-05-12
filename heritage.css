@@ -1,0 +1,152 @@
+/* ================= HERO ================= */
+.heritage-hero {
+  background: url("images/school-bldg.png") center/cover no-repeat;
+  min-height: 90vh;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 60px;
+  left: 70px;
+  color: white;
+}
+
+.hero-overlay h1 {
+  font-size: 50px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ================= SECTION ================= */
+.heritage-content-section {
+  background: #f4f4f4;
+  padding: 110px 60px;
+}
+
+/* ================= LAYOUT ================= */
+.heritage-content-wrapper {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 70px;
+  align-items: start;
+}
+
+/* ================= MAIN ================= */
+.heritage-main {
+  background: white;
+  padding: 60px 60px 70px;
+}
+
+/* ================= INTRO ================= */
+.heritage-intro h2 {
+  font-size: 36px;
+  color: #0d2d5c;
+  margin-bottom: 25px;
+}
+
+.heritage-bold {
+  font-size: 20px;
+  color: #0d2d5c;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.heritage-intro p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 18px;
+}
+
+/* ================= IMAGE ================= */
+.heritage-large-image {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  margin-top: 40px;
+}
+
+/* ================= RIGHT PANEL ================= */
+.section-panel {
+  background: #0d2d5c;
+  color: white;
+  padding: 40px 35px;
+  position: sticky;
+  top: 120px;
+}
+
+/* LOGO */
+.panel-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.panel-logo img {
+  width: 55px;
+}
+
+/* TITLE */
+.panel-title {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* LINKS */
+.panel-links a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  transition: 0.3s;
+}
+
+.panel-links a:hover {
+  color: #ffd700;
+  padding-left: 6px;
+}
+
+.panel-links a.active {
+  color: #ffd700;
+  font-weight: 500;
+}
+
+/* ================= HERITAGE MOBILE ================= */
+@media (max-width: 1000px) {
+
+  .heritage-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-panel {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .heritage-main {
+    padding: 40px 22px;
+  }
+
+  .hero-overlay {
+    left: 25px;
+    right: 25px;
+    bottom: 40px;
+    max-width: 100%;
+  }
+
+  .hero-overlay h1 {
+    font-size: 38px;
+    line-height: 1.15;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
