@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ================= MENU =================
 function toggleMenu() {
   const menu = document.getElementById("menu");
@@ -525,7 +524,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-=======
 // ================= MENU =================
 function toggleMenu() {
   const menu = document.getElementById("menu");
@@ -1071,4 +1069,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
->>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b

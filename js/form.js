@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // ================= MULTI STEP FORM =================
 
 let currentStep = 0;
@@ -74,7 +73,6 @@ if (form) {
   });
 }
 window.nextStep = nextStep;
-=======
 // ================= MULTI STEP FORM =================
 
 let currentStep = 0;
@@ -150,5 +148,4 @@ if (form) {
   });
 }
 window.nextStep = nextStep;
->>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 window.prevStep = prevStep;

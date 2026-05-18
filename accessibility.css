@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ================= ACCESSIBILITY HERO ================= */
 .page-hero {
   min-height: 80vh;
@@ -13,7 +12,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.32);
+  background: rgba(0, 0, 0, 0.32);
 }
 
 .page-hero h1 {
@@ -57,9 +56,7 @@ body.inner-page {
 }
 
 /* ================= RESPONSIVE ================= */
-
 @media (max-width: 800px) {
-
   .page-hero {
     min-height: 60vh;
     padding: 35px 22px;
@@ -89,7 +86,6 @@ body.inner-page {
 }
 
 @media (max-width: 500px) {
-
   .page-hero {
     min-height: 50vh;
     padding: 28px 18px;
@@ -107,114 +103,4 @@ body.inner-page {
   .terms-section h2 {
     font-size: 22px;
   }
-=======
-/* ================= ACCESSIBILITY HERO ================= */
-.page-hero {
-  min-height: 80vh;
-  background: url("images/school.jpeg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 70px;
-}
-
-.page-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.32);
-}
-
-.page-hero h1 {
-  position: relative;
-  z-index: 2;
-  color: white;
-  font-size: 52px;
-  font-weight: 400;
-}
-
-/* ================= CONTENT ================= */
-body.inner-page {
-  background: #f4f4f4;
-}
-
-.terms-section {
-  max-width: 1000px;
-  margin: 110px auto;
-  background: white;
-  padding: 70px;
-}
-
-.terms-section h2 {
-  font-size: 30px;
-  font-weight: 400;
-  color: #0d2d5c;
-  margin: 45px 0 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-.terms-section h2:first-child {
-  margin-top: 0;
-}
-
-.terms-section p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-  max-width: 850px;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 800px) {
-
-  .page-hero {
-    min-height: 60vh;
-    padding: 35px 22px;
-    text-align: center;
-  }
-
-  .page-hero h1 {
-    font-size: 38px;
-    line-height: 1.15;
-  }
-
-  .terms-section {
-    margin: 70px 22px;
-    padding: 40px 24px;
-  }
-
-  .terms-section h2 {
-    font-size: 25px;
-    line-height: 1.25;
-  }
-
-  .terms-section p,
-  .terms-section li {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-}
-
-@media (max-width: 500px) {
-
-  .page-hero {
-    min-height: 50vh;
-    padding: 28px 18px;
-  }
-
-  .page-hero h1 {
-    font-size: 30px;
-  }
-
-  .terms-section {
-    margin: 55px 16px;
-    padding: 32px 18px;
-  }
-
-  .terms-section h2 {
-    font-size: 22px;
-  }
->>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 }

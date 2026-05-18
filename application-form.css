@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* HERO */
 .page-hero {
   min-height: 80vh;
@@ -13,7 +12,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .page-hero h1 {
@@ -40,7 +39,7 @@
 .app-card {
   background: white;
   padding: 40px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
 
 .app-btn {
@@ -69,7 +68,7 @@
   margin: auto;
   background: white;
   padding: 70px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.1);
   border-top: 6px solid #7a1c2e;
 }
 
@@ -234,241 +233,4 @@ textarea {
   textarea {
     width: 100%;
   }
-=======
-/* HERO */
-.page-hero {
-  min-height: 80vh;
-  background: url("images/school.jpeg") center/cover no-repeat;
-  display: flex;
-  align-items: flex-end;
-  padding: 70px;
-  position: relative;
-}
-
-.page-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-}
-
-.page-hero h1 {
-  color: white;
-  font-size: 50px;
-  z-index: 2;
-}
-
-/* OPTIONS */
-.application-options {
-  padding: 100px 20px;
-  text-align: center;
-  background: #f4f4f4;
-}
-
-.application-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.app-card {
-  background: white;
-  padding: 40px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-}
-
-.app-btn {
-  display: inline-block;
-  padding: 12px 25px;
-  border: 2px solid #7a1c2e;
-  color: #7a1c2e;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.app-btn:hover {
-  background: #7a1c2e;
-  color: white;
-}
-
-/* FORM */
-.form-page {
-  padding: 120px 20px;
-  background: #f6f3ef;
-}
-
-.school-application-form {
-  max-width: 1100px;
-  margin: auto;
-  background: white;
-  padding: 70px;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.1);
-  border-top: 6px solid #7a1c2e;
-}
-
-.school-application-form h2 {
-  text-align: center;
-  font-size: 36px;
-  color: #7a1c2e;
-}
-
-.form-note {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.form-section {
-  margin-bottom: 50px;
-}
-
-.form-section h3 {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-/* FIXED INPUT TARGETING */
-.school-application-form input,
-.school-application-form select,
-.school-application-form textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  width: 100%;
-  background: #fafafa;
-}
-
-.school-application-form input:focus,
-.school-application-form select:focus,
-.school-application-form textarea:focus {
-  outline: none;
-  border-color: #7a1c2e;
-  background: white;
-}
-
-textarea {
-  min-height: 100px;
-}
-
-.full-width {
-  grid-column: span 2;
-}
-
-/* UPLOAD */
-.upload-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-}
-
-.upload-box {
-  background: #faf7f5;
-  border: 1px dashed #7a1c2e;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  transition: 0.3s;
-}
-
-.upload-box:hover {
-  background: #fff5f6;
-}
-
-.upload-box span {
-  color: #1f2f46;
-  font-weight: 500;
-}
-
-.upload-box input {
-  background: white;
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-/* DECLARATION */
-.declaration {
-  display: block;
-  padding: 20px;
-  background: #f4f4f4;
-}
-
-/* BUTTON */
-.submit-application {
-  margin-top: 40px;
-  padding: 15px 40px;
-  background: #7a1c2e;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  transition: 0.3s;
-}
-
-.submit-application:hover {
-  background: #4f101d;
-  transform: translateY(-2px);
-}
-
-/* FOOTER LOGO */
-.footer-logo {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.footer-logo img {
-  width: 80px;
-  display: block;
-  margin: 0 auto 15px;
-}
-
-.footer-logo h2 {
-  color: white;
-  font-weight: 400;
-  font-size: 22px;
-}
-
-/* ================= APPLICATION FORM MOBILE ================= */
-@media (max-width: 800px) {
-
-  .application-grid,
-  .form-grid,
-  .upload-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .full-width {
-    grid-column: 1 / -1;
-  }
-
-  .school-application-form {
-    padding: 35px 22px;
-  }
-
-  .page-hero {
-    padding: 90px 20px;
-  }
-
-  .page-hero h1 {
-    font-size: 38px;
-    line-height: 1.15;
-  }
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-  }
->>>>>>> 91c403a33ee70c95ef9568944d7f3a1d17e47d8b
 }
