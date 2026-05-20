@@ -236,7 +236,20 @@ Design by Issac Belho
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
@@ -250,18 +263,56 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 const form = document.getElementById("applicationForm");
+
+async function uploadFile(file, folderName) {
+  if (!file) return "";
+
+  const safeFileName = Date.now() + "-" + file.name.replace(/\s+/g, "-");
+  const fileRef = ref(storage, `applications/${folderName}/${safeFileName}`);
+
+  await uploadBytes(fileRef, file);
+  return await getDownloadURL(fileRef);
+}
 
 form.addEventListener("submit", async function(e) {
   e.preventDefault();
 
   const submitBtn = form.querySelector(".submit-application");
-  submitBtn.textContent = "Submitting...";
+  submitBtn.textContent = "Uploading documents...";
   submitBtn.disabled = true;
 
   try {
     const formData = new FormData(form);
+
+    const birthCertificateUrl = await uploadFile(
+      formData.get("birth_certificate"),
+      "birth-certificates"
+    );
+
+    const aadhaarCardUrl = await uploadFile(
+      formData.get("aadhaar_card"),
+      "aadhaar-cards"
+    );
+
+    const transferCertificateUrl = await uploadFile(
+      formData.get("transfer_certificate"),
+      "transfer-certificates"
+    );
+
+    const marksheetUrl = await uploadFile(
+      formData.get("marksheet"),
+      "marksheets"
+    );
+
+    const passportPhotoUrl = await uploadFile(
+      formData.get("passport_photo"),
+      "passport-photos"
+    );
+
+    submitBtn.textContent = "Submitting application...";
 
     await addDoc(collection(db, "applications"), {
       firstName: formData.get("first_name"),
@@ -292,7 +343,15 @@ form.addEventListener("submit", async function(e) {
       bloodGroup: formData.get("blood_group"),
       medicalCondition: formData.get("medical_condition"),
 
-      documentUploadStatus: "Not enabled yet",
+      documents: {
+        birthCertificate: birthCertificateUrl,
+        aadhaarCard: aadhaarCardUrl,
+        transferCertificate: transferCertificateUrl,
+        marksheet: marksheetUrl,
+        passportPhoto: passportPhotoUrl
+      },
+
+      documentUploadStatus: "Uploaded",
       status: "New",
       createdAt: serverTimestamp()
     });
@@ -302,7 +361,7 @@ form.addEventListener("submit", async function(e) {
 
   } catch (error) {
     console.error("Firebase Error:", error);
-    alert("Something went wrong. Check Console for Firebase Error.");
+    alert("Something went wrong. Please check Firebase Storage rules.");
   }
 
   submitBtn.textContent = "Submit Application";

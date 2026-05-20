@@ -6,6 +6,7 @@
   <title>Boarding Life - St Clare Higher Secondary School</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="boarding.css">
 <link rel="stylesheet" href="admissions.css">
@@ -266,281 +267,75 @@
   </a>
 </div>
 
-<!-- ================= JS ================= -->
-
-<script src="js/main.js"></script>
-
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boarding Life - St Clare Higher Secondary School</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="boarding.css">
-<link rel="stylesheet" href="admissions.css">
-</head>
-
-<body class="inner-page">
-
-<!-- ================= HEADER ================= -->
-
-<header class="main-header">
-  <div class="logo">
-    <img src="images/logo.jpg" alt="Logo">
-    <h3>St Clare Higher Secondary School</h3>
-  </div>
-
-  <div class="header-right">
-    <a href="enquire.html" class="enquire-btn">Enquire Now</a>
-
-    <button class="menu-toggle" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
-
-<!-- ================= MENU ================= -->
-<nav id="menu">
-  <div class="close-btn" onclick="toggleMenu()">✕</div>
-
-  <div class="mega-menu">
-
-    <div class="menu-column">
-      <h3 class="menu-title">Academic</h3>
-      <div class="menu-links">
-        <a href="academic.html">Overview</a>
-        <a href="academic-introduction.html">Introduction</a>
-        <a href="primary.html">Primary</a>
-        <a href="grade6-10.html">Grades 6–10</a>
-        <a href="grade11-12.html">Grades 11–12</a>
-        <a href="learning-support.html">Learning Support</a>
-        <a href="academic-results.html">Results</a>
-        <a href="career-guidance.html">Career Guidance</a>
-      </div>
-    </div>
-
-    <div class="menu-column">
-      <h3 class="menu-title">Boarding</h3>
-      <div class="menu-links">
-        <a href="boarding.html">Overview</a>
-        <a href="boarding-life.html">Boarding Life</a>
-        <a href="boarding-houses.html">Boarding Houses</a>
-        <a href="boarding-wellbeing.html">Wellbeing</a>
-      </div>
-    </div>
-
-    <div class="menu-column">
-      <h3 class="menu-title">Co-Curricular</h3>
-      <div class="menu-links">
-        <a href="cocurricular.html">Overview</a>
-        <a href="sports.html">Sports</a>
-        <a href="arts.html">Arts</a>
-        <a href="clubs.html">Clubs</a>
-      </div>
-    </div>
-
-    <div class="menu-column">
-      <h3 class="menu-title">About</h3>
-      <div class="menu-links">
-        <a href="about.html">Overview</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-
-  </div>
-</nav>
-
-<!-- ================= HERO (UNCOVER STYLE) ================= -->
-
-<section class="boarding-intro">
-
-  <div class="boarding-photo">
-    <img src="images/boarding-life.jpg" alt="Boarding Life">
-  </div>
-
-  <div class="boarding-overlay" id="boardingOverlay">
-
-    <div class="boarding-curve">
-      <svg viewBox="0 0 700 900" preserveAspectRatio="none">
-        <path d="M0,0 H520 C620,180 620,720 520,900 H0 Z" fill="#ffffff"/>
-      </svg>
-    </div>
-
-    <div class="boarding-text">
-      <p class="tag">BOARDING LIFE</p>
-
-      <h1>Daily life, friendships & growth</h1>
-
-      <p>
-        Boarding life at St Clare is vibrant, structured, and filled with
-        meaningful experiences that shape students into confident individuals.
-      </p>
-
-      <button class="discover-btn" onclick="uncoverBoarding()">
-        Uncover Boarding Life
-      </button>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= BOARDING LIFE CONTENT ================= -->
-
-<section class="boarding-life-page">
-
-  <h2 class="boarding-life-title">Seizing every opportunity</h2>
-
-  <div class="boarding-life-layout">
-
-    <!-- LEFT BIG TEXT -->
-    <div class="boarding-life-left">
-      <h3>
-        A balanced blend of study, activities, discipline,
-        friendships and personal growth makes every day at
-        St Clare unique.
-      </h3>
-    </div>
-
-    <!-- MIDDLE CONTENT -->
-    <div class="boarding-life-main">
-
-      <p class="strong">
-        At St Clare, the rhythm of boarding life is built around study,
-        discipline, prayer, recreation and rest.
-      </p>
-
-      <p>
-        Every student’s day is different, but each routine is designed to help
-        them grow in confidence, responsibility and independence.
-      </p>
-
-      <p>
-        After school, students spend time studying, playing, joining activities,
-        relaxing with friends and preparing for the next day.
-      </p>
-
-      <img src="images/boarding-life.jpg" alt="Boarding Life">
-
-      <div class="typical-day">
-
-        <h2>A typical day</h2>
-
-        <h3>Morning</h3>
-        <div class="day-row">5.30 am - Wake up <span>+</span></div>
-        <div class="day-row">6.00 am - Prayer / preparation <span>+</span></div>
-        <div class="day-row">7.00 am - Breakfast <span>+</span></div>
-        <div class="day-row">8.30 am - School begins <span>+</span></div>
-
-        <h3>Afternoon</h3>
-        <div class="day-row">12.30 pm - Lunch <span>+</span></div>
-        <div class="day-row">3.30 pm - School ends <span>+</span></div>
-        <div class="day-row">4.00 pm - Games / recreation <span>+</span></div>
-
-        <h3>Evening</h3>
-        <div class="day-row">6.00 pm - Study time <span>+</span></div>
-        <div class="day-row">7.30 pm - Dinner <span>+</span></div>
-        <div class="day-row">8.30 pm - Evening study / prayer <span>+</span></div>
-        <div class="day-row">10.00 pm - Bedtime <span>+</span></div>
-
-      </div>
-
-      <div class="boarding-life-quote">
-        “Boarding life builds discipline, independence, friendship and character.”
-      </div>
-
-      <div class="weekend-section">
-        <h2>Weekends</h2>
-
-        <p>
-          Weekends at St Clare are filled with opportunities to rest, play,
-          participate in activities and spend meaningful time with friends.
-        </p>
-
-        <p>
-          Students enjoy a healthy balance of study, recreation, prayer,
-          cultural activities and personal time.
-        </p>
-
-        <a href="boarding-houses.html">Discover More</a>
-      </div>
-
-    </div>
-
-    <!-- RIGHT SIDE MENU -->
-    <aside class="boarding-life-menu">
-      <img src="images/logo.jpg" alt="Logo">
-
-      <h3>In this section</h3>
-
-      <ul>
-        <li><a href="boarding.html">Boarding</a></li>
-        <li><a href="boarding.html">Introduction</a></li>
-        <li><a class="active" href="boarding-life.html">Boarding Life</a></li>
-        <li><a href="boarding-houses.html">Boarding Houses</a></li>
-        <li><a href="boarding-wellbeing.html">Health and Wellbeing</a></li>
-      </ul>
-    </aside>
-
-  </div>
-
-</section>
-
-<!-- ADMISSIONS -->
-<section class="admissions-section">
-
-  <div class="admissions-image left">
-    <img src="images/admission-left.jpeg" alt="Students seated in school hall">
-  </div>
-
-  <div class="admissions-image right">
-    <img src="images/admission-right.jpg" alt="Students inside school building">
-  </div>
-
-  <div class="admissions-box">
+<footer class="premium-footer">
+  <div class="footer-logo">
     <img src="images/logo.jpg" alt="School Logo">
-
-    <h2>Admissions</h2>
-
-    <p>
-      We’re delighted that you’re interested in joining the St Clare family.
-      Our Admissions Team will guide you through the process from enquiry
-      to application.
-    </p>
-
-    <p>
-      Begin your child’s learning journey with us in a caring, disciplined,
-      and inspiring environment.
-    </p>
-
-    <div class="admissions-buttons">
-      <a href="enquire.html">Arrange a Visit</a>
-      <a href="admissions.html">Applications</a>
-    </div>
+    <h2>St Clare Higher Secondary School</h2>
   </div>
 
-</section>
+  <div class="footer-container">
 
-<!-- ================= BACK ================= -->
+    <div class="footer-column">
+      <h3>Contact us</h3>
+      <p>Kacharigaon (Phevima) village</p>
+      <p>Dimapur, Nagaland - 797112</p>
+      <p>India</p>
+      <p>stclareshs@gmail.com</p>
+      <p>+91 8413079844</p>
 
-<div class="back-wrapper">
-  <a href="boarding.html" class="back-modern">
-    ← Back to Boarding
-  </a>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/St. Clare hr. Sec school" target="_blank">
+          <i class="fab fa-facebook-f"></i>
+        </a>
 
-  <a href="index.html" class="back-modern secondary">
-    ⌂ Home
-  </a>
-</div>
+        <a href="https://www.instagram.com/st.clareschool777" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
 
-<!-- ================= JS ================= -->
+        <a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </div>
 
+    <div class="footer-column">
+      <h3>Information</h3>
+      <a href="news.html">News & Events</a>
+      <a href="activities.html">School Activities</a>
+      <a href="careers.html">Careers</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Quick Access</h3>
+      <a href="payments.html">Online Payments</a>
+      <a href="term-dates.html">Term Dates</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Admissions</h3>
+      <a href="application-process.html">Application Process</a>
+      <a href="application-form.html">Application Form</a>
+      <a href="admission-team.html">Admission Team</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+
+    <div class="footer-column">
+      <h3>Policies</h3>
+      <a href="legal.html">Legal Notice</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    Design by Issac Belho
+  </div>
+</footer>
+
+<div class="page-transition"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
 
 </body>

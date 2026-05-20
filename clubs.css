@@ -11,6 +11,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .hero-overlay {
@@ -18,6 +19,7 @@
   bottom: 50px;
   left: 60px;
   color: white;
+  z-index: 2;
 }
 
 .hero-overlay h1 {
@@ -27,6 +29,7 @@
 }
 
 /* ================= INTRO ================= */
+
 .clubs-intro {
   background: #f4f4f4;
   padding: 110px 60px;
@@ -38,9 +41,11 @@
   gap: 70px;
   max-width: 1400px;
   margin: auto;
+  align-items: start;
 }
 
 /* LEFT */
+
 .clubs-left h2 {
   font-size: 32px;
   line-height: 1.5;
@@ -48,6 +53,7 @@
 }
 
 /* CENTER */
+
 .clubs-center {
   font-family: 'Poppins', sans-serif;
 }
@@ -61,9 +67,11 @@
 .clubs-center p {
   color: #555;
   line-height: 1.7;
+  margin-bottom: 20px;
 }
 
 /* ================= RIGHT PANEL ================= */
+
 .section-box {
   background: #0d2d5c;
   color: white;
@@ -72,7 +80,6 @@
   top: 120px;
 }
 
-/* LOGO */
 .section-logo {
   text-align: center;
   margin-bottom: 20px;
@@ -80,53 +87,56 @@
 
 .section-logo img {
   width: 50px;
+  display: block;
+  margin: 0 auto;
 }
 
-/* TITLE */
 .section-box h3 {
   text-align: center;
   font-weight: 400;
   margin-bottom: 25px;
+  font-size: 28px;
 }
 
-/* LIST */
 .section-box ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .section-box li {
-  padding: 12px 0;
   border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
-/* LINKS */
 .section-box li a {
   color: white;
   text-decoration: none;
   display: block;
+  padding: 12px 0;
   transition: 0.3s;
 }
 
-/* HOVER */
 .section-box li a:hover {
   color: #ffd700;
   padding-left: 5px;
 }
 
-/* ACTIVE */
-.section-box li.active {
+.section-box li.active a {
   color: #ffd700;
   font-weight: 500;
 }
 
 /* ================= IMAGE ================= */
+
 .clubs-image img {
   width: 100%;
   height: 650px;
   object-fit: cover;
+  display: block;
 }
 
 /* ================= CONTENT ================= */
+
 .clubs-content {
   padding: 110px 20px;
   background: #fff;
@@ -149,7 +159,6 @@
   line-height: 1.7;
 }
 
-/* BLOCKS */
 .content-block {
   margin-bottom: 45px;
 }
@@ -160,8 +169,13 @@
   margin-bottom: 10px;
 }
 
-/* ================= CLUBS MOBILE ================= */
+/* ================= MOBILE ================= */
+
 @media (max-width: 1000px) {
+
+  .clubs-intro {
+    padding: 80px 28px;
+  }
 
   .clubs-container {
     grid-template-columns: 1fr;
@@ -175,7 +189,7 @@
 
   .clubs-left h2 {
     font-size: 28px;
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   .clubs-left p {
@@ -193,206 +207,75 @@
     width: 100%;
   }
 
-  .section-box ul {
-    padding-left: 18px;
-  }
-}
-/* ================= CLUBS PAGE ================= */
-
-/* HERO */
-.clubs-hero {
-  position: relative;
-  height: 90vh;
-  overflow: hidden;
-}
-
-.clubs-hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  bottom: 50px;
-  left: 60px;
-  color: white;
-}
-
-.hero-overlay h1 {
-  font-size: 44px;
-  font-weight: 400;
-  letter-spacing: 1px;
-}
-
-/* ================= INTRO ================= */
-.clubs-intro {
-  background: #f4f4f4;
-  padding: 110px 60px;
-}
-
-.clubs-container {
-  display: grid;
-  grid-template-columns: 1.2fr 1.5fr 1fr;
-  gap: 70px;
-  max-width: 1400px;
-  margin: auto;
-}
-
-/* LEFT */
-.clubs-left h2 {
-  font-size: 32px;
-  line-height: 1.5;
-  color: #0d2d5c;
-}
-
-/* CENTER */
-.clubs-center {
-  font-family: 'Poppins', sans-serif;
-}
-
-.clubs-center .lead {
-  font-size: 19px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.clubs-center p {
-  color: #555;
-  line-height: 1.7;
-}
-
-/* ================= RIGHT PANEL ================= */
-.section-box {
-  background: #0d2d5c;
-  color: white;
-  padding: 35px 30px;
-  position: sticky;
-  top: 120px;
-}
-
-/* LOGO */
-.section-logo {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.section-logo img {
-  width: 50px;
-}
-
-/* TITLE */
-.section-box h3 {
-  text-align: center;
-  font-weight: 400;
-  margin-bottom: 25px;
-}
-
-/* LIST */
-.section-box ul {
-  list-style: none;
-}
-
-.section-box li {
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-/* LINKS */
-.section-box li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  transition: 0.3s;
-}
-
-/* HOVER */
-.section-box li a:hover {
-  color: #ffd700;
-  padding-left: 5px;
-}
-
-/* ACTIVE */
-.section-box li.active {
-  color: #ffd700;
-  font-weight: 500;
-}
-
-/* ================= IMAGE ================= */
-.clubs-image img {
-  width: 100%;
-  height: 650px;
-  object-fit: cover;
-}
-
-/* ================= CONTENT ================= */
-.clubs-content {
-  padding: 110px 20px;
-  background: #fff;
-}
-
-.content-container {
-  max-width: 900px;
-  margin: auto;
-}
-
-.clubs-content h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: #0d2d5c;
-}
-
-.clubs-content p {
-  margin-bottom: 30px;
-  color: #444;
-  line-height: 1.7;
-}
-
-/* BLOCKS */
-.content-block {
-  margin-bottom: 45px;
-}
-
-.content-block h3 {
-  font-size: 26px;
-  color: #0d2d5c;
-  margin-bottom: 10px;
-}
-
-/* ================= CLUBS MOBILE ================= */
-@media (max-width: 1000px) {
-
-  .clubs-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .clubs-image img {
+    height: 500px;
   }
 
-  .clubs-left,
-  .clubs-right {
-    width: 100%;
+  .hero-overlay {
+    left: 40px;
+    bottom: 40px;
   }
 
-  .clubs-left h2 {
-    font-size: 28px;
+  .hero-overlay h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .clubs-hero {
+    height: 70vh;
+  }
+
+  .clubs-intro {
+    padding: 60px 20px;
+  }
+
+  .hero-overlay {
+    left: 22px;
+    bottom: 28px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 30px;
     line-height: 1.2;
   }
 
-  .clubs-left p {
-    font-size: 16px;
+  .clubs-left h2 {
+    font-size: 24px;
+  }
+
+  .clubs-center .lead {
+    font-size: 17px;
+  }
+
+  .clubs-center p,
+  .clubs-content p {
+    font-size: 15px;
     line-height: 1.7;
   }
 
-  .clubs-right {
-    order: 3;
+  .clubs-content {
+    padding: 70px 20px;
+  }
+
+  .clubs-content h2 {
+    font-size: 28px;
+  }
+
+  .content-block h3 {
+    font-size: 22px;
+  }
+
+  .clubs-image img {
+    height: 320px;
   }
 
   .section-box {
-    position: relative;
-    top: 0;
-    width: 100%;
+    padding: 30px 22px;
   }
 
-  .section-box ul {
-    padding-left: 18px;
+  .section-box h3 {
+    font-size: 24px;
   }
 }

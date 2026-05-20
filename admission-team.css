@@ -4,6 +4,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .page-hero::after {
@@ -11,6 +12,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -79,6 +81,7 @@
   width: 100%;
   height: 280px;
   object-fit: cover;
+  display: block;
 }
 
 .team-card h3 {
@@ -116,6 +119,8 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .enquire-sidebar h3 {
@@ -167,6 +172,7 @@
 
 .activity-cta p {
   margin-bottom: 25px;
+  line-height: 1.7;
 }
 
 .activity-cta a {
@@ -238,6 +244,10 @@
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .page-hero {
+    min-height: 65vh;
+  }
+
   .admissions-page {
     padding: 55px 18px;
   }
@@ -252,6 +262,10 @@
 
   .page-content p {
     font-size: 14px;
+  }
+
+  .hero-overlay {
+    bottom: 45px;
   }
 
   .hero-overlay h1 {

@@ -150,10 +150,11 @@ button:disabled {
 
 .admin-news-card img {
   width: 100%;
-  max-height: 280px;
+  height: 280px;
   object-fit: cover;
   margin-bottom: 18px;
   border-radius: 8px;
+  display: block;
 }
 
 .admin-news-card h3 {
@@ -191,6 +192,27 @@ button:disabled {
     margin: 30px 15px;
     padding: 30px 20px;
   }
+}
+
+@media(max-width: 600px) {
+
+  .news-admin h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .admin-news-card {
+    padding: 20px 16px;
+  }
+
+  .admin-news-card img {
+    height: 220px;
+  }
+
+  button {
+    width: 100%;
+  }
+
 }
 </style>
 </head>

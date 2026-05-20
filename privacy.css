@@ -1,4 +1,5 @@
 /* ================= PRIVACY HERO ================= */
+
 .page-hero {
   min-height: 80vh;
   background: url("images/school.jpeg") center/cover no-repeat;
@@ -13,6 +14,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.32);
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -24,6 +26,7 @@
 }
 
 /* ================= CONTENT ================= */
+
 body.inner-page {
   background: #f4f4f4;
 }
@@ -48,14 +51,21 @@ body.inner-page {
   margin-top: 0;
 }
 
-.terms-section p {
+.terms-section p,
+.terms-section li {
   font-size: 16px;
   line-height: 1.8;
   color: #444;
   max-width: 850px;
 }
 
-/* ================= PRIVACY MOBILE ================= */
+.terms-section ul,
+.terms-section ol {
+  padding-left: 24px;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 800px) {
 
   .page-hero {
@@ -66,102 +76,6 @@ body.inner-page {
   .page-hero h1 {
     font-size: 38px;
     line-height: 1.1;
-  }
-
-  .page-hero p {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  .terms-section {
-    margin: 70px 20px;
-    padding: 40px 22px;
-  }
-
-  .terms-section h2 {
-    font-size: 25px;
-    line-height: 1.2;
-  }
-
-  .terms-section p,
-  .terms-section li {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-}
-/* ================= PRIVACY HERO ================= */
-.page-hero {
-  min-height: 80vh;
-  background: url("images/school.jpeg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 70px;
-}
-
-.page-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.32);
-}
-
-.page-hero h1 {
-  position: relative;
-  z-index: 2;
-  color: white;
-  font-size: 52px;
-  font-weight: 400;
-}
-
-/* ================= CONTENT ================= */
-body.inner-page {
-  background: #f4f4f4;
-}
-
-.terms-section {
-  max-width: 1000px;
-  margin: 110px auto;
-  background: white;
-  padding: 70px;
-}
-
-.terms-section h2 {
-  font-size: 30px;
-  font-weight: 400;
-  color: #0d2d5c;
-  margin: 45px 0 15px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-.terms-section h2:first-child {
-  margin-top: 0;
-}
-
-.terms-section p {
-  font-size: 16px;
-  line-height: 1.8;
-  color: #444;
-  max-width: 850px;
-}
-
-/* ================= PRIVACY MOBILE ================= */
-@media (max-width: 800px) {
-
-  .page-hero {
-    min-height: 60vh;
-    padding: 35px 22px;
-  }
-
-  .page-hero h1 {
-    font-size: 38px;
-    line-height: 1.1;
-  }
-
-  .page-hero p {
-    font-size: 16px;
-    line-height: 1.7;
   }
 
   .terms-section {

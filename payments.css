@@ -1,4 +1,5 @@
 /* ================= HERO ================= */
+
 .page-hero {
   min-height: 80vh;
   background: url("images/school.jpeg") center/cover no-repeat;
@@ -13,6 +14,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.32);
+  z-index: 1;
 }
 
 .page-hero h1 {
@@ -23,6 +25,7 @@
 }
 
 /* ================= MAIN ================= */
+
 .payments-section {
   background: #f4f4f4;
   padding: 110px 60px;
@@ -36,7 +39,6 @@
   gap: 70px;
 }
 
-/* LEFT */
 .payments-main {
   background: white;
   padding: 60px;
@@ -59,7 +61,8 @@
   line-height: 1.7;
 }
 
-/* METHODS */
+/* ================= METHODS ================= */
+
 .payment-methods {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -85,12 +88,14 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-/* BANK DETAILS */
+/* ================= BANK DETAILS ================= */
+
 .payment-details {
   margin-top: 50px;
 }
 
-/* SIDEBAR */
+/* ================= SIDEBAR ================= */
+
 .payments-sidebar {
   background: #0d2d5c;
   color: white;
@@ -106,6 +111,8 @@
 
 .payments-sidebar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .payments-sidebar a {
@@ -122,6 +129,7 @@
 }
 
 /* ================= UPI SECTION ================= */
+
 .upi-section {
   margin-top: 60px;
 }
@@ -148,6 +156,7 @@
 }
 
 /* ================= RECEIPT ================= */
+
 .receipt-section {
   margin-top: 60px;
 }
@@ -167,12 +176,21 @@
   background: #071d3d;
 }
 
-/* ================= PAYMENT MOBILE ================= */
+/* ================= MOBILE ================= */
+
 @media (max-width: 900px) {
+
+  .payments-section {
+    padding: 75px 22px;
+  }
 
   .payments-container {
     grid-template-columns: 1fr;
     gap: 35px;
+  }
+
+  .payments-main {
+    padding: 40px 22px;
   }
 
   .payment-methods {
@@ -180,226 +198,19 @@
     gap: 20px;
   }
 
+  .payments-sidebar {
+    position: relative;
+    top: 0;
+  }
+
   .page-hero {
+    min-height: 60vh;
     padding: 30px 22px;
   }
 
   .page-hero h1 {
     font-size: 36px;
     line-height: 1.1;
-  }
-
-  .page-hero p {
-    font-size: 16px;
-    line-height: 1.7;
-  }
-
-  .upi-box {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .upi-box img {
-    max-width: 180px;
-    width: 100%;
-  }
-}
-/* ================= HERO ================= */
-.page-hero {
-  min-height: 80vh;
-  background: url("images/school.jpeg") center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  padding: 70px;
-}
-
-.page-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.32);
-}
-
-.page-hero h1 {
-  position: relative;
-  z-index: 2;
-  color: white;
-  font-size: 52px;
-}
-
-/* ================= MAIN ================= */
-.payments-section {
-  background: #f4f4f4;
-  padding: 110px 60px;
-}
-
-.payments-container {
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.6fr 0.8fr;
-  gap: 70px;
-}
-
-/* LEFT */
-.payments-main {
-  background: white;
-  padding: 60px;
-}
-
-.payments-main h2 {
-  font-size: 36px;
-  color: #0d2d5c;
-  margin-bottom: 20px;
-}
-
-.lead {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #0d2d5c;
-}
-
-.payments-main p {
-  color: #444;
-  line-height: 1.7;
-}
-
-/* METHODS */
-.payment-methods {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin: 50px 0;
-}
-
-.method {
-  background: #f7f7f7;
-  padding: 35px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.method i {
-  font-size: 38px;
-  color: #0d2d5c;
-  margin-bottom: 15px;
-}
-
-.method:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-/* BANK DETAILS */
-.payment-details {
-  margin-top: 50px;
-}
-
-/* SIDEBAR */
-.payments-sidebar {
-  background: #0d2d5c;
-  color: white;
-  padding: 40px;
-  position: sticky;
-  top: 120px;
-}
-
-.payments-sidebar h3 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.payments-sidebar ul {
-  list-style: none;
-}
-
-.payments-sidebar a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.payments-sidebar a:hover,
-.payments-sidebar a.active {
-  color: #ffd700;
-}
-
-/* ================= UPI SECTION ================= */
-.upi-section {
-  margin-top: 60px;
-}
-
-.upi-box {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-top: 20px;
-}
-
-.upi-box img {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  border: 1px solid #ddd;
-  padding: 10px;
-  background: white;
-}
-
-.upi-info p {
-  margin-bottom: 10px;
-  color: #444;
-}
-
-/* ================= RECEIPT ================= */
-.receipt-section {
-  margin-top: 60px;
-}
-
-.receipt-btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #0d2d5c;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.receipt-btn:hover {
-  background: #071d3d;
-}
-
-/* ================= PAYMENT MOBILE ================= */
-@media (max-width: 900px) {
-
-  .payments-container {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .payment-methods {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .page-hero {
-    padding: 30px 22px;
-  }
-
-  .page-hero h1 {
-    font-size: 36px;
-    line-height: 1.1;
-  }
-
-  .page-hero p {
-    font-size: 16px;
-    line-height: 1.7;
   }
 
   .upi-box {

@@ -4,6 +4,7 @@
   position: relative;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .page-hero::after {
@@ -11,6 +12,7 @@
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -38,6 +40,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 70px;
+  align-items: start;
 }
 
 /* ================= LEFT CONTENT ================= */
@@ -50,6 +53,7 @@
   font-size: 20px;
   color: #0d2d5c;
   margin-bottom: 40px;
+  line-height: 1.7;
 }
 
 /* ================= STEP BOXES ================= */
@@ -106,23 +110,39 @@
 /* ================= BUTTONS ================= */
 .process-buttons {
   margin-top: 25px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
 }
 
 .btn-primary {
   background: #0d2d5c;
   color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  margin-right: 10px;
-  border-radius: 25px;
+  border: 1px solid #0d2d5c;
 }
 
 .btn-secondary {
   border: 1px solid #0d2d5c;
   color: #0d2d5c;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 25px;
+  background: white;
+}
+
+.btn-primary:hover {
+  background: #081f40;
+}
+
+.btn-secondary:hover {
+  background: #0d2d5c;
+  color: white;
 }
 
 /* ================= SIDEBAR / IN THIS SECTION ================= */
@@ -145,6 +165,8 @@
   width: 60px;
   height: 60px;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 .enquire-sidebar h3 {
@@ -182,6 +204,10 @@
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 1000px) {
+  .admissions-page {
+    padding: 75px 28px;
+  }
+
   .page-layout {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -190,6 +216,7 @@
   .enquire-sidebar {
     position: relative;
     top: 0;
+    min-width: 0;
     width: 100%;
   }
 
@@ -197,29 +224,47 @@
     padding: 40px 22px;
   }
 
+  .process-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
   .hero-overlay {
-    left: 25px;
-    right: 25px;
-    max-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    text-align: center;
   }
 
   .hero-overlay h1 {
     font-size: 36px;
     line-height: 1.15;
   }
+}
 
-  .hero-overlay p {
+@media (max-width: 600px) {
+  .page-hero {
+    min-height: 60vh;
+  }
+
+  .admissions-page {
+    padding: 55px 18px;
+  }
+
+  .page-content {
+    padding: 32px 18px;
+  }
+
+  .process-intro {
     font-size: 16px;
-    line-height: 1.7;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
+  .step-content h2 {
+    font-size: 24px;
   }
 
-  .hero-buttons a,
-  .hero-buttons button {
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     text-align: center;
   }
