@@ -2523,3 +2523,238 @@ div {
     height: 240px;
   }
 }
+
+/* =====================================================
+   TRUE FINAL RESPONSIVE OVERRIDES
+   Keep this at the VERY BOTTOM of style.css
+   ===================================================== */
+
+/* Prevent horizontal scroll on all devices */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Safer media elements */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Header mobile fit */
+@media (max-width: 768px) {
+  body.home {
+    padding-top: 78px;
+  }
+
+  .inner-page {
+    padding-top: 78px;
+  }
+
+  .main-header {
+    min-height: 78px;
+    padding: 10px 16px;
+  }
+
+  .logo {
+    max-width: 62%;
+  }
+
+  .logo img {
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .logo h3,
+  .school-name {
+    font-size: clamp(13px, 3.6vw, 16px);
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .header-right {
+    gap: 9px;
+    flex-shrink: 0;
+  }
+
+  .enquire-btn {
+    font-size: 11px;
+    padding: 8px 11px;
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    width: 26px;
+    height: 19px;
+    flex-shrink: 0;
+  }
+}
+
+/* Hero safety */
+@media (max-width: 768px) {
+  .hero,
+  .panel,
+  .page-hero,
+  .about-hero,
+  .careers-hero,
+  .contact-hero,
+  .enquire-hero {
+    width: 100%;
+    min-height: 58vh;
+    height: auto;
+    overflow: hidden;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .panel.hero,
+  .panel.intro,
+  .intro-photo {
+    min-height: 80vh;
+    height: 80vh;
+  }
+
+  .page-hero h1,
+  .about-hero h1,
+  .careers-hero h1,
+  .contact-hero h1,
+  .enquire-hero h1,
+  .hero-overlay h1 {
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1.1;
+  }
+}
+
+/* About / overview page clean mobile */
+@media (max-width: 900px) {
+  .about-content-section {
+    padding: 70px 22px;
+  }
+
+  .about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-intro,
+  .vision-mission-row,
+  .principal-inner,
+  .contact-intro,
+  .voice-box,
+  .team-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .about-heritage,
+  .vision-mission-row > div {
+    padding: 34px 24px;
+  }
+
+  .principal-inner img,
+  .voice-box img,
+  .team-slide img {
+    height: 320px;
+  }
+
+  .team-text,
+  .voice-box div {
+    padding: 36px 24px;
+  }
+}
+
+/* Cards / grids */
+@media (max-width: 900px) {
+  .home-news-grid,
+  .career-features,
+  .careers-collage,
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .careers-collage {
+    grid-auto-rows: auto;
+  }
+
+  .career-img,
+  .career-img.big {
+    grid-row: auto;
+    height: 260px;
+  }
+
+  .home-news-card img {
+    height: 230px;
+  }
+}
+
+/* Keep footer compact but readable on phones */
+@media (max-width: 600px) {
+  .premium-footer {
+    padding: 48px 20px 28px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 18px;
+  }
+
+  .footer-column h3 {
+    font-size: 13px;
+  }
+
+  .footer-column p,
+  .footer-column a {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .footer-logo img {
+    width: 76px;
+  }
+
+  .footer-logo h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 430px) {
+  .logo {
+    max-width: 58%;
+  }
+
+  .logo h3,
+  .school-name {
+    font-size: 13px;
+  }
+
+  .enquire-btn {
+    font-size: 10px;
+    padding: 7px 9px;
+  }
+
+  .page-hero,
+  .about-hero,
+  .careers-hero,
+  .contact-hero,
+  .enquire-hero {
+    min-height: 52vh;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Hide side section tab on mobile */
+@media (max-width: 768px) {
+  .section-tab,
+  .section-panel-slide {
+    display: none !important;
+  }
+}
+
