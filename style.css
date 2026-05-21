@@ -2758,3 +2758,17 @@ iframe {
   }
 }
 
+/* ================= REMOVE IN THIS SECTION FROM MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .section-tab,
+  .section-panel-slide,
+  .section-menu,
+  .in-this-section,
+  .page-sidebar,
+  .boarding-sidebar {
+    display: none !important;
+  }
+
+}
