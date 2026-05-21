@@ -2772,3 +2772,20 @@ iframe {
   }
 
 }
+
+/* ================= HIDE ALL "IN THIS SECTION" ON MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .section-menu,
+  .section-sidebar,
+  .sidebar-menu,
+  .page-sidebar,
+  .in-this-section,
+  .section-nav,
+  .quick-links,
+  .section-links {
+    display: none !important;
+  }
+
+}
