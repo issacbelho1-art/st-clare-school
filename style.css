@@ -2864,3 +2864,33 @@ iframe {
     padding: 0;
   }
 }
+
+/* =====================================================
+   PERMANENT MOBILE HIDE: "IN THIS SECTION"
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  aside,
+  .sidebar,
+  .section-menu,
+  .section-panel,
+  .section-panel-slide,
+  .section-tab,
+  .page-sidebar,
+  .section-sidebar,
+  .in-this-section,
+  .side-nav,
+  .inner-sidebar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+}
