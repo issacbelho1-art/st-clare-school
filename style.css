@@ -2404,32 +2404,122 @@ body.menu-open {
   }
 }
 
-/* ================= ABOUT / OVERVIEW MOBILE HERO FIX ================= */
+/* =====================================================
+   GLOBAL RESPONSIVE SAFETY SYSTEM
+   Fits all screen sizes
+   ===================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+section,
+header,
+footer,
+main,
+div {
+  max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .footer-container,
+  .home-news-grid,
+  .career-features,
+  .careers-collage,
+  .about-content-wrapper,
+  .contact-intro,
+  .principal-inner,
+  .voice-box,
+  .team-slide,
+  .term-container,
+  .about-intro,
+  .vision-mission-row {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 768px) {
+  .main-header {
+    padding: 10px 16px;
+  }
+
+  .logo h3,
+  .school-name {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .enquire-btn {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
 
   .page-hero,
-  .overview-hero,
-  .about-hero {
-    min-height: 42vh !important;
-    height: 42vh !important;
-
-    padding: 30px 22px !important;
-
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-
-    background-position: center !important;
-    background-size: cover !important;
+  .about-hero,
+  .enquire-hero,
+  .contact-hero {
+    min-height: 55vh;
+    height: auto;
+    padding: 30px 22px;
   }
 
   .page-hero h1,
-  .overview-hero h1,
-  .about-hero h1 {
-    font-size: 52px !important;
-    line-height: 1.05 !important;
-    margin-bottom: 18px !important;
+  .about-hero h1,
+  .enquire-hero h1,
+  .contact-hero h1 {
+    font-size: clamp(32px, 10vw, 48px);
+    line-height: 1.1;
   }
 
+  .term-main,
+  .terms-section,
+  .contact-main,
+  .section-menu,
+  .why-box,
+  .admissions-box,
+  .contact-admissions-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .premium-footer {
+    padding: 50px 20px 30px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .premium-nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-news-card img,
+  .team-slide img,
+  .voice-box img {
+    height: 240px;
+  }
 }
