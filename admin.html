@@ -10,65 +10,186 @@
 body{background:#f4f1ee;color:#222;}
 
 .admin-header{
-  background:#7a1c2e;color:#fff;padding:25px 40px;
-  display:flex;justify-content:space-between;align-items:center;
+  background:#7a1c2e;
+  color:#fff;
+  padding:25px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
+
 .admin-header h1{font-size:26px;font-weight:400;}
 
 .header-actions{display:flex;gap:12px;}
-.admin-header a,.logout-btn{
-  color:#fff;text-decoration:none;border:1px solid #fff;
-  padding:10px 20px;border-radius:30px;background:transparent;
+
+.admin-header a,
+.logout-btn{
+  color:#fff;
+  text-decoration:none;
+  border:1px solid #fff;
+  padding:10px 20px;
+  border-radius:30px;
+  background:transparent;
   cursor:pointer;
 }
-.admin-header a:hover,.logout-btn:hover{
-  background:#fff;color:#7a1c2e;
+
+.admin-header a:hover,
+.logout-btn:hover{
+  background:#fff;
+  color:#7a1c2e;
 }
 
-.admin-main{padding:50px 30px;max-width:1300px;margin:auto;}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+  margin:30px;
+}
 
-.admin-tabs{display:flex;gap:15px;margin-bottom:30px;}
+.stat-card{
+  background:#fff;
+  padding:25px;
+  border-left:5px solid #7a1c2e;
+}
+
+.stat-card h2{
+  font-size:40px;
+  color:#7a1c2e;
+}
+
+.admin-main{
+  padding:50px 30px;
+  max-width:1300px;
+  margin:auto;
+}
+
+.admin-tabs{
+  display:flex;
+  gap:15px;
+  margin-bottom:30px;
+}
+
 .admin-tabs button{
-  padding:13px 25px;border:none;background:#fff;
-  color:#7a1c2e;border-radius:30px;cursor:pointer;
+  padding:13px 25px;
+  border:none;
+  background:#fff;
+  color:#7a1c2e;
+  border-radius:30px;
+  cursor:pointer;
 }
-.admin-tabs button.active{background:#7a1c2e;color:#fff;}
+
+.admin-tabs button.active{
+  background:#7a1c2e;
+  color:#fff;
+}
 
 .admin-section{display:none;}
 .admin-section.active{display:block;}
 
 .card{
-  background:#fff;padding:28px;margin-bottom:22px;
+  background:#fff;
+  padding:28px;
+  margin-bottom:22px;
   box-shadow:0 15px 40px rgba(0,0,0,0.08);
   border-left:5px solid #7a1c2e;
 }
 
-.info-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+.card h3{
+  color:#7a1c2e;
+  margin-bottom:18px;
+  font-size:24px;
 }
-.info-grid p{background:#faf7f5;padding:10px;font-size:14px;}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.info-grid p{
+  background:#faf7f5;
+  padding:12px;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.info-grid strong{
+  display:block;
+  color:#7a1c2e;
+  margin-bottom:4px;
+}
 
 .message-box{
-  background:#faf7f5;padding:12px;margin-top:12px;
+  background:#faf7f5;
+  padding:15px;
+  margin-top:15px;
+  line-height:1.7;
+}
+
+.message-box strong{
+  color:#7a1c2e;
+  display:block;
+  margin-bottom:6px;
+}
+
+.document-links{
+  margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.document-links a{
+  background:#7a1c2e;
+  color:white;
+  padding:9px 15px;
+  border-radius:20px;
+  text-decoration:none;
+  font-size:13px;
 }
 
 .review-btn{
-  margin-top:15px;padding:10px 18px;
-  background:#7a1c2e;color:#fff;border:none;
-  border-radius:25px;cursor:pointer;
+  margin-top:18px;
+  padding:10px 18px;
+  background:#7a1c2e;
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
 }
 
-.empty{background:#fff;padding:30px;text-align:center;color:#777;}
+.review-btn:disabled{
+  background:green;
+  cursor:not-allowed;
+}
 
-.stats-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:25px;margin:30px;
+.empty{
+  background:#fff;
+  padding:30px;
+  text-align:center;
+  color:#777;
 }
-.stat-card{
-  background:#fff;padding:25px;
-  border-left:5px solid #7a1c2e;
+
+@media(max-width:900px){
+  .admin-header{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+    margin:20px;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .admin-tabs{
+    flex-wrap:wrap;
+  }
 }
-.stat-card h2{font-size:40px;color:#7a1c2e;}
 </style>
 </head>
 
@@ -76,6 +197,7 @@ body{background:#f4f1ee;color:#222;}
 
 <header class="admin-header">
   <h1>St Clare Admin Dashboard</h1>
+
   <div class="header-actions">
     <a href="index.html">Back</a>
     <button onclick="logoutAdmin()" class="logout-btn">Logout</button>
@@ -87,6 +209,7 @@ body{background:#f4f1ee;color:#222;}
     <h2 id="applicationCount">0</h2>
     <p>Total Applications</p>
   </div>
+
   <div class="stat-card">
     <h2 id="enquiryCount">0</h2>
     <p>Total Enquiries</p>
@@ -95,25 +218,26 @@ body{background:#f4f1ee;color:#222;}
 
 <main class="admin-main">
 
-<div class="admin-tabs">
-  <button class="tab-btn active" onclick="showTab(event,'applications')">Applications</button>
-  <button class="tab-btn" onclick="showTab(event,'enquiries')">Enquiries</button>
-</div>
+  <div class="admin-tabs">
+    <button class="tab-btn active" onclick="showTab(event,'applications')">Applications</button>
+    <button class="tab-btn" onclick="showTab(event,'enquiries')">Enquiries</button>
+  </div>
 
-<section id="applications" class="admin-section active">
-  <div id="applicationsList" class="empty">Loading...</div>
-</section>
+  <section id="applications" class="admin-section active">
+    <div id="applicationsList" class="empty">Loading...</div>
+  </section>
 
-<section id="enquiries" class="admin-section">
-  <div id="enquiriesList" class="empty">Loading...</div>
-</section>
+  <section id="enquiries" class="admin-section">
+    <div id="enquiriesList" class="empty">Loading...</div>
+  </section>
 
 </main>
 
 <script>
 function showTab(e, tab){
-  document.querySelectorAll(".admin-section").forEach(s=>s.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".admin-section").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+
   document.getElementById(tab).classList.add("active");
   e.target.classList.add("active");
 }
@@ -121,8 +245,23 @@ function showTab(e, tab){
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, getDocs, query, orderBy, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  doc,
+  updateDoc,
+  deleteDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+  getAuth,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
@@ -133,110 +272,192 @@ const firebaseConfig = {
   appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
   measurementId: "G-4B7S4KEJFZ"
 };
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-onAuthStateChanged(auth,(user)=>{
-  if(!user){
-    location.href="admin-login.html";
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    location.href = "admin-login.html";
   } else {
     loadApplications();
     loadEnquiries();
   }
 });
 
-// ✅ APPLICATIONS
-async function loadApplications(){
-  const list=document.getElementById("applicationsList");
-  list.innerHTML="Loading...";
+function value(data, keys) {
+  for (const key of keys) {
+    if (data[key]) return data[key];
+  }
+  return "-";
+}
 
-  const snapshot=await getDocs(query(collection(db,"applications"),orderBy("createdAt","desc")));
-  document.getElementById("applicationCount").textContent=snapshot.size;
+/* ================= APPLICATIONS ================= */
 
-  if(snapshot.empty){
-    list.innerHTML="<div class='empty'>No applications</div>";
+async function loadApplications() {
+  const list = document.getElementById("applicationsList");
+  list.innerHTML = "Loading...";
+
+  const snapshot = await getDocs(
+    query(collection(db, "applications"), orderBy("createdAt", "desc"))
+  );
+
+  document.getElementById("applicationCount").textContent = snapshot.size;
+
+  if (snapshot.empty) {
+    list.innerHTML = "<div class='empty'>No applications</div>";
     return;
   }
 
-  list.innerHTML="";
+  list.innerHTML = "";
 
-  snapshot.forEach(d=>{
-    const data=d.data();
-    const id=d.id;
+  snapshot.forEach((d) => {
+    const data = d.data();
+    const id = d.id;
 
-    // ✅ FIXED STATUS COLOR
     const statusColor = data.status === "Reviewed" ? "green" : "red";
+    const docs = data.documents || {};
 
-    list.innerHTML+=`
-    <div class="card">
-      <h3>${data.firstName || ""} ${data.lastName || ""}</h3>
+    list.innerHTML += `
+      <div class="card">
+        <h3>${data.firstName || ""} ${data.lastName || ""}</h3>
 
-      <div class="info-grid">
-        <p><strong>Class</strong>${data.applyingClass || "-"}</p>
-        <p><strong>DOB</strong>${data.dob || "-"}</p>
-        <p><strong>Gender</strong>${data.gender || "-"}</p>
+        <div class="info-grid">
+          <p><strong>Class</strong>${data.applyingClass || "-"}</p>
+          <p><strong>DOB</strong>${data.dob || "-"}</p>
+          <p><strong>Gender</strong>${data.gender || "-"}</p>
 
-        <p><strong>Father</strong>${data.fatherName || "-"}</p>
-        <p><strong>Mother</strong>${data.motherName || "-"}</p>
-        <p><strong>Phone</strong>${data.phone || "-"}</p>
+          <p><strong>Nationality</strong>${data.nationality || "-"}</p>
+          <p><strong>Religion</strong>${data.religion || "-"}</p>
+          <p><strong>Previous School</strong>${data.previousSchool || "-"}</p>
 
-        <p><strong>Email</strong>${data.email || "-"}</p>
+          <p><strong>Father</strong>${data.fatherName || "-"}</p>
+          <p><strong>Father Occupation</strong>${data.fatherOccupation || "-"}</p>
+          <p><strong>Mother</strong>${data.motherName || "-"}</p>
 
-        <p>
-          <strong>Status</strong>
-          <span id="status-${id}" style="color:${statusColor}">
-            ${data.status || "New"}
-          </span>
-        </p>
+          <p><strong>Mother Occupation</strong>${data.motherOccupation || "-"}</p>
+          <p><strong>Phone</strong>${data.phone || "-"}</p>
+          <p><strong>Email</strong>${data.email || "-"}</p>
+
+          <p><strong>Guardian</strong>${data.guardianName || "-"}</p>
+          <p><strong>Guardian Phone</strong>${data.guardianPhone || "-"}</p>
+          <p><strong>Village / Town</strong>${data.villageTown || "-"}</p>
+
+          <p><strong>District</strong>${data.district || "-"}</p>
+          <p><strong>State</strong>${data.state || "-"}</p>
+          <p><strong>PIN Code</strong>${data.pinCode || "-"}</p>
+
+          <p><strong>Blood Group</strong>${data.bloodGroup || "-"}</p>
+          <p><strong>Medical Condition</strong>${data.medicalCondition || "-"}</p>
+
+          <p>
+            <strong>Status</strong>
+            <span id="status-${id}" style="color:${statusColor}">
+              ${data.status || "New"}
+            </span>
+          </p>
+        </div>
+
+        <div class="message-box">
+          <strong>Permanent Address</strong>
+          ${data.permanentAddress || "-"}
+        </div>
+
+        <div class="message-box">
+          <strong>Present Address</strong>
+          ${data.presentAddress || "-"}
+        </div>
+
+        <div class="document-links">
+          ${docs.birthCertificate ? `<a href="${docs.birthCertificate}" target="_blank">Birth Certificate</a>` : ""}
+          ${docs.aadhaarCard ? `<a href="${docs.aadhaarCard}" target="_blank">Aadhaar Card</a>` : ""}
+          ${docs.transferCertificate ? `<a href="${docs.transferCertificate}" target="_blank">Transfer Certificate</a>` : ""}
+          ${docs.marksheet ? `<a href="${docs.marksheet}" target="_blank">Marksheet</a>` : ""}
+          ${docs.passportPhoto ? `<a href="${docs.passportPhoto}" target="_blank">Passport Photo</a>` : ""}
+        </div>
+
+        <button onclick="markReviewed('${id}', this)" class="review-btn">
+          ${data.status === "Reviewed" ? "Reviewed" : "Mark Reviewed"}
+        </button>
       </div>
-
-      <button onclick="markReviewed('${id}',this)" class="review-btn">
-        Mark Reviewed
-      </button>
-    </div>`;
+    `;
   });
 }
 
-// ✅ ENQUIRIES
-async function loadEnquiries(){
-  const list=document.getElementById("enquiriesList");
+/* ================= ENQUIRIES ================= */
 
-  const snapshot=await getDocs(query(collection(db,"enquiries"),orderBy("createdAt","desc")));
-  document.getElementById("enquiryCount").textContent=snapshot.size;
+async function loadEnquiries() {
+  const list = document.getElementById("enquiriesList");
+  list.innerHTML = "Loading...";
 
-  list.innerHTML="";
+  const snapshot = await getDocs(
+    query(collection(db, "enquiries"), orderBy("createdAt", "desc"))
+  );
 
-  snapshot.forEach(d=>{
-    const data=d.data();
+  document.getElementById("enquiryCount").textContent = snapshot.size;
 
-    list.innerHTML+=`
-    <div class="card">
-      <h3>${data.firstName || ""}</h3>
-      <div class="info-grid">
-        <p><strong>Email</strong>${data.email}</p>
-        <p><strong>Phone</strong>${data.phone}</p>
-        <p><strong>Grade</strong>${data.grade}</p>
+  if (snapshot.empty) {
+    list.innerHTML = "<div class='empty'>No enquiries</div>";
+    return;
+  }
+
+  list.innerHTML = "";
+
+  snapshot.forEach((d) => {
+    const data = d.data();
+
+    const fullName =
+      data.name ||
+      `${data.firstName || ""} ${data.lastName || ""}`.trim() ||
+      "No Name";
+
+    list.innerHTML += `
+      <div class="card">
+        <h3>${fullName}</h3>
+
+        <div class="info-grid">
+          <p><strong>Email</strong>${value(data, ["email", "studentEmail"])}</p>
+          <p><strong>Phone</strong>${value(data, ["phone", "mobile", "contact", "contactNumber"])}</p>
+          <p><strong>Class / Grade</strong>${value(data, ["grade", "class", "applyingClass", "yearGroup"])}</p>
+
+          <p><strong>Parent Name</strong>${value(data, ["parentName", "fatherName", "motherName", "guardianName"])}</p>
+          <p><strong>Student Name</strong>${value(data, ["studentName", "childName"])}</p>
+          <p><strong>Address</strong>${value(data, ["address", "location"])}</p>
+
+          <p><strong>Admission Type</strong>${value(data, ["admissionType", "enquiryType"])}</p>
+          <p><strong>Preferred Contact</strong>${value(data, ["preferredContact", "contactMethod"])}</p>
+          <p><strong>Status</strong>${value(data, ["status"])}</p>
+        </div>
+
+        <div class="message-box">
+          <strong>Message / Enquiry Details</strong>
+          ${value(data, ["message", "enquiry", "details", "question"])}
+        </div>
       </div>
-    </div>`;
+    `;
   });
 }
 
-// ✅ MARK REVIEWED
-window.markReviewed = async(id,btn)=>{
-  await updateDoc(doc(db,"applications",id),{status:"Reviewed"});
+/* ================= MARK REVIEWED ================= */
 
-  document.getElementById(`status-${id}`).innerText="Reviewed";
-  document.getElementById(`status-${id}`).style.color="green";
+window.markReviewed = async (id, btn) => {
+  await updateDoc(doc(db, "applications", id), {
+    status: "Reviewed"
+  });
 
-  btn.innerText="Reviewed";
-  btn.disabled=true;
+  document.getElementById(`status-${id}`).innerText = "Reviewed";
+  document.getElementById(`status-${id}`).style.color = "green";
+
+  btn.innerText = "Reviewed";
+  btn.disabled = true;
 };
 
-// LOGOUT
-window.logoutAdmin = async()=>{
+/* ================= LOGOUT ================= */
+
+window.logoutAdmin = async () => {
   await signOut(auth);
-  location.href="admin-login.html";
+  location.href = "admin-login.html";
 };
 </script>
 
