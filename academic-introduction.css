@@ -759,11 +759,12 @@
 .video-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.88);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+  z-index: 999999;
+  padding: 25px;
 }
 
 .video-popup.active {
@@ -772,23 +773,36 @@
 
 .video-box {
   position: relative;
-  width: 80%;
-  max-width: 900px;
+  width: min(900px, 95vw);
+  background: #000;
+  border-radius: 14px;
+  overflow: visible;
 }
 
 .video-box video {
   width: 100%;
-  border-radius: 10px;
+  max-height: 80vh;
+  border-radius: 14px;
   display: block;
+  background: #000;
 }
 
 .close-video {
   position: absolute;
-  top: -45px;
+  top: -52px;
   right: 0;
-  color: white;
-  font-size: 35px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+
+  background: white;
+  color: #111;
+  font-size: 30px;
+  line-height: 1;
   cursor: pointer;
+  z-index: 10;
 }
 
 /* ================= PREMIUM BACK BUTTON ================= */

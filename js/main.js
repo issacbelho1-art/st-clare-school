@@ -609,3 +609,44 @@ document.addEventListener("DOMContentLoaded", function () {
     beauCollage.scrollLeft = scrollLeft - walk;
   });
 });
+
+// ================= TOUR VIDEO POPUP =================
+document.addEventListener("DOMContentLoaded", () => {
+  const tourButtons = document.querySelectorAll(".tour-play");
+  const videoPopup = document.getElementById("videoPopup");
+  const tourVideo = document.getElementById("tourVideo");
+  const closeVideo = document.querySelector(".close-video");
+
+  if (!tourButtons.length || !videoPopup || !tourVideo || !closeVideo) return;
+
+  tourButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const videoPath = button.getAttribute("data-video");
+
+      tourVideo.src = videoPath;
+      tourVideo.load();
+
+      videoPopup.classList.add("active");
+
+      setTimeout(() => {
+        tourVideo.play();
+      }, 150);
+    });
+  });
+
+  function closeTourVideo() {
+    videoPopup.classList.remove("active");
+    tourVideo.pause();
+    tourVideo.currentTime = 0;
+    tourVideo.removeAttribute("src");
+    tourVideo.load();
+  }
+
+  closeVideo.addEventListener("click", closeTourVideo);
+
+  videoPopup.addEventListener("click", (e) => {
+    if (e.target === videoPopup) {
+      closeTourVideo();
+    }
+  });
+});

@@ -325,6 +325,7 @@
 <section class="tour-section">
   <div class="tour-intro">
     <img src="images/logo.png" alt="School Logo">
+
     <p>
       Tucked away in a peaceful campus and surrounded by a caring learning environment,
       St Clare offers inspiring spaces for students to learn, grow, discover, and thrive.
@@ -358,11 +359,13 @@
 
 <div class="video-popup" id="videoPopup">
   <div class="video-box">
-    <span class="close-video">&times;</span>
-    <video id="tourVideo" controls></video>
+    <button class="close-video" type="button">&times;</button>
+
+    <video id="tourVideo" controls playsinline>
+      <source id="tourVideoSource" src="" type="video/mp4">
+    </video>
   </div>
 </div>
-
 <section class="admissions-section">
   <div class="admissions-image left">
     <img src="images/admission-left.jpeg" alt="Students seated in school hall">
