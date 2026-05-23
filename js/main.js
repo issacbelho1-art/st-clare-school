@@ -650,3 +650,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// ================= HOME HERO IMAGE CAROUSEL =================
+document.addEventListener("DOMContentLoaded", () => {
+  const heroSlides = document.querySelectorAll(".home-hero-slide");
+
+  if (!heroSlides.length) return;
+
+  let heroIndex = 0;
+
+  setInterval(() => {
+    heroSlides[heroIndex].classList.remove("active");
+
+    heroIndex++;
+
+    if (heroIndex >= heroSlides.length) {
+      heroIndex = 0;
+    }
+
+    heroSlides[heroIndex].classList.add("active");
+  }, 6000);
+});
