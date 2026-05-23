@@ -408,22 +408,79 @@ window.nextTeamSlide = nextTeamSlide;
 window.prevTeamSlide = prevTeamSlide;
 
 
-// ================= CO-CURRICULAR SLIDER =================
-let cocoIndex = 0;
+// ================= CO-CURRICULAR INFINITE SLIDER =================
+
+let cocoIndex = 1;
+let cocoTrack;
+let cocoSlides;
+let isCocoSliding = false;
+
+function setupCocoSlider() {
+  cocoTrack = document.querySelector(".coco-slider-track");
+
+  if (!cocoTrack) return;
+
+  const originalSlides = Array.from(document.querySelectorAll(".coco-slide"));
+
+  if (originalSlides.length <= 1) return;
+
+  const firstClone = originalSlides[0].cloneNode(true);
+  const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
+
+  cocoTrack.appendChild(firstClone);
+  cocoTrack.insertBefore(lastClone, originalSlides[0]);
+
+  cocoSlides = document.querySelectorAll(".coco-slide");
+
+  cocoTrack.style.transition = "none";
+  cocoTrack.style.transform = `translateX(-${cocoIndex * 100}%)`;
+
+  setTimeout(() => {
+    cocoTrack.style.transition = "transform 0.75s ease";
+  }, 50);
+}
 
 function changeCocoSlide(direction) {
-  const slides = document.querySelectorAll(".coco-slide");
-  if (!slides.length) return;
+  if (!cocoTrack || isCocoSliding) return;
 
-  slides[cocoIndex].classList.remove("active");
-
+  isCocoSliding = true;
   cocoIndex += direction;
 
-  if (cocoIndex < 0) cocoIndex = slides.length - 1;
-  if (cocoIndex >= slides.length) cocoIndex = 0;
-
-  slides[cocoIndex].classList.add("active");
+  cocoTrack.style.transition = "transform 0.75s ease";
+  cocoTrack.style.transform = `translateX(-${cocoIndex * 100}%)`;
 }
+
+document.addEventListener("transitionend", (e) => {
+  if (!cocoTrack || e.target !== cocoTrack) return;
+
+  cocoSlides = document.querySelectorAll(".coco-slide");
+
+  if (cocoSlides[cocoIndex].classList.contains("clone")) {
+    cocoTrack.style.transition = "none";
+
+    if (cocoIndex === cocoSlides.length - 1) {
+      cocoIndex = 1;
+    }
+
+    if (cocoIndex === 0) {
+      cocoIndex = cocoSlides.length - 2;
+    }
+
+    cocoTrack.style.transform = `translateX(-${cocoIndex * 100}%)`;
+
+    setTimeout(() => {
+      cocoTrack.style.transition = "transform 0.75s ease";
+    }, 50);
+  }
+
+  isCocoSliding = false;
+});
+
+document.addEventListener("DOMContentLoaded", setupCocoSlider);
+
 window.changeCocoSlide = changeCocoSlide;
 
 

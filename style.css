@@ -47,10 +47,20 @@ img {
   gap: 10px;
 }
 
-.logo img {
-  height: 40px;
+.logo img,
+.footer-logo img,
+.admissions-box img,
+.academic-menu img,
+.collage-message img,
+.collage-intro img {
+  width: auto;
+  height: auto;
+  max-height: 58px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
-
 /* ================= BUTTON ================= */
 .enquire-btn {
   background: #00c853;
@@ -388,7 +398,7 @@ html {
 }
 .panel.hero {
   min-height: 100vh;
-  background-image: url("images/first.jpg");
+  background-image: url("images/school-bldg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -404,7 +414,9 @@ html {
 .career-guidance { background: url("images/guidance.jpeg") center/cover no-repeat; }
 
 /* ================= BOARDING ================= */
-.boarding-overview { background: url("images/boarding.jpeg") center/cover no-repeat; }
+#boarding.panel {
+  background: url("images/boarding.png") center/cover no-repeat;
+}
 .boarding-life { background: url("images/boardinglife.jpeg") center/cover no-repeat; }
 .boarding-home { background: url("images/house.jpeg") center/cover no-repeat; }
 .boarding-wellbeing { background: url("images/wellbeing.jpeg") center/cover no-repeat; }
@@ -528,7 +540,11 @@ html {
 }
 
 .footer-logo img {
-  width: 90px;
+  width: auto;
+  height: 72px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
   margin: 0 auto 15px;
 }
@@ -2061,7 +2077,12 @@ img {
   }
 
   .logo img {
-    height: 42px;
+    height: 48px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
   }
 
   .logo h3,
@@ -2583,9 +2604,14 @@ iframe {
   }
 
   .logo img {
-    height: 40px;
-    flex-shrink: 0;
-  }
+  height: 46px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  flex-shrink: 0;
+}
 
   .logo h3,
   .school-name {
@@ -2731,8 +2757,12 @@ iframe {
   }
 
   .footer-logo img {
-    width: 76px;
-  }
+  width: auto;
+  height: 68px;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
   .footer-logo h2 {
     font-size: 20px;
@@ -2750,6 +2780,13 @@ iframe {
   .school-name {
     font-size: 13px;
   }
+  .logo img {
+  height: 44px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
 
   .enquire-btn {
     font-size: 10px;

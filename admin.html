@@ -6,17 +6,9 @@
 <title>Admin Dashboard - St Clare School</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-body{
-  background:#f4f1ee;
-  color:#222;
-}
+body{background:#f4f1ee;color:#222;}
 
 .admin-header{
   background:#7a1c2e;
@@ -27,15 +19,9 @@ body{
   align-items:center;
 }
 
-.admin-header h1{
-  font-size:26px;
-  font-weight:400;
-}
+.admin-header h1{font-size:26px;font-weight:400;}
 
-.header-actions{
-  display:flex;
-  gap:12px;
-}
+.header-actions{display:flex;gap:12px;}
 
 .admin-header a,
 .logout-btn{
@@ -49,14 +35,11 @@ body{
 }
 
 .admin-header a:hover,
-.logout-btn:hover{
-  background:#fff;
-  color:#7a1c2e;
-}
+.logout-btn:hover{background:#fff;color:#7a1c2e;}
 
 .stats-grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:25px;
   margin:30px;
 }
@@ -67,10 +50,7 @@ body{
   border-left:5px solid #7a1c2e;
 }
 
-.stat-card h2{
-  font-size:40px;
-  color:#7a1c2e;
-}
+.stat-card h2{font-size:40px;color:#7a1c2e;}
 
 .admin-main{
   padding:50px 30px;
@@ -82,6 +62,7 @@ body{
   display:flex;
   gap:15px;
   margin-bottom:30px;
+  flex-wrap:wrap;
 }
 
 .admin-tabs button{
@@ -93,18 +74,10 @@ body{
   cursor:pointer;
 }
 
-.admin-tabs button.active{
-  background:#7a1c2e;
-  color:#fff;
-}
+.admin-tabs button.active{background:#7a1c2e;color:#fff;}
 
-.admin-section{
-  display:none;
-}
-
-.admin-section.active{
-  display:block;
-}
+.admin-section{display:none;}
+.admin-section.active{display:block;}
 
 .card{
   background:#fff;
@@ -184,33 +157,14 @@ body{
   font-size:13px;
 }
 
-.review-btn{
-  background:#7a1c2e;
-}
-
-.interview-btn{
-  background:#1565c0;
-}
-
-.accept-btn{
-  background:#2e7d32;
-}
-
-.reject-btn{
-  background:#ef6c00;
-}
-
-.print-btn{
-  background:#444;
-}
-
-.delete-btn{
-  background:#c62828;
-}
-
-.delete-btn:hover{
-  background:#8e0000;
-}
+.review-btn{background:#7a1c2e;}
+.interview-btn{background:#1565c0;}
+.accept-btn{background:#2e7d32;}
+.reject-btn{background:#ef6c00;}
+.print-btn{background:#444;}
+.verify-btn{background:#2e7d32;}
+.delete-btn{background:#c62828;}
+.delete-btn:hover{background:#8e0000;}
 
 .status-pill{
   display:inline-block;
@@ -220,25 +174,13 @@ body{
   font-size:13px;
 }
 
-.status-new{
-  background:#c62828;
-}
-
-.status-reviewed{
-  background:#6a1b9a;
-}
-
-.status-interview{
-  background:#1565c0;
-}
-
-.status-accepted{
-  background:#2e7d32;
-}
-
-.status-rejected{
-  background:#ef6c00;
-}
+.status-new{background:#c62828;}
+.status-reviewed{background:#6a1b9a;}
+.status-interview{background:#1565c0;}
+.status-accepted{background:#2e7d32;}
+.status-rejected{background:#ef6c00;}
+.status-pending{background:#ef6c00;}
+.status-verified{background:#2e7d32;}
 
 .empty{
   background:#fff;
@@ -248,24 +190,9 @@ body{
 }
 
 @media(max-width:900px){
-  .admin-header{
-    flex-direction:column;
-    gap:15px;
-    text-align:center;
-  }
-
-  .stats-grid{
-    grid-template-columns:1fr;
-    margin:20px;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-
-  .admin-tabs{
-    flex-wrap:wrap;
-  }
+  .admin-header{flex-direction:column;gap:15px;text-align:center;}
+  .stats-grid{grid-template-columns:1fr;margin:20px;}
+  .info-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -291,6 +218,11 @@ body{
     <h2 id="enquiryCount">0</h2>
     <p>Total Enquiries</p>
   </div>
+
+  <div class="stat-card">
+    <h2 id="paymentCount">0</h2>
+    <p>Total Payments</p>
+  </div>
 </div>
 
 <main class="admin-main">
@@ -298,6 +230,7 @@ body{
   <div class="admin-tabs">
     <button class="tab-btn active" onclick="showTab(event,'applications')">Applications</button>
     <button class="tab-btn" onclick="showTab(event,'enquiries')">Enquiries</button>
+    <button class="tab-btn" onclick="showTab(event,'payments')">Payments</button>
   </div>
 
   <section id="applications" class="admin-section active">
@@ -308,13 +241,16 @@ body{
     <div id="enquiriesList" class="empty">Loading...</div>
   </section>
 
+  <section id="payments" class="admin-section">
+    <div id="paymentsList" class="empty">Loading...</div>
+  </section>
+
 </main>
 
 <script>
 function showTab(e, tab){
   document.querySelectorAll(".admin-section").forEach(s => s.classList.remove("active"));
   document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-
   document.getElementById(tab).classList.add("active");
   e.target.classList.add("active");
 }
@@ -360,6 +296,7 @@ onAuthStateChanged(auth, (user) => {
   } else {
     loadApplications();
     loadEnquiries();
+    loadPayments();
   }
 });
 
@@ -375,6 +312,8 @@ function getStatusClass(status){
   if (status === "Interview Scheduled") return "status-interview";
   if (status === "Accepted") return "status-accepted";
   if (status === "Rejected") return "status-rejected";
+  if (status === "Verified") return "status-verified";
+  if (status === "Pending Verification") return "status-pending";
   return "status-new";
 }
 
@@ -412,30 +351,23 @@ async function loadApplications() {
             <p><strong>Class</strong>${data.applyingClass || "-"}</p>
             <p><strong>DOB</strong>${data.dob || "-"}</p>
             <p><strong>Gender</strong>${data.gender || "-"}</p>
-
             <p><strong>Nationality</strong>${data.nationality || "-"}</p>
             <p><strong>Religion</strong>${data.religion || "-"}</p>
             <p><strong>Previous School</strong>${data.previousSchool || "-"}</p>
-
             <p><strong>Father</strong>${data.fatherName || "-"}</p>
             <p><strong>Father Occupation</strong>${data.fatherOccupation || "-"}</p>
             <p><strong>Mother</strong>${data.motherName || "-"}</p>
-
             <p><strong>Mother Occupation</strong>${data.motherOccupation || "-"}</p>
             <p><strong>Phone</strong>${data.phone || "-"}</p>
             <p><strong>Email</strong>${data.email || "-"}</p>
-
             <p><strong>Guardian</strong>${data.guardianName || "-"}</p>
             <p><strong>Guardian Phone</strong>${data.guardianPhone || "-"}</p>
             <p><strong>Village / Town</strong>${data.villageTown || "-"}</p>
-
             <p><strong>District</strong>${data.district || "-"}</p>
             <p><strong>State</strong>${data.state || "-"}</p>
             <p><strong>PIN Code</strong>${data.pinCode || "-"}</p>
-
             <p><strong>Blood Group</strong>${data.bloodGroup || "-"}</p>
             <p><strong>Medical Condition</strong>${data.medicalCondition || "-"}</p>
-
             <p>
               <strong>Status</strong>
               <span id="status-${id}" class="status-pill ${getStatusClass(currentStatus)}">
@@ -463,29 +395,12 @@ async function loadApplications() {
           </div>
 
           <div class="action-row">
-            <button onclick="updateApplicationStatus('${id}', 'Reviewed')" class="review-btn">
-              Mark Reviewed
-            </button>
-
-            <button onclick="updateApplicationStatus('${id}', 'Interview Scheduled')" class="interview-btn">
-              Interview
-            </button>
-
-            <button onclick="updateApplicationStatus('${id}', 'Accepted')" class="accept-btn">
-              Accept
-            </button>
-
-            <button onclick="updateApplicationStatus('${id}', 'Rejected')" class="reject-btn">
-              Reject
-            </button>
-
-            <button onclick="printApplication('${id}')" class="print-btn">
-              Print
-            </button>
-
-            <button onclick="deleteApplication('${id}')" class="delete-btn">
-              Delete
-            </button>
+            <button onclick="updateApplicationStatus('${id}', 'Reviewed')" class="review-btn">Mark Reviewed</button>
+            <button onclick="updateApplicationStatus('${id}', 'Interview Scheduled')" class="interview-btn">Interview</button>
+            <button onclick="updateApplicationStatus('${id}', 'Accepted')" class="accept-btn">Accept</button>
+            <button onclick="updateApplicationStatus('${id}', 'Rejected')" class="reject-btn">Reject</button>
+            <button onclick="printApplication('${id}')" class="print-btn">Print</button>
+            <button onclick="deleteApplication('${id}')" class="delete-btn">Delete</button>
           </div>
         </div>
       `;
@@ -534,11 +449,9 @@ async function loadEnquiries() {
             <p><strong>Email</strong>${value(data, ["email", "studentEmail"])}</p>
             <p><strong>Phone</strong>${value(data, ["phone", "mobile", "contact", "contactNumber"])}</p>
             <p><strong>Class / Grade</strong>${value(data, ["grade", "class", "applyingClass", "yearGroup"])}</p>
-
             <p><strong>Parent Name</strong>${value(data, ["parentName", "fatherName", "motherName", "guardianName"])}</p>
             <p><strong>Student Name</strong>${value(data, ["studentName", "childName"])}</p>
             <p><strong>Address</strong>${value(data, ["address", "location"])}</p>
-
             <p><strong>Admission Type</strong>${value(data, ["admissionType", "enquiryType"])}</p>
             <p><strong>Preferred Contact</strong>${value(data, ["preferredContact", "contactMethod"])}</p>
             <p><strong>Status</strong>${value(data, ["status"])}</p>
@@ -550,9 +463,7 @@ async function loadEnquiries() {
           </div>
 
           <div class="action-row">
-            <button onclick="deleteEnquiry('${id}')" class="delete-btn">
-              Delete Enquiry
-            </button>
+            <button onclick="deleteEnquiry('${id}')" class="delete-btn">Delete Enquiry</button>
           </div>
         </div>
       `;
@@ -564,13 +475,76 @@ async function loadEnquiries() {
   }
 }
 
+/* ================= PAYMENTS ================= */
+
+async function loadPayments() {
+  const list = document.getElementById("paymentsList");
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "payments"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("paymentCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No payment records</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+      const status = data.status || "Pending Verification";
+
+      list.innerHTML += `
+        <div class="card" id="payment-card-${id}">
+          <h3>${data.studentName || "Payment Record"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Student Name</strong>${data.studentName || "-"}</p>
+            <p><strong>Class</strong>${data.className || "-"}</p>
+            <p><strong>Parent / Guardian</strong>${data.parentName || "-"}</p>
+            <p><strong>Phone</strong>${data.phone || "-"}</p>
+            <p><strong>Purpose</strong>${data.purpose || "-"}</p>
+            <p><strong>Amount</strong>₹${data.amount || "-"}</p>
+            <p><strong>Transaction ID</strong>${data.transactionId || "-"}</p>
+            <p><strong>Payment Date</strong>${data.paymentDate || "-"}</p>
+            <p>
+              <strong>Status</strong>
+              <span id="payment-status-${id}" class="status-pill ${getStatusClass(status)}">
+                ${status}
+              </span>
+            </p>
+          </div>
+
+          <div class="document-links">
+            ${data.screenshotUrl ? `<a href="${data.screenshotUrl}" target="_blank">View Payment Screenshot</a>` : ""}
+          </div>
+
+          <div class="action-row">
+            <button onclick="verifyPayment('${id}')" class="verify-btn">Verify Payment</button>
+            <button onclick="printReceipt('${id}')" class="print-btn">Print Receipt</button>
+            <button onclick="deletePayment('${id}')" class="delete-btn">Delete Payment</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load payment records</div>";
+  }
+}
+
 /* ================= UPDATE APPLICATION STATUS ================= */
 
 window.updateApplicationStatus = async (id, status) => {
   try {
-    await updateDoc(doc(db, "applications", id), {
-      status: status
-    });
+    await updateDoc(doc(db, "applications", id), { status });
 
     const statusEl = document.getElementById(`status-${id}`);
     statusEl.innerText = status;
@@ -584,114 +558,126 @@ window.updateApplicationStatus = async (id, status) => {
   }
 };
 
+/* ================= VERIFY PAYMENT ================= */
+
+window.verifyPayment = async (id) => {
+  try {
+    await updateDoc(doc(db, "payments", id), {
+      status: "Verified",
+      receiptStatus: "Issued"
+    });
+
+    const statusEl = document.getElementById(`payment-status-${id}`);
+    statusEl.innerText = "Verified";
+    statusEl.className = "status-pill status-verified";
+
+    alert("Payment verified. Receipt can now be printed.");
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to verify payment.");
+  }
+};
+
 /* ================= PRINT APPLICATION ================= */
 
 window.printApplication = (id) => {
-
   const card = document.getElementById(`application-card-${id}`);
-
-  if (!card) {
-    alert("Application not found.");
-    return;
-  }
-
-  const printContents = card.innerHTML;
+  if (!card) return alert("Application not found.");
 
   const originalContents = document.body.innerHTML;
 
   document.body.innerHTML = `
     <div style="padding:40px;font-family:Arial,sans-serif;">
-
-      <div style="
-        text-align:center;
-        border-bottom:3px solid #7a1c2e;
-        padding-bottom:20px;
-        margin-bottom:30px;
-      ">
-        <h1 style="color:#7a1c2e;margin-bottom:10px;">
-          St Clare Higher Secondary School
-        </h1>
-
+      <div style="text-align:center;border-bottom:3px solid #7a1c2e;padding-bottom:20px;margin-bottom:30px;">
+        <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
         <p>Student Admission Application Form</p>
       </div>
 
-      ${printContents}
+      ${card.innerHTML}
 
-      <div style="
-        margin-top:80px;
-        display:flex;
-        justify-content:space-between;
-      ">
-
-        <div style="
-          width:220px;
-          border-top:1px solid #222;
-          text-align:center;
-          padding-top:10px;
-        ">
-          Parent Signature
-        </div>
-
-        <div style="
-          width:220px;
-          border-top:1px solid #222;
-          text-align:center;
-          padding-top:10px;
-        ">
-          Principal Signature
-        </div>
-
+      <div style="margin-top:80px;display:flex;justify-content:space-between;">
+        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Parent Signature</div>
+        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Principal Signature</div>
       </div>
-
     </div>
   `;
 
-  const actionRows = document.querySelectorAll(".action-row");
-  actionRows.forEach(row => {
-    row.style.display = "none";
-  });
-
-  const documentLinks = document.querySelectorAll(".document-links");
-  documentLinks.forEach(link => {
-    link.style.display = "none";
+  document.querySelectorAll(".action-row,.document-links").forEach(el => {
+    el.style.display = "none";
   });
 
   window.print();
-
   document.body.innerHTML = originalContents;
-
   location.reload();
 };
 
-/* ================= DELETE APPLICATION ================= */
+/* ================= PRINT PAYMENT RECEIPT ================= */
+
+window.printReceipt = (id) => {
+  const card = document.getElementById(`payment-card-${id}`);
+  if (!card) return alert("Payment record not found.");
+
+  const originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = `
+    <div style="padding:40px;font-family:Arial,sans-serif;">
+      <div style="text-align:center;border-bottom:3px solid #7a1c2e;padding-bottom:20px;margin-bottom:30px;">
+        <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
+        <p>Official Payment Receipt</p>
+        <p>Receipt generated after school verification</p>
+      </div>
+
+      ${card.innerHTML}
+
+      <div style="margin-top:80px;display:flex;justify-content:space-between;">
+        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Parent / Guardian</div>
+        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Accounts Office</div>
+      </div>
+    </div>
+  `;
+
+  document.querySelectorAll(".action-row,.document-links").forEach(el => {
+    el.style.display = "none";
+  });
+
+  window.print();
+  document.body.innerHTML = originalContents;
+  location.reload();
+};
+
+/* ================= DELETE ================= */
 
 window.deleteApplication = async (id) => {
-  const confirmDelete = confirm("Are you sure you want to delete this application?");
-
-  if (!confirmDelete) return;
+  if (!confirm("Are you sure you want to delete this application?")) return;
 
   try {
     await deleteDoc(doc(db, "applications", id));
     loadApplications();
   } catch (error) {
-    console.error(error);
     alert("Failed to delete application.");
   }
 };
 
-/* ================= DELETE ENQUIRY ================= */
-
 window.deleteEnquiry = async (id) => {
-  const confirmDelete = confirm("Are you sure you want to delete this enquiry?");
-
-  if (!confirmDelete) return;
+  if (!confirm("Are you sure you want to delete this enquiry?")) return;
 
   try {
     await deleteDoc(doc(db, "enquiries", id));
     loadEnquiries();
   } catch (error) {
-    console.error(error);
     alert("Failed to delete enquiry.");
+  }
+};
+
+window.deletePayment = async (id) => {
+  if (!confirm("Are you sure you want to delete this payment record?")) return;
+
+  try {
+    await deleteDoc(doc(db, "payments", id));
+    loadPayments();
+  } catch (error) {
+    alert("Failed to delete payment record.");
   }
 };
 

@@ -3,20 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Online Payments - St Clare School</title>
+<title>Online Payments - St Clare Higher Secondary School</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="payments.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body class="inner-page">
 
-<!-- HEADER -->
 <header class="main-header">
   <div class="logo">
-    <img src="images/logo.jpg">
+    <img src="images/logo.jpg" alt="School Logo">
     <h3>St Clare Higher Secondary School</h3>
   </div>
 
@@ -28,34 +26,76 @@
   </div>
 </header>
 
-<!-- HERO -->
-<section class="page-hero">
-  <h1>Online Payments</h1>
+<nav id="menu">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+
+  <div class="mega-menu">
+    <div class="menu-column">
+      <h3 class="menu-title">Academic</h3>
+      <div class="menu-links">
+        <a href="academic.html">Overview</a>
+        <a href="academic-introduction.html">Introduction</a>
+        <a href="pre-primary.html">Pre-Primary</a>
+        <a href="primary.html">Primary</a>
+        <a href="grade6-10.html">Middle & Secondary</a>
+        <a href="grade11-12.html">Senior Secondary</a>
+        <a href="academic-results.html">Academic Results</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">Boarding Vision</h3>
+      <div class="menu-links">
+        <a href="boarding.html">Overview</a>
+        <a href="boarding-life.html">Boarding Life</a>
+        <a href="boarding-houses.html">Boarding Houses</a>
+        <a href="boarding-wellbeing.html">Wellbeing</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">Co-Curricular</h3>
+      <div class="menu-links">
+        <a href="cocurricular.html">Overview</a>
+        <a href="arts.html">Arts</a>
+        <a href="sports.html">Sports</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="outdoor.html">Outdoor Education</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">About Us</h3>
+      <div class="menu-links">
+        <a href="about.html">Overview</a>
+        <a href="heritage.html">Our Heritage</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero payments-hero">
+  <div class="hero-overlay">
+    <h1>Online Payments</h1>
+  </div>
 </section>
 
-<!-- MAIN -->
 <section class="payments-section">
-
   <div class="payments-container">
 
-    <!-- LEFT CONTENT -->
     <div class="payments-main">
-
       <h2>Easy and Secure Payments</h2>
 
       <p class="lead">
-        St Clare Higher Secondary School offers a simple and secure way
-        to pay fees online.
+        Parents may pay fees using bank transfer, UPI, or other approved digital methods.
+        After payment, please submit the transaction details below for school verification.
       </p>
 
-      <p>
-        Parents can complete payments using bank transfer, UPI or other
-        digital payment options. All transactions are safe and verified.
-      </p>
-
-      <!-- PAYMENT METHODS -->
       <div class="payment-methods">
-
         <div class="method">
           <i class="fas fa-university"></i>
           <h3>Bank Transfer</h3>
@@ -65,66 +105,82 @@
         <div class="method">
           <i class="fas fa-mobile-alt"></i>
           <h3>UPI Payment</h3>
-          <p>Fast and easy payments using UPI apps.</p>
+          <p>Fast payment using any UPI app.</p>
         </div>
 
         <div class="method">
-          <i class="fas fa-credit-card"></i>
-          <h3>Card Payment</h3>
-          <p>Use debit or credit cards securely.</p>
+          <i class="fas fa-receipt"></i>
+          <h3>Receipt Verification</h3>
+          <p>Submit transaction details for school confirmation.</p>
         </div>
-
       </div>
 
-      <!-- PAYMENT DETAILS -->
       <div class="payment-details">
         <h2>Bank Details</h2>
-
         <p><strong>Account Name:</strong> St Clare Higher Secondary School</p>
         <p><strong>Bank:</strong> State Bank of India</p>
         <p><strong>Account No:</strong> XXXXXXXX</p>
         <p><strong>IFSC:</strong> SBIN000XXXX</p>
       </div>
 
+      <div class="upi-section">
+        <h2>UPI Payment</h2>
+        <p>Scan the QR code below to pay using any UPI app.</p>
+
+        <div class="upi-box">
+          <img src="images/upi-qr.png" alt="UPI QR Code">
+
+          <div class="upi-info">
+            <p><strong>UPI ID:</strong> stclare@upi</p>
+            <p>After payment, submit the transaction details below.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="receipt-section">
+        <h2>Submit Payment for Verification</h2>
+        <p>
+          Once submitted, the school office will verify the payment and issue an official receipt.
+        </p>
+
+        <form id="paymentForm" class="payment-form" enctype="multipart/form-data">
+          <div class="form-grid">
+            <input type="text" name="student_name" placeholder="Student Name" required>
+            <input type="text" name="class_name" placeholder="Class / Grade" required>
+
+            <input type="text" name="parent_name" placeholder="Parent / Guardian Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <select name="purpose" required>
+              <option value="">Purpose of Payment</option>
+              <option>Admission Fee</option>
+              <option>Tuition Fee</option>
+              <option>Exam Fee</option>
+              <option>Transport Fee</option>
+              <option>Other Fee</option>
+            </select>
+
+            <input type="number" name="amount" placeholder="Amount Paid" required>
+
+            <input type="text" name="transaction_id" placeholder="Transaction ID / UPI Ref No." required>
+            <input type="date" name="payment_date" required>
+          </div>
+
+          <label class="upload-box">
+            <span>Upload Payment Screenshot / Receipt</span>
+            <input type="file" name="payment_screenshot" accept=".jpg,.jpeg,.png,.pdf" required>
+          </label>
+
+          <button type="submit" class="submit-payment">
+            Submit Payment Details
+          </button>
+        </form>
+      </div>
     </div>
-    <!-- ================= UPI PAYMENT ================= -->
-<div class="upi-section">
 
-  <h2>UPI Payment</h2>
-
-  <p>Scan the QR code below to pay instantly using any UPI app.</p>
-
-  <div class="upi-box">
-
-    <img src="images/upi-qr.png" alt="UPI QR Code">
-
-    <div class="upi-info">
-      <p><strong>UPI ID:</strong> stclare@upi</p>
-      <p>After payment, please save the receipt.</p>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- ================= RECEIPT DOWNLOAD ================= -->
-<div class="receipt-section">
-
-  <h2>Download Payment Receipt</h2>
-
-  <p>After completing your payment, download and submit your receipt.</p>
-
-  <a href="pdf/payment-receipt.pdf" download class="receipt-btn">
-    Download Receipt Format
-  </a>
-
-</div>
-
-    <!-- RIGHT PANEL -->
     <aside class="payments-sidebar">
-
       <div class="sidebar-logo">
-        <img src="images/logo.jpg">
+        <img src="images/logo.jpg" alt="School Logo">
       </div>
 
       <h3>In this section</h3>
@@ -136,58 +192,39 @@
         <li><a href="payments.html" class="active">Online Payments</a></li>
         <li><a href="terms.html">Terms & Conditions</a></li>
       </ul>
-
     </aside>
 
   </div>
-
 </section>
 
-<!-- CTA -->
 <section class="activity-cta">
   <h2>Need Assistance?</h2>
   <p>Contact our team for help with payments.</p>
   <a href="contact.html">Contact Us</a>
 </section>
 
-<!-- FOOTER (reuse yours) -->
 <footer class="premium-footer">
-
-  <!-- LOGO -->
   <div class="footer-logo">
-    <img src="images/logo.jpg">
+    <img src="images/logo.jpg" alt="School Logo">
     <h2>St Clare Higher Secondary School</h2>
   </div>
 
-  <!-- 5 COLUMNS -->
   <div class="footer-container">
-
-    <!-- COLUMN 1 -->
     <div class="footer-column">
       <h3>Contact us</h3>
       <p>Kacharigaon (Phevima) village</p>
       <p>Dimapur, Nagaland - 797112</p>
       <p>India</p>
-
       <p>stclareshs@gmail.com</p>
       <p>+91 8413079844</p>
 
       <div class="social-icons">
-        <a href="https://www.facebook.com/StclareSchool" target="_blank">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <a href="https://www.instagram.com/st.clareschool777" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank">
-          <i class="fab fa-youtube"></i>
-        </a>
+        <a href="https://www.facebook.com/StclareSchool" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/st.clareschool777" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
-    </div> <!-- ✅ FIX ADDED HERE -->
+    </div>
 
-    <!-- COLUMN 2 -->
     <div class="footer-column">
       <h3>Information</h3>
       <a href="news.html">News & Events</a>
@@ -195,14 +232,12 @@
       <a href="careers.html">Careers</a>
     </div>
 
-    <!-- COLUMN 3 -->
     <div class="footer-column">
       <h3>Quick Access</h3>
       <a href="payments.html">Online Payments</a>
       <a href="term-dates.html">Term Dates</a>
     </div>
 
-    <!-- COLUMN 4 -->
     <div class="footer-column">
       <h3>Admissions</h3>
       <a href="application-process.html">Application Process</a>
@@ -211,27 +246,108 @@
       <a href="terms.html">Terms & Conditions</a>
     </div>
 
-    <!-- COLUMN 5 -->
     <div class="footer-column">
       <h3>Policies</h3>
       <a href="legal.html">Legal Notice</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="accessibility.html">Accessibility</a>
     </div>
-
   </div>
 
-  <!-- BOTTOM -->
   <div class="footer-bottom">
     Design by Issac Belho
   </div>
-
 </footer>
 
 <div class="page-transition"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
+  authDomain: "st-clare-school.firebaseapp.com",
+  projectId: "st-clare-school",
+  storageBucket: "st-clare-school.firebasestorage.app",
+  messagingSenderId: "980272641859",
+  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
+  measurementId: "G-4B7S4KEJFZ"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const storage = getStorage(app);
+
+const paymentForm = document.getElementById("paymentForm");
+
+async function uploadPaymentFile(file) {
+  if (!file || file.size === 0) return "";
+
+  const safeFileName = Date.now() + "-" + file.name.replace(/\s+/g, "-");
+  const fileRef = ref(storage, `payments/screenshots/${safeFileName}`);
+
+  await uploadBytes(fileRef, file);
+  return await getDownloadURL(fileRef);
+}
+
+paymentForm.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const submitBtn = paymentForm.querySelector(".submit-payment");
+  submitBtn.textContent = "Submitting...";
+  submitBtn.disabled = true;
+
+  try {
+    const formData = new FormData(paymentForm);
+
+    const screenshotUrl = await uploadPaymentFile(
+      formData.get("payment_screenshot")
+    );
+
+    await addDoc(collection(db, "payments"), {
+      studentName: formData.get("student_name"),
+      className: formData.get("class_name"),
+      parentName: formData.get("parent_name"),
+      phone: formData.get("phone"),
+      purpose: formData.get("purpose"),
+      amount: formData.get("amount"),
+      transactionId: formData.get("transaction_id"),
+      paymentDate: formData.get("payment_date"),
+      screenshotUrl: screenshotUrl,
+      status: "Pending Verification",
+      receiptStatus: "Not Issued",
+      createdAt: serverTimestamp()
+    });
+
+    alert("Payment details submitted successfully. The school office will verify your payment.");
+    paymentForm.reset();
+
+  } catch (error) {
+    console.error("Payment Submit Error:", error);
+    alert("Something went wrong. Please try again.");
+  }
+
+  submitBtn.textContent = "Submit Payment Details";
+  submitBtn.disabled = false;
+});
+</script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Application Form - St Clare School</title>
+<title>Application Form - St Clare Higher Secondary School</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="application-form.css">
@@ -12,27 +12,118 @@
 
 <body class="inner-page">
 
-<section class="page-hero">
-  <h1>Application Form</h1>
+<header class="main-header">
+  <div class="logo">
+    <img src="images/logo.png" alt="School Logo">
+    <h3>St Clare Higher Secondary School</h3>
+  </div>
+
+  <div class="header-right">
+    <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="menu">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+
+  <div class="mega-menu">
+
+    <div class="menu-column">
+      <h3 class="menu-title">Academic</h3>
+      <div class="menu-links">
+        <a href="academic.html">Overview</a>
+        <a href="academic-introduction.html">Introduction</a>
+        <a href="pre-primary.html">Pre-Primary (LKG & UKG)</a>
+        <a href="primary.html">Primary (Classes 1–5)</a>
+        <a href="grade6-10.html">Middle & Secondary (6–10)</a>
+        <a href="grade11-12.html">Senior Secondary (11–12)</a>
+        <a href="learning-support.html">Learning Support</a>
+        <a href="academic-results.html">Academic Results</a>
+        <a href="career-guidance.html">Career Guidance</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">Boarding Vision</h3>
+      <div class="menu-links">
+        <a href="boarding.html">Overview</a>
+        <a href="boarding-life.html">Boarding Life</a>
+        <a href="boarding-houses.html">Boarding Houses</a>
+        <a href="boarding-wellbeing.html">Wellbeing</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">Co-Curricular</h3>
+      <div class="menu-links">
+        <a href="cocurricular.html">Overview</a>
+        <a href="arts.html">Arts</a>
+        <a href="sports.html">Sports</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="outdoor.html">Outdoor Education</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">About Us</h3>
+      <div class="menu-links">
+        <a href="about.html">Overview</a>
+        <a href="heritage.html">Our Heritage</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="news.html">News</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<section class="page-hero application-hero">
+  <div class="hero-overlay">
+    <h1>Application Form</h1>
+  </div>
 </section>
 
 <section class="application-options">
   <h2>How would you like to apply?</h2>
 
   <div class="application-grid">
+
     <div class="app-card">
+      <i class="fa-solid fa-laptop-file"></i>
       <h3>Online Application</h3>
-      <p>Complete the application form directly on our website.</p>
+      <p>Complete and submit the application form directly through the school website.</p>
       <a href="#form" class="app-btn">Apply Online</a>
     </div>
 
-    <div class="app-card">
+    <div class="app-card premium-offline">
+      <i class="fa-solid fa-file-arrow-down"></i>
       <h3>Offline Application</h3>
-      <p>Download and submit at school office.</p>
-      <a href="pdf/application-form.pdf" class="app-btn" download>
-  Download Form
-</a>
+      <p>Open or download the official admission form, print it, and submit it at the school office.</p>
+
+      <div class="offline-actions">
+        <a href="pdf/application-form.pdf"
+           class="app-btn secondary-btn"
+           target="_blank"
+           rel="noopener noreferrer">
+          Open Form
+        </a>
+
+        <button type="button" class="app-btn" onclick="downloadOfflineForm()">
+          Download PDF
+        </button>
+      </div>
+
+      <small>PDF will be saved as St-Clare-Application-Form.pdf</small>
     </div>
+
   </div>
 </section>
 
@@ -48,7 +139,6 @@
 <div class="form-grid">
 <input type="text" name="first_name" placeholder="First Name" required>
 <input type="text" name="last_name" placeholder="Last Name" required>
-
 <input type="date" name="dob" required>
 
 <select name="gender" required>
@@ -88,13 +178,10 @@
 <div class="form-grid">
 <input type="text" name="father_name" placeholder="Father Name" required>
 <input type="text" name="father_occupation" placeholder="Father Occupation">
-
 <input type="text" name="mother_name" placeholder="Mother Name" required>
 <input type="text" name="mother_occupation" placeholder="Mother Occupation">
-
 <input type="tel" name="phone" placeholder="Phone Number" required>
 <input type="email" name="email" placeholder="Email">
-
 <input type="text" name="guardian_name" placeholder="Guardian Name">
 <input type="tel" name="guardian_phone" placeholder="Guardian Phone">
 </div>
@@ -106,10 +193,8 @@
 <div class="form-grid">
 <textarea class="full-width" name="permanent_address" placeholder="Permanent Address"></textarea>
 <textarea class="full-width" name="present_address" placeholder="Present Address"></textarea>
-
 <input type="text" name="village_town" placeholder="Village / Town">
 <input type="text" name="district" placeholder="District">
-
 <input type="text" name="state" placeholder="State">
 <input type="text" name="pin_code" placeholder="PIN Code">
 </div>
@@ -119,7 +204,6 @@
 <h3>4. Documents Upload</h3>
 
 <div class="upload-grid">
-
 <label class="upload-box">
 <span>Birth Certificate</span>
 <input type="file" name="birth_certificate" accept=".pdf,.jpg,.jpeg,.png" required>
@@ -144,7 +228,6 @@
 <span>Passport Size Photo</span>
 <input type="file" name="passport_photo" accept=".jpg,.jpeg,.png">
 </label>
-
 </div>
 </div>
 
@@ -172,63 +255,61 @@ I declare all information is correct.
 </section>
 
 <footer class="premium-footer">
+  <div class="footer-logo">
+    <img src="images/logo.png" alt="School Logo">
+    <h2>St Clare Higher Secondary School</h2>
+  </div>
 
-<div class="footer-logo">
-  <img src="images/logo.jpg" alt="School Logo">
-  <h2>St Clare Higher Secondary School</h2>
-</div>
+  <div class="footer-container">
 
-<div class="footer-container">
+    <div class="footer-column">
+      <h3>Contact us</h3>
+      <p>Kacharigaon (Phevima) village</p>
+      <p>Dimapur, Nagaland - 797112</p>
+      <p>India</p>
+      <p>stclareshs@gmail.com</p>
+      <p>+91 8413079844</p>
 
-<div class="footer-column">
-<h3>Contact us</h3>
-<p>Kacharigaon (Phevima) village</p>
-<p>Dimapur, Nagaland - 797112</p>
-<p>India</p>
-<p>stclareshs@gmail.com</p>
-<p>+91 8413079844</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/StclareSchool" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/st.clareschool777" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
 
-<div class="social-icons">
-<a href="https://www.facebook.com/StclareSchool" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.instagram.com/st.clareschool777" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank"><i class="fab fa-youtube"></i></a>
-</div>
-</div>
+    <div class="footer-column">
+      <h3>Information</h3>
+      <a href="news.html">News & Events</a>
+      <a href="activities.html">School Activities</a>
+      <a href="careers.html">Careers</a>
+    </div>
 
-<div class="footer-column">
-<h3>Information</h3>
-<a href="news.html">News & Events</a>
-<a href="activities.html">School Activities</a>
-<a href="careers.html">Careers</a>
-</div>
+    <div class="footer-column">
+      <h3>Quick Access</h3>
+      <a href="payments.html">Online Payments</a>
+      <a href="term-dates.html">Term Dates</a>
+    </div>
 
-<div class="footer-column">
-<h3>Quick Access</h3>
-<a href="payments.html">Online Payments</a>
-<a href="term-dates.html">Term Dates</a>
-</div>
+    <div class="footer-column">
+      <h3>Admissions</h3>
+      <a href="application-process.html">Application Process</a>
+      <a href="application-form.html">Application Form</a>
+      <a href="admission-team.html">Admission Team</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
 
-<div class="footer-column">
-<h3>Admissions</h3>
-<a href="application-process.html">Application Process</a>
-<a href="application-form.html">Application Form</a>
-<a href="admission-team.html">Admission Team</a>
-<a href="terms.html">Terms & Conditions</a>
-</div>
+    <div class="footer-column">
+      <h3>Policies</h3>
+      <a href="legal.html">Legal Notice</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
 
-<div class="footer-column">
-<h3>Policies</h3>
-<a href="legal.html">Legal Notice</a>
-<a href="privacy.html">Privacy Policy</a>
-<a href="accessibility.html">Accessibility</a>
-</div>
+  </div>
 
-</div>
-
-<div class="footer-bottom">
-Design by Issac Belho
-</div>
-
+  <div class="footer-bottom">
+    Design by Issac Belho
+  </div>
 </footer>
 
 <div class="page-transition"></div>
@@ -236,139 +317,32 @@ Design by Issac Belho
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-import {
-  getStorage,
-  ref,
-  uploadBytes,
-  getDownloadURL
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
-  authDomain: "st-clare-school.firebaseapp.com",
-  projectId: "st-clare-school",
-  storageBucket: "st-clare-school.firebasestorage.app",
-  messagingSenderId: "980272641859",
-  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
-  measurementId: "G-4B7S4KEJFZ"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const storage = getStorage(app);
-
-const form = document.getElementById("applicationForm");
-
-async function uploadFile(file, folderName) {
-  if (!file) return "";
-
-  const safeFileName = Date.now() + "-" + file.name.replace(/\s+/g, "-");
-  const fileRef = ref(storage, `applications/${folderName}/${safeFileName}`);
-
-  await uploadBytes(fileRef, file);
-  return await getDownloadURL(fileRef);
-}
-
-form.addEventListener("submit", async function(e) {
-  e.preventDefault();
-
-  const submitBtn = form.querySelector(".submit-application");
-  submitBtn.textContent = "Uploading documents...";
-  submitBtn.disabled = true;
+<script>
+async function downloadOfflineForm() {
+  const fileUrl = "pdf/application-form.pdf";
 
   try {
-    const formData = new FormData(form);
+    const response = await fetch(fileUrl);
+    const blob = await response.blob();
 
-    const birthCertificateUrl = await uploadFile(
-      formData.get("birth_certificate"),
-      "birth-certificates"
-    );
+    const blobUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
 
-    const aadhaarCardUrl = await uploadFile(
-      formData.get("aadhaar_card"),
-      "aadhaar-cards"
-    );
+    link.href = blobUrl;
+    link.download = "St-Clare-Application-Form.pdf";
+    document.body.appendChild(link);
+    link.click();
 
-    const transferCertificateUrl = await uploadFile(
-      formData.get("transfer_certificate"),
-      "transfer-certificates"
-    );
-
-    const marksheetUrl = await uploadFile(
-      formData.get("marksheet"),
-      "marksheets"
-    );
-
-    const passportPhotoUrl = await uploadFile(
-      formData.get("passport_photo"),
-      "passport-photos"
-    );
-
-    submitBtn.textContent = "Submitting application...";
-
-    await addDoc(collection(db, "applications"), {
-      firstName: formData.get("first_name"),
-      lastName: formData.get("last_name"),
-      dob: formData.get("dob"),
-      gender: formData.get("gender"),
-      nationality: formData.get("nationality"),
-      religion: formData.get("religion"),
-      applyingClass: formData.get("applying_class"),
-      previousSchool: formData.get("previous_school"),
-
-      fatherName: formData.get("father_name"),
-      fatherOccupation: formData.get("father_occupation"),
-      motherName: formData.get("mother_name"),
-      motherOccupation: formData.get("mother_occupation"),
-      phone: formData.get("phone"),
-      email: formData.get("email"),
-      guardianName: formData.get("guardian_name"),
-      guardianPhone: formData.get("guardian_phone"),
-
-      permanentAddress: formData.get("permanent_address"),
-      presentAddress: formData.get("present_address"),
-      villageTown: formData.get("village_town"),
-      district: formData.get("district"),
-      state: formData.get("state"),
-      pinCode: formData.get("pin_code"),
-
-      bloodGroup: formData.get("blood_group"),
-      medicalCondition: formData.get("medical_condition"),
-
-      documents: {
-        birthCertificate: birthCertificateUrl,
-        aadhaarCard: aadhaarCardUrl,
-        transferCertificate: transferCertificateUrl,
-        marksheet: marksheetUrl,
-        passportPhoto: passportPhotoUrl
-      },
-
-      documentUploadStatus: "Uploaded",
-      status: "New",
-      createdAt: serverTimestamp()
-    });
-
-    alert("Application submitted successfully.");
-    form.reset();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
 
   } catch (error) {
-    console.error("Firebase Error:", error);
-    alert("Something went wrong. Please check Firebase Storage rules.");
+    window.open(fileUrl, "_blank");
   }
-
-  submitBtn.textContent = "Submit Application";
-  submitBtn.disabled = false;
-});
+}
 </script>
+
+<script type="module" src="js/forms.js"></script>
+
 </body>
 </html>
