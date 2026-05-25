@@ -7,154 +7,68 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-
 body{background:#f4f1ee;color:#222;}
 
 .admin-header{
-  background:#7a1c2e;
-  color:#fff;
-  padding:25px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  background:#7a1c2e;color:#fff;padding:25px 40px;
+  display:flex;justify-content:space-between;align-items:center;
 }
-
 .admin-header h1{font-size:26px;font-weight:400;}
-
 .header-actions{display:flex;gap:12px;}
 
-.admin-header a,
-.logout-btn{
-  color:#fff;
-  text-decoration:none;
-  border:1px solid #fff;
-  padding:10px 20px;
-  border-radius:30px;
-  background:transparent;
-  cursor:pointer;
+.admin-header a,.logout-btn{
+  color:#fff;text-decoration:none;border:1px solid #fff;
+  padding:10px 20px;border-radius:30px;background:transparent;cursor:pointer;
 }
-
-.admin-header a:hover,
-.logout-btn:hover{background:#fff;color:#7a1c2e;}
+.admin-header a:hover,.logout-btn:hover{background:#fff;color:#7a1c2e;}
 
 .stats-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-  margin:30px;
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:25px;margin:30px;
 }
+.stat-card{background:#fff;padding:25px;border-left:5px solid #7a1c2e;}
+.stat-card h2{font-size:38px;color:#7a1c2e;}
 
-.stat-card{
-  background:#fff;
-  padding:25px;
-  border-left:5px solid #7a1c2e;
-}
+.admin-main{padding:50px 30px;max-width:1350px;margin:auto;}
 
-.stat-card h2{font-size:40px;color:#7a1c2e;}
-
-.admin-main{
-  padding:50px 30px;
-  max-width:1300px;
-  margin:auto;
-}
-
-.admin-tabs{
-  display:flex;
-  gap:15px;
-  margin-bottom:30px;
-  flex-wrap:wrap;
-}
-
+.admin-tabs{display:flex;gap:15px;margin-bottom:30px;flex-wrap:wrap;}
 .admin-tabs button{
-  padding:13px 25px;
-  border:none;
-  background:#fff;
-  color:#7a1c2e;
-  border-radius:30px;
-  cursor:pointer;
+  padding:13px 25px;border:none;background:#fff;color:#7a1c2e;
+  border-radius:30px;cursor:pointer;
 }
-
 .admin-tabs button.active{background:#7a1c2e;color:#fff;}
 
 .admin-section{display:none;}
 .admin-section.active{display:block;}
 
 .card{
-  background:#fff;
-  padding:28px;
-  margin-bottom:22px;
+  background:#fff;padding:28px;margin-bottom:22px;
   box-shadow:0 15px 40px rgba(0,0,0,0.08);
   border-left:5px solid #7a1c2e;
 }
+.card h3{color:#7a1c2e;margin-bottom:18px;font-size:24px;}
 
-.card h3{
-  color:#7a1c2e;
-  margin-bottom:18px;
-  font-size:24px;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
 .info-grid p{
-  background:#faf7f5;
-  padding:12px;
-  font-size:14px;
-  line-height:1.5;
+  background:#faf7f5;padding:12px;font-size:14px;line-height:1.5;
 }
-
-.info-grid strong{
-  display:block;
-  color:#7a1c2e;
-  margin-bottom:4px;
-}
+.info-grid strong{display:block;color:#7a1c2e;margin-bottom:4px;}
 
 .message-box{
-  background:#faf7f5;
-  padding:15px;
-  margin-top:15px;
-  line-height:1.7;
+  background:#faf7f5;padding:15px;margin-top:15px;line-height:1.7;
 }
+.message-box strong{color:#7a1c2e;display:block;margin-bottom:6px;}
 
-.message-box strong{
-  color:#7a1c2e;
-  display:block;
-  margin-bottom:6px;
-}
-
-.document-links{
-  margin-top:18px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
+.document-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
 .document-links a{
-  background:#7a1c2e;
-  color:white;
-  padding:9px 15px;
-  border-radius:20px;
-  text-decoration:none;
-  font-size:13px;
+  background:#7a1c2e;color:white;padding:9px 15px;
+  border-radius:20px;text-decoration:none;font-size:13px;
 }
 
-.action-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-
+.action-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
 .action-row button{
-  padding:10px 18px;
-  color:#fff;
-  border:none;
-  border-radius:25px;
-  cursor:pointer;
-  font-size:13px;
+  padding:10px 18px;color:#fff;border:none;
+  border-radius:25px;cursor:pointer;font-size:13px;
 }
 
 .review-btn{background:#7a1c2e;}
@@ -164,16 +78,12 @@ body{background:#f4f1ee;color:#222;}
 .print-btn{background:#444;}
 .verify-btn{background:#2e7d32;}
 .delete-btn{background:#c62828;}
-.delete-btn:hover{background:#8e0000;}
+.due-btn{background:#ef6c00;}
 
 .status-pill{
-  display:inline-block;
-  padding:6px 12px;
-  border-radius:20px;
-  color:#fff;
-  font-size:13px;
+  display:inline-block;padding:6px 12px;border-radius:20px;
+  color:#fff;font-size:13px;
 }
-
 .status-new{background:#c62828;}
 .status-reviewed{background:#6a1b9a;}
 .status-interview{background:#1565c0;}
@@ -181,18 +91,44 @@ body{background:#f4f1ee;color:#222;}
 .status-rejected{background:#ef6c00;}
 .status-pending{background:#ef6c00;}
 .status-verified{background:#2e7d32;}
+.status-paid{background:#2e7d32;}
+.status-due{background:#c62828;}
 
-.empty{
-  background:#fff;
-  padding:30px;
-  text-align:center;
-  color:#777;
+.empty{background:#fff;padding:30px;text-align:center;color:#777;}
+
+.admin-form{
+  background:#fff;padding:28px;margin-bottom:30px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  border-left:5px solid #7a1c2e;
 }
+.admin-form h3{color:#7a1c2e;margin-bottom:20px;}
+.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.form-grid input,.form-grid select,.form-grid textarea{
+  padding:13px;border:1px solid #ddd;border-radius:6px;font-size:14px;
+}
+.form-grid textarea{grid-column:1/-1;min-height:100px;resize:vertical;}
+
+.submit-btn{
+  margin-top:18px;background:#7a1c2e;color:#fff;border:none;
+  padding:13px 28px;border-radius:30px;cursor:pointer;
+}
+
+.file-help{
+  grid-column:1/-1;
+  font-size:13px;
+  color:#666;
+  margin-top:-8px;
+}
+.form-grid input[type="file"]{
+  background:#fff;
+}
+
 
 @media(max-width:900px){
   .admin-header{flex-direction:column;gap:15px;text-align:center;}
   .stats-grid{grid-template-columns:1fr;margin:20px;}
-  .info-grid{grid-template-columns:1fr;}
+  .info-grid,.form-grid{grid-template-columns:1fr;}
+  .form-grid textarea{grid-column:auto;}
 }
 </style>
 </head>
@@ -201,7 +137,6 @@ body{background:#f4f1ee;color:#222;}
 
 <header class="admin-header">
   <h1>St Clare Admin Dashboard</h1>
-
   <div class="header-actions">
     <a href="index.html">Back</a>
     <button onclick="logoutAdmin()" class="logout-btn">Logout</button>
@@ -223,6 +158,21 @@ body{background:#f4f1ee;color:#222;}
     <h2 id="paymentCount">0</h2>
     <p>Total Payments</p>
   </div>
+
+  <div class="stat-card">
+    <h2 id="feeCount">0</h2>
+    <p>Fee Records</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 id="routineCount">0</h2>
+    <p>Exam Routines</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 id="resultCount">0</h2>
+    <p>Academic Results</p>
+  </div>
 </div>
 
 <main class="admin-main">
@@ -231,6 +181,9 @@ body{background:#f4f1ee;color:#222;}
     <button class="tab-btn active" onclick="showTab(event,'applications')">Applications</button>
     <button class="tab-btn" onclick="showTab(event,'enquiries')">Enquiries</button>
     <button class="tab-btn" onclick="showTab(event,'payments')">Payments</button>
+    <button class="tab-btn" onclick="showTab(event,'fees')">Fees Records</button>
+    <button class="tab-btn" onclick="showTab(event,'routines')">Exam Routine</button>
+    <button class="tab-btn" onclick="showTab(event,'academicResults')">Academic Results</button>
   </div>
 
   <section id="applications" class="admin-section active">
@@ -243,6 +196,80 @@ body{background:#f4f1ee;color:#222;}
 
   <section id="payments" class="admin-section">
     <div id="paymentsList" class="empty">Loading...</div>
+  </section>
+
+  <section id="fees" class="admin-section">
+    <form id="feeForm" class="admin-form">
+      <h3>Add Student Fee Record</h3>
+
+      <div class="form-grid">
+        <input type="text" id="feeStudentName" placeholder="Student Name" required>
+        <input type="text" id="feeClassName" placeholder="Class / Grade" required>
+        <input type="text" id="feeRollNo" placeholder="Roll No / Admission No">
+        <input type="number" id="monthlyFee" placeholder="Monthly Fee Amount" required>
+
+        <select id="feeMonth" required>
+          <option value="">Select Month</option>
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+
+        <select id="feeStatus" required>
+          <option value="Due">Due</option>
+          <option value="Paid">Paid</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn">Add Fee Record</button>
+    </form>
+
+    <div id="feesList" class="empty">Loading...</div>
+  </section>
+
+  <section id="routines" class="admin-section">
+    <form id="routineForm" class="admin-form">
+      <h3>Post Exam Routine</h3>
+
+      <div class="form-grid">
+        <input type="text" id="routineTitle" placeholder="Routine Title e.g. HSLC Test Exam Routine" required>
+        <input type="text" id="routineClass" placeholder="Class / Grade" required>
+        <input type="text" id="routineSubject" placeholder="Subject" required>
+        <input type="date" id="routineDate" required>
+        <input type="time" id="routineStartTime" required>
+        <input type="time" id="routineEndTime" required>
+        <input type="file" id="routinePdfFile" accept=".pdf,image/*">
+        <small class="file-help">Optional: upload PDF or image routine directly. No Google Drive needed.</small>
+        <textarea id="routineNote" placeholder="Extra note / instructions"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Post Routine</button>
+    </form>
+
+    <div id="routinesList" class="empty">Loading...</div>
+  </section>
+
+
+  <section id="academicResults" class="admin-section">
+    <form id="academicResultForm" class="admin-form">
+      <h3>Publish Academic Result</h3>
+
+      <div class="form-grid">
+        <input type="text" id="resultTitle" placeholder="Result Title e.g. HSLC Board Result 2026" required>
+        <input type="text" id="resultClass" placeholder="Class / Grade" required>
+        <input type="text" id="examName" placeholder="Exam Name">
+        <input type="text" id="academicYear" placeholder="Academic Year e.g. 2025-2026">
+        <input type="date" id="publishedDate">
+        <input type="file" id="resultPdfFile" accept=".pdf,image/*">
+        <small class="file-help">Optional: upload result PDF or image directly. No Google Drive needed.</small>
+        <textarea id="resultNote" placeholder="Additional note / instructions"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Publish Result</button>
+    </form>
+
+    <div id="academicResultsList" class="empty">Loading...</div>
   </section>
 
 </main>
@@ -267,7 +294,9 @@ import {
   orderBy,
   doc,
   updateDoc,
-  deleteDoc
+  deleteDoc,
+  addDoc,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import {
@@ -275,6 +304,13 @@ import {
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
@@ -289,6 +325,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const storage = getStorage(app);
 
 onAuthStateChanged(auth, (user) => {
   if (!user) {
@@ -297,6 +334,9 @@ onAuthStateChanged(auth, (user) => {
     loadApplications();
     loadEnquiries();
     loadPayments();
+    loadFees();
+    loadRoutines();
+    loadAcademicResults();
   }
 });
 
@@ -314,7 +354,21 @@ function getStatusClass(status){
   if (status === "Rejected") return "status-rejected";
   if (status === "Verified") return "status-verified";
   if (status === "Pending Verification") return "status-pending";
+  if (status === "Paid") return "status-paid";
+  if (status === "Due") return "status-due";
   return "status-new";
+}
+
+
+async function uploadAdminFile(file, folderName) {
+  if (!file) return "";
+
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  const filePath = `${folderName}/${Date.now()}_${safeName}`;
+  const storageRef = ref(storage, filePath);
+
+  await uploadBytes(storageRef, file);
+  return await getDownloadURL(storageRef);
 }
 
 /* ================= APPLICATIONS ================= */
@@ -355,25 +409,14 @@ async function loadApplications() {
             <p><strong>Religion</strong>${data.religion || "-"}</p>
             <p><strong>Previous School</strong>${data.previousSchool || "-"}</p>
             <p><strong>Father</strong>${data.fatherName || "-"}</p>
-            <p><strong>Father Occupation</strong>${data.fatherOccupation || "-"}</p>
             <p><strong>Mother</strong>${data.motherName || "-"}</p>
-            <p><strong>Mother Occupation</strong>${data.motherOccupation || "-"}</p>
             <p><strong>Phone</strong>${data.phone || "-"}</p>
             <p><strong>Email</strong>${data.email || "-"}</p>
-            <p><strong>Guardian</strong>${data.guardianName || "-"}</p>
-            <p><strong>Guardian Phone</strong>${data.guardianPhone || "-"}</p>
             <p><strong>Village / Town</strong>${data.villageTown || "-"}</p>
             <p><strong>District</strong>${data.district || "-"}</p>
             <p><strong>State</strong>${data.state || "-"}</p>
             <p><strong>PIN Code</strong>${data.pinCode || "-"}</p>
-            <p><strong>Blood Group</strong>${data.bloodGroup || "-"}</p>
-            <p><strong>Medical Condition</strong>${data.medicalCondition || "-"}</p>
-            <p>
-              <strong>Status</strong>
-              <span id="status-${id}" class="status-pill ${getStatusClass(currentStatus)}">
-                ${currentStatus}
-              </span>
-            </p>
+            <p><strong>Status</strong><span id="status-${id}" class="status-pill ${getStatusClass(currentStatus)}">${currentStatus}</span></p>
           </div>
 
           <div class="message-box">
@@ -452,8 +495,6 @@ async function loadEnquiries() {
             <p><strong>Parent Name</strong>${value(data, ["parentName", "fatherName", "motherName", "guardianName"])}</p>
             <p><strong>Student Name</strong>${value(data, ["studentName", "childName"])}</p>
             <p><strong>Address</strong>${value(data, ["address", "location"])}</p>
-            <p><strong>Admission Type</strong>${value(data, ["admissionType", "enquiryType"])}</p>
-            <p><strong>Preferred Contact</strong>${value(data, ["preferredContact", "contactMethod"])}</p>
             <p><strong>Status</strong>${value(data, ["status"])}</p>
           </div>
 
@@ -513,12 +554,7 @@ async function loadPayments() {
             <p><strong>Amount</strong>₹${data.amount || "-"}</p>
             <p><strong>Transaction ID</strong>${data.transactionId || "-"}</p>
             <p><strong>Payment Date</strong>${data.paymentDate || "-"}</p>
-            <p>
-              <strong>Status</strong>
-              <span id="payment-status-${id}" class="status-pill ${getStatusClass(status)}">
-                ${status}
-              </span>
-            </p>
+            <p><strong>Status</strong><span id="payment-status-${id}" class="status-pill ${getStatusClass(status)}">${status}</span></p>
           </div>
 
           <div class="document-links">
@@ -540,7 +576,320 @@ async function loadPayments() {
   }
 }
 
-/* ================= UPDATE APPLICATION STATUS ================= */
+/* ================= FEES RECORDS ================= */
+
+document.getElementById("feeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    await addDoc(collection(db, "feeRecords"), {
+      studentName: document.getElementById("feeStudentName").value,
+      className: document.getElementById("feeClassName").value,
+      rollNo: document.getElementById("feeRollNo").value,
+      monthlyFee: document.getElementById("monthlyFee").value,
+      month: document.getElementById("feeMonth").value,
+      status: document.getElementById("feeStatus").value,
+      createdAt: serverTimestamp()
+    });
+
+    alert("Fee record added successfully.");
+    e.target.reset();
+    loadFees();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to add fee record.");
+  }
+});
+
+async function loadFees() {
+  const list = document.getElementById("feesList");
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "feeRecords"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("feeCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No fee records yet</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+      const status = data.status || "Due";
+
+      list.innerHTML += `
+        <div class="card" id="fee-card-${id}">
+          <h3>${data.studentName || "Student Fee Record"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Student Name</strong>${data.studentName || "-"}</p>
+            <p><strong>Class</strong>${data.className || "-"}</p>
+            <p><strong>Roll / Admission No</strong>${data.rollNo || "-"}</p>
+            <p><strong>Month</strong>${data.month || "-"}</p>
+            <p><strong>Monthly Fee</strong>₹${data.monthlyFee || "-"}</p>
+            <p><strong>Status</strong><span id="fee-status-${id}" class="status-pill ${getStatusClass(status)}">${status}</span></p>
+          </div>
+
+          <div class="action-row">
+            <button onclick="markFeePaid('${id}')" class="verify-btn">Mark Paid</button>
+            <button onclick="markFeeDue('${id}')" class="due-btn">Mark Due</button>
+            <button onclick="printFeeRecord('${id}')" class="print-btn">Print</button>
+            <button onclick="deleteFeeRecord('${id}')" class="delete-btn">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load fee records</div>";
+  }
+}
+
+window.markFeePaid = async (id) => {
+  await updateDoc(doc(db, "feeRecords", id), { status: "Paid" });
+  loadFees();
+};
+
+window.markFeeDue = async (id) => {
+  await updateDoc(doc(db, "feeRecords", id), { status: "Due" });
+  loadFees();
+};
+
+window.deleteFeeRecord = async (id) => {
+  if (!confirm("Delete this fee record?")) return;
+  await deleteDoc(doc(db, "feeRecords", id));
+  loadFees();
+};
+
+/* ================= EXAM ROUTINES ================= */
+
+document.getElementById("routineForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    const routineFile = document.getElementById("routinePdfFile").files[0];
+    const uploadedRoutineUrl = await uploadAdminFile(routineFile, "exam-routines");
+
+    await addDoc(collection(db, "examRoutines"), {
+      title: document.getElementById("routineTitle").value,
+      className: document.getElementById("routineClass").value,
+      subject: document.getElementById("routineSubject").value,
+      examDate: document.getElementById("routineDate").value,
+      startTime: document.getElementById("routineStartTime").value,
+      endTime: document.getElementById("routineEndTime").value,
+      pdfUrl: uploadedRoutineUrl,
+      routineUrl: uploadedRoutineUrl,
+      note: document.getElementById("routineNote").value,
+      createdAt: serverTimestamp()
+    });
+
+    alert("Exam routine posted successfully.");
+    e.target.reset();
+    loadRoutines();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to post exam routine. Check Firebase Storage rules.");
+  }
+});
+
+async function loadRoutines() {
+  const list = document.getElementById("routinesList");
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "examRoutines"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("routineCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No exam routines posted yet</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+
+      list.innerHTML += `
+        <div class="card" id="routine-card-${id}">
+          <h3>${data.title || "Exam Routine"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Class</strong>${data.className || "-"}</p>
+            <p><strong>Subject</strong>${data.subject || "-"}</p>
+            <p><strong>Date</strong>${data.examDate || "-"}</p>
+            <p><strong>Start Time</strong>${data.startTime || "-"}</p>
+            <p><strong>End Time</strong>${data.endTime || "-"}</p>
+          </div>
+
+          <div class="message-box">
+            <strong>Note / Instructions</strong>
+            ${data.note || "-"}
+          </div>
+
+          <div class="document-links">
+            ${(data.pdfUrl || data.routineUrl || data.fileUrl || data.downloadUrl) ? `<a href="${data.pdfUrl || data.routineUrl || data.fileUrl || data.downloadUrl}" target="_blank">View Routine PDF</a>` : ""}
+          </div>
+
+          <div class="action-row">
+            <button onclick="printRoutine('${id}')" class="print-btn">Print</button>
+            <button onclick="deleteRoutine('${id}')" class="delete-btn">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load exam routines</div>";
+  }
+}
+
+window.deleteRoutine = async (id) => {
+  if (!confirm("Delete this exam routine?")) return;
+  await deleteDoc(doc(db, "examRoutines", id));
+  loadRoutines();
+};
+
+/* ================= ACADEMIC RESULTS ================= */
+
+document.getElementById("academicResultForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    const resultFile = document.getElementById("resultPdfFile").files[0];
+    const uploadedResultUrl = await uploadAdminFile(resultFile, "academic-results");
+
+    await addDoc(collection(db, "academicResults"), {
+      title: document.getElementById("resultTitle").value,
+      className: document.getElementById("resultClass").value,
+      examName: document.getElementById("examName").value,
+      academicYear: document.getElementById("academicYear").value,
+      publishedDate: document.getElementById("publishedDate").value,
+      pdfUrl: uploadedResultUrl,
+      resultUrl: uploadedResultUrl,
+      note: document.getElementById("resultNote").value,
+      createdAt: serverTimestamp()
+    });
+
+    alert("Academic result published successfully.");
+    e.target.reset();
+    loadAcademicResults();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to publish academic result. Check Firebase Storage rules.");
+  }
+});
+
+async function loadAcademicResults() {
+  const list = document.getElementById("academicResultsList");
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "academicResults"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("resultCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No academic results published yet</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+      const resultLink = data.pdfUrl || data.resultUrl || data.fileUrl || data.downloadUrl || "";
+
+      list.innerHTML += `
+        <div class="card" id="result-card-${id}">
+          <h3>${data.title || "Academic Result"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Class</strong>${data.className || "-"}</p>
+            <p><strong>Exam</strong>${data.examName || "-"}</p>
+            <p><strong>Academic Year</strong>${data.academicYear || "-"}</p>
+            <p><strong>Published Date</strong>${data.publishedDate || "-"}</p>
+          </div>
+
+          <div class="message-box">
+            <strong>Note / Instructions</strong>
+            ${data.note || "-"}
+          </div>
+
+          <div class="document-links">
+            ${resultLink ? `<a href="${resultLink}" target="_blank">View Result PDF</a>` : ""}
+          </div>
+
+          <div class="action-row">
+            <button onclick="printAcademicResult('${id}')" class="print-btn">Print</button>
+            <button onclick="deleteAcademicResult('${id}')" class="delete-btn">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load academic results</div>";
+  }
+}
+
+window.deleteAcademicResult = async (id) => {
+  if (!confirm("Delete this academic result?")) return;
+  await deleteDoc(doc(db, "academicResults", id));
+  loadAcademicResults();
+};
+
+/* ================= PRINT FUNCTIONS ================= */
+
+window.printApplication = (id) => printCard(`application-card-${id}`, "Student Admission Application Form");
+window.printReceipt = (id) => printCard(`payment-card-${id}`, "Official Payment Receipt");
+window.printFeeRecord = (id) => printCard(`fee-card-${id}`, "Student Monthly Fee Record");
+window.printRoutine = (id) => printCard(`routine-card-${id}`, "Exam Routine");
+window.printAcademicResult = (id) => printCard(`result-card-${id}`, "Academic Result");
+
+function printCard(cardId, subtitle) {
+  const card = document.getElementById(cardId);
+  if (!card) return alert("Record not found.");
+
+  const originalContents = document.body.innerHTML;
+
+  document.body.innerHTML = `
+    <div style="padding:40px;font-family:Arial,sans-serif;">
+      <div style="text-align:center;border-bottom:3px solid #7a1c2e;padding-bottom:20px;margin-bottom:30px;">
+        <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
+        <p>${subtitle}</p>
+      </div>
+      ${card.innerHTML}
+    </div>
+  `;
+
+  document.querySelectorAll(".action-row,.document-links").forEach(el => el.style.display = "none");
+  window.print();
+  document.body.innerHTML = originalContents;
+  location.reload();
+}
+
+/* ================= UPDATE / DELETE ================= */
 
 window.updateApplicationStatus = async (id, status) => {
   try {
@@ -551,14 +900,11 @@ window.updateApplicationStatus = async (id, status) => {
     statusEl.className = `status-pill ${getStatusClass(status)}`;
 
     alert(`Application status updated to ${status}`);
-
   } catch (error) {
     console.error(error);
     alert("Failed to update application status.");
   }
 };
-
-/* ================= VERIFY PAYMENT ================= */
 
 window.verifyPayment = async (id) => {
   try {
@@ -572,116 +918,29 @@ window.verifyPayment = async (id) => {
     statusEl.className = "status-pill status-verified";
 
     alert("Payment verified. Receipt can now be printed.");
-
   } catch (error) {
     console.error(error);
     alert("Failed to verify payment.");
   }
 };
 
-/* ================= PRINT APPLICATION ================= */
-
-window.printApplication = (id) => {
-  const card = document.getElementById(`application-card-${id}`);
-  if (!card) return alert("Application not found.");
-
-  const originalContents = document.body.innerHTML;
-
-  document.body.innerHTML = `
-    <div style="padding:40px;font-family:Arial,sans-serif;">
-      <div style="text-align:center;border-bottom:3px solid #7a1c2e;padding-bottom:20px;margin-bottom:30px;">
-        <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
-        <p>Student Admission Application Form</p>
-      </div>
-
-      ${card.innerHTML}
-
-      <div style="margin-top:80px;display:flex;justify-content:space-between;">
-        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Parent Signature</div>
-        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Principal Signature</div>
-      </div>
-    </div>
-  `;
-
-  document.querySelectorAll(".action-row,.document-links").forEach(el => {
-    el.style.display = "none";
-  });
-
-  window.print();
-  document.body.innerHTML = originalContents;
-  location.reload();
-};
-
-/* ================= PRINT PAYMENT RECEIPT ================= */
-
-window.printReceipt = (id) => {
-  const card = document.getElementById(`payment-card-${id}`);
-  if (!card) return alert("Payment record not found.");
-
-  const originalContents = document.body.innerHTML;
-
-  document.body.innerHTML = `
-    <div style="padding:40px;font-family:Arial,sans-serif;">
-      <div style="text-align:center;border-bottom:3px solid #7a1c2e;padding-bottom:20px;margin-bottom:30px;">
-        <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
-        <p>Official Payment Receipt</p>
-        <p>Receipt generated after school verification</p>
-      </div>
-
-      ${card.innerHTML}
-
-      <div style="margin-top:80px;display:flex;justify-content:space-between;">
-        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Parent / Guardian</div>
-        <div style="width:220px;border-top:1px solid #222;text-align:center;padding-top:10px;">Accounts Office</div>
-      </div>
-    </div>
-  `;
-
-  document.querySelectorAll(".action-row,.document-links").forEach(el => {
-    el.style.display = "none";
-  });
-
-  window.print();
-  document.body.innerHTML = originalContents;
-  location.reload();
-};
-
-/* ================= DELETE ================= */
-
 window.deleteApplication = async (id) => {
   if (!confirm("Are you sure you want to delete this application?")) return;
-
-  try {
-    await deleteDoc(doc(db, "applications", id));
-    loadApplications();
-  } catch (error) {
-    alert("Failed to delete application.");
-  }
+  await deleteDoc(doc(db, "applications", id));
+  loadApplications();
 };
 
 window.deleteEnquiry = async (id) => {
   if (!confirm("Are you sure you want to delete this enquiry?")) return;
-
-  try {
-    await deleteDoc(doc(db, "enquiries", id));
-    loadEnquiries();
-  } catch (error) {
-    alert("Failed to delete enquiry.");
-  }
+  await deleteDoc(doc(db, "enquiries", id));
+  loadEnquiries();
 };
 
 window.deletePayment = async (id) => {
   if (!confirm("Are you sure you want to delete this payment record?")) return;
-
-  try {
-    await deleteDoc(doc(db, "payments", id));
-    loadPayments();
-  } catch (error) {
-    alert("Failed to delete payment record.");
-  }
+  await deleteDoc(doc(db, "payments", id));
+  loadPayments();
 };
-
-/* ================= LOGOUT ================= */
 
 window.logoutAdmin = async () => {
   await signOut(auth);

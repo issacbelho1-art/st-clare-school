@@ -8,18 +8,123 @@
   <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="academic-inner.css">
   <link rel="stylesheet" href="admissions.css">
+
+  <style>
+    .published-results-section {
+      background: #f4f1ee;
+      padding: 80px 8%;
+    }
+
+    .published-results-header {
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+
+    .published-results-header span {
+      color: #7a1c2e;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .published-results-header h2 {
+      font-size: 42px;
+      color: #222;
+      margin: 12px 0;
+    }
+
+    .published-results-header p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .result-card {
+      background: #fff;
+      padding: 30px;
+      border-left: 5px solid #7a1c2e;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .result-card .badge {
+      display: inline-block;
+      background: #f4f1ee;
+      color: #7a1c2e;
+      padding: 6px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .result-card h3 {
+      color: #7a1c2e;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .result-card p {
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
+
+    .result-download-btn {
+      display: inline-block;
+      margin-top: 18px;
+      background: #7a1c2e;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .result-download-btn:hover {
+      background: #54101d;
+      transform: translateY(-2px);
+    }
+
+    .results-empty {
+      background: #fff;
+      padding: 30px;
+      color: #777;
+      text-align: center;
+      grid-column: 1 / -1;
+    }
+
+    @media(max-width: 900px) {
+      .published-results-section {
+        padding: 60px 25px;
+      }
+
+      .published-results-header h2 {
+        font-size: 32px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body class="inner-page">
 
-<!-- ================= HEADER ================= -->
 <header class="main-header">
   <div class="logo">
     <img src="images/logo.png" alt="School Logo">
@@ -37,7 +142,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </div>
 </header>
 
-<!-- ================= MENU ================= -->
 <nav id="menu">
   <div class="close-btn" onclick="toggleMenu()">✕</div>
 
@@ -54,6 +158,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <a href="grade11-12.html">Senior Secondary (11–12)</a>
         <a href="learning-support.html">Learning Support</a>
         <a href="academic-results.html">Academic Results</a>
+        <a href="exam-routine.html">Exam Routine</a>
         <a href="career-guidance.html">Career Guidance</a>
       </div>
     </div>
@@ -94,7 +199,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </div>
 </nav>
 
-<!-- ================= HERO ================= -->
 <section class="results-hero">
 
   <div class="results-image">
@@ -111,14 +215,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       through hard work, discipline and perseverance.
     </p>
 
-    <a href="results.html" class="results-btn">
-  Explore Results
-</a>
+    <a href="#publishedResults" class="results-btn">
+      Explore Results
+    </a>
   </div>
 
 </section>
 
-<!-- ================= CONTENT ================= -->
 <section class="inner-content">
 
   <p>
@@ -147,7 +250,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </p>
 
 </section>
-<!-- ================= ADMISSIONS SECTION ================= -->
+
+<section class="published-results-section" id="publishedResults">
+
+  <div class="published-results-header">
+    <span>Official Publications</span>
+    <h2>Published Academic Results</h2>
+    <p>
+      View official result notices, board examination achievements and downloadable
+      result documents published by the school office.
+    </p>
+  </div>
+
+  <div class="results-grid" id="resultsList">
+    <div class="results-empty">Loading academic results...</div>
+  </div>
+
+</section>
+
 <section class="admissions-section">
 
   <div class="admissions-image left">
@@ -181,7 +301,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </div>
 
 </section>
-<!-- ================= BACK ================= -->
+
 <div class="back-wrapper">
 
   <a href="academic.html" class="back-modern">
@@ -195,19 +315,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   </a>
 
 </div>
-<!-- FOOTER -->
+
 <footer class="premium-footer">
 
-  <!-- LOGO -->
   <div class="footer-logo">
     <img src="images/logo.png">
     <h2>St Clare Higher Secondary School</h2>
   </div>
 
-  <!-- 5 COLUMNS -->
   <div class="footer-container">
 
-    <!-- COLUMN 1 -->
     <div class="footer-column">
       <h3>Contact us</h3>
       <p>Kacharigaon (Phevima) village</p>
@@ -230,9 +347,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           <i class="fab fa-youtube"></i>
         </a>
       </div>
-    </div> <!-- ✅ FIX ADDED HERE -->
+    </div>
 
-    <!-- COLUMN 2 -->
     <div class="footer-column">
       <h3>Information</h3>
       <a href="news.html">News & Events</a>
@@ -240,14 +356,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       <a href="careers.html">Careers</a>
     </div>
 
-    <!-- COLUMN 3 -->
     <div class="footer-column">
       <h3>Quick Access</h3>
       <a href="payments.html">Online Payments</a>
       <a href="term-dates.html">Term Dates</a>
+      <a href="exam-routine.html">Exam Routine</a>
     </div>
 
-    <!-- COLUMN 4 -->
     <div class="footer-column">
       <h3>Admissions</h3>
       <a href="application-process.html">Application Process</a>
@@ -256,7 +371,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       <a href="terms.html">Terms & Conditions</a>
     </div>
 
-    <!-- COLUMN 5 -->
     <div class="footer-column">
       <h3>Policies</h3>
       <a href="legal.html">Legal Notice</a>
@@ -266,18 +380,108 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   </div>
 
-  <!-- BOTTOM -->
   <div class="footer-bottom">
     Design by Issac Belho
   </div>
 
 </footer>
-<!-- ================= TRANSITION ================= -->
+
 <div class="page-transition"></div>
 
-<!-- ================= JS ================= -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+  import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
+    authDomain: "st-clare-school.firebaseapp.com",
+    projectId: "st-clare-school",
+    storageBucket: "st-clare-school.firebasestorage.app",
+    messagingSenderId: "980272641859",
+    appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
+    measurementId: "G-4B7S4KEJFZ"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const resultsList = document.getElementById("resultsList");
+
+  async function loadAcademicResults() {
+    try {
+      const snapshot = await getDocs(
+        query(collection(db, "academicResults"), orderBy("createdAt", "desc"))
+      );
+
+      if (snapshot.empty) {
+        resultsList.innerHTML = `
+          <div class="results-empty">
+            No academic results have been published yet.
+          </div>
+        `;
+        return;
+      }
+
+      resultsList.innerHTML = "";
+
+      snapshot.forEach((resultDoc) => {
+        const data = resultDoc.data();
+
+        const resultLink =
+          data.resultUrl ||
+          data.pdfUrl ||
+          data.fileUrl ||
+          data.downloadUrl ||
+          "";
+
+        const downloadButton = resultLink
+          ? `
+            <a href="${resultLink}" target="_blank" class="result-download-btn">
+              View / Download Result
+            </a>
+          `
+          : "";
+
+        resultsList.innerHTML += `
+          <div class="result-card">
+            <span class="badge">Official Result</span>
+
+            <h3>${data.title || "Academic Result"}</h3>
+
+            <p><strong>Class:</strong> ${data.className || "-"}</p>
+            <p><strong>Exam:</strong> ${data.examName || "-"}</p>
+            <p><strong>Academic Year:</strong> ${data.academicYear || "-"}</p>
+            <p><strong>Published Date:</strong> ${data.publishedDate || "-"}</p>
+            <p><strong>Note:</strong> ${data.note || "-"}</p>
+
+            ${downloadButton}
+          </div>
+        `;
+      });
+
+    } catch (error) {
+      console.error(error);
+
+      resultsList.innerHTML = `
+        <div class="results-empty">
+          Unable to load academic results. Please try again later.
+        </div>
+      `;
+    }
+  }
+
+  loadAcademicResults();
+</script>
 
 </body>
 </html>
