@@ -1,0 +1,310 @@
+/* ================= CAREERS PAGE ================= */
+
+.careers-page {
+  background: #f7f7f7;
+  padding: 100px 7%;
+}
+
+.careers-intro {
+  max-width: 850px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.careers-intro h2,
+.career-community h2,
+.opportunities-section h2,
+.team-voices h2 {
+  font-size: 44px;
+  font-weight: 300;
+  color: #002b5c;
+  margin-bottom: 28px;
+}
+
+.careers-intro p,
+.career-community p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ================= CAREERS COLLAGE ================= */
+
+.careers-collage {
+  max-width: 1300px;
+  margin: 90px auto 110px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-auto-rows: 240px;
+  gap: 18px;
+}
+
+.career-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BIG LEFT IMAGE */
+.career-img.big {
+  grid-row: span 2;
+}
+
+/* MESSAGE BOX */
+.career-message {
+  background: linear-gradient(135deg, #7a1c2e, #9e2a3f);
+  color: white;
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.career-message img {
+  width: 70px;
+  margin-bottom: 22px;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.career-message p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ================= COMMUNITY ================= */
+
+.career-community {
+  max-width: 900px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+
+/* ================= OPPORTUNITIES ================= */
+
+.opportunities-section {
+  text-align: center;
+  margin-bottom: 110px;
+}
+
+.opportunity-card {
+  max-width: 560px;
+  margin: 35px auto 25px;
+  background: white;
+  padding: 45px 50px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+}
+
+.opportunity-card h3 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.opportunity-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 22px;
+}
+
+.opportunity-card a {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 13px 32px;
+  border: 1px solid #002b5c;
+  border-radius: 30px;
+  color: #002b5c;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.opportunity-card a:hover {
+  background: #002b5c;
+  color: white;
+}
+
+.career-note {
+  font-size: 16px;
+  color: #333;
+}
+
+/* ================= TEAM SLIDER ================= */
+
+.team-slider-section {
+  text-align: center;
+  margin: 120px auto;
+  max-width: 1100px;
+  overflow: hidden;
+}
+
+.team-slider-section h2 {
+  font-size: 42px;
+  font-weight: 300;
+  color: #002b5c;
+  margin-bottom: 40px;
+}
+
+.team-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-slides {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s ease;
+}
+
+.team-slide {
+  min-width: 100%;
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #002b5c;
+  color: white;
+  min-height: 520px;
+}
+
+.team-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.team-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.team-text h3 {
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.team-text p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* BUTTONS */
+.team-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+}
+
+.team-controls button {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-size: 20px;
+  padding: 10px 18px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.team-controls button:hover {
+  background: white;
+  color: #002b5c;
+}
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .careers-page {
+    padding: 70px 22px;
+  }
+
+  .careers-intro h2,
+  .career-community h2,
+  .opportunities-section h2,
+  .team-voices h2 {
+    font-size: 34px;
+  }
+
+  .careers-collage {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 260px;
+    margin: 60px auto 80px;
+  }
+
+  .career-img.big {
+    grid-row: span 1;
+  }
+
+  .opportunity-card {
+    padding: 35px 25px;
+  }
+
+  .team-slider-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 70px auto;
+    padding: 0 18px;
+    box-sizing: border-box;
+  }
+
+  .team-slider-section h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  .team-slide {
+    grid-template-columns: 1fr;
+  }
+
+  .team-slide img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  padding: 0;
+  background: none;
+}
+
+  .team-text {
+    padding: 34px 24px 95px;
+  }
+
+  .team-text h3 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+
+  .team-text p {
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .team-controls {
+    right: 24px;
+    bottom: 24px;
+  }
+
+  .team-controls button {
+    width: 58px;
+    height: 58px;
+    padding: 0;
+  }
+}

@@ -321,21 +321,24 @@ function changeLeader(direction) {
 window.changeLeader = changeLeader;
 
 
-// ================= TEAM SLIDER INFINITE LOOP =================
+// ================= TEAM SLIDER INFINITE LOOP - FINAL =================
 
 let teamIndex = 1;
-let teamTrack;
-let teamSlides;
+let teamTrack = null;
+let teamSlides = [];
 let isTeamSliding = false;
 
-document.addEventListener("DOMContentLoaded", () => {
+function setupTeamSlider() {
   teamTrack = document.querySelector(".team-slides");
 
   if (!teamTrack) return;
 
-  const originalSlides = Array.from(document.querySelectorAll(".team-slide"));
+  // prevent duplicate clones if JS reloads
+  teamTrack.querySelectorAll(".team-slide.clone").forEach(clone => clone.remove());
 
-  if (originalSlides.length === 0) return;
+  const originalSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
+
+  if (originalSlides.length <= 1) return;
 
   const firstClone = originalSlides[0].cloneNode(true);
   const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
@@ -346,15 +349,18 @@ document.addEventListener("DOMContentLoaded", () => {
   teamTrack.appendChild(firstClone);
   teamTrack.insertBefore(lastClone, originalSlides[0]);
 
-  teamSlides = document.querySelectorAll(".team-slide");
+  teamSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
+
+  teamIndex = 1;
+  isTeamSliding = false;
 
   teamTrack.style.transition = "none";
   teamTrack.style.transform = `translateX(-${teamIndex * 100}%)`;
 
-  setTimeout(() => {
+  requestAnimationFrame(() => {
     teamTrack.style.transition = "transform 0.6s ease";
-  }, 50);
-});
+  });
+}
 
 function moveTeamSlider() {
   if (!teamTrack || isTeamSliding) return;
@@ -378,30 +384,38 @@ function prevTeamSlide() {
   moveTeamSlider();
 }
 
-document.addEventListener("transitionend", (e) => {
+document.addEventListener("DOMContentLoaded", setupTeamSlider);
+
+document.addEventListener("transitionend", function (e) {
   if (!teamTrack || e.target !== teamTrack) return;
 
-  teamSlides = document.querySelectorAll(".team-slide");
+  teamSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
+
+  if (!teamSlides[teamIndex]) {
+    isTeamSliding = false;
+    return;
+  }
 
   if (teamSlides[teamIndex].classList.contains("clone")) {
     teamTrack.style.transition = "none";
 
     if (teamIndex === teamSlides.length - 1) {
       teamIndex = 1;
-    }
-
-    if (teamIndex === 0) {
+    } else if (teamIndex === 0) {
       teamIndex = teamSlides.length - 2;
     }
 
     teamTrack.style.transform = `translateX(-${teamIndex * 100}%)`;
 
-    setTimeout(() => {
-      teamTrack.style.transition = "transform 0.6s ease";
-    }, 50);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        teamTrack.style.transition = "transform 0.6s ease";
+        isTeamSliding = false;
+      });
+    });
+  } else {
+    isTeamSliding = false;
   }
-
-  isTeamSliding = false;
 });
 
 window.nextTeamSlide = nextTeamSlide;
