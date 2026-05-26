@@ -82,6 +82,7 @@
     <h1>Admission Team</h1>
   </div>
 </section>
+
 <!-- ================= MAIN ================= -->
 <section class="admissions-page">
 
@@ -98,28 +99,63 @@
         </p>
       </section>
 
-      <!-- TEAM -->
-      <section class="team-section">
+      <!-- SLIDER -->
+      <section class="admission-slider-section">
 
-        <div class="team-card">
-          <img src="images/staff1.jpeg" alt="">
-          <h3>Sr. Mary Joseph</h3>
-          <p>Admissions Head</p>
-          <p>Email: stclareshs@gmail.com</p>
+        <div class="admission-slider-wrapper">
+
+          <button class="admission-arrow prev" onclick="changeAdmissionSlide(-1)">
+            &#8592;
+          </button>
+
+          <div class="admission-slider-track">
+
+            <div class="admission-slide active-admission-slide">
+              <img src="images/principal.png" alt="Principal">
+              <div class="member-name">Principal</div>
+            </div>
+
+            <div class="admission-slide">
+              <img src="images/vice-principal.jpg" alt="Vice Principal">
+              <div class="member-name">Vice-Principal</div>
+            </div>
+
+            <div class="admission-slide">
+              <img src="images/arenla.jpeg" alt="Maam Arenla">
+              <div class="member-name">Maam Arenla</div>
+            </div>
+
+            <div class="admission-slide">
+              <img src="images/juliana.jpeg" alt="Sr Juliana">
+              <div class="member-name">Sr Juliana</div>
+            </div>
+
+            <div class="admission-slide">
+              <img src="images/clerk.jpeg" alt="Clerk">
+              <div class="member-name">Clerk</div>
+            </div>
+
+          </div>
+
+          <button class="admission-arrow next" onclick="changeAdmissionSlide(1)">
+            &#8594;
+          </button>
+
         </div>
 
-        <div class="team-card">
-          <img src="images/staff2.jpeg" alt="">
-          <h3>Mr. John Peter</h3>
-          <p>Admissions Officer</p>
-          <p>Phone: +91 8413079844</p>
-        </div>
+        <div class="admission-details">
 
-        <div class="team-card">
-          <img src="images/staff3.jpeg" alt="">
-          <h3>Ms. Anita Das</h3>
-          <p>Student Coordinator</p>
-          <p>Email: stclareshs@gmail.com</p>
+          <h2 id="admissionTitle">Principal</h2>
+
+          <h4 id="admissionRole">
+            Head of School
+          </h4>
+
+          <p id="admissionDesc">
+            Leading St Clare Higher Secondary School with dedication,
+            academic excellence and discipline.
+          </p>
+
         </div>
 
       </section>
@@ -133,7 +169,7 @@
         <img src="images/logo.png" alt="School Logo">
       </div>
 
-      <h3>In this section</h3>
+      <h3>In This Section</h3>
 
       <ul>
         <li><a href="admissions.html">Admissions</a></li>
@@ -155,7 +191,6 @@
   <p>We are here to help you with your admission journey.</p>
   <a href="enquire.html">Contact Admissions</a>
 </section>
-
 <!-- ================= FOOTER ================= -->
 <footer class="premium-footer">
 
@@ -199,7 +234,6 @@
 
     <div class="footer-column">
       <h3>Quick Access</h3>
-      <a href="payments.html">Online Payments</a>
       <a href="term-dates.html">Term Dates</a>
     </div>
 

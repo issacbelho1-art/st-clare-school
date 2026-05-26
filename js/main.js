@@ -671,3 +671,152 @@ document.addEventListener("DOMContentLoaded", () => {
     heroSlides[heroIndex].classList.add("active");
   }, 6000);
 });
+
+// ================= UNIQUE ADMISSION TEAM SLIDER =================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".admission-slider-track");
+  const wrapper = document.querySelector(".admission-slider-wrapper");
+
+  if (!track || !wrapper) return;
+
+  let slides = Array.from(track.querySelectorAll(".admission-slide"));
+
+  const title = document.getElementById("admissionTitle");
+  const role = document.getElementById("admissionRole");
+  const desc = document.getElementById("admissionDesc");
+
+  const data = [
+    {
+      title: "Principal",
+      role: "Head of School",
+      desc: "Leading St Clare Higher Secondary School with dedication, academic excellence and discipline."
+    },
+    {
+      title: "Vice-Principal",
+      role: "Academic Administration",
+      desc: "Supporting academic coordination, student growth and school operations."
+    },
+    {
+      title: "Maam Arenla",
+      role: "Admissions Coordinator",
+      desc: "Helping parents and students through the admissions process."
+    },
+    {
+      title: "Sr Juliana",
+      role: "Student Guidance & Support",
+      desc: "Providing care and support for students and families."
+    },
+    {
+      title: "Clerk",
+      role: "Admissions & Office Support",
+      desc: "Managing admission records and office administration."
+    }
+  ];
+
+  const firstClone = slides[0].cloneNode(true);
+  const lastClone = slides[slides.length - 1].cloneNode(true);
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, slides[0]);
+
+  slides = Array.from(track.querySelectorAll(".admission-slide"));
+
+  let index = 1;
+  let moving = false;
+
+  function updateAdmissionSlider(animate = true) {
+    slides.forEach(slide => {
+      slide.classList.remove("active-admission-slide");
+    });
+
+    slides[index].classList.add("active-admission-slide");
+
+    const wrapperCenter = wrapper.offsetWidth / 2;
+    const activeCenter =
+      slides[index].offsetLeft + slides[index].offsetWidth / 2;
+
+    const moveX = wrapperCenter - activeCenter;
+
+    track.style.transition = animate
+      ? "transform .65s cubic-bezier(.77,0,.175,1)"
+      : "none";
+
+    track.style.transform = `translateX(${moveX}px)`;
+
+    const realIndex =
+      index === 0
+        ? data.length - 1
+        : index === slides.length - 1
+        ? 0
+        : index - 1;
+
+    title.textContent = data[realIndex].title;
+    role.textContent = data[realIndex].role;
+    desc.textContent = data[realIndex].desc;
+  }
+
+  window.changeAdmissionSlide = function (direction) {
+    if (moving) return;
+
+    moving = true;
+    index += direction;
+
+    updateAdmissionSlider(true);
+  };
+
+  track.addEventListener("transitionend", () => {
+
+  if (index === slides.length - 1) {
+
+    slides[index].classList.remove("active-admission-slide");
+
+    index = 1;
+
+    track.style.transition = "none";
+
+    updateAdmissionSlider(false);
+
+    void track.offsetWidth;
+
+    setTimeout(() => {
+      track.style.transition =
+        "transform .65s cubic-bezier(.77,0,.175,1)";
+      moving = false;
+    }, 30);
+
+    return;
+  }
+
+  if (index === 0) {
+
+    slides[index].classList.remove("active-admission-slide");
+
+    index = slides.length - 2;
+
+    track.style.transition = "none";
+
+    updateAdmissionSlider(false);
+
+    void track.offsetWidth;
+
+    setTimeout(() => {
+      track.style.transition =
+        "transform .65s cubic-bezier(.77,0,.175,1)";
+      moving = false;
+    }, 30);
+
+    return;
+  }
+
+  moving = false;
+
+});
+
+window.addEventListener("resize", () => {
+  updateAdmissionSlider(false);
+});
+
+updateAdmissionSlider(false);
+
+});
