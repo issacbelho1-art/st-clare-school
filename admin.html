@@ -123,11 +123,133 @@ body{background:#f4f1ee;color:#222;}
   background:#fff;
 }
 
+/* ================= PROGRESS REPORTS ================= */
+.marks-table-wrap{
+  grid-column:1/-1;
+  overflow-x:auto;
+  background:#faf7f5;
+  padding:15px;
+  border-radius:8px;
+}
+.marks-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
+}
+.marks-table th,
+.marks-table td{
+  border:1px solid #ddd;
+  padding:10px;
+  font-size:14px;
+  text-align:left;
+}
+.marks-table th{
+  background:#7a1c2e;
+  color:#fff;
+  font-weight:400;
+}
+.marks-table input{
+  width:100%;
+  padding:9px;
+  border:1px solid #ddd;
+  border-radius:5px;
+}
+.report-summary{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:15px;
+}
+.report-summary div{
+  background:#faf7f5;
+  padding:12px;
+  border-left:4px solid #7a1c2e;
+}
+.report-card-print{
+  background:#fff;
+  padding:35px;
+  color:#222;
+}
+.report-school-head{
+  text-align:center;
+  border-bottom:3px solid #7a1c2e;
+  padding-bottom:18px;
+  margin-bottom:24px;
+}
+.report-school-head h1{
+  color:#7a1c2e;
+  font-size:28px;
+  margin-bottom:6px;
+}
+.report-title{
+  text-align:center;
+  font-size:20px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin:18px 0;
+  color:#7a1c2e;
+}
+.report-info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:20px;
+}
+.report-info p{
+  background:#faf7f5;
+  padding:10px;
+  font-size:14px;
+}
+.report-marks{
+  width:100%;
+  border-collapse:collapse;
+  margin:18px 0;
+}
+.report-marks th,
+.report-marks td{
+  border:1px solid #333;
+  padding:9px;
+  font-size:13px;
+  text-align:center;
+}
+.report-marks th{
+  background:#f2e8e5;
+  color:#7a1c2e;
+}
+.report-remarks{
+  margin-top:18px;
+  background:#faf7f5;
+  padding:14px;
+  line-height:1.6;
+}
+.signature-row{
+  display:flex;
+  justify-content:space-between;
+  gap:30px;
+  margin-top:55px;
+}
+.signature-box{
+  width:45%;
+  text-align:center;
+}
+.signature-box img{
+  max-width:160px;
+  height:55px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 8px;
+}
+.signature-line{
+  border-top:1px solid #222;
+  padding-top:8px;
+  font-size:14px;
+}
+
 
 @media(max-width:900px){
   .admin-header{flex-direction:column;gap:15px;text-align:center;}
   .stats-grid{grid-template-columns:1fr;margin:20px;}
-  .info-grid,.form-grid{grid-template-columns:1fr;}
+  .info-grid,.form-grid,.report-summary,.report-info{grid-template-columns:1fr;}
   .form-grid textarea{grid-column:auto;}
 }
 </style>
@@ -167,6 +289,11 @@ body{background:#f4f1ee;color:#222;}
     <h2 id="resultCount">0</h2>
     <p>Academic Results</p>
   </div>
+
+  <div class="stat-card">
+    <h2 id="progressCount">0</h2>
+    <p>Progress Reports</p>
+  </div>
 </div>
 
 <main class="admin-main">
@@ -177,6 +304,7 @@ body{background:#f4f1ee;color:#222;}
     <button class="tab-btn" onclick="showTab(event,'fees')">Fees Records</button>
     <button class="tab-btn" onclick="showTab(event,'routines')">Exam Routine</button>
     <button class="tab-btn" onclick="showTab(event,'academicResults')">Academic Results</button>
+    <button class="tab-btn" onclick="showTab(event,'progressReports')">Progress Reports</button>
   </div>
 
   <section id="applications" class="admin-section active">
@@ -260,6 +388,51 @@ body{background:#f4f1ee;color:#222;}
     <div id="academicResultsList" class="empty">Loading...</div>
   </section>
 
+  <section id="progressReports" class="admin-section">
+    <form id="progressReportForm" class="admin-form">
+      <h3>Create Student Progress Report</h3>
+
+      <div class="form-grid">
+        <input type="text" id="reportStudentName" placeholder="Student Name" required>
+        <input type="text" id="reportClassName" placeholder="Class / Grade" required>
+        <input type="text" id="reportRollNo" placeholder="Roll No / Admission No">
+        <input type="text" id="reportExamName" placeholder="Exam / Term e.g. Final Examination" required>
+        <input type="text" id="reportAcademicYear" placeholder="Academic Year e.g. 2025-2026" required>
+        <input type="text" id="reportAttendance" placeholder="Attendance e.g. 180/200">
+        <input type="text" id="reportClassTeacher" placeholder="Class Teacher Name">
+        <input type="text" id="reportPrincipal" placeholder="Principal Name" value="Sr Deepa Mathew">
+        <input type="text" id="reportStatus" placeholder="Result / Promotion Status e.g. Promoted">
+        <input type="text" id="principalSignature" placeholder="Principal signature image path" value="images/principal-signature.png">
+        <input type="text" id="teacherSignature" placeholder="Class teacher signature image path" value="images/class-teacher-signature.png">
+        <textarea id="reportRemarks" placeholder="Teacher remarks / conduct / general progress"></textarea>
+
+        <div class="marks-table-wrap">
+          <table class="marks-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Full Marks</th>
+                <th>Marks Obtained</th>
+              </tr>
+            </thead>
+            <tbody id="marksRows">
+              <tr><td><input value="English"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr><td><input value="Alternative English"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr><td><input value="Mathematics"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr><td><input value="Science"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr><td><input value="Social Science"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr><td><input value="Computer"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Save Progress Report</button>
+    </form>
+
+    <div id="progressReportsList" class="empty">Loading...</div>
+  </section>
+
 </main>
 
 <script>
@@ -324,6 +497,7 @@ onAuthStateChanged(auth, (user) => {
     loadFees();
     loadRoutines();
     loadAcademicResults();
+    loadProgressReports();
   }
 });
 
@@ -784,6 +958,240 @@ window.deleteAcademicResult = async (id) => {
   if (!confirm("Delete this academic result?")) return;
   await deleteDoc(doc(db, "academicResults", id));
   loadAcademicResults();
+};
+
+/* ================= PROGRESS REPORTS ================= */
+
+document.getElementById("progressReportForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const rows = document.querySelectorAll("#marksRows tr");
+  const subjects = [];
+
+  let totalFullMarks = 0;
+  let totalObtained = 0;
+
+  rows.forEach((row) => {
+    const inputs = row.querySelectorAll("input");
+
+    const subject = inputs[0].value.trim();
+    const fullMarks = Number(inputs[1].value) || 0;
+    const marksObtained = Number(inputs[2].value) || 0;
+
+    if (subject) {
+      subjects.push({ subject, fullMarks, marksObtained });
+      totalFullMarks += fullMarks;
+      totalObtained += marksObtained;
+    }
+  });
+
+  const percentage = totalFullMarks
+    ? ((totalObtained / totalFullMarks) * 100).toFixed(2)
+    : "0.00";
+
+  let grade = "D";
+  if (percentage >= 90) grade = "A+";
+  else if (percentage >= 80) grade = "A";
+  else if (percentage >= 70) grade = "B+";
+  else if (percentage >= 60) grade = "B";
+  else if (percentage >= 50) grade = "C";
+  else if (percentage >= 40) grade = "D";
+  else grade = "Needs Improvement";
+
+  try {
+    await addDoc(collection(db, "progressReports"), {
+      studentName: document.getElementById("reportStudentName").value,
+      className: document.getElementById("reportClassName").value,
+      rollNo: document.getElementById("reportRollNo").value,
+      examName: document.getElementById("reportExamName").value,
+      academicYear: document.getElementById("reportAcademicYear").value,
+      attendance: document.getElementById("reportAttendance").value,
+      classTeacher: document.getElementById("reportClassTeacher").value,
+      principal: document.getElementById("reportPrincipal").value,
+      status: document.getElementById("reportStatus").value,
+      remarks: document.getElementById("reportRemarks").value,
+      principalSignature: document.getElementById("principalSignature").value,
+      teacherSignature: document.getElementById("teacherSignature").value,
+      subjects,
+      totalFullMarks,
+      totalObtained,
+      percentage,
+      grade,
+      createdAt: serverTimestamp()
+    });
+
+    alert("Progress report saved successfully.");
+    e.target.reset();
+    document.getElementById("reportPrincipal").value = "Sr Deepa Mathew";
+    document.getElementById("principalSignature").value = "images/principal-signature.png";
+    document.getElementById("teacherSignature").value = "images/class-teacher-signature.png";
+    loadProgressReports();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to save progress report.");
+  }
+});
+
+async function loadProgressReports() {
+  const list = document.getElementById("progressReportsList");
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "progressReports"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("progressCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No progress reports created yet</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+
+      list.innerHTML += `
+        <div class="card" id="progress-card-${id}">
+          <h3>${data.studentName || "Student Progress Report"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Class</strong>${data.className || "-"}</p>
+            <p><strong>Roll / Admission No</strong>${data.rollNo || "-"}</p>
+            <p><strong>Exam / Term</strong>${data.examName || "-"}</p>
+            <p><strong>Academic Year</strong>${data.academicYear || "-"}</p>
+            <p><strong>Attendance</strong>${data.attendance || "-"}</p>
+            <p><strong>Status</strong>${data.status || "-"}</p>
+          </div>
+
+          <div class="report-summary">
+            <div><strong>Total Marks</strong><br>${data.totalObtained || 0} / ${data.totalFullMarks || 0}</div>
+            <div><strong>Percentage</strong><br>${data.percentage || "0.00"}%</div>
+            <div><strong>Grade</strong><br>${data.grade || "-"}</div>
+            <div><strong>Class Teacher</strong><br>${data.classTeacher || "-"}</div>
+          </div>
+
+          <div class="message-box">
+            <strong>Remarks</strong>
+            ${data.remarks || "-"}
+          </div>
+
+          <div class="action-row">
+            <button onclick="printProgressReport('${id}')" class="print-btn">Print Progress Report</button>
+            <button onclick="deleteProgressReport('${id}')" class="delete-btn">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load progress reports</div>";
+  }
+}
+
+window.printProgressReport = async (id) => {
+  try {
+    const snapshot = await getDocs(query(collection(db, "progressReports"), orderBy("createdAt", "desc")));
+    let report = null;
+
+    snapshot.forEach((d) => {
+      if (d.id === id) report = d.data();
+    });
+
+    if (!report) return alert("Progress report not found.");
+
+    const subjects = report.subjects || [];
+
+    const marksRows = subjects.map((item, index) => `
+      <tr>
+        <td>${index + 1}</td>
+        <td style="text-align:left;">${item.subject || "-"}</td>
+        <td>${item.fullMarks || 0}</td>
+        <td>${item.marksObtained || 0}</td>
+      </tr>
+    `).join("");
+
+    const originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = `
+      <div class="report-card-print">
+        <div class="report-school-head">
+          <h1>St Clare Higher Secondary School</h1>
+          <p>Kacharigaon (Phevima) Village, Dimapur, Nagaland - 797112</p>
+        </div>
+
+        <div class="report-title">Student Progress Report</div>
+
+        <div class="report-info">
+          <p><strong>Name:</strong> ${report.studentName || "-"}</p>
+          <p><strong>Class:</strong> ${report.className || "-"}</p>
+          <p><strong>Roll / Admission No:</strong> ${report.rollNo || "-"}</p>
+          <p><strong>Exam / Term:</strong> ${report.examName || "-"}</p>
+          <p><strong>Academic Year:</strong> ${report.academicYear || "-"}</p>
+          <p><strong>Attendance:</strong> ${report.attendance || "-"}</p>
+        </div>
+
+        <table class="report-marks">
+          <thead>
+            <tr>
+              <th>Sl. No</th>
+              <th>Subject</th>
+              <th>Full Marks</th>
+              <th>Marks Obtained</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${marksRows}
+          </tbody>
+        </table>
+
+        <div class="report-summary">
+          <div><strong>Total</strong><br>${report.totalObtained || 0} / ${report.totalFullMarks || 0}</div>
+          <div><strong>Percentage</strong><br>${report.percentage || "0.00"}%</div>
+          <div><strong>Grade</strong><br>${report.grade || "-"}</div>
+          <div><strong>Status</strong><br>${report.status || "-"}</div>
+        </div>
+
+        <div class="report-remarks">
+          <strong>Remarks:</strong><br>
+          ${report.remarks || "-"}
+        </div>
+
+        <div class="signature-row">
+          <div class="signature-box">
+            <img src="${report.teacherSignature || "images/class-teacher-signature.png"}" onerror="this.style.display='none'">
+            <div class="signature-line">${report.classTeacher || "Class Teacher"}</div>
+            <p>Class Teacher</p>
+          </div>
+
+          <div class="signature-box">
+            <img src="${report.principalSignature || "images/principal-signature.png"}" onerror="this.style.display='none'">
+            <div class="signature-line">${report.principal || "Principal"}</div>
+            <p>Principal</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    window.print();
+    document.body.innerHTML = originalContents;
+    location.reload();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to print progress report.");
+  }
+};
+
+window.deleteProgressReport = async (id) => {
+  if (!confirm("Delete this progress report?")) return;
+  await deleteDoc(doc(db, "progressReports", id));
+  loadProgressReports();
 };
 
 /* ================= PRINT FUNCTIONS ================= */
