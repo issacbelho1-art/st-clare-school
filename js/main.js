@@ -298,28 +298,126 @@ function openHouseImage(button) {
 window.openHouseImage = openHouseImage;
 
 
-// ================= LEADERSHIP SLIDER =================
-let currentLeader = 0;
+// ================= AUTO INFINITE LEADERSHIP CAROUSEL SLIDER =================
 
-function changeLeader(direction) {
-  const cards = document.querySelectorAll(".leader-card");
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.querySelector(".leader-slider");
+  const track = document.querySelector(".leader-track");
   const messages = document.querySelectorAll(".leader-message");
 
-  if (!cards.length || !messages.length) return;
+  if (!slider || !track || !messages.length) return;
 
-  cards[currentLeader].classList.remove("active");
-  messages[currentLeader].classList.remove("active");
+  let cards = Array.from(track.querySelectorAll(".leader-card"));
+  if (cards.length <= 1) return;
 
-  currentLeader += direction;
+  track.querySelectorAll(".leader-card.clone").forEach(clone => clone.remove());
 
-  if (currentLeader < 0) currentLeader = cards.length - 1;
-  if (currentLeader >= cards.length) currentLeader = 0;
+  cards = Array.from(track.querySelectorAll(".leader-card"));
 
-  cards[currentLeader].classList.add("active");
-  messages[currentLeader].classList.add("active");
-}
-window.changeLeader = changeLeader;
+  const firstClone = cards[0].cloneNode(true);
+  const lastClone = cards[cards.length - 1].cloneNode(true);
 
+  firstClone.classList.add("clone");
+  lastClone.classList.add("clone");
+
+  track.appendChild(firstClone);
+  track.insertBefore(lastClone, cards[0]);
+
+  cards = Array.from(track.querySelectorAll(".leader-card"));
+
+  let current = 1;
+  let moving = false;
+  let autoTimer = null;
+
+  function realIndex() {
+    if (current === 0) return messages.length - 1;
+    if (current === cards.length - 1) return 0;
+    return current - 1;
+  }
+
+  function updateLeaderCarousel(animate = true) {
+    cards.forEach(card => card.classList.remove("active"));
+    cards[current].classList.add("active");
+
+    const activeCard = cards[current];
+
+    const sliderCenter = slider.offsetWidth / 2;
+    const activeCenter =
+      activeCard.offsetLeft + activeCard.offsetWidth / 2;
+
+    const moveX = sliderCenter - activeCenter;
+
+    track.style.transition = animate
+      ? "transform 0.7s cubic-bezier(.77,0,.175,1)"
+      : "none";
+
+    track.style.transform = `translateX(${moveX}px)`;
+
+    messages.forEach(msg => msg.classList.remove("active"));
+
+    const index = realIndex();
+
+    if (messages[index]) {
+      messages[index].classList.add("active");
+    }
+  }
+
+  function goLeader(direction) {
+    if (moving) return;
+
+    moving = true;
+    current += direction;
+
+    updateLeaderCarousel(true);
+  }
+
+  window.changeLeader = function(direction) {
+    stopAutoLeader();
+    goLeader(direction);
+    startAutoLeader();
+  };
+
+  function startAutoLeader() {
+    stopAutoLeader();
+
+    autoTimer = setInterval(() => {
+      goLeader(1);
+    }, 4500);
+  }
+
+  function stopAutoLeader() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  track.addEventListener("transitionend", () => {
+    if (current === cards.length - 1) {
+      current = 1;
+      updateLeaderCarousel(false);
+    }
+
+    if (current === 0) {
+      current = cards.length - 2;
+      updateLeaderCarousel(false);
+    }
+
+    setTimeout(() => {
+      moving = false;
+    }, 80);
+  });
+
+  slider.addEventListener("mouseenter", stopAutoLeader);
+  slider.addEventListener("mouseleave", startAutoLeader);
+
+  window.addEventListener("resize", () => {
+    updateLeaderCarousel(false);
+  });
+
+  updateLeaderCarousel(false);
+  startAutoLeader();
+});
 
 // ================= TEAM SLIDER INFINITE LOOP - FINAL =================
 

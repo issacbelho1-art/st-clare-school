@@ -227,26 +227,28 @@
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
+
   html,
   body {
     overflow-x: hidden;
   }
 
   .careers-page {
-    padding: 70px 22px;
+    padding: 65px 18px;
   }
 
   .careers-intro h2,
   .career-community h2,
   .opportunities-section h2,
   .team-voices h2 {
-    font-size: 34px;
+    font-size: 30px;
+    line-height: 1.2;
   }
 
   .careers-collage {
     grid-template-columns: 1fr;
-    grid-auto-rows: 260px;
-    margin: 60px auto 80px;
+    grid-auto-rows: 220px;
+    margin: 50px auto 70px;
   }
 
   .career-img.big {
@@ -254,57 +256,67 @@
   }
 
   .opportunity-card {
-    padding: 35px 25px;
+    padding: 30px 22px;
   }
+
+  /* ================= TEAM SLIDER ================= */
 
   .team-slider-section {
     width: 100%;
     max-width: 100%;
-    margin: 70px auto;
-    padding: 0 18px;
+    margin: 55px auto;
+    padding: 0 14px;
     box-sizing: border-box;
   }
 
   .team-slider-section h2 {
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.2;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .team-slide {
     grid-template-columns: 1fr;
+    overflow: hidden;
   }
 
   .team-slide img {
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  padding: 0;
-  background: none;
-}
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    padding: 0;
+    background: none;
+  }
 
   .team-text {
-    padding: 34px 24px 95px;
+    padding: 28px 22px 90px;
+    min-height: auto;
   }
 
   .team-text h3 {
-    font-size: 34px;
-    line-height: 1.15;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 16px;
   }
 
   .team-text p {
-    font-size: 22px;
-    line-height: 1.55;
+    font-size: 16px;
+    line-height: 1.75;
   }
 
   .team-controls {
-    right: 24px;
-    bottom: 24px;
+    right: 20px;
+    bottom: 20px;
+    gap: 10px;
   }
 
   .team-controls button {
-    width: 58px;
-    height: 58px;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
     padding: 0;
   }
+
 }
