@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Report - St Clare Higher Secondary School</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .report-page {
+      padding: 130px 7% 80px;
+      background: #f4f1ee;
+      min-height: 100vh;
+    }
+
+    .report-box {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 40px;
+      border-left: 6px solid #7a1c2e;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .report-box h1 {
+      color: #7a1c2e;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    .report-box p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .report-search {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .report-search input {
+      padding: 14px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+    }
+
+    .report-search button,
+    .print-btn {
+      background: #7a1c2e;
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+
+    .student-report {
+      display: none;
+      margin-top: 30px;
+      background: #faf7f5;
+      padding: 30px;
+    }
+
+    .report-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .report-info p,
+    .summary-card {
+      background: #fff;
+      padding: 12px;
+      margin: 0;
+    }
+
+    .marks-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background: #fff;
+    }
+
+    .marks-table th,
+    .marks-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .marks-table th {
+      background: #7a1c2e;
+      color: #fff;
+    }
+
+    .report-summary {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .empty-msg {
+      display: none;
+      background: #fff3f3;
+      color: #9b1c1c;
+      padding: 18px;
+      margin-top: 20px;
+    }
+
+    @media(max-width: 800px) {
+      .report-page {
+        padding: 110px 22px 60px;
+      }
+
+      .report-search,
+      .report-info,
+      .report-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .report-box {
+        padding: 28px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">
+    <img src="images/logo.png" alt="School Logo">
+    <h3>St Clare Higher Secondary School</h3>
+  </div>
+
+  <div class="header-right">
+    <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<nav id="menu">
+  <div class="close-btn" onclick="toggleMenu()">✕</div>
+
+  <div class="mega-menu">
+    <div class="menu-column">
+      <h3 class="menu-title">Academic</h3>
+      <div class="menu-links">
+        <a href="academic-introduction.html">Introduction</a>
+        <a href="academic-results.html">Academic Results</a>
+        <a href="exam-routines.html">Exam Routine</a>
+        <a href="fee-notices.html">Fee Notices</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">Admissions</h3>
+      <div class="menu-links">
+        <a href="admissions.html">Admissions</a>
+        <a href="application-form.html">Application Form</a>
+        <a href="enquire.html">Enquire</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">School Life</h3>
+      <div class="menu-links">
+        <a href="boarding.html">Boarding</a>
+        <a href="sports.html">Sports</a>
+        <a href="cocurricular.html">Co-Curricular</a>
+        <a href="news.html">News</a>
+      </div>
+    </div>
+
+    <div class="menu-column">
+      <h3 class="menu-title">About Us</h3>
+      <div class="menu-links">
+        <a href="about.html">Overview</a>
+        <a href="heritage.html">Our Heritage</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="report-page">
+
+  <div class="report-box">
+
+    <h1>Student Progress Report</h1>
+
+    <p>
+      Parents can search for a student progress report using the student name
+      and roll/admission number provided by the school.
+    </p>
+
+    <div class="report-search">
+      <input type="text" id="studentName" placeholder="Student Name">
+      <input type="text" id="rollNo" placeholder="Roll / Admission No">
+      <button onclick="searchReport()">Search</button>
+    </div>
+
+    <div id="emptyMsg" class="empty-msg">
+      No matching progress report found. Please check the details or contact the school office.
+    </div>
+
+    <div id="studentReport" class="student-report">
+
+      <h2 id="reportStudentName"></h2>
+
+      <div class="report-info">
+        <p><strong>Class:</strong> <span id="reportClass"></span></p>
+        <p><strong>Roll No:</strong> <span id="reportRoll"></span></p>
+        <p><strong>Exam:</strong> <span id="reportExam"></span></p>
+        <p><strong>Academic Year:</strong> <span id="reportYear"></span></p>
+        <p><strong>Attendance:</strong> <span id="reportAttendance"></span></p>
+        <p><strong>Status:</strong> <span id="reportStatus"></span></p>
+      </div>
+
+      <table class="marks-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Full Marks</th>
+            <th>Marks Obtained</th>
+          </tr>
+        </thead>
+
+        <tbody id="marksTable"></tbody>
+      </table>
+
+      <div class="report-summary">
+        <div class="summary-card">
+          <strong>Total</strong><br>
+          <span id="reportTotal"></span>
+        </div>
+
+        <div class="summary-card">
+          <strong>Percentage</strong><br>
+          <span id="reportPercentage"></span>
+        </div>
+
+        <div class="summary-card">
+          <strong>Grade</strong><br>
+          <span id="reportGrade"></span>
+        </div>
+
+        <div class="summary-card">
+          <strong>Class Teacher</strong><br>
+          <span id="reportTeacher"></span>
+        </div>
+      </div>
+
+      <p><strong>Remarks:</strong></p>
+      <p id="reportRemarks"></p>
+
+      <button class="print-btn" onclick="window.print()">Print Report</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="js/main.js"></script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC97WiF96Rx2_NH-6jz0vMP0LqyowgDMAc",
+  authDomain: "st-clare-website.firebaseapp.com",
+  projectId: "st-clare-website",
+  storageBucket: "st-clare-website.firebasestorage.app",
+  messagingSenderId: "505543741254",
+  appId: "1:505543741254:web:206b1ccbd6c5a17f655f47",
+  measurementId: "G-08EEWQFN19"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.searchReport = async function() {
+  const nameInput = document.getElementById("studentName").value.trim().toLowerCase();
+  const rollInput = document.getElementById("rollNo").value.trim().toLowerCase();
+
+  const emptyMsg = document.getElementById("emptyMsg");
+  const studentReport = document.getElementById("studentReport");
+
+  emptyMsg.style.display = "none";
+  studentReport.style.display = "none";
+
+  if (!nameInput || !rollInput) {
+    alert("Please enter student name and roll/admission number.");
+    return;
+  }
+
+  const snapshot = await getDocs(collection(db, "progressReports"));
+
+  let foundReport = null;
+
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+
+    const dbName = (data.studentName || "").trim().toLowerCase();
+    const dbRoll = (data.rollNo || "").trim().toLowerCase();
+
+    if (dbName === nameInput && dbRoll === rollInput) {
+      foundReport = data;
+    }
+  });
+
+  if (!foundReport) {
+    emptyMsg.style.display = "block";
+    return;
+  }
+
+  document.getElementById("reportStudentName").textContent = foundReport.studentName || "-";
+  document.getElementById("reportClass").textContent = foundReport.className || "-";
+  document.getElementById("reportRoll").textContent = foundReport.rollNo || "-";
+  document.getElementById("reportExam").textContent = foundReport.examName || "-";
+  document.getElementById("reportYear").textContent = foundReport.academicYear || "-";
+  document.getElementById("reportAttendance").textContent = foundReport.attendance || "-";
+  document.getElementById("reportStatus").textContent = foundReport.status || "-";
+  document.getElementById("reportTotal").textContent =
+    `${foundReport.totalObtained || 0} / ${foundReport.totalFullMarks || 0}`;
+  document.getElementById("reportPercentage").textContent =
+    `${foundReport.percentage || "0.00"}%`;
+  document.getElementById("reportGrade").textContent = foundReport.grade || "-";
+  document.getElementById("reportTeacher").textContent = foundReport.classTeacher || "-";
+  document.getElementById("reportRemarks").textContent = foundReport.remarks || "-";
+
+  const marksTable = document.getElementById("marksTable");
+  marksTable.innerHTML = "";
+
+  const subjects = foundReport.subjects || [];
+
+  subjects.forEach((item) => {
+    marksTable.innerHTML += `
+      <tr>
+        <td>${item.subject || "-"}</td>
+        <td>${item.fullMarks || 0}</td>
+        <td>${item.marksObtained || 0}</td>
+      </tr>
+    `;
+  });
+
+  studentReport.style.display = "block";
+};
+</script>
+
+</body>
+</html>

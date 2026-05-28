@@ -2611,3 +2611,45 @@ iframe {
     object-position: center;
   }
 }
+
+.quick-links {
+  padding: 90px 7%;
+  background: #f7f7f7;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.quick-card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: #111;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-8px);
+}
+
+.quick-card h3 {
+  color: #7a1c2e;
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+.quick-card p {
+  color: #555;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
