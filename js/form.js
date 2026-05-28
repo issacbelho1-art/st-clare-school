@@ -7,339 +7,164 @@ import {
   serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* ================= FIREBASE ================= */
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
-  authDomain: "st-clare-school.firebaseapp.com",
-  projectId: "st-clare-school",
-  storageBucket: "st-clare-school.firebasestorage.app",
-  messagingSenderId: "980272641859",
-  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
-  measurementId: "G-4B7S4KEJFZ"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-/* ================= APPLICATION FORM ================= */
-
-const applicationForm =
-document.getElementById("applicationForm");
-
-if (applicationForm) {
-
-  /* TEMPORARY:
-  disable required file uploads
-  until Firebase Storage upload is added */
-
-  document
-  .querySelectorAll('input[type="file"]')
-  .forEach(input => {
-    input.required = false;
-  });
-
-  applicationForm.addEventListener(
-  "submit",
-  async (e) => {
-
-    e.preventDefault();
-
-    const submitBtn =
-    applicationForm.querySelector(
-    ".submit-application"
-    );
-
-    submitBtn.disabled = true;
-    submitBtn.textContent =
-    "Submitting...";
-
-    const formData =
-    new FormData(applicationForm);
-
-    try {
-
-      await addDoc(
-        collection(db, "applications"),
-        {
-
-        firstName:
-        formData.get("first_name"),
-
-        lastName:
-        formData.get("last_name"),
-
-        dob:
-        formData.get("dob"),
-
-        gender:
-        formData.get("gender"),
-
-        nationality:
-        formData.get("nationality"),
-
-        religion:
-        formData.get("religion"),
-
-        applyingClass:
-        formData.get("applying_class"),
-
-        previousSchool:
-        formData.get("previous_school"),
-
-        fatherName:
-        formData.get("father_name"),
-
-        fatherOccupation:
-        formData.get("father_occupation"),
-
-        motherName:
-        formData.get("mother_name"),
-
-        motherOccupation:
-        formData.get("mother_occupation"),
-
-        phone:
-        formData.get("phone"),
-
-        email:
-        formData.get("email"),
-
-        guardianName:
-        formData.get("guardian_name"),
-
-        guardianPhone:
-        formData.get("guardian_phone"),
-
-        permanentAddress:
-        formData.get("permanent_address"),
-
-        presentAddress:
-        formData.get("present_address"),
-
-        villageTown:
-        formData.get("village_town"),
-
-        district:
-        formData.get("district"),
-
-        state:
-        formData.get("state"),
-
-        pinCode:
-        formData.get("pin_code"),
-
-        bloodGroup:
-        formData.get("blood_group"),
-
-        medicalCondition:
-        formData.get("medical_condition"),
-
-        status: "New",
-
-        documents: {},
-
-        createdAt:
-        serverTimestamp()
-
-      });
-
-      alert(
-      "Application submitted successfully."
-      );
-
-      applicationForm.reset();
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert(
-      "Application failed. Please try again."
-      );
-
-    }
-
-    submitBtn.disabled = false;
-
-    submitBtn.textContent =
-    "Submit Application";
-
-  });
-
-}import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
 /* ================= FIREBASE CONFIG ================= */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
-  authDomain: "st-clare-school.firebaseapp.com",
-  projectId: "st-clare-school",
-  storageBucket: "st-clare-school.firebasestorage.app",
-  messagingSenderId: "980272641859",
-  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
-  measurementId: "G-4B7S4KEJFZ"
+  apiKey: "AIzaSyC97WiF96Rx2_NH-6jz0vMP0LqyowgDMAc",
+  authDomain: "st-clare-website.firebaseapp.com",
+  projectId: "st-clare-website",
+  storageBucket: "st-clare-website.firebasestorage.app",
+  messagingSenderId: "505543741254",
+  appId: "1:505543741254:web:206b1ccbd6c5a17f655f47",
+  measurementId: "G-08EEWQFN19"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage(app);
+
+/* ================= FILE UPLOAD HELPER ================= */
+
+async function uploadFile(file, folderName) {
+  if (!file || file.size === 0) {
+    return "";
+  }
+
+  const allowedTypes = [
+    "application/pdf",
+    "image/jpeg",
+    "image/png"
+  ];
+
+  if (!allowedTypes.includes(file.type)) {
+    throw new Error("Only PDF, JPG and PNG files are allowed.");
+  }
+
+  if (file.size > 10 * 1024 * 1024) {
+    throw new Error("File size must be below 10MB.");
+  }
+
+  const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  const filePath = `${folderName}/${Date.now()}_${safeName}`;
+
+  const storageRef = ref(storage, filePath);
+
+  await uploadBytes(storageRef, file);
+
+  return await getDownloadURL(storageRef);
+}
 
 /* ================= APPLICATION FORM ================= */
 
 window.addEventListener("DOMContentLoaded", () => {
-
-  const applicationForm =
-  document.getElementById("applicationForm");
+  const applicationForm = document.getElementById("applicationForm");
 
   if (!applicationForm) return;
 
-  /* TEMPORARY:
-     Disable file required validation
-     until Firebase Storage uploads are added */
-
-  document
-  .querySelectorAll('input[type="file"]')
-  .forEach(input => {
-    input.required = false;
-  });
-
-  applicationForm.addEventListener(
-  "submit",
-  async (e) => {
-
+  applicationForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const submitBtn =
-    applicationForm.querySelector(
-    ".submit-application"
-    );
+    const submitBtn = applicationForm.querySelector(".submit-application");
+
+    if (!submitBtn) return;
 
     submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
 
-    submitBtn.textContent =
-    "Submitting...";
-
-    const formData =
-    new FormData(applicationForm);
+    const formData = new FormData(applicationForm);
 
     try {
+      const birthCertificateFile = formData.get("birth_certificate");
+      const aadhaarCardFile = formData.get("aadhaar_card");
+      const transferCertificateFile = formData.get("transfer_certificate");
+      const marksheetFile = formData.get("marksheet");
+      const passportPhotoFile = formData.get("passport_photo");
 
-      await addDoc(
-        collection(db, "applications"),
-        {
+      const birthCertificateUrl = await uploadFile(
+        birthCertificateFile,
+        "applications/birth-certificates"
+      );
 
-        firstName:
-        formData.get("first_name") || "",
+      const aadhaarCardUrl = await uploadFile(
+        aadhaarCardFile,
+        "applications/aadhaar-cards"
+      );
 
-        lastName:
-        formData.get("last_name") || "",
+      const transferCertificateUrl = await uploadFile(
+        transferCertificateFile,
+        "applications/transfer-certificates"
+      );
 
-        dob:
-        formData.get("dob") || "",
+      const marksheetUrl = await uploadFile(
+        marksheetFile,
+        "applications/marksheets"
+      );
 
-        gender:
-        formData.get("gender") || "",
+      const passportPhotoUrl = await uploadFile(
+        passportPhotoFile,
+        "applications/passport-photos"
+      );
 
-        nationality:
-        formData.get("nationality") || "",
+      await addDoc(collection(db, "applications"), {
+        firstName: formData.get("first_name") || "",
+        lastName: formData.get("last_name") || "",
+        dob: formData.get("dob") || "",
+        gender: formData.get("gender") || "",
+        nationality: formData.get("nationality") || "",
+        religion: formData.get("religion") || "",
+        applyingClass: formData.get("applying_class") || "",
+        previousSchool: formData.get("previous_school") || "",
 
-        religion:
-        formData.get("religion") || "",
+        fatherName: formData.get("father_name") || "",
+        fatherOccupation: formData.get("father_occupation") || "",
+        motherName: formData.get("mother_name") || "",
+        motherOccupation: formData.get("mother_occupation") || "",
+        phone: formData.get("phone") || "",
+        email: formData.get("email") || "",
+        guardianName: formData.get("guardian_name") || "",
+        guardianPhone: formData.get("guardian_phone") || "",
 
-        applyingClass:
-        formData.get("applying_class") || "",
+        permanentAddress: formData.get("permanent_address") || "",
+        presentAddress: formData.get("present_address") || "",
+        villageTown: formData.get("village_town") || "",
+        district: formData.get("district") || "",
+        state: formData.get("state") || "",
+        pinCode: formData.get("pin_code") || "",
 
-        previousSchool:
-        formData.get("previous_school") || "",
-
-        fatherName:
-        formData.get("father_name") || "",
-
-        fatherOccupation:
-        formData.get("father_occupation") || "",
-
-        motherName:
-        formData.get("mother_name") || "",
-
-        motherOccupation:
-        formData.get("mother_occupation") || "",
-
-        phone:
-        formData.get("phone") || "",
-
-        email:
-        formData.get("email") || "",
-
-        guardianName:
-        formData.get("guardian_name") || "",
-
-        guardianPhone:
-        formData.get("guardian_phone") || "",
-
-        permanentAddress:
-        formData.get("permanent_address") || "",
-
-        presentAddress:
-        formData.get("present_address") || "",
-
-        villageTown:
-        formData.get("village_town") || "",
-
-        district:
-        formData.get("district") || "",
-
-        state:
-        formData.get("state") || "",
-
-        pinCode:
-        formData.get("pin_code") || "",
-
-        bloodGroup:
-        formData.get("blood_group") || "",
-
-        medicalCondition:
-        formData.get("medical_condition") || "",
+        bloodGroup: formData.get("blood_group") || "",
+        medicalCondition: formData.get("medical_condition") || "",
 
         status: "New",
 
-        documents: {},
+        documents: {
+          birthCertificate: birthCertificateUrl,
+          aadhaarCard: aadhaarCardUrl,
+          transferCertificate: transferCertificateUrl,
+          marksheet: marksheetUrl,
+          passportPhoto: passportPhotoUrl
+        },
 
-        createdAt:
-        serverTimestamp()
-
+        createdAt: serverTimestamp()
       });
 
-      alert(
-      "Application submitted successfully."
-      );
+      alert("Application submitted successfully.");
 
       applicationForm.reset();
 
     } catch (error) {
+      console.error("Application submit error:", error);
 
-      console.error(
-      "Application submit error:",
-      error
-      );
-
-      alert(
-      "Application failed. Please try again."
-      );
-
+      alert(error.message || "Application failed. Please try again.");
     }
 
     submitBtn.disabled = false;
-
-    submitBtn.textContent =
-    "Submit Application";
-
+    submitBtn.textContent = "Submit Application";
   });
-
 });

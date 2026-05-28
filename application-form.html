@@ -216,17 +216,17 @@
 
 <label class="upload-box">
 <span>Transfer Certificate</span>
-<input type="file" name="transfer_certificate" accept=".pdf,.jpg,.jpeg,.png">
+<input type="file" name="transfer_certificate" accept=".pdf,.jpg,.jpeg,.png" required>
 </label>
 
 <label class="upload-box">
 <span>Previous Marksheet</span>
-<input type="file" name="marksheet" accept=".pdf,.jpg,.jpeg,.png">
+<input type="file" name="marksheet" accept=".pdf,.jpg,.jpeg,.png" required>
 </label>
 
 <label class="upload-box">
 <span>Passport Size Photo</span>
-<input type="file" name="passport_photo" accept=".jpg,.jpeg,.png">
+<input type="file" name="passport_photo" accept=".jpg,.jpeg,.png" required>
 </label>
 </div>
 </div>
@@ -341,7 +341,7 @@ async function downloadOfflineForm() {
 }
 </script>
 
-<script type="module" src="js/forms.js"></script>
+<script type="module" src="js/form.js"></script>
 
 </body>
 </html>

@@ -1,271 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard - St Clare School</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
-body{background:#f4f1ee;color:#222;}
+  <title>Admin Dashboard - St Clare School</title>
 
-.admin-header{
-  background:#7a1c2e;color:#fff;padding:25px 40px;
-  display:flex;justify-content:space-between;align-items:center;
-}
-.admin-header h1{font-size:26px;font-weight:400;}
-.header-actions{display:flex;gap:12px;}
-
-.admin-header a,.logout-btn{
-  color:#fff;text-decoration:none;border:1px solid #fff;
-  padding:10px 20px;border-radius:30px;background:transparent;cursor:pointer;
-}
-.admin-header a:hover,.logout-btn:hover{background:#fff;color:#7a1c2e;}
-
-.stats-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);
-  gap:25px;margin:30px;
-}
-.stat-card{background:#fff;padding:25px;border-left:5px solid #7a1c2e;}
-.stat-card h2{font-size:38px;color:#7a1c2e;}
-
-.admin-main{padding:50px 30px;max-width:1350px;margin:auto;}
-
-.admin-tabs{display:flex;gap:15px;margin-bottom:30px;flex-wrap:wrap;}
-.admin-tabs button{
-  padding:13px 25px;border:none;background:#fff;color:#7a1c2e;
-  border-radius:30px;cursor:pointer;
-}
-.admin-tabs button.active{background:#7a1c2e;color:#fff;}
-
-.admin-section{display:none;}
-.admin-section.active{display:block;}
-
-.card{
-  background:#fff;padding:28px;margin-bottom:22px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  border-left:5px solid #7a1c2e;
-}
-.card h3{color:#7a1c2e;margin-bottom:18px;font-size:24px;}
-
-.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
-.info-grid p{
-  background:#faf7f5;padding:12px;font-size:14px;line-height:1.5;
-}
-.info-grid strong{display:block;color:#7a1c2e;margin-bottom:4px;}
-
-.message-box{
-  background:#faf7f5;padding:15px;margin-top:15px;line-height:1.7;
-}
-.message-box strong{color:#7a1c2e;display:block;margin-bottom:6px;}
-
-.document-links{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
-.document-links a{
-  background:#7a1c2e;color:white;padding:9px 15px;
-  border-radius:20px;text-decoration:none;font-size:13px;
-}
-
-.action-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
-.action-row button{
-  padding:10px 18px;color:#fff;border:none;
-  border-radius:25px;cursor:pointer;font-size:13px;
-}
-
-.review-btn{background:#7a1c2e;}
-.interview-btn{background:#1565c0;}
-.accept-btn{background:#2e7d32;}
-.reject-btn{background:#ef6c00;}
-.print-btn{background:#444;}
-.verify-btn{background:#2e7d32;}
-.delete-btn{background:#c62828;}
-.due-btn{background:#ef6c00;}
-
-.status-pill{
-  display:inline-block;padding:6px 12px;border-radius:20px;
-  color:#fff;font-size:13px;
-}
-.status-new{background:#c62828;}
-.status-reviewed{background:#6a1b9a;}
-.status-interview{background:#1565c0;}
-.status-accepted{background:#2e7d32;}
-.status-rejected{background:#ef6c00;}
-.status-pending{background:#ef6c00;}
-.status-verified{background:#2e7d32;}
-.status-paid{background:#2e7d32;}
-.status-due{background:#c62828;}
-
-.empty{background:#fff;padding:30px;text-align:center;color:#777;}
-
-.admin-form{
-  background:#fff;padding:28px;margin-bottom:30px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  border-left:5px solid #7a1c2e;
-}
-.admin-form h3{color:#7a1c2e;margin-bottom:20px;}
-.form-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
-.form-grid input,.form-grid select,.form-grid textarea{
-  padding:13px;border:1px solid #ddd;border-radius:6px;font-size:14px;
-}
-.form-grid textarea{grid-column:1/-1;min-height:100px;resize:vertical;}
-
-.submit-btn{
-  margin-top:18px;background:#7a1c2e;color:#fff;border:none;
-  padding:13px 28px;border-radius:30px;cursor:pointer;
-}
-
-.file-help{
-  grid-column:1/-1;
-  font-size:13px;
-  color:#666;
-  margin-top:-8px;
-}
-.form-grid input[type="file"]{
-  background:#fff;
-}
-
-/* ================= PROGRESS REPORTS ================= */
-.marks-table-wrap{
-  grid-column:1/-1;
-  overflow-x:auto;
-  background:#faf7f5;
-  padding:15px;
-  border-radius:8px;
-}
-.marks-table{
-  width:100%;
-  border-collapse:collapse;
-  min-width:650px;
-}
-.marks-table th,
-.marks-table td{
-  border:1px solid #ddd;
-  padding:10px;
-  font-size:14px;
-  text-align:left;
-}
-.marks-table th{
-  background:#7a1c2e;
-  color:#fff;
-  font-weight:400;
-}
-.marks-table input{
-  width:100%;
-  padding:9px;
-  border:1px solid #ddd;
-  border-radius:5px;
-}
-.report-summary{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-top:15px;
-}
-.report-summary div{
-  background:#faf7f5;
-  padding:12px;
-  border-left:4px solid #7a1c2e;
-}
-.report-card-print{
-  background:#fff;
-  padding:35px;
-  color:#222;
-}
-.report-school-head{
-  text-align:center;
-  border-bottom:3px solid #7a1c2e;
-  padding-bottom:18px;
-  margin-bottom:24px;
-}
-.report-school-head h1{
-  color:#7a1c2e;
-  font-size:28px;
-  margin-bottom:6px;
-}
-.report-title{
-  text-align:center;
-  font-size:20px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  margin:18px 0;
-  color:#7a1c2e;
-}
-.report-info{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-bottom:20px;
-}
-.report-info p{
-  background:#faf7f5;
-  padding:10px;
-  font-size:14px;
-}
-.report-marks{
-  width:100%;
-  border-collapse:collapse;
-  margin:18px 0;
-}
-.report-marks th,
-.report-marks td{
-  border:1px solid #333;
-  padding:9px;
-  font-size:13px;
-  text-align:center;
-}
-.report-marks th{
-  background:#f2e8e5;
-  color:#7a1c2e;
-}
-.report-remarks{
-  margin-top:18px;
-  background:#faf7f5;
-  padding:14px;
-  line-height:1.6;
-}
-.signature-row{
-  display:flex;
-  justify-content:space-between;
-  gap:30px;
-  margin-top:55px;
-}
-.signature-box{
-  width:45%;
-  text-align:center;
-}
-.signature-box img{
-  max-width:160px;
-  height:55px;
-  object-fit:contain;
-  display:block;
-  margin:0 auto 8px;
-}
-.signature-line{
-  border-top:1px solid #222;
-  padding-top:8px;
-  font-size:14px;
-}
-
-
-@media(max-width:900px){
-  .admin-header{flex-direction:column;gap:15px;text-align:center;}
-  .stats-grid{grid-template-columns:1fr;margin:20px;}
-  .info-grid,.form-grid,.report-summary,.report-info{grid-template-columns:1fr;}
-  .form-grid textarea{grid-column:auto;}
-}
-</style>
+  <link rel="stylesheet" href="admin.css">
 </head>
 
 <body>
 
 <header class="admin-header">
   <h1>St Clare Admin Dashboard</h1>
+
   <div class="header-actions">
-    <a href="index.html">Back</a>
+    <a href="index.html">Back to Website</a>
+    <a href="admin-news.html">Manage News</a>
     <button onclick="logoutAdmin()" class="logout-btn">Logout</button>
   </div>
 </header>
 
 <div class="stats-grid">
+
   <div class="stat-card">
     <h2 id="applicationCount">0</h2>
     <p>Total Applications</p>
@@ -275,9 +32,15 @@ body{background:#f4f1ee;color:#222;}
     <h2 id="enquiryCount">0</h2>
     <p>Total Enquiries</p>
   </div>
+
   <div class="stat-card">
     <h2 id="feeCount">0</h2>
     <p>Fee Records</p>
+  </div>
+
+  <div class="stat-card">
+    <h2 id="feeNoticeCount">0</h2>
+    <p>Fee Notices</p>
   </div>
 
   <div class="stat-card">
@@ -294,6 +57,7 @@ body{background:#f4f1ee;color:#222;}
     <h2 id="progressCount">0</h2>
     <p>Progress Reports</p>
   </div>
+
 </div>
 
 <main class="admin-main">
@@ -301,20 +65,26 @@ body{background:#f4f1ee;color:#222;}
   <div class="admin-tabs">
     <button class="tab-btn active" onclick="showTab(event,'applications')">Applications</button>
     <button class="tab-btn" onclick="showTab(event,'enquiries')">Enquiries</button>
-    <button class="tab-btn" onclick="showTab(event,'fees')">Fees Records</button>
+    <button class="tab-btn" onclick="showTab(event,'fees')">Fee Records</button>
+    <button class="tab-btn" onclick="showTab(event,'feeNotices')">Fee Notices</button>
     <button class="tab-btn" onclick="showTab(event,'routines')">Exam Routine</button>
     <button class="tab-btn" onclick="showTab(event,'academicResults')">Academic Results</button>
     <button class="tab-btn" onclick="showTab(event,'progressReports')">Progress Reports</button>
   </div>
 
+  <!-- APPLICATIONS -->
   <section id="applications" class="admin-section active">
     <div id="applicationsList" class="empty">Loading...</div>
   </section>
 
+  <!-- ENQUIRIES -->
   <section id="enquiries" class="admin-section">
     <div id="enquiriesList" class="empty">Loading...</div>
   </section>
+
+  <!-- FEE RECORDS -->
   <section id="fees" class="admin-section">
+
     <form id="feeForm" class="admin-form">
       <h3>Add Student Fee Record</h3>
 
@@ -326,10 +96,18 @@ body{background:#f4f1ee;color:#222;}
 
         <select id="feeMonth" required>
           <option value="">Select Month</option>
-          <option>January</option><option>February</option><option>March</option>
-          <option>April</option><option>May</option><option>June</option>
-          <option>July</option><option>August</option><option>September</option>
-          <option>October</option><option>November</option><option>December</option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
         </select>
 
         <select id="feeStatus" required>
@@ -342,9 +120,49 @@ body{background:#f4f1ee;color:#222;}
     </form>
 
     <div id="feesList" class="empty">Loading...</div>
+
   </section>
 
+  <!-- FEE NOTICES -->
+  <section id="feeNotices" class="admin-section">
+
+    <form id="feeNoticeForm" class="admin-form">
+      <h3>Publish Fee Notice</h3>
+
+      <div class="form-grid">
+        <input type="text" id="feeNoticeTitle" placeholder="Notice Title e.g. Monthly Fee Notice" required>
+
+        <select id="feeNoticeCategory" required>
+          <option value="">Select Category</option>
+          <option>Fee Update</option>
+          <option>Monthly Fee</option>
+          <option>Admission Fee</option>
+          <option>Hostel Fee</option>
+          <option>Transport Fee</option>
+          <option>Important Notice</option>
+        </select>
+
+        <input type="date" id="feeNoticeDate" required>
+
+        <input type="file" id="feeNoticeFile" accept=".pdf,image/*">
+
+        <small class="file-help">
+          Optional: upload PDF or image notice directly. This will appear on fee-notices.html.
+        </small>
+
+        <textarea id="feeNoticeDescription" placeholder="Short description / instructions for parents"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Publish Fee Notice</button>
+    </form>
+
+    <div id="feeNoticesList" class="empty">Loading...</div>
+
+  </section>
+
+  <!-- EXAM ROUTINES -->
   <section id="routines" class="admin-section">
+
     <form id="routineForm" class="admin-form">
       <h3>Post Exam Routine</h3>
 
@@ -355,8 +173,13 @@ body{background:#f4f1ee;color:#222;}
         <input type="date" id="routineDate" required>
         <input type="time" id="routineStartTime" required>
         <input type="time" id="routineEndTime" required>
+
         <input type="file" id="routinePdfFile" accept=".pdf,image/*">
-        <small class="file-help">Optional: upload PDF or image routine directly. No Google Drive needed.</small>
+
+        <small class="file-help">
+          Optional: upload PDF or image routine directly. No Google Drive needed.
+        </small>
+
         <textarea id="routineNote" placeholder="Extra note / instructions"></textarea>
       </div>
 
@@ -364,10 +187,12 @@ body{background:#f4f1ee;color:#222;}
     </form>
 
     <div id="routinesList" class="empty">Loading...</div>
+
   </section>
 
-
+  <!-- ACADEMIC RESULTS -->
   <section id="academicResults" class="admin-section">
+
     <form id="academicResultForm" class="admin-form">
       <h3>Publish Academic Result</h3>
 
@@ -377,8 +202,13 @@ body{background:#f4f1ee;color:#222;}
         <input type="text" id="examName" placeholder="Exam Name">
         <input type="text" id="academicYear" placeholder="Academic Year e.g. 2025-2026">
         <input type="date" id="publishedDate">
+
         <input type="file" id="resultPdfFile" accept=".pdf,image/*">
-        <small class="file-help">Optional: upload result PDF or image directly. No Google Drive needed.</small>
+
+        <small class="file-help">
+          Optional: upload result PDF or image directly. No Google Drive needed.
+        </small>
+
         <textarea id="resultNote" placeholder="Additional note / instructions"></textarea>
       </div>
 
@@ -386,9 +216,12 @@ body{background:#f4f1ee;color:#222;}
     </form>
 
     <div id="academicResultsList" class="empty">Loading...</div>
+
   </section>
 
+  <!-- PROGRESS REPORTS -->
   <section id="progressReports" class="admin-section">
+
     <form id="progressReportForm" class="admin-form">
       <h3>Create Student Progress Report</h3>
 
@@ -404,6 +237,7 @@ body{background:#f4f1ee;color:#222;}
         <input type="text" id="reportStatus" placeholder="Result / Promotion Status e.g. Promoted">
         <input type="text" id="principalSignature" placeholder="Principal signature image path" value="images/principal-signature.png">
         <input type="text" id="teacherSignature" placeholder="Class teacher signature image path" value="images/class-teacher-signature.png">
+
         <textarea id="reportRemarks" placeholder="Teacher remarks / conduct / general progress"></textarea>
 
         <div class="marks-table-wrap">
@@ -415,13 +249,43 @@ body{background:#f4f1ee;color:#222;}
                 <th>Marks Obtained</th>
               </tr>
             </thead>
+
             <tbody id="marksRows">
-              <tr><td><input value="English"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
-              <tr><td><input value="Alternative English"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
-              <tr><td><input value="Mathematics"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
-              <tr><td><input value="Science"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
-              <tr><td><input value="Social Science"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
-              <tr><td><input value="Computer"></td><td><input type="number" value="100"></td><td><input type="number"></td></tr>
+              <tr>
+                <td><input value="English"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
+
+              <tr>
+                <td><input value="Alternative English"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
+
+              <tr>
+                <td><input value="Mathematics"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
+
+              <tr>
+                <td><input value="Science"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
+
+              <tr>
+                <td><input value="Social Science"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
+
+              <tr>
+                <td><input value="Computer"></td>
+                <td><input type="number" value="100"></td>
+                <td><input type="number"></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -431,14 +295,21 @@ body{background:#f4f1ee;color:#222;}
     </form>
 
     <div id="progressReportsList" class="empty">Loading...</div>
+
   </section>
 
 </main>
 
 <script>
-function showTab(e, tab){
-  document.querySelectorAll(".admin-section").forEach(s => s.classList.remove("active"));
-  document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+function showTab(e, tab) {
+  document.querySelectorAll(".admin-section").forEach(section => {
+    section.classList.remove("active");
+  });
+
+  document.querySelectorAll(".tab-btn").forEach(button => {
+    button.classList.remove("active");
+  });
+
   document.getElementById(tab).classList.add("active");
   e.target.classList.add("active");
 }
@@ -474,13 +345,13 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
-  authDomain: "st-clare-school.firebaseapp.com",
-  projectId: "st-clare-school",
-  storageBucket: "st-clare-school.firebasestorage.app",
-  messagingSenderId: "980272641859",
-  appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
-  measurementId: "G-4B7S4KEJFZ"
+  apiKey: "AIzaSyC97WiF96Rx2_NH-6jz0vMP0LqyowgDMAc",
+  authDomain: "st-clare-website.firebaseapp.com",
+  projectId: "st-clare-website",
+  storageBucket: "st-clare-website.firebasestorage.app",
+  messagingSenderId: "505543741254",
+  appId: "1:505543741254:web:206b1ccbd6c5a17f655f47",
+  measurementId: "G-08EEWQFN19"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -495,6 +366,7 @@ onAuthStateChanged(auth, (user) => {
     loadApplications();
     loadEnquiries();
     loadFees();
+    loadFeeNotices();
     loadRoutines();
     loadAcademicResults();
     loadProgressReports();
@@ -505,10 +377,11 @@ function value(data, keys) {
   for (const key of keys) {
     if (data[key]) return data[key];
   }
+
   return "-";
 }
 
-function getStatusClass(status){
+function getStatusClass(status) {
   if (status === "Reviewed") return "status-reviewed";
   if (status === "Interview Scheduled") return "status-interview";
   if (status === "Accepted") return "status-accepted";
@@ -517,18 +390,21 @@ function getStatusClass(status){
   if (status === "Pending Verification") return "status-pending";
   if (status === "Paid") return "status-paid";
   if (status === "Due") return "status-due";
+
   return "status-new";
 }
-
 
 async function uploadAdminFile(file, folderName) {
   if (!file) return "";
 
   const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
   const filePath = `${folderName}/${Date.now()}_${safeName}`;
+
   const storageRef = ref(storage, filePath);
 
   await uploadBytes(storageRef, file);
+
   return await getDownloadURL(storageRef);
 }
 
@@ -536,6 +412,7 @@ async function uploadAdminFile(file, folderName) {
 
 async function loadApplications() {
   const list = document.getElementById("applicationsList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -620,6 +497,7 @@ async function loadApplications() {
 
 async function loadEnquiries() {
   const list = document.getElementById("enquiriesList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -677,7 +555,7 @@ async function loadEnquiries() {
   }
 }
 
-/* ================= FEES RECORDS ================= */
+/* ================= FEE RECORDS ================= */
 
 document.getElementById("feeForm").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -694,7 +572,9 @@ document.getElementById("feeForm").addEventListener("submit", async (e) => {
     });
 
     alert("Fee record added successfully.");
+
     e.target.reset();
+
     loadFees();
 
   } catch (error) {
@@ -705,6 +585,7 @@ document.getElementById("feeForm").addEventListener("submit", async (e) => {
 
 async function loadFees() {
   const list = document.getElementById("feesList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -767,8 +648,105 @@ window.markFeeDue = async (id) => {
 
 window.deleteFeeRecord = async (id) => {
   if (!confirm("Delete this fee record?")) return;
+
   await deleteDoc(doc(db, "feeRecords", id));
+
   loadFees();
+};
+
+/* ================= FEE NOTICES ================= */
+
+document.getElementById("feeNoticeForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  try {
+    const noticeFile = document.getElementById("feeNoticeFile").files[0];
+
+    const uploadedNoticeUrl = await uploadAdminFile(noticeFile, "fee-notices");
+
+    await addDoc(collection(db, "feeNotices"), {
+      title: document.getElementById("feeNoticeTitle").value,
+      category: document.getElementById("feeNoticeCategory").value,
+      date: document.getElementById("feeNoticeDate").value,
+      description: document.getElementById("feeNoticeDescription").value,
+      fileUrl: uploadedNoticeUrl,
+      createdAt: serverTimestamp()
+    });
+
+    alert("Fee notice published successfully.");
+
+    e.target.reset();
+
+    loadFeeNotices();
+
+  } catch (error) {
+    console.error(error);
+    alert("Failed to publish fee notice. Check Firebase Storage rules.");
+  }
+});
+
+async function loadFeeNotices() {
+  const list = document.getElementById("feeNoticesList");
+
+  list.innerHTML = "Loading...";
+
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "feeNotices"), orderBy("createdAt", "desc"))
+    );
+
+    document.getElementById("feeNoticeCount").textContent = snapshot.size;
+
+    if (snapshot.empty) {
+      list.innerHTML = "<div class='empty'>No fee notices published yet</div>";
+      return;
+    }
+
+    list.innerHTML = "";
+
+    snapshot.forEach((d) => {
+      const data = d.data();
+      const id = d.id;
+      const noticeLink = data.fileUrl || data.pdfUrl || data.downloadUrl || "";
+
+      list.innerHTML += `
+        <div class="card" id="fee-notice-card-${id}">
+          <h3>${data.title || "Fee Notice"}</h3>
+
+          <div class="info-grid">
+            <p><strong>Category</strong>${data.category || "-"}</p>
+            <p><strong>Date</strong>${data.date || "-"}</p>
+          </div>
+
+          <div class="message-box">
+            <strong>Description / Instructions</strong>
+            ${data.description || "-"}
+          </div>
+
+          <div class="document-links">
+            ${noticeLink ? `<a href="${noticeLink}" target="_blank">View Fee Notice</a>` : ""}
+          </div>
+
+          <div class="action-row">
+            <button onclick="printFeeNotice('${id}')" class="print-btn">Print</button>
+            <button onclick="deleteFeeNotice('${id}')" class="delete-btn">Delete</button>
+          </div>
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    console.error(error);
+    list.innerHTML = "<div class='empty'>Failed to load fee notices</div>";
+  }
+}
+
+window.deleteFeeNotice = async (id) => {
+  if (!confirm("Delete this fee notice?")) return;
+
+  await deleteDoc(doc(db, "feeNotices", id));
+
+  loadFeeNotices();
 };
 
 /* ================= EXAM ROUTINES ================= */
@@ -778,6 +756,7 @@ document.getElementById("routineForm").addEventListener("submit", async (e) => {
 
   try {
     const routineFile = document.getElementById("routinePdfFile").files[0];
+
     const uploadedRoutineUrl = await uploadAdminFile(routineFile, "exam-routines");
 
     await addDoc(collection(db, "examRoutines"), {
@@ -794,7 +773,9 @@ document.getElementById("routineForm").addEventListener("submit", async (e) => {
     });
 
     alert("Exam routine posted successfully.");
+
     e.target.reset();
+
     loadRoutines();
 
   } catch (error) {
@@ -805,6 +786,7 @@ document.getElementById("routineForm").addEventListener("submit", async (e) => {
 
 async function loadRoutines() {
   const list = document.getElementById("routinesList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -825,6 +807,13 @@ async function loadRoutines() {
       const data = d.data();
       const id = d.id;
 
+      const routineLink =
+        data.pdfUrl ||
+        data.routineUrl ||
+        data.fileUrl ||
+        data.downloadUrl ||
+        "";
+
       list.innerHTML += `
         <div class="card" id="routine-card-${id}">
           <h3>${data.title || "Exam Routine"}</h3>
@@ -843,7 +832,7 @@ async function loadRoutines() {
           </div>
 
           <div class="document-links">
-            ${(data.pdfUrl || data.routineUrl || data.fileUrl || data.downloadUrl) ? `<a href="${data.pdfUrl || data.routineUrl || data.fileUrl || data.downloadUrl}" target="_blank">View Routine PDF</a>` : ""}
+            ${routineLink ? `<a href="${routineLink}" target="_blank">View Routine PDF</a>` : ""}
           </div>
 
           <div class="action-row">
@@ -862,7 +851,9 @@ async function loadRoutines() {
 
 window.deleteRoutine = async (id) => {
   if (!confirm("Delete this exam routine?")) return;
+
   await deleteDoc(doc(db, "examRoutines", id));
+
   loadRoutines();
 };
 
@@ -873,6 +864,7 @@ document.getElementById("academicResultForm").addEventListener("submit", async (
 
   try {
     const resultFile = document.getElementById("resultPdfFile").files[0];
+
     const uploadedResultUrl = await uploadAdminFile(resultFile, "academic-results");
 
     await addDoc(collection(db, "academicResults"), {
@@ -888,7 +880,9 @@ document.getElementById("academicResultForm").addEventListener("submit", async (
     });
 
     alert("Academic result published successfully.");
+
     e.target.reset();
+
     loadAcademicResults();
 
   } catch (error) {
@@ -899,6 +893,7 @@ document.getElementById("academicResultForm").addEventListener("submit", async (
 
 async function loadAcademicResults() {
   const list = document.getElementById("academicResultsList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -918,7 +913,13 @@ async function loadAcademicResults() {
     snapshot.forEach((d) => {
       const data = d.data();
       const id = d.id;
-      const resultLink = data.pdfUrl || data.resultUrl || data.fileUrl || data.downloadUrl || "";
+
+      const resultLink =
+        data.pdfUrl ||
+        data.resultUrl ||
+        data.fileUrl ||
+        data.downloadUrl ||
+        "";
 
       list.innerHTML += `
         <div class="card" id="result-card-${id}">
@@ -956,7 +957,9 @@ async function loadAcademicResults() {
 
 window.deleteAcademicResult = async (id) => {
   if (!confirm("Delete this academic result?")) return;
+
   await deleteDoc(doc(db, "academicResults", id));
+
   loadAcademicResults();
 };
 
@@ -980,6 +983,7 @@ document.getElementById("progressReportForm").addEventListener("submit", async (
 
     if (subject) {
       subjects.push({ subject, fullMarks, marksObtained });
+
       totalFullMarks += fullMarks;
       totalObtained += marksObtained;
     }
@@ -990,6 +994,7 @@ document.getElementById("progressReportForm").addEventListener("submit", async (
     : "0.00";
 
   let grade = "D";
+
   if (percentage >= 90) grade = "A+";
   else if (percentage >= 80) grade = "A";
   else if (percentage >= 70) grade = "B+";
@@ -1021,10 +1026,13 @@ document.getElementById("progressReportForm").addEventListener("submit", async (
     });
 
     alert("Progress report saved successfully.");
+
     e.target.reset();
+
     document.getElementById("reportPrincipal").value = "Sr Deepa Mathew";
     document.getElementById("principalSignature").value = "images/principal-signature.png";
     document.getElementById("teacherSignature").value = "images/class-teacher-signature.png";
+
     loadProgressReports();
 
   } catch (error) {
@@ -1035,6 +1043,7 @@ document.getElementById("progressReportForm").addEventListener("submit", async (
 
 async function loadProgressReports() {
   const list = document.getElementById("progressReportsList");
+
   list.innerHTML = "Loading...";
 
   try {
@@ -1096,7 +1105,10 @@ async function loadProgressReports() {
 
 window.printProgressReport = async (id) => {
   try {
-    const snapshot = await getDocs(query(collection(db, "progressReports"), orderBy("createdAt", "desc")));
+    const snapshot = await getDocs(
+      query(collection(db, "progressReports"), orderBy("createdAt", "desc"))
+    );
+
     let report = null;
 
     snapshot.forEach((d) => {
@@ -1145,6 +1157,7 @@ window.printProgressReport = async (id) => {
               <th>Marks Obtained</th>
             </tr>
           </thead>
+
           <tbody>
             ${marksRows}
           </tbody>
@@ -1179,7 +1192,9 @@ window.printProgressReport = async (id) => {
     `;
 
     window.print();
+
     document.body.innerHTML = originalContents;
+
     location.reload();
 
   } catch (error) {
@@ -1190,7 +1205,9 @@ window.printProgressReport = async (id) => {
 
 window.deleteProgressReport = async (id) => {
   if (!confirm("Delete this progress report?")) return;
+
   await deleteDoc(doc(db, "progressReports", id));
+
   loadProgressReports();
 };
 
@@ -1198,11 +1215,13 @@ window.deleteProgressReport = async (id) => {
 
 window.printApplication = (id) => printCard(`application-card-${id}`, "Student Admission Application Form");
 window.printFeeRecord = (id) => printCard(`fee-card-${id}`, "Student Monthly Fee Record");
+window.printFeeNotice = (id) => printCard(`fee-notice-card-${id}`, "Fee Notice");
 window.printRoutine = (id) => printCard(`routine-card-${id}`, "Exam Routine");
 window.printAcademicResult = (id) => printCard(`result-card-${id}`, "Academic Result");
 
 function printCard(cardId, subtitle) {
   const card = document.getElementById(cardId);
+
   if (!card) return alert("Record not found.");
 
   const originalContents = document.body.innerHTML;
@@ -1213,13 +1232,19 @@ function printCard(cardId, subtitle) {
         <h1 style="color:#7a1c2e;margin-bottom:10px;">St Clare Higher Secondary School</h1>
         <p>${subtitle}</p>
       </div>
+
       ${card.innerHTML}
     </div>
   `;
 
-  document.querySelectorAll(".action-row,.document-links").forEach(el => el.style.display = "none");
+  document.querySelectorAll(".action-row,.document-links").forEach(el => {
+    el.style.display = "none";
+  });
+
   window.print();
+
   document.body.innerHTML = originalContents;
+
   location.reload();
 }
 
@@ -1230,10 +1255,12 @@ window.updateApplicationStatus = async (id, status) => {
     await updateDoc(doc(db, "applications", id), { status });
 
     const statusEl = document.getElementById(`status-${id}`);
+
     statusEl.innerText = status;
     statusEl.className = `status-pill ${getStatusClass(status)}`;
 
     alert(`Application status updated to ${status}`);
+
   } catch (error) {
     console.error(error);
     alert("Failed to update application status.");
@@ -1242,18 +1269,23 @@ window.updateApplicationStatus = async (id, status) => {
 
 window.deleteApplication = async (id) => {
   if (!confirm("Are you sure you want to delete this application?")) return;
+
   await deleteDoc(doc(db, "applications", id));
+
   loadApplications();
 };
 
 window.deleteEnquiry = async (id) => {
   if (!confirm("Are you sure you want to delete this enquiry?")) return;
+
   await deleteDoc(doc(db, "enquiries", id));
+
   loadEnquiries();
 };
 
 window.logoutAdmin = async () => {
   await signOut(auth);
+
   location.href = "admin-login.html";
 };
 </script>

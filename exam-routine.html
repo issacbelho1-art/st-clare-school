@@ -8,41 +8,12 @@
   <title>Exam Routine - St Clare Higher Secondary School</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="term-dates.css">
-
-  <style>
-    .routine-download-btn {
-      display: inline-block;
-      margin-top: 18px;
-      background: #7a1c2e;
-      color: #fff;
-      padding: 12px 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s ease;
-    }
-
-    .routine-download-btn:hover {
-      background: #54101d;
-      transform: translateY(-2px);
-    }
-
-    .routine-badge {
-      display: inline-block;
-      background: #f4f1ee;
-      color: #7a1c2e;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-  </style>
+  <link rel="stylesheet" href="exam-routines.css">
 </head>
 
 <body class="inner-page">
 
+  <!-- HEADER -->
   <header class="main-header">
     <div class="logo">
       <img src="images/logo.png" alt="School Logo">
@@ -60,6 +31,7 @@
     </div>
   </header>
 
+  <!-- MENU -->
   <nav id="menu">
     <div class="close-btn" onclick="toggleMenu()">✕</div>
 
@@ -67,6 +39,7 @@
 
       <div class="menu-column">
         <h3 class="menu-title">Academic</h3>
+
         <div class="menu-links">
           <a href="academic-introduction.html">Introduction</a>
           <a href="pre-primary.html">Pre-Primary</a>
@@ -74,12 +47,13 @@
           <a href="grade6-10.html">Middle & Secondary</a>
           <a href="grade11-12.html">Senior Secondary</a>
           <a href="academic-results.html">Academic Results</a>
-          <a href="exam-routine.html">Exam Routine</a>
+          <a href="exam-routines.html">Exam Routine</a>
         </div>
       </div>
 
       <div class="menu-column">
         <h3 class="menu-title">Admissions</h3>
+
         <div class="menu-links">
           <a href="admissions.html">Admissions</a>
           <a href="application-process.html">Application Process</a>
@@ -91,6 +65,7 @@
 
       <div class="menu-column">
         <h3 class="menu-title">Co-Curricular</h3>
+
         <div class="menu-links">
           <a href="cocurricular.html">Overview</a>
           <a href="arts.html">Arts</a>
@@ -102,6 +77,7 @@
 
       <div class="menu-column">
         <h3 class="menu-title">About Us</h3>
+
         <div class="menu-links">
           <a href="about.html">Overview</a>
           <a href="heritage.html">Our Heritage</a>
@@ -115,29 +91,38 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <section class="page-hero">
     <div class="hero-overlay">
       <h1>Exam Routine</h1>
     </div>
   </section>
 
+  <!-- MAIN SECTION -->
   <section class="term-section">
+
     <div class="term-container">
 
+      <!-- MAIN CONTENT -->
       <div class="term-main">
+
         <h2>Latest Exam Routine</h2>
 
         <p class="lead">
-          View the latest examination schedules, downloadable routines and important instructions
-          posted by the school office.
+          View the latest examination schedules, downloadable routines and important instructions posted by the school office.
         </p>
 
         <div id="routineList">
-          <div class="empty">Loading exam routines...</div>
+          <div class="empty">
+            Loading exam routines...
+          </div>
         </div>
+
       </div>
 
+      <!-- SIDEBAR -->
       <aside class="term-sidebar">
+
         <div class="sidebar-logo">
           <img src="images/logo.png" alt="School Logo">
         </div>
@@ -147,28 +132,43 @@
         <ul>
           <li><a href="academic-introduction.html">Academic Introduction</a></li>
           <li><a href="academic-results.html">Academic Results</a></li>
-          <li><a href="exam-routine.html" class="active">Exam Routine</a></li>
+          <li><a href="exam-routines.html" class="active">Exam Routine</a></li>
           <li><a href="term-dates.html">Term Dates</a></li>
           <li><a href="contact.html">Contact School</a></li>
         </ul>
+
       </aside>
 
     </div>
+
   </section>
 
+  <!-- CTA -->
   <section class="activity-cta">
+
     <h2>Need More Information?</h2>
-    <p>Please contact the school office for examination related queries.</p>
+
+    <p>
+      Please contact the school office for examination related queries.
+    </p>
+
     <a href="contact.html">Contact Us</a>
+
   </section>
 
   <div class="page-transition"></div>
 
+  <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+
+  <!-- MAIN JS -->
   <script src="js/main.js"></script>
 
+  <!-- FIREBASE -->
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import { initializeApp }
+      from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
     import {
       getFirestore,
@@ -176,41 +176,53 @@
       getDocs,
       query,
       orderBy
-    } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    /* ================= FIREBASE CONFIG ================= */
 
     const firebaseConfig = {
-      apiKey: "AIzaSyD3ZfrYRJ2XNfijkmaYGKTUVotGTqYX5Ds",
-      authDomain: "st-clare-school.firebaseapp.com",
-      projectId: "st-clare-school",
-      storageBucket: "st-clare-school.firebasestorage.app",
-      messagingSenderId: "980272641859",
-      appId: "1:980272641859:web:0e37c8a0e5faab38afa1f6",
-      measurementId: "G-4B7S4KEJFZ"
-    };
+  apiKey: "AIzaSyC97WiF96Rx2_NH-6jz0vMP0LqyowgDMAc",
+  authDomain: "st-clare-website.firebaseapp.com",
+  projectId: "st-clare-website",
+  storageBucket: "st-clare-website.firebasestorage.app",
+  messagingSenderId: "505543741254",
+  appId: "1:505543741254:web:206b1ccbd6c5a17f655f47",
+  measurementId: "G-08EEWQFN19"
+};
 
     const app = initializeApp(firebaseConfig);
+
     const db = getFirestore(app);
 
     const routineList = document.getElementById("routineList");
 
     async function loadExamRoutines() {
+
       try {
+
         const snapshot = await getDocs(
-          query(collection(db, "examRoutines"), orderBy("createdAt", "desc"))
+          query(
+            collection(db, "examRoutines"),
+            orderBy("createdAt", "desc")
+          )
         );
 
         if (snapshot.empty) {
+
           routineList.innerHTML = `
             <div class="empty">
               No exam routine has been posted yet.
             </div>
           `;
+
           return;
         }
 
         routineList.innerHTML = "";
 
         snapshot.forEach((routineDoc) => {
+
           const data = routineDoc.data();
 
           const routineLink =
@@ -222,41 +234,61 @@
 
           const downloadButton = routineLink
             ? `
-              <a href="${routineLink}" target="_blank" class="routine-download-btn">
+              <a href="${routineLink}"
+                 target="_blank"
+                 class="routine-download-btn">
+
                 View / Download Routine
+
               </a>
             `
             : "";
 
           routineList.innerHTML += `
+
             <div class="term-box">
-              <span class="routine-badge">Official Exam Notice</span>
+
+              <span class="routine-badge">
+                Official Exam Notice
+              </span>
 
               <h3>${data.title || "Exam Routine"}</h3>
 
               <p><strong>Class:</strong> ${data.className || "-"}</p>
+
               <p><strong>Subject:</strong> ${data.subject || "-"}</p>
+
               <p><strong>Date:</strong> ${data.examDate || "-"}</p>
-              <p><strong>Time:</strong> ${data.startTime || "-"} - ${data.endTime || "-"}</p>
+
+              <p><strong>Time:</strong>
+                ${data.startTime || "-"} -
+                ${data.endTime || "-"}
+              </p>
+
               <p><strong>Note:</strong> ${data.note || "-"}</p>
 
               ${downloadButton}
+
             </div>
+
           `;
         });
 
       } catch (error) {
+
         console.error(error);
 
         routineList.innerHTML = `
           <div class="empty">
-            Unable to load exam routine. Please try again later.
+            Unable to load exam routine.
+            Please try again later.
           </div>
         `;
       }
     }
 
     loadExamRoutines();
+
   </script>
 
 </body>
