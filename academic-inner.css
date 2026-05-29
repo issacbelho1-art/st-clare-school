@@ -576,3 +576,19 @@ body.inner-page {
     font-size: 16px;
   }
 }
+
+.video-section {
+  padding: 80px 7%;
+  background: #f7f7f7;
+}
+
+.video-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
