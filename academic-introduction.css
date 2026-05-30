@@ -614,6 +614,7 @@
   display: block;
 }
 
+/* DARK OVERLAY */
 .tour-image::after {
   content: "";
   position: absolute;
@@ -623,45 +624,75 @@
   pointer-events: none;
 }
 
-/* PLAY BUTTON */
+/* ================= PLAY BUTTON WITH LABEL ================= */
+
 .tour-play {
   position: absolute;
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
+  z-index: 6;
+
+  width: auto;
+  min-width: 135px;
+
+  padding: 8px 16px 8px 8px;
+
+  border: none;
+  border-radius: 50px;
+
   background: #f26522;
-  color: white;
-  border: 3px solid white;
-  font-size: 22px;
-  cursor: pointer;
+  color: #fff;
+
   display: flex;
   align-items: center;
-  justify-content: center;
-  z-index: 5;
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.55);
-  backdrop-filter: blur(6px);
+  gap: 10px;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.28);
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .tour-play:hover {
   background: #ff6f2a;
-  transform: scale(1.1);
+  transform: translateY(-3px);
 }
 
+.tour-play span {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+  background: #fff;
+  color: #f26522;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tour-play small {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* BUTTON POSITIONS */
 .play-1 {
-  top: 34%;
-  left: 17%;
+  top: 35%;
+  left: 16%;
 }
 
 .play-2 {
-  top: 50%;
+  top: 54%;
   left: 50%;
-  animation: pulse 2s infinite;
 }
 
 .play-3 {
-  top: 38%;
-  right: 18%;
+  top: 42%;
+  right: 15%;
 }
 
 .play-4 {
@@ -669,89 +700,18 @@
   left: 56%;
 }
 
-@keyframes pulse {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) scale(1.12);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
-/* LABEL BOXES */
-.tour-label {
-  position: absolute;
-  background: #1f3f7a;
-  color: white;
-  padding: 7px 18px;
-  font-size: 13px;
-  font-style: italic;
-  border-radius: 2px;
-  white-space: nowrap;
-  z-index: 6;
-}
-
-/* CONNECTOR LINES */
-.tour-line {
-  position: absolute;
-  height: 2px;
-  background: #1f3f7a;
-  transform-origin: left center;
-  z-index: 4;
-}
-
-/* LINE + LABEL POSITIONS */
-.line-1 {
-  width: 120px;
-  top: 38%;
-  left: 21%;
-  transform: rotate(-35deg);
-}
-
-.label-1 {
-  top: 30%;
-  left: 27%;
-}
-
-.line-2 {
-  width: 130px;
-  top: 50%;
-  left: 52%;
-  transform: rotate(0deg);
-}
-
-.label-2 {
-  top: 47%;
-  left: 61%;
-}
-
-.line-3 {
-  width: 120px;
-  top: 41%;
-  right: 21%;
-  transform: rotate(-35deg);
-}
-
-.label-3 {
-  top: 32%;
-  right: 25%;
-}
-
-.line-4 {
-  width: 130px;
-  top: 28%;
-  left: 58%;
-  transform: rotate(35deg);
-}
-
+/* Remove old connector lines/labels */
+.tour-line,
+.tour-label,
+.line-1,
+.line-2,
+.line-3,
+.line-4,
+.label-1,
+.label-2,
+.label-3,
 .label-4 {
-  top: 22%;
-  left: 65%;
+  display: none !important;
 }
 
 /* ================= VIDEO POPUP ================= */
@@ -759,11 +719,15 @@
 .video-popup {
   position: fixed;
   inset: 0;
+
   background: rgba(0,0,0,0.88);
+
   display: none;
   align-items: center;
   justify-content: center;
+
   z-index: 999999;
+
   padding: 25px;
 }
 
@@ -773,8 +737,11 @@
 
 .video-box {
   position: relative;
+
   width: min(900px, 95vw);
+
   background: #000;
+
   border-radius: 14px;
   overflow: visible;
 }
@@ -782,7 +749,9 @@
 .video-box video {
   width: 100%;
   max-height: 80vh;
+
   border-radius: 14px;
+
   display: block;
   background: #000;
 }
@@ -794,17 +763,132 @@
 
   width: 42px;
   height: 42px;
+
   border-radius: 50%;
   border: none;
 
   background: white;
   color: #111;
+
   font-size: 30px;
   line-height: 1;
+
   cursor: pointer;
   z-index: 10;
 }
 
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+  .tour-wrapper {
+    display: block;
+  }
+
+  .tour-title {
+    width: 100%;
+    height: auto;
+    writing-mode: horizontal-tb;
+    transform: none;
+
+    font-size: 36px;
+    padding: 0 20px 35px;
+    text-align: center;
+  }
+
+  .tour-image {
+    height: 420px;
+  }
+
+  .tour-play {
+    min-width: auto;
+    padding: 7px 11px 7px 7px;
+    gap: 7px;
+  }
+
+  .tour-play span {
+    width: 34px;
+    height: 34px;
+    font-size: 13px;
+  }
+
+  .tour-play small {
+    font-size: 11px;
+  }
+
+  .play-1 {
+    top: 28%;
+    left: 8%;
+  }
+
+  .play-2 {
+    top: 53%;
+    left: 35%;
+  }
+
+  .play-3 {
+    top: 40%;
+    right: 6%;
+  }
+
+  .play-4 {
+    top: 18%;
+    left: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .tour-section {
+    padding: 70px 0 80px;
+  }
+
+  .tour-intro {
+    margin-bottom: 55px;
+  }
+
+  .tour-intro p {
+    font-size: 18px;
+  }
+
+  .tour-title {
+    font-size: 30px;
+  }
+
+  .tour-image {
+    height: 360px;
+  }
+
+  .tour-play {
+    transform: scale(0.92);
+  }
+
+  .tour-play:hover {
+    transform: scale(0.92);
+  }
+
+  .play-1 {
+    top: 26%;
+    left: 5%;
+  }
+
+  .play-2 {
+    top: 56%;
+    left: 28%;
+  }
+
+  .play-3 {
+    top: 41%;
+    right: 4%;
+  }
+
+  .play-4 {
+    top: 15%;
+    left: 45%;
+  }
+
+  .video-popup {
+    padding: 18px;
+  }
+}
 /* ================= PREMIUM BACK BUTTON ================= */
 
 .back-academic-wrapper {
