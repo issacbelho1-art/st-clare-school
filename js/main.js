@@ -932,3 +932,8 @@ window.addEventListener("resize", () => {
 updateAdmissionSlider(false);
 
 });
+
+
+function closeBoardingNotice() {
+  document.getElementById("boardingNotice").style.display = "none";
+}

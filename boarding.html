@@ -17,6 +17,20 @@
 
 <body class="inner-page">
 
+<div id="boardingNotice" class="boarding-notice">
+  <div class="boarding-notice-box">
+    <span class="boarding-close" onclick="closeBoardingNotice()">&times;</span>
+
+    <h2>Boarding Information</h2>
+
+    <p>Boarding facilities are currently not operational.</p>
+
+    <p>Future reopening plans will be announced by the school.</p>
+
+    <button onclick="closeBoardingNotice()">Continue to Page</button>
+  </div>
+</div>
+
 <header class="main-header">
   <div class="logo">
     <img src="images/logo.png" alt="School Logo">
@@ -90,42 +104,32 @@
   </div>
 </nav>
 
-<!-- BOARDING UNCOVER HERO -->
-<section class="boarding-intro">
-
-  <div class="boarding-photo">
-    <img src="images/boarding.png" alt="Boarding vision at St Clare">
+<section class="academic-intro">
+  <div class="academic-intro-image">
+    <img src="images/boarding.png" alt="Boarding Life at St Clare">
   </div>
 
-  <div class="boarding-overlay" id="boardingOverlay">
+  <div class="intro-overlay" id="introOverlay">
+    <div class="blue-shape"></div>
 
-    <div class="boarding-curve">
-      <svg viewBox="0 0 700 900" preserveAspectRatio="none">
-        <path d="M0,0 H520 C620,180 620,720 520,900 H0 Z" fill="#ffffff"/>
-      </svg>
-    </div>
-
-    <div class="boarding-text">
-      <p class="tag">BOARDING VISION</p>
+    <div class="intro-text-content">
+      <span class="tag">BOARDING VISION</span>
 
       <h1>Reviving a tradition of residential life</h1>
 
       <p>
         St Clare Higher Secondary School has a proud history of residential
-        boarding life and continues to value the importance of a safe,
-        disciplined, and caring community for students.
+        boarding life. Boarding facilities are currently not operational,
+        but future reopening plans will be announced by the school.
       </p>
 
-      <button class="discover-btn" onclick="uncoverBoarding()">
+      <button type="button" class="discover-btn" onclick="revealIntro()">
         <span>UNCOVER</span>
       </button>
     </div>
-
   </div>
-
 </section>
 
-<!-- MAIN CONTENT -->
 <section class="academic-page">
 
   <div class="academic-left">
@@ -145,8 +149,9 @@
     </p>
 
     <p>
-      The school continues to value the spirit of residential learning and the
-      strong sense of community it helped create among students.
+      Boarding facilities are currently not operational. The school continues
+      to value the spirit of residential learning and the strong sense of
+      community it helped create among students.
     </p>
 
     <p>
@@ -158,31 +163,28 @@
   </div>
 
   <div class="section-tab">
-  <span>IN THIS SECTION</span>
-</div>
+    <span>IN THIS SECTION</span>
+  </div>
 
-<aside class="section-panel-slide">
-
-  <div class="panel-header">
-    <div class="panel-logo">
-      <img src="images/logo.png" alt="School Logo">
+  <aside class="section-panel-slide">
+    <div class="panel-header">
+      <div class="panel-logo">
+        <img src="images/logo.png" alt="School Logo">
+      </div>
     </div>
-  </div>
 
-  <h3 class="panel-title">In this section</h3>
+    <h3 class="panel-title">In this section</h3>
 
-  <div class="panel-links">
-    <a href="boarding.html">Boarding Overview</a>
-    <a href="boarding-life.html">Boarding Life</a>
-    <a href="boarding-houses.html">Boarding Houses</a>
-    <a href="boarding-wellbeing.html">Health & Wellbeing</a>
-  </div>
-
-</aside>
+    <div class="panel-links">
+      <a href="boarding.html" class="active">Boarding Overview</a>
+      <a href="boarding-life.html">Boarding Life</a>
+      <a href="boarding-houses.html">Boarding Houses</a>
+      <a href="boarding-wellbeing.html">Health & Wellbeing</a>
+    </div>
+  </aside>
 
 </section>
 
-<!-- BOARDING CARDS -->
 <section class="academic-extra">
   <div class="extra-grid">
 
@@ -223,7 +225,6 @@
   </p>
 </section>
 
-<!-- BOARDING SLIDER -->
 <section class="fullscreen-slider boarding-slider">
   <div class="slides">
 
@@ -278,8 +279,9 @@
 
 <section class="beau-collage">
   <div class="drag-indicator">
-  Drag cursor to move
-</div>
+    Drag cursor to move
+  </div>
+
   <div class="beau-grid">
     <img class="tile t1" src="images/boarding1.jpg" alt="">
     <img class="tile t2" src="images/boarding2.jpg" alt="">
@@ -292,7 +294,7 @@
     <img class="tile t9" src="images/boarding9.jpg" alt="">
 
     <div class="collage-message">
-      <img src="images/logo.png" alt="school logo">
+      <img src="images/logo.png" alt="School Logo">
       <h2>A tradition of care, discipline, and belonging.</h2>
     </div>
 
@@ -306,7 +308,6 @@
   </div>
 </section>
 
-<!-- ADMISSIONS -->
 <section class="admissions-section">
 
   <div class="admissions-image left">
@@ -348,7 +349,6 @@
   </a>
 </div>
 
-<!-- FOOTER -->
 <footer class="premium-footer">
 
   <div class="footer-logo">
@@ -377,7 +377,7 @@
           <i class="fab fa-instagram"></i>
         </a>
 
-        <a href="https://www.youtube.com/St clare School" target="_blank">
+        <a href="https://www.youtube.com/@StclareSchoolDimapur" target="_blank">
           <i class="fab fa-youtube"></i>
         </a>
       </div>
@@ -392,8 +392,10 @@
 
     <div class="footer-column">
       <h3>Quick Access</h3>
-      <a href="payments.html">Online Payments</a>
       <a href="term-dates.html">Term Dates</a>
+      <a href="exam-routine.html">Exam Routine</a>
+      <a href="fee-notices.html">Fee Notices</a>
+      <a href="academic-results.html">Academic Results</a>
     </div>
 
     <div class="footer-column">
@@ -423,6 +425,24 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
 <script src="js/main.js"></script>
+
+<script>
+  function closeBoardingNotice() {
+    const notice = document.getElementById("boardingNotice");
+
+    if (notice) {
+      notice.style.display = "none";
+    }
+  }
+
+  function revealIntro() {
+    const introOverlay = document.getElementById("introOverlay");
+
+    if (introOverlay) {
+      introOverlay.classList.add("hide");
+    }
+  }
+</script>
 
 </body>
 </html>

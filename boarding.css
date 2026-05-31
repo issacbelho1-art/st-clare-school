@@ -131,6 +131,9 @@ body.cocurricular-page .boarding-overlay::before {
 
 /* ================= BOARDING LIFE CONTENT ================= */
 
+.boarding-life {
+  background: url("images/boarding-life.jpg") center/cover no-repeat;
+}
 .boarding-life-page {
   padding: 90px 7%;
   background: #f7f7f7;
@@ -629,4 +632,51 @@ body.cocurricular-page .boarding-overlay::before {
   .house-small {
     height: 300px;
   }
+}
+
+.boarding-notice {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.boarding-notice-box {
+  background: white;
+  max-width: 550px;
+  width: 90%;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+}
+
+.boarding-notice-box h2 {
+  color: #002b5c;
+  margin-bottom: 20px;
+}
+
+.boarding-notice-box p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.boarding-notice-box button {
+  background: #7a1c2e;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.boarding-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 30px;
+  cursor: pointer;
 }

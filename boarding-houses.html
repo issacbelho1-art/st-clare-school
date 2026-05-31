@@ -17,6 +17,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body class="inner-page">
 
+<div id="boardingNotice" class="boarding-notice">
+  <div class="boarding-notice-box">
+
+    <span class="boarding-close" onclick="closeBoardingNotice()">&times;</span>
+
+    <h2>Boarding Information</h2>
+
+    <p>
+      Boarding facilities are currently not operational.
+    </p>
+
+    <p>
+      Future reopening plans will be announced by the school.
+    </p>
+
+    <button onclick="closeBoardingNotice()">
+      Continue to Page
+    </button>
+
+  </div>
+</div>
+
 <!-- ================= HEADER ================= -->
 
 <header class="main-header">
@@ -243,10 +265,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer class="premium-footer">
 
   <div class="footer-logo">
-  <img src="images/logo.png" alt="School Logo">
+    <img src="images/logo.png">
     <h2>St Clare Higher Secondary School</h2>
   </div>
 
@@ -286,7 +309,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
     <div class="footer-column">
       <h3>Quick Access</h3>
-      <a href="payments.html">Online Payments</a>
       <a href="term-dates.html">Term Dates</a>
     </div>
 
