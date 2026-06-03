@@ -233,56 +233,65 @@
     overflow-x: hidden;
   }
 
-  .careers-page {
-    padding: 65px 18px;
+  .admissions-page {
+    padding: 60px 16px;
   }
 
-  .careers-intro h2,
-  .career-community h2,
-  .opportunities-section h2,
-  .team-voices h2 {
-    font-size: 30px;
+  .admissions-intro h2,
+  .admission-process h2,
+  .admission-team h2,
+  .admission-enquiry h2 {
+    font-size: 28px;
     line-height: 1.2;
   }
 
-  .careers-collage {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
-    margin: 50px auto 70px;
+  .admissions-intro p,
+  .admission-process p,
+  .admission-team p,
+  .admission-enquiry p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-  .career-img.big {
+  .admissions-collage {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    margin: 40px auto 60px;
+  }
+
+  .admission-img.big {
     grid-row: span 1;
   }
 
-  .opportunity-card {
-    padding: 30px 22px;
+  .admission-card,
+  .process-card {
+    padding: 26px 20px;
   }
 
-  /* ================= TEAM SLIDER ================= */
+  /* ================= ADMISSION TEAM SLIDER ================= */
 
-  .team-slider-section {
+  .admission-team-slider-section {
     width: 100%;
     max-width: 100%;
-    margin: 55px auto;
-    padding: 0 14px;
+    margin: 40px auto;
+    padding: 0 8px;
     box-sizing: border-box;
   }
 
-  .team-slider-section h2 {
-    font-size: 28px;
+  .admission-team-slider-section h2 {
+    font-size: 25px;
     line-height: 1.2;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
   }
 
-  .team-slide {
+  .admission-team-slide {
     grid-template-columns: 1fr;
     overflow: hidden;
   }
 
-  .team-slide img {
+  .admission-team-slide img {
     width: 100%;
-    height: 350px;
+    height: 260px;
     object-fit: cover;
     object-position: center top;
     display: block;
@@ -290,33 +299,32 @@
     background: none;
   }
 
-  .team-text {
-    padding: 28px 22px 90px;
+  .admission-team-text {
+    padding: 22px 18px 75px;
     min-height: auto;
   }
 
-  .team-text h3 {
-    font-size: 24px;
+  .admission-team-text h3 {
+    font-size: 22px;
     line-height: 1.2;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
-  .team-text p {
+  .admission-team-text p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .admission-team-controls {
+    right: 16px;
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .admission-team-controls button {
+    width: 42px;
+    height: 42px;
     font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .team-controls {
-    right: 20px;
-    bottom: 20px;
-    gap: 10px;
-  }
-
-  .team-controls button {
-    width: 48px;
-    height: 48px;
-    font-size: 18px;
     padding: 0;
   }
-
 }

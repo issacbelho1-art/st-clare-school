@@ -294,16 +294,25 @@
     padding: 40px 22px;
   }
 
+  /* ===== Contact Admissions Section ===== */
+
   .contact-admissions {
-    height: auto;
     display: flex;
     flex-direction: column;
+    height: auto;
+    overflow: hidden;
   }
 
   .contact-admissions-img {
     position: relative;
     width: 100%;
-    height: 260px;
+    height: 300px;
+  }
+
+  .contact-admissions-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .contact-admissions-box {
@@ -311,9 +320,95 @@
     top: auto;
     left: auto;
     transform: none;
-    width: 90%;
-    margin: -60px auto 45px;
-    padding: 35px 25px;
+    width: calc(100% - 40px);
+    max-width: 650px;
+    margin: -70px auto 50px;
+    padding: 40px 30px;
+    border-radius: 18px;
+    z-index: 5;
+  }
+
+  /* ===== Admissions Page Mobile ===== */
+
+  .admissions-page {
+    padding: 60px 20px;
+  }
+
+  .admissions-intro h2,
+  .admission-process h2,
+  .admission-team h2,
+  .admission-enquiry h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .admissions-intro p,
+  .admission-process p,
+  .admission-team p,
+  .admission-enquiry p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .admissions-collage {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+    margin: 50px auto 70px;
+  }
+
+  .admission-img.big {
+    grid-row: span 1;
+  }
+
+  .admission-card,
+  .process-card {
+    padding: 30px 22px;
+  }
+
+  .admission-team-slider-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 45px auto;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .admission-team-slide {
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .admission-team-slide img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .admission-team-text {
+    padding: 24px 18px 75px;
+    min-height: auto;
+  }
+
+  .admission-team-text h3 {
+    font-size: 22px;
+  }
+
+  .admission-team-text p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .admission-team-controls {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .admission-team-controls button {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
   }
 }
 
@@ -345,8 +440,40 @@
     font-size: 15px;
   }
 
+  .contact-admissions-img {
+    height: 240px;
+  }
+
+  .contact-admissions-box {
+    width: calc(100% - 24px);
+    margin: -55px auto 40px;
+    padding: 28px 22px;
+    border-radius: 14px;
+  }
+
   .contact-admissions-box h2 {
     font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .admissions-page {
+    padding: 55px 16px;
+  }
+
+  .admissions-intro h2,
+  .admission-process h2,
+  .admission-team h2,
+  .admission-enquiry h2 {
+    font-size: 26px;
+  }
+
+  .admissions-collage {
+    grid-auto-rows: 200px;
+    margin: 40px auto 60px;
+  }
+
+  .admission-team-slide img {
+    height: 250px;
   }
 
   .social-icons {
