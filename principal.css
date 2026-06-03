@@ -1,0 +1,126 @@
+/* ================= PRINCIPAL DESK ================= */
+
+.principal-desk-page {
+background: #f7f7f7;
+}
+
+.about-main {
+max-width: 950px;
+}
+
+.about-main h2 {
+font-size: 42px;
+font-weight: 300;
+color: #002f63;
+margin-bottom: 30px;
+}
+
+.about-main h3 {
+font-size: 28px;
+font-weight: 400;
+color: #002f63;
+margin: 45px 0 18px;
+}
+
+.about-main p {
+font-size: 17px;
+line-height: 1.95;
+color: #444;
+margin-bottom: 24px;
+}
+
+.about-bold {
+font-size: 20px;
+font-weight: 600;
+color: #002f63;
+}
+
+.vision-mission-row {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 35px;
+margin: 50px 0;
+}
+
+.vision-mission-row > div {
+background: #fff;
+padding: 35px;
+border-radius: 18px;
+box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.about-heritage,
+.about-extra {
+margin-top: 60px;
+}
+
+.about-extra {
+background: #fff;
+padding: 45px;
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+.about-extra p:last-child {
+margin-bottom: 0;
+}
+
+.about-extra .about-bold {
+font-size: 22px;
+text-align: center;
+margin: 35px 0;
+}
+
+.about-extra strong {
+color: #002f63;
+font-size: 18px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+.vision-mission-row {
+grid-template-columns: 1fr;
+}
+
+.about-main h2 {
+font-size: 34px;
+}
+
+.about-main h3 {
+font-size: 24px;
+}
+
+.about-main p {
+font-size: 16px;
+}
+}
+
+@media (max-width: 600px) {
+
+.about-main h2 {
+font-size: 30px;
+}
+
+.about-main h3 {
+font-size: 22px;
+}
+
+.about-main p {
+font-size: 15px;
+line-height: 1.8;
+}
+
+.vision-mission-row > div {
+padding: 25px;
+}
+
+.about-extra {
+padding: 28px 22px;
+}
+
+.about-extra .about-bold {
+font-size: 18px;
+}
+}
