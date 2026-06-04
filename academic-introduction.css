@@ -1123,13 +1123,13 @@
     width: 100% !important;
     max-width: 100% !important;
     display: grid !important;
-    grid-template-columns: 135px 1fr !important;
+    grid-template-columns: 170px 1fr !important;
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
     height: auto !important;
     border-radius: 0 !important;
-  }
+}
 
   .blue-side {
     width: 100% !important;
@@ -1147,11 +1147,12 @@
   }
 
   .blue-side h2 {
-    font-size: 22px !important;
-    line-height: 1.12 !important;
+    font-size: 34px !important;
+    line-height: 1.05 !important;
     margin: 0 !important;
     color: #fff !important;
-  }
+    word-break: break-word !important;
+}
 
   .blue-side .discover-btn,
   .blue-side button {
@@ -1259,12 +1260,12 @@
   }
 
   .content-box {
-    grid-template-columns: 135px 1fr !important;
-  }
+    grid-template-columns: 170px 1fr !important;
+}
 
-  .blue-side h2 {
-    font-size: 22px !important;
-  }
+.blue-side h2 {
+    font-size: 30px !important;
+}
 
   .white-side p {
     font-size: 13px !important;

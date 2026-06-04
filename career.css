@@ -46,12 +46,10 @@
   display: block;
 }
 
-/* BIG LEFT IMAGE */
 .career-img.big {
   grid-row: span 2;
 }
 
-/* MESSAGE BOX */
 .career-message {
   background: linear-gradient(135deg, #7a1c2e, #9e2a3f);
   color: white;
@@ -177,11 +175,12 @@
 
 .team-slide img {
   width: 100%;
-  height: 100%;
+  height: 520px;
   object-fit: cover;
   object-position: center top;
   display: block;
 }
+
 .team-text {
   display: flex;
   flex-direction: column;
@@ -203,6 +202,7 @@
 }
 
 /* BUTTONS */
+
 .team-controls {
   position: absolute;
   bottom: 20px;
@@ -224,103 +224,166 @@
   background: white;
   color: #002b5c;
 }
+
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
 
-html,
-body {
-overflow-x: hidden;
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .careers-page {
+    padding: 60px 16px;
+  }
+
+  .careers-intro {
+    margin-bottom: 55px;
+  }
+
+  .careers-intro h2,
+  .career-community h2,
+  .opportunities-section h2,
+  .team-voices h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .careers-intro p,
+  .career-community p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .careers-collage {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+    margin: 50px auto 70px;
+    gap: 14px;
+  }
+
+  .career-img.big {
+    grid-row: span 1;
+  }
+
+  .career-message {
+    padding: 30px 22px;
+  }
+
+  .career-message p {
+    font-size: 15px;
+  }
+
+  .career-community {
+    margin-bottom: 70px;
+  }
+
+  .opportunities-section {
+    margin-bottom: 75px;
+  }
+
+  .opportunity-card {
+    padding: 30px 22px;
+    margin-top: 30px;
+  }
+
+  .opportunity-card h3 {
+    font-size: 23px;
+  }
+
+  /* ================= TEAM SLIDER MOBILE FIX ================= */
+
+  .team-slider-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 60px auto 40px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .team-slider-section h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 28px;
+  }
+
+  .team-slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .team-slides {
+    display: flex;
+    width: 100%;
+  }
+
+  .team-slide {
+    min-width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: auto;
+  }
+
+  .team-slide img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .team-text {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 28px 22px 80px;
+    text-align: left;
+    display: block;
+  }
+
+  .team-text h3 {
+    font-size: 23px;
+    line-height: 1.25;
+    margin-bottom: 14px;
+  }
+
+  .team-text p {
+    font-size: 15px;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .team-controls {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .team-controls button {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin-left: 8px;
+    font-size: 16px;
+  }
 }
 
-.admissions-page {
-padding: 50px 16px;
-}
+@media (max-width: 480px) {
 
-.admissions-intro h2,
-.admission-process h2,
-.admission-team h2,
-.admission-enquiry h2 {
-font-size: 28px;
-line-height: 1.2;
-}
+  .team-slide img {
+    height: 230px;
+  }
 
-.admissions-intro p,
-.admission-process p,
-.admission-team p,
-.admission-enquiry p {
-font-size: 15px;
-line-height: 1.7;
-}
+  .team-text {
+    padding: 24px 20px 75px;
+  }
 
-.admissions-collage {
-grid-template-columns: 1fr;
-grid-auto-rows: 180px;
-margin: 35px auto 50px;
-}
+  .team-text h3 {
+    font-size: 21px;
+  }
 
-.admission-img.big {
-grid-row: span 1;
-}
-
-.admission-card,
-.process-card {
-padding: 24px 18px;
-}
-
-/* ===== ADMISSION TEAM SLIDER ===== */
-
-.admission-team-slider-section {
-width: 100%;
-max-width: 100%;
-margin: 35px auto;
-padding: 0;
-}
-
-.admission-team-slide {
-display: grid;
-grid-template-columns: 1fr;
-height: auto !important;
-min-height: auto !important;
-overflow: hidden;
-}
-
-.admission-team-slide img {
-width: 100%;
-height: 240px;
-object-fit: cover;
-object-position: center top;
-display: block;
-}
-
-.admission-team-text {
-height: auto !important;
-min-height: auto !important;
-padding: 20px 18px 70px;
-}
-
-.admission-team-text h3 {
-font-size: 21px;
-line-height: 1.2;
-margin-bottom: 10px;
-}
-
-.admission-team-text p {
-font-size: 15px;
-line-height: 1.6;
-margin-bottom: 0;
-}
-
-.admission-team-controls {
-right: 14px;
-bottom: 14px;
-gap: 8px;
-}
-
-.admission-team-controls button {
-width: 40px;
-height: 40px;
-font-size: 15px;
-padding: 0;
-}
+  .team-text p {
+    font-size: 14.5px;
+  }
 }
