@@ -2732,14 +2732,26 @@ iframe {
   color: #555;
 }
 
-/* VIDEO */
+.media-videos {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
 
 .video-wrapper {
-  max-width: 1100px;
-  margin: 0 auto;
   background: #fff;
   padding: 18px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+.video-wrapper h3 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #002b5c;
+  font-size: 22px;
+  font-weight: 400;
 }
 
 .video-wrapper iframe {
@@ -2748,8 +2760,6 @@ iframe {
   border: none;
   display: block;
 }
-
-/* OPTIONAL CHANNEL BUTTON */
 
 .youtube-btn {
   display: inline-block;
@@ -2761,17 +2771,9 @@ iframe {
   border-radius: 30px;
   font-size: 14px;
   font-weight: 600;
-  transition: 0.3s ease;
 }
-
-.youtube-btn:hover {
-  background: #a61f1b;
-}
-
-/* MOBILE */
 
 @media (max-width: 900px) {
-
   .school-media {
     padding: 70px 22px;
   }
@@ -2782,6 +2784,10 @@ iframe {
 
   .school-media .section-heading p {
     font-size: 15px;
+  }
+
+  .media-videos {
+    grid-template-columns: 1fr;
   }
 
   .video-wrapper {
