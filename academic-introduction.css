@@ -1124,7 +1124,8 @@
     transform: none !important;
     width: 100% !important;
     max-width: 100% !important;
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 44% 56% !important;
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
@@ -1137,33 +1138,35 @@
     width: 100% !important;
     background: #008fc7 !important;
     color: #fff !important;
-    min-height: auto !important;
-    padding: 30px 24px 26px !important;
+    min-height: 220px !important;
+    padding: 28px 18px 78px !important;
     position: relative !important;
     box-sizing: border-box !important;
   }
 
   .blue-side h4 {
-    font-size: 14px !important;
+    font-size: 13px !important;
     letter-spacing: 3px !important;
-    margin: 0 0 14px !important;
+    margin: 0 0 16px !important;
     color: #fff !important;
   }
 
   .blue-side h2 {
-    font-size: 38px !important;
-    line-height: 1.1 !important;
-    margin: 0 0 24px !important;
+    font-size: clamp(25px, 7vw, 34px) !important;
+    line-height: 1.08 !important;
+    margin: 0 !important;
     color: #fff !important;
     white-space: normal !important;
     word-break: normal !important;
-    overflow-wrap: normal !important;
+    overflow-wrap: break-word !important;
     overflow: visible !important;
   }
 
   .blue-side .discover-btn,
   .blue-side button {
-    position: static !important;
+    position: absolute !important;
+    left: 18px !important;
+    bottom: 24px !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1171,8 +1174,8 @@
     color: #008fc7 !important;
     border: none !important;
     border-radius: 30px !important;
-    padding: 12px 24px !important;
-    font-size: 11px !important;
+    padding: 11px 20px !important;
+    font-size: 10px !important;
     font-weight: 700 !important;
     letter-spacing: 1px !important;
     text-transform: uppercase !important;
@@ -1185,14 +1188,14 @@
   .white-side {
     width: 100% !important;
     background: #fff !important;
-    min-height: auto !important;
-    padding: 28px 24px 85px !important;
+    min-height: 220px !important;
+    padding: 35px 22px 80px !important;
     box-sizing: border-box !important;
   }
 
   .white-side p {
     font-size: 16px !important;
-    line-height: 1.6 !important;
+    line-height: 1.55 !important;
     color: #333 !important;
     margin: 0 !important;
   }
@@ -1269,16 +1272,31 @@
     padding-top: 300px !important;
   }
 
+  .content-box {
+    grid-template-columns: 45% 55% !important;
+  }
+
   .blue-side {
-    padding: 28px 22px 24px !important;
+    min-height: 220px !important;
+    padding: 26px 16px 76px !important;
   }
 
   .blue-side h2 {
-    font-size: 34px !important;
+    font-size: clamp(23px, 6.6vw, 30px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .blue-side .discover-btn,
+  .blue-side button {
+    left: 16px !important;
+    bottom: 24px !important;
+    padding: 10px 17px !important;
+    font-size: 9.5px !important;
   }
 
   .white-side {
-    padding: 26px 22px 82px !important;
+    min-height: 220px !important;
+    padding: 32px 20px 82px !important;
   }
 
   .white-side p {

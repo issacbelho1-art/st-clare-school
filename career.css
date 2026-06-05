@@ -235,18 +235,18 @@
   }
 
   .careers-page {
-    padding: 60px 16px;
+    padding: 55px 16px;
   }
 
   .careers-intro {
-    margin-bottom: 55px;
+    margin-bottom: 45px;
   }
 
   .careers-intro h2,
   .career-community h2,
   .opportunities-section h2,
   .team-voices h2 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.2;
   }
 
@@ -258,8 +258,8 @@
 
   .careers-collage {
     grid-template-columns: 1fr;
-    grid-auto-rows: 200px;
-    margin: 50px auto 70px;
+    grid-auto-rows: 180px;
+    margin: 40px auto 55px;
     gap: 14px;
   }
 
@@ -268,28 +268,28 @@
   }
 
   .career-message {
-    padding: 30px 22px;
+    padding: 26px 20px;
   }
 
   .career-message p {
-    font-size: 15px;
+    font-size: 14.5px;
   }
 
   .career-community {
-    margin-bottom: 70px;
+    margin-bottom: 55px;
   }
 
   .opportunities-section {
-    margin-bottom: 75px;
+    margin-bottom: 55px;
   }
 
   .opportunity-card {
-    padding: 30px 22px;
-    margin-top: 30px;
+    padding: 26px 20px;
+    margin-top: 25px;
   }
 
   .opportunity-card h3 {
-    font-size: 23px;
+    font-size: 22px;
   }
 
   /* ================= TEAM SLIDER MOBILE FIX ================= */
@@ -297,20 +297,21 @@
   .team-slider-section {
     width: 100%;
     max-width: 100%;
-    margin: 60px auto 40px;
+    margin: 45px auto 35px;
     padding: 0;
     overflow: hidden;
   }
 
   .team-slider-section h2 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.2;
-    margin-bottom: 28px;
+    margin-bottom: 22px;
   }
 
   .team-slider {
     width: 100%;
     overflow: hidden;
+    position: relative;
   }
 
   .team-slides {
@@ -321,69 +322,82 @@
   .team-slide {
     min-width: 100%;
     flex: 0 0 100%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     min-height: 0;
     height: auto;
+    background: #002b5c;
   }
 
   .team-slide img {
     width: 100%;
-    height: 260px;
+    height: 210px;
     object-fit: cover;
     object-position: center top;
+    display: block;
   }
 
   .team-text {
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 28px 22px 80px;
+    padding: 22px 20px 68px;
     text-align: left;
     display: block;
+    box-sizing: border-box;
   }
 
   .team-text h3 {
-    font-size: 23px;
-    line-height: 1.25;
-    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
   }
 
   .team-text p {
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 14px;
+    line-height: 1.55;
     margin: 0;
   }
 
   .team-controls {
-    right: 18px;
-    bottom: 18px;
+    right: 14px;
+    bottom: 14px;
   }
 
   .team-controls button {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     padding: 0;
-    margin-left: 8px;
-    font-size: 16px;
+    margin-left: 7px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 480px) {
 
+  .team-slider-section h2 {
+    font-size: 26px;
+  }
+
   .team-slide img {
-    height: 230px;
+    height: 190px;
   }
 
   .team-text {
-    padding: 24px 20px 75px;
+    padding: 20px 18px 62px;
   }
 
   .team-text h3 {
-    font-size: 21px;
+    font-size: 19px;
   }
 
   .team-text p {
-    font-size: 14.5px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .team-controls button {
+    width: 36px;
+    height: 36px;
   }
 }

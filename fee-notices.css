@@ -9,7 +9,7 @@ body {
   min-height: 70vh;
   background:
     linear-gradient(rgba(0, 32, 70, 0.48), rgba(0, 32, 70, 0.48)),
-    url("images/fees-notice.jpg") center/cover no-repeat;
+    url("images/fees.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
