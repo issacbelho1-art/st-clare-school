@@ -1083,6 +1083,8 @@
     object-fit: cover;
   }
 
+  /* ================= MOBILE DISCOVER SLIDER FIX ================= */
+
   .fullscreen-slider {
     width: 100%;
     height: auto !important;
@@ -1122,50 +1124,57 @@
     transform: none !important;
     width: 100% !important;
     max-width: 100% !important;
-    display: grid !important;
-    grid-template-columns: 170px 1fr !important;
+    display: block !important;
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
     height: auto !important;
     border-radius: 0 !important;
-}
+    overflow: hidden !important;
+  }
 
   .blue-side {
     width: 100% !important;
     background: #008fc7 !important;
     color: #fff !important;
-    min-height: 175px !important;
-    padding: 20px 12px 68px !important;
+    min-height: auto !important;
+    padding: 30px 24px 26px !important;
     position: relative !important;
+    box-sizing: border-box !important;
   }
 
   .blue-side h4 {
     font-size: 14px !important;
-    margin: 0 0 12px !important;
+    letter-spacing: 3px !important;
+    margin: 0 0 14px !important;
     color: #fff !important;
   }
 
   .blue-side h2 {
-    font-size: 34px !important;
-    line-height: 1.05 !important;
-    margin: 0 !important;
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin: 0 0 24px !important;
     color: #fff !important;
-    word-break: break-word !important;
-}
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    overflow: visible !important;
+  }
 
   .blue-side .discover-btn,
   .blue-side button {
-    position: absolute !important;
-    left: 12px !important;
-    bottom: 22px !important;
+    position: static !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     background: #fff !important;
     color: #008fc7 !important;
     border: none !important;
     border-radius: 30px !important;
-    padding: 10px 13px !important;
-    font-size: 9px !important;
+    padding: 12px 24px !important;
+    font-size: 11px !important;
     font-weight: 700 !important;
+    letter-spacing: 1px !important;
     text-transform: uppercase !important;
     text-decoration: none !important;
     white-space: nowrap !important;
@@ -1176,13 +1185,14 @@
   .white-side {
     width: 100% !important;
     background: #fff !important;
-    min-height: 175px !important;
-    padding: 20px 16px 65px !important;
+    min-height: auto !important;
+    padding: 28px 24px 85px !important;
+    box-sizing: border-box !important;
   }
 
   .white-side p {
-    font-size: 13px !important;
-    line-height: 1.55 !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
     color: #333 !important;
     margin: 0 !important;
   }
@@ -1192,8 +1202,8 @@
     top: auto !important;
     bottom: 0 !important;
     transform: none !important;
-    width: 48px !important;
-    height: 48px !important;
+    width: 56px !important;
+    height: 56px !important;
     border: none !important;
     border-radius: 0 !important;
     font-size: 24px !important;
@@ -1202,7 +1212,7 @@
   }
 
   .fullscreen-slider .arrow.left {
-    right: 48px !important;
+    right: 56px !important;
     left: auto !important;
     background: #f1f1f1 !important;
     color: #003b6f !important;
@@ -1256,19 +1266,23 @@
   }
 
   .slide {
-    padding-top: 310px !important;
+    padding-top: 300px !important;
   }
 
-  .content-box {
-    grid-template-columns: 170px 1fr !important;
-}
+  .blue-side {
+    padding: 28px 22px 24px !important;
+  }
 
-.blue-side h2 {
-    font-size: 30px !important;
-}
+  .blue-side h2 {
+    font-size: 34px !important;
+  }
+
+  .white-side {
+    padding: 26px 22px 82px !important;
+  }
 
   .white-side p {
-    font-size: 13px !important;
+    font-size: 15px !important;
   }
 
   .collage-intro p {
