@@ -345,10 +345,9 @@
 .beau-grid {
   position: relative;
   width: 2050px;
-  height: 1450px;
+  height: 1960px;
   margin: 0 auto;
 }
-
 /* DRAG MESSAGE */
 .drag-indicator {
   position: absolute;
@@ -552,7 +551,42 @@
   left: 1770px;
   top: 1160px;
 }
+/* NEW BOTTOM ROW */
 
+.t20 {
+  width: 460px;
+  height: 300px;
+  left: 300px;
+  top: 1290px;
+}
+
+.t21 {
+  width: 460px;
+  height: 300px;
+  left: 1280px;
+  top: 1310px;
+}
+
+.t22 {
+  width: 460px;
+  height: 300px;
+  left: 790px;
+  top: 1435px;
+}
+
+.t23 {
+  width: 270px;
+  height: 300px;
+  left: -10px;
+  top: 1430px;
+}
+
+.t24 {
+  width: 270px;
+  height: 300px;
+  left: 1770px;
+  top: 1445px;
+}
 /* ================= TOUR SECTION ================= */
 
 .tour-section {

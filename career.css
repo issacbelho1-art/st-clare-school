@@ -275,10 +275,7 @@
     font-size: 14.5px;
   }
 
-  .career-community {
-    margin-bottom: 55px;
-  }
-
+  .career-community,
   .opportunities-section {
     margin-bottom: 55px;
   }
@@ -291,17 +288,6 @@
   .opportunity-card h3 {
     font-size: 22px;
   }
-
- /* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  /* ================= TEAM SLIDER MOBILE FIX ================= */
 
   .team-slider-section {
     width: 100%;
