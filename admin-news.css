@@ -165,20 +165,19 @@ button:disabled {
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
 }
 
-/* IMPORTANT FIX:
-   object-fit: contain keeps poster/certificate images fully visible */
+/* ================= NEWS IMAGE FIX ================= */
+
 .admin-news-card img {
   width: 100%;
-  max-height: 420px;
+  height: 320px;
   object-fit: contain;
-  object-position: center;
+  object-position: center center;
   display: block;
-  background: #fff;
+  background: #ffffff;
   border-radius: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
+  margin: 0 auto 20px;
+  padding: 12px;
 }
-
 .admin-news-card h3 {
   color: #7a1c2e;
   margin-bottom: 15px;
