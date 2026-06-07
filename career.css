@@ -137,102 +137,129 @@
   color: #333;
 }
 
-/* ================= TEAM SLIDER - ST CLARE PREMIUM ================= */
+/* ================= CAREERS TEAM SLIDER ================= */
 
-.team-slider-section {
-  text-align: center;
-  margin: 110px auto 90px;
-  max-width: 1150px;
+.career-team-section {
+  padding: 90px 0 40px;
+  background: #f7f7f7;
   overflow: hidden;
+  text-align: center;
 }
 
-.team-slider-section h2 {
+.career-team-section > h2 {
   font-size: 44px;
   font-weight: 300;
   color: #002b5c;
   margin-bottom: 50px;
 }
 
-.team-slider {
+.career-slider-wrapper {
   position: relative;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  margin-bottom: 45px;
 }
 
-.team-slides {
+.career-slider-track {
   display: flex;
-  width: 100%;
-  transition: transform 0.6s ease;
+  gap: 22px;
+  align-items: center;
+  width: max-content;
+  transition: transform 0.65s cubic-bezier(.77, 0, .175, 1);
 }
 
-.team-slide {
-  min-width: 100%;
-  flex: 0 0 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  background: #002b5c;
-  color: white;
-  align-items: stretch;
-}
-
-.team-photo {
-  width: 100%;
-  height: 520px;
-  background: #f4f4f4;
+.career-slide {
+  position: relative;
+  width: 210px;
+  height: 420px;
   overflow: hidden;
+  flex: 0 0 auto;
+  background: #ddd;
+  opacity: 0.55;
+  transform: scale(0.9);
+  border: 4px solid transparent;
+  transition: 0.45s ease;
 }
 
-.team-photo img {
+.active-career-slide {
+  width: 450px;
+  opacity: 1;
+  transform: scale(1);
+  border-color: #0099e5;
+  z-index: 2;
+}
+
+.career-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: cover;
+  object-position: center top;
   display: block;
 }
 
-.team-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 70px 95px;
-  text-align: left;
-  box-sizing: border-box;
-}
-
-.team-text h3 {
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1.25;
-  margin-bottom: 24px;
-}
-
-.team-text p {
-  font-size: 18px;
-  line-height: 1.75;
-  margin: 0;
-}
-
-.team-controls {
+.career-slide::after {
+  content: "";
   position: absolute;
-  right: 26px;
-  bottom: 26px;
-  z-index: 5;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82),
+    rgba(0, 0, 0, 0.18),
+    transparent
+  );
 }
 
-.team-controls button {
-  width: 54px;
-  height: 54px;
-  background: transparent;
-  border: 2px solid white;
-  color: white;
-  font-size: 22px;
-  margin-left: 8px;
+.career-member-name {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 2;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.career-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 56px;
+  height: 56px;
+  border: none;
+  background: #0099e5;
+  color: #fff;
+  font-size: 28px;
   cursor: pointer;
 }
 
-.team-controls button:hover {
-  background: white;
+.career-arrow.prev {
+  left: 0;
+}
+
+.career-arrow.next {
+  right: 0;
+}
+
+.career-details {
+  max-width: 850px;
+  margin: auto;
+  padding: 0 20px 10px;
+}
+
+.career-details h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 400;
   color: #002b5c;
+}
+
+.career-details p {
+  font-size: 19px;
+  line-height: 1.8;
+  color: #222;
 }
 
 /* ================= MOBILE ================= */
@@ -255,7 +282,7 @@
   .careers-intro h2,
   .career-community h2,
   .opportunities-section h2,
-  .team-slider-section h2 {
+  .career-team-section > h2 {
     font-size: 34px;
     line-height: 1.2;
   }
@@ -306,88 +333,48 @@
     font-size: 23px;
   }
 
-  /* ================= TEAM SLIDER MOBILE ================= */
+  /* ================= CAREER TEAM SLIDER MOBILE ================= */
 
-  .team-slider-section {
-    width: 100%;
-    max-width: 100%;
-    margin: 75px auto 55px;
-    overflow: hidden;
+  .career-team-section {
+    padding: 65px 0 30px;
   }
 
-  .team-slider-section h2 {
-    font-size: 32px;
-    line-height: 1.25;
+  .career-team-section > h2 {
+    margin-bottom: 35px;
+    padding: 0 20px;
+  }
+
+  .career-slider-wrapper {
     margin-bottom: 35px;
   }
 
-  .team-slider {
-    position: relative;
-    overflow: hidden;
-    padding-top: 0;
+  .career-slide {
+    width: 145px;
+    height: 300px;
   }
 
-  .team-slide {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    min-height: auto !important;
-    background: #002b5c;
+  .active-career-slide {
+    width: 260px;
   }
 
-  .team-photo {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100%;
-    height: 310px;
-    background: #f4f4f4;
-    overflow: hidden;
+  .career-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
   }
 
-  .team-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
+  .career-details {
+    padding: 0 22px 10px;
   }
 
-  .team-text {
-    width: 100%;
-    height: auto !important;
-    min-height: auto !important;
-    background: #002b5c;
-    color: white;
-    padding: 30px 24px 82px;
-    display: block;
-    text-align: left;
-    box-sizing: border-box;
-  }
-
-  .team-text h3 {
-    font-size: 24px;
+  .career-details h2 {
+    font-size: 28px;
     line-height: 1.25;
-    margin-bottom: 14px;
   }
 
-  .team-text p {
+  .career-details p {
     font-size: 15px;
-    line-height: 1.65;
-    margin: 0;
-  }
-
-  .team-controls {
-    right: 20px;
-    bottom: 20px;
-  }
-
-  .team-controls button {
-    width: 42px;
-    height: 42px;
-    font-size: 17px;
-    margin-left: 8px;
+    line-height: 1.7;
   }
 }
 
@@ -398,7 +385,7 @@
   .careers-intro h2,
   .career-community h2,
   .opportunities-section h2,
-  .team-slider-section h2 {
+  .career-team-section > h2 {
     font-size: 30px;
   }
 
@@ -407,25 +394,27 @@
     height: 230px;
   }
 
-  .team-photo {
+  .career-slide {
+    width: 130px;
     height: 280px;
   }
 
-  .team-text {
-    padding: 26px 20px 76px;
+  .active-career-slide {
+    width: 235px;
   }
 
-  .team-text h3 {
-    font-size: 22px;
+  .career-details h2 {
+    font-size: 25px;
   }
 
-  .team-text p {
+  .career-details p {
     font-size: 14px;
     line-height: 1.6;
   }
 
-  .team-controls button {
-    width: 38px;
-    height: 38px;
+  .career-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
   }
 }

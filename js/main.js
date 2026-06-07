@@ -419,105 +419,87 @@ document.addEventListener("DOMContentLoaded", () => {
   startAutoLeader();
 });
 
-// ================= TEAM SLIDER INFINITE LOOP - FINAL =================
+// ================= CAREERS SLIDER LOOP =================
 
-let teamIndex = 1;
-let teamTrack = null;
-let teamSlides = [];
-let isTeamSliding = false;
+let careerIndex = 0;
 
-function setupTeamSlider() {
-  teamTrack = document.querySelector(".team-slides");
+const careerData = [
+  {
+    title: "Sr Deepa Mathew Principal",
+    desc: "“Our mission is to shape character along with knowledge, preparing students for life.”"
+  },
+  {
+    title: "Sr Flory Vice Principal",
+    desc: "“At St Clare, we strive to create an environment where every student feels valued, encouraged and inspired to grow.”"
+  },
+  {
+    title: "Mr Paul Thailiklung Pamei",
+    desc: "“For twenty-five years, St. Clare School has been more than just a workplace—it has been my second home. I have watched shy children walk through our gates and leave as confident, compassionate leaders. To have played a part in shaping generations of St. Clare students is the greatest privilege of my life.”"
+  },
+  {
+    title: "Sir Sena",
+    desc: "“At St Clare School, we guide students by helping them in their studies and encouraging discipline, confidence, and good values.”"
+  },
+  {
+    title: "Mr Alemwapang Imti",
+    desc: "“Guiding minds, shaping futures, and building character. Proud to be a part of the St Clare family.”"
+  },
+  {
+    title: "Miss Azonu Zao",
+    desc: "“Grow what you go through.”"
+  },
+  {
+    title: "Miss Moatula",
+    desc: "“At St Clare, teaching is not just a job — it is a calling. We guide students with care, discipline and values.”"
+  }
+];
 
-  if (!teamTrack) return;
+function changeCareerSlide(direction) {
+  const slides = document.querySelectorAll(".career-slide");
+  const track = document.querySelector(".career-slider-track");
+  const wrapper = document.querySelector(".career-slider-wrapper");
 
-  // prevent duplicate clones if JS reloads
-  teamTrack.querySelectorAll(".team-slide.clone").forEach(clone => clone.remove());
+  if (!slides.length || !track || !wrapper) return;
 
-  const originalSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
+  careerIndex += direction;
 
-  if (originalSlides.length <= 1) return;
+  if (careerIndex < 0) {
+    careerIndex = slides.length - 1;
+  }
 
-  const firstClone = originalSlides[0].cloneNode(true);
-  const lastClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+  if (careerIndex >= slides.length) {
+    careerIndex = 0;
+  }
 
-  firstClone.classList.add("clone");
-  lastClone.classList.add("clone");
-
-  teamTrack.appendChild(firstClone);
-  teamTrack.insertBefore(lastClone, originalSlides[0]);
-
-  teamSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
-
-  teamIndex = 1;
-  isTeamSliding = false;
-
-  teamTrack.style.transition = "none";
-  teamTrack.style.transform = `translateX(-${teamIndex * 100}%)`;
-
-  requestAnimationFrame(() => {
-    teamTrack.style.transition = "transform 0.6s ease";
+  slides.forEach(slide => {
+    slide.classList.remove("active-career-slide");
   });
+
+  slides[careerIndex].classList.add("active-career-slide");
+
+  const activeSlide = slides[careerIndex];
+
+  const offset =
+    activeSlide.offsetLeft -
+    wrapper.offsetWidth / 2 +
+    activeSlide.offsetWidth / 2;
+
+  track.style.transform = `translateX(${-offset}px)`;
+
+  document.getElementById("careerTitle").textContent =
+    careerData[careerIndex].title;
+
+  document.getElementById("careerDesc").textContent =
+    careerData[careerIndex].desc;
 }
 
-function moveTeamSlider() {
-  if (!teamTrack || isTeamSliding) return;
-
-  isTeamSliding = true;
-  teamTrack.style.transition = "transform 0.6s ease";
-  teamTrack.style.transform = `translateX(-${teamIndex * 100}%)`;
-}
-
-function nextTeamSlide() {
-  if (!teamTrack || isTeamSliding) return;
-
-  teamIndex++;
-  moveTeamSlider();
-}
-
-function prevTeamSlide() {
-  if (!teamTrack || isTeamSliding) return;
-
-  teamIndex--;
-  moveTeamSlider();
-}
-
-document.addEventListener("DOMContentLoaded", setupTeamSlider);
-
-document.addEventListener("transitionend", function (e) {
-  if (!teamTrack || e.target !== teamTrack) return;
-
-  teamSlides = Array.from(teamTrack.querySelectorAll(".team-slide"));
-
-  if (!teamSlides[teamIndex]) {
-    isTeamSliding = false;
-    return;
-  }
-
-  if (teamSlides[teamIndex].classList.contains("clone")) {
-    teamTrack.style.transition = "none";
-
-    if (teamIndex === teamSlides.length - 1) {
-      teamIndex = 1;
-    } else if (teamIndex === 0) {
-      teamIndex = teamSlides.length - 2;
-    }
-
-    teamTrack.style.transform = `translateX(-${teamIndex * 100}%)`;
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        teamTrack.style.transition = "transform 0.6s ease";
-        isTeamSliding = false;
-      });
-    });
-  } else {
-    isTeamSliding = false;
-  }
+window.addEventListener("load", () => {
+  changeCareerSlide(0);
 });
 
-window.nextTeamSlide = nextTeamSlide;
-window.prevTeamSlide = prevTeamSlide;
+window.addEventListener("resize", () => {
+  changeCareerSlide(0);
+});
 
 
 // ================= CO-CURRICULAR INFINITE SLIDER =================

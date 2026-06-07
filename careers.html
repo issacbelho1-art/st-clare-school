@@ -202,92 +202,61 @@
   </div>
 
 
-<!-- ================= TEAM SLIDER ================= -->
-<section class="team-slider-section">
+<!-- ================= CAREERS TEAM SLIDER ================= -->
+<section class="career-team-section">
 
   <h2>Hear from some of our team</h2>
 
-  <div class="team-slider">
+  <div class="career-slider-wrapper">
 
-    <div class="team-slides">
+    <button class="career-arrow prev" onclick="changeCareerSlide(-1)">&#8592;</button>
 
-      <div class="team-slide active">
-        <div class="team-photo">
-          <img src="images/staff3.jpeg" alt="Principal message">
-        </div>
-        <div class="team-text">
-          <h3>Sr Deepa Mathew Principal</h3>
-          <p>“Our mission is to shape character along with knowledge, preparing students for life.”</p>
-        </div>
+    <div class="career-slider-track">
+
+      <div class="career-slide active-career-slide">
+        <img src="images/staff3.jpeg" alt="Sr Deepa Mathew">
+        <div class="career-member-name">Sr Deepa Mathew</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff4.jpg" alt="Vice Principal message">
-        </div>
-        <div class="team-text">
-          <h3>Sr Flory Vice Principal</h3>
-          <p>“At St Clare, we strive to create an environment where every student feels valued, encouraged and inspired to grow.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff4.jpg" alt="Sr Flory">
+        <div class="career-member-name">Sr Flory</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff7.jpeg" alt="Teacher message">
-        </div>
-        <div class="team-text">
-          <h3>Mr Paul Thailiklung Pamei</h3>
-          <p>“For twenty-five years, St. Clare School has been more than just a workplace—it has been my second home. I have watched shy children walk through our gates and leave as confident, compassionate leaders. To have played a part in shaping generations of St. Clare students is the greatest privilege of my life.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff7.jpeg" alt="Mr Paul">
+        <div class="career-member-name">Mr Paul Thailiklung Pamei</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff2.jpeg" alt="Staff message">
-        </div>
-        <div class="team-text">
-          <h3>Sir. Sena</h3>
-          <p>“At St Clare School, we guide students by helping them in their studies and encouraging discipline, confidence, and good values.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff2.jpeg" alt="Sir Sena">
+        <div class="career-member-name">Sir Sena</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff5.jpeg" alt="Teacher message">
-        </div>
-        <div class="team-text">
-          <h3>Mr Alemwapang Imti</h3>
-          <p>“Guiding minds, shaping futures, and building character. Proud to be a part of the St Clare family.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff5.jpeg" alt="Mr Alemwapang Imti">
+        <div class="career-member-name">Mr Alemwapang Imti</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff6.jpeg" alt="Teacher message">
-        </div>
-        <div class="team-text">
-          <h3>Miss Azonu Zao</h3>
-          <p>“Grow what you go through.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff6.jpeg" alt="Miss Azonu Zao">
+        <div class="career-member-name">Miss Azonu Zao</div>
       </div>
 
-      <div class="team-slide">
-        <div class="team-photo">
-          <img src="images/staff1.jpeg" alt="Staff message">
-        </div>
-        <div class="team-text">
-          <h3>Miss. Moatula</h3>
-          <p>“At St Clare, teaching is not just a job — it is a calling. We guide students with care, discipline and values.”</p>
-        </div>
+      <div class="career-slide">
+        <img src="images/staff1.jpeg" alt="Miss Moatula">
+        <div class="career-member-name">Miss Moatula</div>
       </div>
 
     </div>
 
-    <div class="team-controls">
-      <button onclick="prevTeamSlide()">←</button>
-      <button onclick="nextTeamSlide()">→</button>
-    </div>
+    <button class="career-arrow next" onclick="changeCareerSlide(1)">&#8594;</button>
 
+  </div>
+
+  <div class="career-details">
+    <h2 id="careerTitle">Sr Deepa Mathew Principal</h2>
+    <p id="careerDesc">“Our mission is to shape character along with knowledge, preparing students for life.”</p>
   </div>
 
 </section>
