@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admissions - St Clare School</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admissions - St Clare Higher Secondary School</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="admissions.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admissions.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="inner-page">
 
 <!-- ================= HEADER ================= -->
 <header class="main-header">
@@ -21,8 +21,11 @@
 
   <div class="header-right">
     <a href="enquire.html" class="enquire-btn">Enquire Now</a>
+
     <button class="menu-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </header>
@@ -42,6 +45,9 @@
         <a href="primary.html">Primary</a>
         <a href="grade6-10.html">Middle & Secondary</a>
         <a href="grade11-12.html">Senior Secondary</a>
+        <a href="learning-support.html">Learning Support</a>
+        <a href="academic-results.html">Results</a>
+        <a href="career-guidance.html">Career Guidance</a>
       </div>
     </div>
 
@@ -50,7 +56,8 @@
       <div class="menu-links">
         <a href="boarding.html">Overview</a>
         <a href="boarding-life.html">Boarding Life</a>
-        <a href="boarding-houses.html">Boarding Houses</a>
+        <a href="boarding-houses.html">Houses</a>
+        <a href="boarding-wellbeing.html">Wellbeing</a>
       </div>
     </div>
 
@@ -58,17 +65,22 @@
       <h3 class="menu-title">Co-Curricular</h3>
       <div class="menu-links">
         <a href="cocurricular.html">Overview</a>
+        <a href="arts.html">Arts</a>
         <a href="sports.html">Sports</a>
         <a href="clubs.html">Clubs</a>
+        <a href="outdoor.html">Outdoor</a>
       </div>
     </div>
 
     <div class="menu-column">
-      <h3 class="menu-title">About</h3>
+      <h3 class="menu-title">About Us</h3>
       <div class="menu-links">
         <a href="about.html">Overview</a>
-        <a href="contact.html">Contact</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="leadership.html">Leadership</a>
+        <a href="news.html">News</a>
         <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
 
@@ -76,7 +88,7 @@
 </nav>
 
 <!-- ================= HERO ================= -->
-<section class="page-hero" style="background-image: url('images/school.jpeg');">
+<section class="page-hero admissions-hero">
   <div class="hero-overlay">
     <h1>Admissions</h1>
   </div>
@@ -87,7 +99,6 @@
 
   <div class="intro-grid">
 
-    <!-- LEFT TEXT -->
     <div class="intro-left">
       <p>
         Located in a nurturing environment, our school is a safe, inspiring,
@@ -95,24 +106,11 @@
       </p>
     </div>
 
-    <!-- CENTER CONTENT -->
     <div class="intro-center">
       <h2>Join Our Family</h2>
-
-      <div class="intro-text">
-        <p>
-          We are delighted that you are interested in joining St Clare Higher Secondary School.
-        </p>
-
-        <p>
-          Our students grow academically, socially, and personally in a supportive environment.
-        </p>
-      </div>
-
-      <img src="images/portrait.jpeg" alt="Students">
+      <img src="images/portrait.jpeg" alt="Students at St Clare Higher Secondary School">
     </div>
 
-    <!-- RIGHT SIDEBAR (FIXED: no extra wrapper) -->
     <aside class="enquire-sidebar">
       <div class="sidebar-logo">
         <img src="images/logo.png" alt="School Logo">
@@ -138,10 +136,8 @@
 
   <div class="process-container">
 
-    <!-- LEFT EMPTY -->
-    <div></div>
+    <div class="process-spacer"></div>
 
-    <!-- CENTER -->
     <div class="process-text">
 
       <h2>The Admissions Process</h2>
@@ -169,12 +165,11 @@
 
     </div>
 
-    <!-- RIGHT (WHY CHOOSE US ONLY HERE) -->
     <div class="right-column">
 
       <div class="process-card">
 
-        <img src="images/school-small.jpeg" alt="School">
+        <img src="images/school-small.jpeg" alt="St Clare School Campus">
 
         <h3>Why Choose Us</h3>
 
@@ -199,17 +194,11 @@
 
 </section>
 
-<!-- ================= NEXT SECTION ================= -->
-<section class="content-section">
-  <h2>Admissions</h2>
-  <p>More details about admission will go here...</p>
-</section>
-
 <!-- ================= FOOTER ================= -->
 <footer class="premium-footer">
 
   <div class="footer-logo">
-    <img src="images/logo.png">
+    <img src="images/logo.png" alt="School Logo">
     <h2>St Clare Higher Secondary School</h2>
   </div>
 
@@ -270,13 +259,13 @@
   </div>
 
   <div class="footer-bottom">
-  Designed & Developed by
-  <a href="https://www.linkedin.com/in/issac-belho-073a2a3a9/"
-     target="_blank"
-     rel="noopener noreferrer">
-     Issac Belho
-  </a>
-</div>
+    Designed & Developed by
+    <a href="https://www.linkedin.com/in/issac-belho-073a2a3a9/"
+       target="_blank"
+       rel="noopener noreferrer">
+       Issac Belho
+    </a>
+  </div>
 
 </footer>
 

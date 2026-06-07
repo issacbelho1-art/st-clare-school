@@ -1,163 +1,453 @@
-/* ================= ADMISSIONS HERO CLASSES ================= */
+/* ================= ADMISSIONS PAGE ================= */
 
-.admissions {
-  background: url("images/admission.jpeg") center/cover no-repeat;
+* {
+  box-sizing: border-box;
 }
 
-.fees {
-  background: url("images/fees.jpeg") center/cover no-repeat;
-}
-
-/* ================= ADMISSIONS SECTION ================= */
-
-.admissions-section {
-  position: relative;
-  width: 100%;
-  min-height: 650px;
-  display: flex;
+body {
   background: #f4f4f4;
-  overflow: hidden;
-  margin-top: 60px;
+  color: #0d2d5c;
+  overflow-x: hidden;
 }
 
-.admissions-image {
-  width: 50%;
-  height: 650px;
+/* ================= HERO ================= */
+
+.admissions-hero {
+  height: 70vh;
+  min-height: 520px;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("images/school.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
 
-.admissions-image img {
+.admissions-hero .hero-overlay {
   width: 100%;
-  height: 100%;
+  padding: 0 7% 80px;
+}
+
+.admissions-hero h1 {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ================= INTRO SECTION ================= */
+
+.admissions-intro {
+  background: #f4f4f4;
+  padding: 100px 7%;
+}
+
+.intro-grid {
+  max-width: 1450px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr 0.75fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.intro-left {
+  padding-top: 100px;
+}
+
+.intro-left p {
+  font-size: 22px;
+  line-height: 1.75;
+  color: #0d2d5c;
+  font-weight: 300;
+}
+
+.intro-center h2 {
+  font-size: 56px;
+  font-weight: 300;
+  color: #0d2d5c;
+  margin-bottom: 32px;
+}
+
+.intro-center img {
+  width: 100%;
+  height: 540px;
   object-fit: cover;
   display: block;
 }
 
-/* CENTER BLUE BOX */
-.admissions-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 560px;
-  transform: translate(-50%, -50%);
-  background: #008fc7;
+/* ================= RIGHT SIDEBAR ================= */
+
+.enquire-sidebar {
+  background: #0d2d5c;
   color: white;
+  padding: 36px 30px;
+  position: sticky;
+  top: 115px;
+}
+
+.sidebar-logo {
   text-align: center;
-  padding: 45px 55px;
-  z-index: 10;
+  margin-bottom: 22px;
 }
 
-.admissions-box img {
+.sidebar-logo img {
   width: 70px;
-  height: 70px;
-  object-fit: contain;
-  margin: 0 auto 18px;
+}
+
+.enquire-sidebar h3 {
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.enquire-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.enquire-sidebar li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.enquire-sidebar a {
   display: block;
-}
-
-.admissions-box h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-  color: white;
-}
-
-.admissions-box p {
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 18px;
-  color: white;
-}
-
-.admissions-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 25px;
-}
-
-.admissions-buttons a {
   color: white;
   text-decoration: none;
-  border: 2px solid white;
-  border-radius: 30px;
-  padding: 13px 28px;
-  text-transform: uppercase;
-  font-size: 13px;
+  padding: 13px 0;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.enquire-sidebar a:hover,
+.enquire-sidebar a.active {
+  color: #ffd700;
+  padding-left: 6px;
+}
+
+/* ================= PROCESS SECTION ================= */
+
+.process-section {
+  background: #fff;
+  padding: 100px 7%;
+}
+
+.process-container {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.process-spacer,
+.process-container > div:first-child:empty {
+  display: none;
+}
+
+.process-text h2 {
+  font-size: 48px;
+  font-weight: 300;
+  color: #0d2d5c;
+  margin-bottom: 30px;
+}
+
+.process-text p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.process-text .intro {
+  font-size: 22px;
+  color: #0d2d5c;
+  font-weight: 300;
+}
+
+.process-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-size: 14px;
   font-weight: 700;
   transition: 0.3s ease;
 }
 
-.admissions-buttons a:hover {
-  background: white;
-  color: #008fc7;
+.btn-primary {
+  background: #0d2d5c;
+  color: white;
 }
 
-/* ================= RESPONSIVE ================= */
+.btn-primary:hover {
+  background: #082045;
+}
 
-@media (max-width: 900px) {
+.btn-secondary {
+  border: 2px solid #0d2d5c;
+  color: #0d2d5c;
+}
 
-  .admissions-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    min-height: 560px;
-    padding: 0 10px 60px;
+.btn-secondary:hover {
+  background: #0d2d5c;
+  color: white;
+}
+
+/* ================= WHY CHOOSE US CARD ================= */
+
+.right-column {
+  width: 100%;
+}
+
+.process-card {
+  background: #f4f4f4;
+  padding: 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.process-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 28px;
+}
+
+.process-card h3 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #0d2d5c;
+  margin-bottom: 16px;
+}
+
+.process-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 18px;
+}
+
+.process-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px;
+}
+
+.process-card li {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: #0d2d5c;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.card-btn:hover {
+  background: #082045;
+}
+
+/* ================= HIDE OLD DUMMY SECTION ================= */
+
+.content-section {
+  display: none;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1000px) {
+  .admissions-hero {
+    height: 60vh;
+    min-height: 430px;
   }
 
-  .admissions-image {
+  .admissions-hero .hero-overlay {
+    padding: 0 28px 60px;
+  }
+
+  .admissions-hero h1 {
+    font-size: 48px;
+  }
+
+  .admissions-intro {
+    padding: 80px 28px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .intro-left {
+    padding-top: 0;
+  }
+
+  .intro-left p {
+    font-size: 20px;
+  }
+
+  .intro-center h2 {
+    font-size: 44px;
+  }
+
+  .intro-center img {
+    height: 420px;
+  }
+
+  .enquire-sidebar {
+    position: relative;
+    top: 0;
     width: 100%;
-    height: 520px;
   }
 
-  .admissions-box {
-    top: 46%;
-    width: 84%;
-    padding: 36px 24px;
+  .process-section {
+    padding: 80px 28px;
   }
 
-  .admissions-box h2 {
-    font-size: 28px;
+  .process-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .process-text h2 {
+    font-size: 40px;
+  }
+
+  .process-card img {
+    height: 260px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .admissions-hero {
+    height: 55vh;
+    min-height: 360px;
+  }
+
+  .admissions-hero .hero-overlay {
+    padding: 0 20px 45px;
+  }
+
+  .admissions-hero h1 {
+    font-size: 38px;
+  }
+
+  .admissions-intro {
+    padding: 60px 18px;
+  }
+
+  .intro-left p {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .intro-center h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .intro-center img {
+    height: 300px;
+  }
+
+  .enquire-sidebar {
+    padding: 32px 24px;
+  }
+
+  .enquire-sidebar h3 {
+    font-size: 24px;
+  }
+
+  .process-section {
+    padding: 65px 18px;
+  }
+
+  .process-text h2 {
+    font-size: 34px;
     line-height: 1.2;
   }
 
-  .admissions-box p {
-    font-size: 14px;
-    line-height: 1.6;
+  .process-text .intro {
+    font-size: 19px;
   }
 
-  .admissions-buttons {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .admissions-section {
-    min-height: 520px;
-    margin-top: 40px;
+  .process-text p {
+    font-size: 15px;
+    line-height: 1.7;
   }
 
-  .admissions-image {
-    height: 500px;
+  .process-buttons {
+    flex-direction: column;
   }
 
-  .admissions-box {
-    width: 88%;
-    padding: 30px 18px;
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
   }
 
-  .admissions-box img {
-    width: 58px;
-    height: 58px;
+  .process-card {
+    padding: 24px 20px;
   }
 
-  .admissions-box h2 {
+  .process-card img {
+    height: 220px;
+  }
+
+  .process-card h3 {
     font-size: 25px;
   }
-
-  .admissions-buttons a {
-    font-size: 11px;
-    padding: 10px 16px;
-  }
 }
 
+/* ================= FINAL POLISH FIXES ================= */
+
+/* Center logo inside In This Section */
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar-logo img {
+  width: 70px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Fix Why Choose Us image cut */
+.process-card img {
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  margin: 0 auto 28px;
+  background: #fff;
+}
