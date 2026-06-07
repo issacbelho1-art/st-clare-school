@@ -171,7 +171,7 @@ body.inner-page {
 /* ================= CAREER TEAM SLIDER ================= */
 
 .career-team-section {
-  padding: 90px 0 60px;
+  padding: 80px 0 55px;
   background: #f7f7f7;
   text-align: center;
   overflow: hidden;
@@ -186,39 +186,41 @@ body.inner-page {
 
 .career-slider-wrapper {
   position: relative;
-  max-width: 1150px;
-  margin: 0 auto 95px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 45px;
   overflow: hidden;
-  padding: 0 80px 80px;
+  padding: 0 70px 75px;
 }
 
 .career-slider-track {
   display: flex;
   align-items: center;
-  gap: 24px;
-  width: max-content;
+  justify-content: center;
+  gap: 42px;
+  width: 100%;
   transition: transform 0.6s ease;
 }
 
 .career-slide {
   position: relative;
-  width: 185px;
-  height: 360px;
+  width: 230px;
+  height: 430px;
   flex: 0 0 auto;
   overflow: hidden;
-  opacity: 0.45;
-  transform: scale(0.9);
-  transition: all 0.45s ease;
   background: #ddd;
+  opacity: 0.45;
+  transform: scale(0.92);
+  transition: all 0.45s ease;
 }
 
 .career-slide.active-career-slide {
-  width: 380px;
-  height: 380px;
+  width: 520px;
+  height: 500px;
   opacity: 1;
   transform: scale(1);
   border: 4px solid #0099e5;
-  z-index: 3;
+  z-index: 5;
 }
 
 .career-slide img {
@@ -239,21 +241,28 @@ body.inner-page {
 
 .member-name {
   position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 26px;
+  bottom: 32px;
   z-index: 2;
   color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 1.15;
+  text-align: left;
+  max-width: 85%;
+}
+
+.career-slide:not(.active-career-slide) .member-name {
+  font-size: 22px;
+  left: 24px;
+  bottom: 28px;
 }
 
 /* ARROWS BOTTOM CENTER */
 
 .career-arrow {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   top: auto;
   z-index: 30;
 
@@ -270,8 +279,6 @@ body.inner-page {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  transform: none;
 }
 
 .career-arrow.prev {
@@ -295,16 +302,16 @@ body.inner-page {
 }
 
 .career-details h2 {
-  font-size: 42px;
+  font-size: 38px;
   line-height: 1.2;
   font-weight: 400;
   color: #002b5c;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .career-details p {
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 17px;
+  line-height: 1.7;
   color: #222;
 }
 
@@ -324,6 +331,26 @@ body.inner-page {
 
   .career-img {
     height: 260px;
+  }
+
+  .career-slider-wrapper {
+    max-width: 100%;
+    padding: 0 35px 75px;
+  }
+
+  .career-slider-track {
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .career-slide {
+    width: 170px;
+    height: 340px;
+  }
+
+  .career-slide.active-career-slide {
+    width: 390px;
+    height: 420px;
   }
 }
 
@@ -416,22 +443,38 @@ body.inner-page {
 
   .career-slider-wrapper {
     max-width: 100%;
-    padding: 0 60px 75px;
-    margin-bottom: 80px;
+    padding: 0 18px 75px;
+    margin-bottom: 70px;
   }
 
   .career-slider-track {
-    gap: 16px;
+    gap: 14px;
+    justify-content: center;
   }
 
   .career-slide {
-    width: 120px;
-    height: 270px;
+    width: 92px;
+    height: 230px;
   }
 
   .career-slide.active-career-slide {
-    width: 235px;
-    height: 300px;
+    width: 220px;
+    height: 285px;
+  }
+
+  .member-name {
+    font-size: 18px;
+    left: 18px;
+    bottom: 22px;
+    max-width: 85%;
+    text-align: left;
+    transform: none;
+  }
+
+  .career-slide:not(.active-career-slide) .member-name {
+    font-size: 13px;
+    left: 14px;
+    bottom: 18px;
   }
 
   .career-arrow {
@@ -447,14 +490,6 @@ body.inner-page {
 
   .career-arrow.next {
     left: calc(50% + 8px);
-  }
-
-  .member-name {
-    font-size: 13px;
-    bottom: 15px;
-    max-width: 90%;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .career-details {
@@ -506,17 +541,33 @@ body.inner-page {
   }
 
   .career-slider-wrapper {
-    padding: 0 52px 70px;
+    padding: 0 10px 70px;
+  }
+
+  .career-slider-track {
+    gap: 10px;
   }
 
   .career-slide {
-    width: 105px;
-    height: 240px;
+    width: 78px;
+    height: 210px;
   }
 
   .career-slide.active-career-slide {
-    width: 210px;
-    height: 270px;
+    width: 195px;
+    height: 260px;
+  }
+
+  .member-name {
+    font-size: 16px;
+    left: 16px;
+    bottom: 20px;
+  }
+
+  .career-slide:not(.active-career-slide) .member-name {
+    font-size: 12px;
+    left: 10px;
+    bottom: 15px;
   }
 
   .career-arrow {
