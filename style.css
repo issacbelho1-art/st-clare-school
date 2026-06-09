@@ -2904,11 +2904,11 @@ iframe {
     width: calc(100% - 50px);
     top: 110px;
     transform: translateX(-50%);
-    padding: 40px 22px;
+    padding: 35px 22px;
   }
 
   .admissions-box h2 {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .admissions-box p {
