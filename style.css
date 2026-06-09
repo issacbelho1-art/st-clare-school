@@ -1125,7 +1125,7 @@ html {
   top: 46%;
   transform: translate(-50%, -50%);
   width: 560px;
-  background: #243f7d;
+  background: #0794c9;
   color: white;
   text-align: center;
   padding: 55px 60px;
@@ -1171,7 +1171,7 @@ html {
 
 .contact-admissions-buttons a:hover {
   background: white;
-  color: #243f7d;
+  color: #0794c9;
 }
 
 /* ================= IN THIS SECTION FINAL ================= */
@@ -2794,9 +2794,10 @@ iframe {
 
 .admissions-section {
   position: relative;
-  height: 520px;
+  height: 560px;
   margin: 100px 0;
   overflow: hidden;
+  background: #f4f4f4;
 }
 
 .admissions-image {
@@ -2804,20 +2805,24 @@ iframe {
   top: 0;
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 
 .admissions-image.left {
   left: 0;
+  padding-right: 10px;
 }
 
 .admissions-image.right {
   right: 0;
+  padding-left: 10px;
 }
 
 .admissions-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -2825,32 +2830,36 @@ iframe {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 86%;
+  max-width: 640px;
+  min-height: auto;
   transform: translate(-50%, -50%);
-  width: 600px;
-  max-width: 90%;
-  background: #008fc7;
+  background: #0794c9;
   color: #fff;
   text-align: center;
-  padding: 50px 45px;
+  padding: 42px 30px;
   z-index: 10;
   box-shadow: 0 20px 45px rgba(0,0,0,0.18);
 }
 
-.admissions-logo {
-  width: 70px;
+.admissions-logo,
+.admissions-box > img {
+  width: 68px;
   height: auto;
   display: block;
-  margin: 0 auto 25px;
+  margin: 0 auto 26px;
 }
 
 .admissions-box h2 {
   color: #fff;
-  font-size: 42px;
-  margin-bottom: 20px;
+  font-size: 34px;
+  line-height: 1.25;
+  margin-bottom: 22px;
 }
 
 .admissions-box p {
   color: #fff;
+  font-size: 16px;
   line-height: 1.7;
   margin-bottom: 18px;
 }
@@ -2858,9 +2867,9 @@ iframe {
 .admissions-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 14px;
   flex-wrap: wrap;
-  margin-top: 25px;
+  margin-top: 28px;
 }
 
 .admissions-buttons a {
@@ -2868,57 +2877,86 @@ iframe {
   text-decoration: none;
   border: 2px solid #fff;
   padding: 12px 22px;
-  border-radius: 30px;
+  border-radius: 35px;
   font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .admissions-buttons a:hover {
   background: #fff;
-  color: #008fc7;
+  color: #0794c9;
 }
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
   .admissions-section {
-    height: 650px;
+    height: 600px;
+    margin-top: 60px;
   }
 
   .admissions-image {
-    width: 48%;
-    height: 430px;
-    top: 60px;
+    width: 50%;
+    height: 100%;
+    top: 0;
   }
 
   .admissions-image.left {
-    left: 15px;
+    left: 0;
+    padding-right: 6px;
   }
 
   .admissions-image.right {
-    right: 15px;
+    right: 0;
+    padding-left: 6px;
+  }
+
+  .admissions-image img {
+    object-fit: cover;
+    object-position: center;
   }
 
   .admissions-box {
-    width: calc(100% - 50px);
-    top: 110px;
-    transform: translateX(-50%);
-    padding: 35px 22px;
+    width: 88%;
+    max-width: 560px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 38px 22px;
+  }
+
+  .admissions-logo,
+  .admissions-box > img {
+    width: 62px;
+    margin: 0 auto 24px;
   }
 
   .admissions-box h2 {
-    font-size: 28px;
+    font-size: 31px;
+    line-height: 1.25;
   }
 
   .admissions-box p {
-    font-size: 15px;
-  }
-  .admissions-logo {
-    width: 58px;
-    height: auto;
-    display: block;
-    margin: 0 auto 22px;
+    font-size: 16px;
+    line-height: 1.65;
   }
 
+  .admissions-buttons {
+    gap: 14px;
+  }
+
+  .admissions-buttons a {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+}
+
+/* FORCE SAME ADMISSIONS BLUE */
+.admissions-box {
+  background: #0794c9 !important;
+}
+
+.admissions-buttons a:hover {
+  color: #0794c9 !important;
 }
