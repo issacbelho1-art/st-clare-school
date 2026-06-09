@@ -288,17 +288,16 @@
 <script src="js/main.js"></script>
 
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  orderBy
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-  import {
-    getFirestore,
-    collection,
-    getDocs,
-    query,
-    orderBy
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-  const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyC97WiF96Rx2_NH-6jz0vMP0LqyowgDMAc",
   authDomain: "st-clare-website.firebaseapp.com",
   projectId: "st-clare-website",
@@ -308,75 +307,103 @@
   measurementId: "G-08EEWQFN19"
 };
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-  const resultsList = document.getElementById("resultsList");
+const resultsList = document.getElementById("resultsList");
 
-  async function loadAcademicResults() {
-    try {
-      const snapshot = await getDocs(
-        query(collection(db, "academicResults"), orderBy("createdAt", "desc"))
-      );
+function shortenText(text, limit = 180) {
+  if (!text) return "";
+  return text.length > limit ? text.substring(0, limit).trim() + "..." : text;
+}
 
-      if (snapshot.empty) {
-        resultsList.innerHTML = `
-          <div class="results-empty">
-            No academic results have been published yet.
-          </div>
-        `;
-        return;
-      }
+async function loadAcademicResults() {
+  try {
+    const snapshot = await getDocs(
+      query(collection(db, "academicResults"), orderBy("createdAt", "desc"))
+    );
 
-      resultsList.innerHTML = "";
-
-      snapshot.forEach((resultDoc) => {
-        const data = resultDoc.data();
-
-        const resultLink =
-          data.resultUrl ||
-          data.pdfUrl ||
-          data.fileUrl ||
-          data.downloadUrl ||
-          "";
-
-        const downloadButton = resultLink
-          ? `
-            <a href="${resultLink}" target="_blank" class="result-download-btn">
-              View / Download Result
-            </a>
-          `
-          : "";
-
-        resultsList.innerHTML += `
-          <div class="result-card">
-            <span class="badge">Official Result</span>
-
-            <h3>${data.title || "Academic Result"}</h3>
-
-            <p><strong>Class:</strong> ${data.className || "-"}</p>
-            <p><strong>Exam:</strong> ${data.examName || "-"}</p>
-            <p><strong>Academic Year:</strong> ${data.academicYear || "-"}</p>
-            <p><strong>Published Date:</strong> ${data.publishedDate || "-"}</p>
-            <p><strong>Note:</strong> ${data.note || "-"}</p>
-
-            ${downloadButton}
-          </div>
-        `;
-      });
-
-    } catch (error) {
-      console.error(error);
-
+    if (snapshot.empty) {
       resultsList.innerHTML = `
         <div class="results-empty">
-          Unable to load academic results. Please try again later.
+          No academic results have been published yet.
+        </div>
+      `;
+      return;
+    }
+
+    resultsList.innerHTML = "";
+    let visibleCount = 0;
+
+    snapshot.forEach((resultDoc) => {
+      const data = resultDoc.data();
+
+      const resultLink =
+        data.resultUrl ||
+        data.pdfUrl ||
+        data.fileUrl ||
+        data.downloadUrl ||
+        "";
+
+      const title = data.title || "";
+      const className = data.className || "";
+      const examName = data.examName || "";
+      const academicYear = data.academicYear || "";
+      const publishedDate = data.publishedDate || "";
+      const note = data.note || "";
+
+      const hasUsefulData =
+        title || className || examName || academicYear || publishedDate || note || resultLink;
+
+      if (!hasUsefulData) return;
+
+      visibleCount++;
+
+      const downloadButton = resultLink
+        ? `
+          <a href="${resultLink}" target="_blank" class="result-download-btn">
+            View / Download Result
+          </a>
+        `
+        : "";
+
+      resultsList.innerHTML += `
+        <div class="result-card">
+          <span class="badge">Official Result</span>
+
+          <h3>${title || "Academic Result"}</h3>
+
+          ${className ? `<p><strong>Class:</strong> ${className}</p>` : ""}
+          ${examName ? `<p><strong>Exam:</strong> ${examName}</p>` : ""}
+          ${academicYear ? `<p><strong>Academic Year:</strong> ${academicYear}</p>` : ""}
+          ${publishedDate ? `<p><strong>Published Date:</strong> ${publishedDate}</p>` : ""}
+          ${note ? `<p><strong>Note:</strong> ${shortenText(note)}</p>` : ""}
+
+          ${downloadButton}
+        </div>
+      `;
+    });
+
+    if (visibleCount === 0) {
+      resultsList.innerHTML = `
+        <div class="results-empty">
+          No academic results have been published yet.
         </div>
       `;
     }
-  }
 
-  loadAcademicResults();
+  } catch (error) {
+    console.error(error);
+
+    resultsList.innerHTML = `
+      <div class="results-empty">
+        Unable to load academic results. Please try again later.
+      </div>
+    `;
+  }
+}
+
+loadAcademicResults();
 </script>
 
 </body>
