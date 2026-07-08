@@ -919,3 +919,13 @@ updateAdmissionSlider(false);
 function closeBoardingNotice() {
   document.getElementById("boardingNotice").style.display = "none";
 }
+
+function isNew(createdAt, days = 14) {
+  const createdDate = createdAt.toDate ? createdAt.toDate() : new Date(createdAt);
+  const now = new Date();
+
+  const diffTime = now - createdDate;
+  const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+  return diffDays <= days;
+}
